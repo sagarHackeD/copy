@@ -1,0 +1,31 @@
+Program 11:
+Develop a LaTeX script to present an algorithm in the document using
+algorithm/algorithmic/algorithm2e library
+\documentclass{article}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead[l]{Latex, program 10}
+\fancyhead[r]{by Sagar}
+\fancyfoot[l]{Dept of CSE, GEC, Karwar}
+\fancyfoot[r]{2025-26}
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{2pt}
+\begin{document}
+\begin{algorithm}
+\caption{Euclid's Algorithm}
+\label{euclid}
+\begin{algorithmic}[1]
+\Require Two non-negative integers $a$ and $b$ such that $a \geq b$
+\Ensure $d = \gcd(a,b)$
+\State $r \gets a \bmod b$
+\While{$r \neq 0$}
+\State $a \gets b$
+\State $b \gets r$
+\State $r \gets a \bmod b$
+\EndWhile
+\State \Return $b$
+\end{algorithmic}
+\end{algorithm}
+\end{document}

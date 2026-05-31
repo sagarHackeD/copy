@@ -1,0 +1,28 @@
+Program 05:
+Develop a LaTeX script to create a document that contains the following table
+with proper labels.
+\documentclass{book}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead[l]{Latex,program 5}
+\fancyhead[r]{by Sagar}
+\fancyfoot[l]{Dept of CSE,GEC,Karwar.}
+\fancyfoot[r]{page 1 2025-26}
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{2pt}
+\begin{document}
+\begin{table}
+\centering
+\caption{Student Tables}
+\label{student}
+\begin{tabular}{|l|c|c|c|c|c|r|}\hline\multirow{2}{*}{slno}&\multirow{2}{*}{USN}&\multir
+ow{2}{*}{studentname}&\multicolumn{3}{|c|}{marks}\\\vline
+&&&subject1 & subject2 & subject3\\\hline
+1& 1VG22CSOO7 & BHOOMIKA YM & 89 & 90 & 95\\\hline
+2& 1VG22CSOO9 & CHANDANA BJ & 85& 80& 60\\\hline
+3& 1VG22CSO47 & SNEHA HL & 75& 80 & 85\\\hline
+\end{tabular}
+\end{table}
+\end{document}
