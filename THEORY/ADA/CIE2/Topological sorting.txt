@@ -1,0 +1,1 @@
+Topological sorting is a method used in computer science to arrange the vertices of a directed acyclic graph (DAG) in a linear order such that for every directed edge from vertex u to vertex v, u appears before v in the ordering. This is commonly applied in scheduling tasks where certain tasks must be completed before others can begin.

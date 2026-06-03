@@ -1,0 +1,13 @@
+1 KRUSKAL(G)
+2  MST = ∅
+3
+4  Sort all edges of G in increasing order of weight
+5
+6  for each edge (u, v) in sorted order do
+7    if u and v are in different sets then
+8      Add (u, v) to MST
+9      Union(u, v)
+10    end if
+11  end for
+12
+13  return MST

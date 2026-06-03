@@ -1,0 +1,6 @@
+Transitive Closure 
+The Transitive Closure of a directed graph with n vertices is defined as an n x n Boolean matrix T={t_ij}. 
+In this matrix, the element t_ij in the i^th row and j^th column is determined as follows: 
+
+• t_{ij} = 1: If there exists a non-trivial path from the i^th vertex to the j^th vertex. 
+• t_{ij} = 0: Otherwise.

@@ -1,0 +1,12 @@
+0 Preprocess
+1 for c ∈ Σ do shif t[c] ← m
+2 for i ← 0 to m − 2 do shif t[P [i]] ← m − 1 − i
+  Search:
+3 j ← 0
+4 while j + m ≤ n do
+5 if P [m − 1] = T [j + m − 1] then
+6 i ← m − 2
+7 while i ≥ 0 and P [i] = T [j + i] do i ← i − 1
+8 if i = −1 then return j
+9 j ← j + shif t[T [j + m − 1]]
+10 return n
