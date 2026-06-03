@@ -1,0 +1,17 @@
+7) Key Differences Between Bootloader and Firmware
+Feature	Bootloader	Firmware
+Purpose	Loads firmware/OS	Controls device operation
+Execution Time	Runs first	Runs after bootloader
+Size	Small	Larger
+Location	ROM/Flash	Flash Memory
+Function	Initialization and loading	Actual device functionality
+Update Frequency	Rarely updated	Frequently updated
+User Interaction	Minimal	Continuous operation
+Boot Process
+Power ON
+   |
+Bootloader
+   |
+Load Firmware
+   |
+Firmware Execution

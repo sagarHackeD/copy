@@ -1,0 +1,43 @@
+3) List ARM Firmware Suite Features and Explain Firmware Execution
+ARM Firmware Suite (AFS)
+
+ARM Firmware Suite provides a framework for firmware development and testing.
+
+Features
+Modular architecture
+Hardware abstraction layer
+Secure boot support
+Interrupt management
+Memory management
+Power management
+Device driver support
+Debugging facilities
+Multi-platform support
+RTOS integration
+Firmware Execution Flow
+Stage 1: Power-On
+Power ON
+   |
+Reset Signal
+   |
+ROM Bootloader
+Stage 2: Hardware Initialization
+Clock setup
+Memory initialization
+Peripheral configuration
+Stage 3: Firmware Loading
+ROM Bootloader
+      |
+Load Firmware
+      |
+Verify Image
+      |
+Jump to Firmware
+Stage 4: Application Execution
+Firmware
+   |
+Initialize Drivers
+   |
+Start Services
+   |
+Run Application

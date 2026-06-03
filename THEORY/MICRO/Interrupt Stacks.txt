@@ -1,0 +1,57 @@
+6) Explain Design and Implementation of Interrupt Stacks in ARM-Based Systems
+Interrupt Stack
+
+An interrupt stack stores processor state during interrupt processing.
+
+Need
+Prevent data corruption.
+Allow nested interrupts.
+Separate user and interrupt execution contexts.
+Design
+
+Each mode has its own stack.
+
+User Stack
+IRQ Stack
+FIQ Stack
+SVC Stack
+Abort Stack
+Undefined Stack
+Initialization
+LDR SP, =IRQ_STACK_TOP
+
+for IRQ mode.
+
+Similarly for other modes.
+
+Interrupt Stack Operation
+Step 1
+
+Interrupt occurs.
+
+Step 2
+
+CPU switches mode.
+
+Step 3
+
+Registers pushed onto stack.
+
+STMFD SP!, {R0-R12, LR}
+Step 4
+
+ISR executes.
+
+Step 5
+
+Registers restored.
+
+LDMFD SP!, {R0-R12, LR}
+Step 6
+
+Return from interrupt.
+
+Advantages
+Reliable context switching.
+Supports nested interrupts.
+Improves system stability.

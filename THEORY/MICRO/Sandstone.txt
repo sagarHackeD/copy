@@ -1,0 +1,51 @@
+8) Explain Sandstone with Code Structure
+Sandstone
+
+Sandstone is an ARM firmware validation and testing framework used for evaluating firmware functionality, hardware interfaces, and platform software.
+
+Objectives:
+Firmware testing
+Platform validation
+Regression testing
+Hardware verification
+
+Typical Code Structure:
+Sandstone
+|
++-- main.c
++-- platform/
++-- drivers/
++-- tests/
++-- include/
++-- scripts/
+main.c
+int main(void)
+{
+    platform_init();
+    run_tests();
+    return 0;
+}
+
+Test Module
+
+void test_uart()
+{
+    uart_init();
+    if(uart_check())
+        PASS();
+    else
+        FAIL();
+}
+
+Execution Flow
+	Start
+	|
+	Platform Init
+	|
+	Driver Init
+	|
+	Run Tests
+	|
+	Generate Report
+	|
+	End

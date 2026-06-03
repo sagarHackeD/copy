@@ -1,0 +1,58 @@
+1) Explain ARM Processor Exceptions and Modes with Neat Diagram
+ARM Processor Exceptions
+
+An exception is an event that interrupts the normal execution flow of a program and causes the processor to execute a special routine called an Exception Handler.
+
+ARM processors support several exceptions to handle errors, interrupts, and system services.
+
+Types of ARM Exceptions
+Exception	Vector Address	Description
+Reset	0x00000000	Occurs when the processor is powered on or reset.
+Undefined Instruction	0x00000004	Generated when an invalid instruction is executed.
+Software Interrupt (SWI/SVC)	0x00000008	Used by applications to request OS services.
+Prefetch Abort	0x0000000C	Occurs when instruction fetch fails.
+Data Abort	0x00000010	Occurs when data access fails.
+IRQ	0x00000018	Normal interrupt request.
+FIQ	0x0000001C	Fast interrupt request with higher priority.
+ARM Processor Modes
+
+ARM supports different operating modes.
+
+Mode	Purpose
+User	Normal application execution
+System	Privileged version of User mode
+Supervisor (SVC)	Entered after reset or SWI
+IRQ	Handles normal interrupts
+FIQ	Handles fast interrupts
+Abort	Handles memory access faults
+Undefined	Handles undefined instructions
+ARM Mode Transition Diagram
+                  RESET
+                    |
+                    V
+              Supervisor
+                  |
+        --------------------
+        |        |         |
+        V        V         V
+      IRQ      FIQ      SWI
+       |         |         |
+       V         V         V
+    IRQ Mode  FIQ Mode  SVC Mode
+
+Undefined Instruction
+         |
+         V
+  Undefined Mode
+
+Data/Prefetch Abort
+         |
+         V
+     Abort Mode
+
+User <------> System
+Features of ARM Exceptions
+Each exception has a dedicated vector address.
+Processor automatically saves state information.
+Processor switches to an appropriate exception mode.
+Execution resumes after exception servicing.

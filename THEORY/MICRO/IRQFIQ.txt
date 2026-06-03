@@ -1,0 +1,46 @@
+5) Briefly Explain What Happens When an IRQ/FIQ Exception Is Raised
+
+IRQ Handling
+When IRQ occurs:
+Current instruction completes.
+CPSR copied to SPSR_irq.
+Return address stored in LR_irq.
+Processor enters IRQ mode.
+IRQ disabled.
+PC loaded with IRQ vector address.
+ISR executes.
+Context restored.
+Return to interrupted program.
+IRQ Flow
+IRQ Raised
+    |
+Save CPSR
+    |
+Save PC → LR_irq
+    |
+Enter IRQ Mode
+    |
+Execute ISR
+    |
+Restore Context
+    |
+Return
+FIQ Handling
+
+FIQ works similarly but has:
+
+Higher priority.
+Additional banked registers.
+Faster response.
+FIQ Flow
+FIQ Raised
+    |
+Save State
+    |
+Enter FIQ Mode
+    |
+Execute Fast ISR
+    |
+Restore State
+    |
+Return
