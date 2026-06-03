@@ -1,0 +1,54 @@
+6) Describe the Process of Function Call in C
+
+A function call transfers control from one function to another.
+
+Example
+#include <stdio.h>
+
+void display()
+{
+    printf("Hello");
+}
+
+int main()
+{
+    display();
+    return 0;
+}
+Function Call Steps
+Step 1
+
+Arguments pushed onto stack.
+
+Step 2
+
+Return address saved.
+
+Step 3
+
+Control transferred to function.
+
+Step 4
+
+Function executes.
+
+Step 5
+
+Return value generated.
+
+Step 6
+
+Control returns to caller.
+
+Function Call Diagram
+main()
+   |
+Call Function
+   |
+Save Return Address
+   |
+Execute Function
+   |
+Return Value
+   |
+Back To main()

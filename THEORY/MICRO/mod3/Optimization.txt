@@ -1,0 +1,82 @@
+1) Explain Code Optimization, Profiling and Cycle Counting
+Code Optimization
+
+Code optimization is the process of improving a program so that it executes faster, consumes less memory, or uses fewer system resources without changing its functionality.
+
+Objectives
+Reduce execution time
+Reduce memory usage
+Lower power consumption
+Improve code efficiency
+Types of Optimization
+1. Compile-Time Optimization
+
+Performed by the compiler.
+
+Examples:
+
+Constant folding
+Dead code elimination
+Function inlining
+Loop unrolling
+int x = 10 * 20;
+
+Compiler replaces it with:
+
+int x = 200;
+2. Manual Optimization
+
+Programmer modifies code.
+
+Example:
+
+for(int i=0;i<1000;i++)
+{
+    sum += array[i];
+}
+
+Using pointers can reduce indexing overhead.
+
+Profiling
+
+Profiling is the process of measuring where a program spends its execution time.
+
+Purpose
+Find bottlenecks
+Improve performance
+Analyze memory usage
+Profiling Information
+Function execution time
+Number of function calls
+Memory consumption
+CPU utilization
+Profiling Process
+Program
+   |
+Execute
+   |
+Collect Runtime Data
+   |
+Analyze Hot Spots
+   |
+Optimize Code
+Cycle Counting
+
+Cycle counting measures the number of CPU clock cycles required to execute code.
+
+Formula
+Execution Time =
+Clock Cycles / CPU Frequency
+
+Example:
+
+If CPU frequency = 100 MHz
+
+Cycles = 500
+
+Execution Time = 500 / 100,000,000
+               = 5 μs
+Importance
+Real-time systems
+Embedded applications
+Performance tuning

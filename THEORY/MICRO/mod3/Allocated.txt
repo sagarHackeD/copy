@@ -1,0 +1,52 @@
+3) Discuss How Registers Are Allocated to Optimize the Program
+Register Allocation
+
+Register allocation is the process of assigning frequently used variables to CPU registers instead of memory locations.
+
+Registers provide the fastest access.
+
+Why Register Allocation?
+
+Memory access:
+
+RAM Access > Register Access
+
+Registers reduce execution time.
+
+Example
+
+Without register allocation:
+
+sum = a + b;
+
+Compiler repeatedly accesses memory.
+
+With register allocation:
+
+LDR r0,[a]
+LDR r1,[b]
+ADD r2,r0,r1
+
+Variables remain in registers.
+
+Benefits
+Faster execution
+Reduced memory accesses
+Lower power consumption
+Better CPU utilization
+Register Allocation Process
+Variables
+    |
+Compiler Analysis
+    |
+Register Assignment
+    |
+Code Generation
+ARM Register Usage
+Register	Purpose
+R0-R3	Parameters and return values
+R4-R11	Local variables
+R12	Scratch register
+R13	Stack Pointer
+R14	Link Register
+R15	Program Counter

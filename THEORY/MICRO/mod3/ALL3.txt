@@ -1,0 +1,482 @@
+1) Explain Code Optimization, Profiling and Cycle Counting
+Code Optimization
+
+Code optimization is the process of improving a program so that it executes faster, consumes less memory, or uses fewer system resources without changing its functionality.
+
+Objectives
+Reduce execution time
+Reduce memory usage
+Lower power consumption
+Improve code efficiency
+Types of Optimization
+1. Compile-Time Optimization
+
+Performed by the compiler.
+
+Examples:
+
+Constant folding
+Dead code elimination
+Function inlining
+Loop unrolling
+int x = 10 * 20;
+
+Compiler replaces it with:
+
+int x = 200;
+2. Manual Optimization
+
+Programmer modifies code.
+
+Example:
+
+for(int i=0;i<1000;i++)
+{
+    sum += array[i];
+}
+
+Using pointers can reduce indexing overhead.
+
+Profiling
+
+Profiling is the process of measuring where a program spends its execution time.
+
+Purpose
+Find bottlenecks
+Improve performance
+Analyze memory usage
+Profiling Information
+Function execution time
+Number of function calls
+Memory consumption
+CPU utilization
+Profiling Process
+Program
+   |
+Execute
+   |
+Collect Runtime Data
+   |
+Analyze Hot Spots
+   |
+Optimize Code
+Cycle Counting
+
+Cycle counting measures the number of CPU clock cycles required to execute code.
+
+Formula
+Execution Time =
+Clock Cycles / CPU Frequency
+
+Example:
+
+If CPU frequency = 100 MHz
+
+Cycles = 500
+
+Execution Time = 500 / 100,000,000
+               = 5 μs
+Importance
+Real-time systems
+Embedded applications
+Performance tuning
+2) Write a C Program That Prints Squares of Integers from 0 to 9 Using Functions and Explain Conversion to Assembly Function
+C Program
+#include <stdio.h>
+
+int square(int n)
+{
+    return n * n;
+}
+
+int main()
+{
+    int i;
+
+    for(i=0;i<=9;i++)
+    {
+        printf("%d = %d\n", i, square(i));
+    }
+
+    return 0;
+}
+Output
+0 = 0
+1 = 1
+2 = 4
+3 = 9
+4 = 16
+5 = 25
+6 = 36
+7 = 49
+8 = 64
+9 = 81
+Converting Function to ARM Assembly
+C Function
+int square(int n)
+{
+    return n*n;
+}
+ARM Assembly Function
+square
+    MUL r0, r0, r0
+    BX  lr
+Explanation
+Input parameter passed in R0.
+MUL computes R0 × R0.
+Result stored in R0.
+BX LR returns to caller.
+3) Discuss How Registers Are Allocated to Optimize the Program
+Register Allocation
+
+Register allocation is the process of assigning frequently used variables to CPU registers instead of memory locations.
+
+Registers provide the fastest access.
+
+Why Register Allocation?
+
+Memory access:
+
+RAM Access > Register Access
+
+Registers reduce execution time.
+
+Example
+
+Without register allocation:
+
+sum = a + b;
+
+Compiler repeatedly accesses memory.
+
+With register allocation:
+
+LDR r0,[a]
+LDR r1,[b]
+ADD r2,r0,r1
+
+Variables remain in registers.
+
+Benefits
+Faster execution
+Reduced memory accesses
+Lower power consumption
+Better CPU utilization
+Register Allocation Process
+Variables
+    |
+Compiler Analysis
+    |
+Register Assignment
+    |
+Code Generation
+ARM Register Usage
+Register	Purpose
+R0-R3	Parameters and return values
+R4-R11	Local variables
+R12	Scratch register
+R13	Stack Pointer
+R14	Link Register
+R15	Program Counter
+4) Develop an ALP to Find the Sum of First 10 Integers
+Algorithm
+Initialize counter = 1
+Initialize sum = 0
+Add counter to sum
+Increment counter
+Repeat until counter = 10
+Store result
+ARM Assembly Program
+AREA SUM10,CODE,READONLY
+ENTRY
+
+MOV R0,#0
+MOV R1,#1
+
+LOOP
+ADD R0,R0,R1
+ADD R1,R1,#1
+
+CMP R1,#11
+BNE LOOP
+
+END
+Working
+Sum = 1+2+3+4+5+6+7+8+9+10
+    = 55
+
+Result stored in R0.
+
+5) Explain Different Basic Data Types in C with Examples
+Basic Data Types
+1. char
+
+Stores characters.
+
+char grade='A';
+
+Size: 1 byte
+
+2. int
+
+Stores integers.
+
+int age=20;
+
+Typically 4 bytes.
+
+3. float
+
+Stores single-precision floating-point values.
+
+float pi=3.14;
+
+Size: 4 bytes.
+
+4. double
+
+Stores double-precision values.
+
+double value=123.456789;
+
+Size: 8 bytes.
+
+5. void
+
+Represents absence of value.
+
+void display();
+
+| Data Type | Example  | Typical Size |
+| --------- | -------- | ------------ |
+| char      | 'A'      | 1 byte       |
+| int       | 100      | 4 bytes      |
+| float     | 3.14     | 4 bytes      |
+| double    | 3.141592 | 8 bytes      |
+| void      | None     | No storage   |
+
+6) Describe the Process of Function Call in C
+
+A function call transfers control from one function to another.
+
+Example
+#include <stdio.h>
+
+void display()
+{
+    printf("Hello");
+}
+
+int main()
+{
+    display();
+    return 0;
+}
+Function Call Steps
+Step 1
+
+Arguments pushed onto stack.
+
+Step 2
+
+Return address saved.
+
+Step 3
+
+Control transferred to function.
+
+Step 4
+
+Function executes.
+
+Step 5
+
+Return value generated.
+
+Step 6
+
+Control returns to caller.
+
+Function Call Diagram
+main()
+   |
+Call Function
+   |
+Save Return Address
+   |
+Execute Function
+   |
+Return Value
+   |
+Back To main()
+7) Discuss Common Portability Issues Faced When Porting C Programs
+Portability
+
+Portability means a program can run on different platforms with little or no modification.
+
+Common Issues
+1. Data Type Size Differences
+int x;
+
+Size may differ between systems.
+
+2. Endianness
+Little Endian
+
+Lowest byte stored first.
+
+Big Endian
+
+Highest byte stored first.
+
+3. Compiler Differences
+
+Different compilers may support different extensions.
+
+4. Pointer Size
+
+32-bit system:
+
+Pointer = 4 bytes
+
+64-bit system:
+
+Pointer = 8 bytes
+5. Operating System Dependencies
+
+Example:
+
+#include <windows.h>
+
+Not portable to Linux.
+
+Solutions
+Use standard C libraries.
+Avoid compiler-specific code.
+Use fixed-width types.
+#include <stdint.h>
+
+uint32_t value;
+8) Explain the Concept of Pointer Aliasing with Example
+Pointer Aliasing
+
+Pointer aliasing occurs when two or more pointers refer to the same memory location.
+
+Example
+int x = 10;
+
+int *p = &x;
+int *q = &x;
+
+*q = 20;
+
+Both pointers refer to the same variable.
+
+Memory Representation
+      x = 20
+      |
+   --------
+   |      |
+   p      q
+Problem
+
+Compiler optimization becomes difficult because changing through one pointer affects the other.
+
+Example
+void update(int *a, int *b)
+{
+    *a = 5;
+    *b = 10;
+}
+
+If a and b point to the same location:
+
+update(&x,&x);
+
+Final value becomes:
+
+10
+Solution
+
+Use restrict keyword.
+
+void update(int *restrict a,
+            int *restrict b)
+{
+}
+
+This tells the compiler the pointers do not alias.
+
+9) How Compiler Handles a for Loop with Variable Number of Iterations (n) and Loop Unrolling with Example
+Variable Iteration Loop
+Example
+for(int i=0;i<n;i++)
+{
+    sum += a[i];
+}
+
+Compiler cannot determine the value of n during compilation.
+
+Generated Steps
+Initialize i
+Compare i<n
+Execute Loop Body
+Increment i
+Repeat
+Loop Overhead
+
+Each iteration performs:
+
+Comparison
+Branch
+Increment
+
+These consume extra cycles.
+
+Loop Unrolling
+
+Loop unrolling reduces loop overhead by executing multiple iterations in one loop pass.
+
+Original Loop
+for(int i=0;i<8;i++)
+{
+    sum += a[i];
+}
+Unrolled Version
+sum += a[0];
+sum += a[1];
+sum += a[2];
+sum += a[3];
+sum += a[4];
+sum += a[5];
+sum += a[6];
+sum += a[7];
+Partial Unrolling
+for(int i=0;i<8;i+=4)
+{
+    sum += a[i];
+    sum += a[i+1];
+    sum += a[i+2];
+    sum += a[i+3];
+}
+Advantages
+Fewer branch instructions
+Reduced loop overhead
+Better instruction scheduling
+Higher execution speed
+Disadvantages
+Larger code size
+Increased memory usage
+Loop Unrolling Diagram
+Normal Loop
+------------
+Check
+Execute
+Increment
+Repeat
+
+Unrolled Loop
+-------------
+Execute 4 Operations
+Increment by 4
+Repeat
