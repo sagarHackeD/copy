@@ -1,0 +1,25 @@
+11. Document-Based NoSQL Systems and CRUD in MongoDB
+Document-Based Database
+Stores data as JSON-like documents.
+Example:
+{
+  "sid": 101,
+  "name": "Rahul",
+  "age": 20
+}
+MongoDB CRUD Operations
+Create
+db.student.insertOne(
+ {sid:101,name:"Rahul",age:20}
+)
+Read
+db.student.find()
+Update
+db.student.updateOne(
+ {sid:101},
+ {$set:{age:21}}
+)
+Delete
+db.student.deleteOne(
+ {sid:101}
+)

@@ -1,0 +1,17 @@
+2. Informal Design Guidelines for Relational Schema Design
+1. Clear Semantics of Attributes
+Attributes in a relation should represent facts about one entity.
+2. Reduce Redundancy
+Avoid duplicate storage of data.
+3. Minimize Update Anomalies
+Design relations to avoid insertion, deletion, and modification anomalies.
+4. Avoid Excessive Null Values
+Relations should not contain many null attributes.
+5. Avoid Spurious Tuples
+Decomposition should be lossless.
+Example:
+Bad Design:
+EmpID	EmpName	DeptName	DeptLoc
+Good Design:
+Employee(EmpID, EmpName, DeptID)
+Department(DeptID, DeptName, DeptLoc)

@@ -1,0 +1,21 @@
+1. Illustrate INSERT, DELETE, UPDATE, ALTER & DROP Commands in SQL
+INSERT
+Used to add new records into a table.
+INSERT INTO Student (SID, Name, Age)
+VALUES (101, 'Rahul', 20);
+DELETE
+Used to remove records from a table.
+DELETE FROM Student
+WHERE SID = 101;
+UPDATE
+Used to modify existing records.
+UPDATE Student
+SET Age = 21
+WHERE SID = 101;
+ALTER
+Used to change the structure of a table.
+ALTER TABLE Student
+ADD Address VARCHAR(50);
+DROP
+Used to delete an entire table.
+DROP TABLE Student;

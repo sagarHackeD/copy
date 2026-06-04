@@ -1,0 +1,23 @@
+10. NoSQL and CAP Theorem
+NoSQL
+NoSQL means "Not Only SQL".
+Features:
+Flexible schema
+High scalability
+Distributed storage
+Examples:
+MongoDB
+Cassandra
+Neo4j
+CAP Theorem
+A distributed system can provide only two of:
+Consistency (C)
+All nodes return same data.
+Availability (A)
+Every request gets response.
+Partition Tolerance (P)
+System works despite network failures.
+Examples:
+CP: HBase
+AP: Cassandra
+CA: Traditional RDBMS

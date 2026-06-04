@@ -1,0 +1,25 @@
+15. Normalization
+Normalization reduces redundancy and anomalies.
+First Normal Form (1NF)
+No multivalued attributes.
+Not 1NF:
+SID	Phone
+101	9876,1234
+1NF:
+SID	Phone
+101	9876
+101	1234
+Second Normal Form (2NF)
+Must be in 1NF and no partial dependency.
+Example:
+(StudentID, CourseID) -> Grade
+StudentID -> StudentName
+Move StudentName to separate table.
+Third Normal Form (3NF)
+Must be in 2NF and no transitive dependency.
+Example:
+EmpID -> DeptID
+DeptID -> DeptName
+Decompose into:
+Employee(EmpID, DeptID)
+Department(DeptID, DeptName)

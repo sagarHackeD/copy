@@ -1,0 +1,37 @@
+17. SQL Queries (Sailors-Boats-Reserves)
+(i) Colors of boats reserved by Alber
+SELECT DISTINCT B.color
+FROM Sailors S, Boats B, Reserves R
+WHERE S.sid = R.sid
+AND B.bid = R.bid
+AND S.sname = 'Alber';
+(ii) Sailor IDs with rating ≥ 8 or reserved boat 103
+SELECT sid
+FROM Sailors
+WHERE rating >= 8
+UNION
+SELECT sid
+FROM Reserves
+WHERE bid = 103;
+(iii) Names of sailors who have not reserved a boat containing "storm"
+SELECT sname
+FROM Sailors
+WHERE sid NOT IN
+(
+    SELECT R.sid
+    FROM Reserves R, Boats B
+    WHERE R.bid = B.bid
+    AND B.bname LIKE '%storm%'
+)
+ORDER BY sname ASC;
+(iv) Sailor IDs with age > 20 and not reserved a boat containing "thunder"
+SELECT sid
+FROM Sailors
+WHERE age > 20
+AND sid NOT IN
+(
+    SELECT R.sid
+    FROM Reserves R, Boats B
+    WHERE R.bid = B.bid
+    AND B.bname LIKE '%thunder%'
+);
