@@ -1,0 +1,28 @@
+11. State and Prove Lagrange's Theorem
+Statement
+If G is a finite group and H is a subgroup of G, then
+|H|
+divides
+|G|
+and
+|G|=[G:H]|H|
+where
+[G:H]
+is the index of H in G.
+Proof
+The left cosets of H in G partition G.
+Every left coset contains exactly
+|H|
+elements.
+Suppose there are
+k
+distinct left cosets.
+Then the elements of G are distributed among these k disjoint cosets.
+Therefore
+|G|=k|H|
+Since k is an integer,
+|H|
+divides
+|G|
+```.
+Hence proved.
