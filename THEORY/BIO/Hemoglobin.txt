@@ -1,0 +1,25 @@
+Hemoglobin-Based Oxygen Carriers (HBOCs)
+
+Hemoglobin-Based Oxygen Carriers (HBOCs) are artificial blood substitutes designed to transport oxygen throughout the body when donor blood is unavailable. They are made from purified hemoglobin obtained from human blood, animal blood, or produced through recombinant DNA technology.
+
+Working Principle
+
+Hemoglobin is the protein in red blood cells responsible for carrying oxygen from the lungs to body tissues. HBOCs use free hemoglobin molecules that can bind and release oxygen in a manner similar to natural red blood cells.
+
+Advantages
+Immediate availability during emergencies and trauma.
+No blood group matching is required.
+Long shelf life compared to donated blood.
+Reduced risk of transmission of infectious diseases.
+Useful in situations where blood transfusions are not possible.
+
+Applications
+Emergency medicine and trauma care.
+Military and battlefield treatments.
+Surgery with significant blood loss.
+Treatment of severe anemia when blood is unavailable.
+
+Limitations
+Short circulation time in the bloodstream.
+May cause high blood pressure and kidney-related complications.
+Some HBOCs have shown side effects, limiting their widespread clinical use.

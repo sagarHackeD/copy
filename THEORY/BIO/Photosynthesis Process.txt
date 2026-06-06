@@ -1,0 +1,55 @@
+2. Photosynthesis Process
+
+Photosynthesis is the process by which green plants, algae, and some bacteria prepare their own food using sunlight, carbon dioxide, and water. It occurs mainly in the leaves inside organelles called chloroplasts, which contain the green pigment chlorophyll.
+
+Definition
+Photosynthesis is the biochemical process in which light energy is converted into chemical energy stored in glucose.
+
+Chemical Equation
+6CO_2 + 6H_2O + Light/Energy -> C_6H_{12}O_6 + 6O_2
+
+Where:
+* (CO_2) = Carbon dioxide
+* (H_2O) = Water
+* (C_6H_{12}O_6) = Glucose
+* (O_2) = Oxygen
+
+Requirements for Photosynthesis
+1. Sunlight
+2. Chlorophyll
+3. Carbon dioxide
+4. Water
+
+Process of Photosynthesis
+Step 1: Absorption of Light
+* Chlorophyll present in chloroplasts absorbs sunlight.
+* Light energy is captured and converted into chemical energy.
+Step 2: Uptake of Water
+* Plant roots absorb water from the soil.
+* Water is transported to leaves through xylem tissues.
+Step 3: Intake of Carbon Dioxide
+* Carbon dioxide enters leaves through tiny pores called stomata.
+Step 4: Conversion into Glucose
+* Using sunlight energy, carbon dioxide and water combine to produce glucose.
+* Glucose serves as food for the plant.
+Step 5: Release of Oxygen
+* Oxygen produced during photosynthesis is released into the atmosphere through stomata.
+
+Stages of Photosynthesis
+A. Light-Dependent Reactions
+* Occur in the thylakoid membranes of chloroplasts.
+* Require sunlight.
+* Produce ATP, NADPH, and oxygen.
+B. Light-Independent Reactions (Calvin Cycle)
+* Occur in the stroma of chloroplasts.
+* Use ATP and NADPH to convert carbon dioxide into glucose.
+
+Importance of Photosynthesis
+1. Produces food for plants.
+2. Releases oxygen necessary for life.
+3. Maintains the balance of carbon dioxide and oxygen in the atmosphere.
+4. Forms the base of the food chain.
+5. Stores solar energy in the form of chemical energy.
+
+Conclusion
+Photosynthesis is a vital biological process that enables plants to manufacture food using sunlight, water, and carbon dioxide. It provides oxygen, supports life on Earth, and plays a crucial role in maintaining ecological balance.

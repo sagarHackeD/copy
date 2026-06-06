@@ -1,0 +1,33 @@
+1. Lotus Leaf Effect
+
+The Lotus Leaf Effect refers to the self-cleaning property of lotus leaves. Water droplets roll off the leaf surface and carry away dust, dirt, and microorganisms, keeping the leaf clean.
+
+Principle
+The surface of a lotus leaf is covered with microscopic bumps and a waxy coating. These structures make the leaf superhydrophobic (extremely water-repellent).
+
+When water falls on the leaf:
+1. Water forms spherical droplets instead of spreading.
+2. The droplets have very little contact with the leaf surface.
+3. As the droplets roll off, they pick up dust and dirt particles.
+4. The leaf remains clean and dry.
+
+Mechanism
+* Micro-scale papillae create surface roughness.
+* Nano-scale wax crystals reduce adhesion between water and the leaf.
+* The contact angle of water is usually greater than 150°, indicating superhydrophobicity.
+
+Applications
+* Self-cleaning paints and coatings.
+* Water-resistant fabrics.
+* Anti-fouling surfaces.
+* Self-cleaning glass and solar panels.
+* Biomedical and industrial surface design.
+
+Advantages
+* Reduces cleaning and maintenance costs.
+* Prevents contamination.
+* Increases durability of surfaces.
+* Improves water resistance.
+
+Conclusion
+The Lotus Leaf Effect is a natural phenomenon where the special surface structure of lotus leaves causes water droplets to roll off and remove dirt. This property has inspired many self-cleaning technologies used in modern engineering and biomimicry.
