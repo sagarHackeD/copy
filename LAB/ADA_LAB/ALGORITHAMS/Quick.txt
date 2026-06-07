@@ -1,0 +1,18 @@
+QUICK_SORT(A, low, high)
+1. If low < high then
+      p <- PARTITION(A, low, high)
+      QUICK_SORT(A, low, p-1)
+      QUICK_SORT(A, p+1, high)
+   End If
+   
+PARTITION
+1. pivot <- A[high]
+2. i <- low - 1
+3. For j <- low to high-1 do
+      if A[j] <= pivot then
+           i <- i + 1
+           Swap A[i], A[j]
+      end if
+   End For
+4. Swap A[i+1], A[high]
+5. Return i+1

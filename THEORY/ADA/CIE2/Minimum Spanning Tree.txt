@@ -1,6 +1,0 @@
-1 A Minimum Spanning Tree (MST) of a connected, weighted, undirected graph is a spanning tree that:
-2
-3 1-Connects all the vertices of the graph.
-4 2-Contains exactly V − 1 edges (where V is the number of vertices).
-5 3-Has no cycles.
-6 4-Has the minimum possible total edge weight among all spanning trees of the graph.

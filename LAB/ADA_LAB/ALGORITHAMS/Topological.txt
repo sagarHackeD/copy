@@ -1,0 +1,20 @@
+Input : Directed Acyclic Graph (DAG)
+Output: Topological order
+
+1. Compute indegree of every vertex.
+
+2. Insert all vertices with indegree 0 into queue.
+
+3. While queue is not empty do
+      u <- dequeue
+
+      Output u
+
+      For each adjacent vertex v of u do
+           indegree[v] <- indegree[v] - 1
+
+           if indegree[v] = 0 then
+                enqueue(v)
+           end if
+      End For
+   End While
