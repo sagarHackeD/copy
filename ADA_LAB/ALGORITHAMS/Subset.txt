@@ -1,0 +1,14 @@
+Input : Set S, target sum d
+Output: Subset whose sum = d
+
+Procedure SUBSET(i, sum)
+1. If sum = d then
+      Print subset
+      Return
+2. If i > n or sum > d then
+      Return
+3. Include S[i]
+      SUBSET(i+1, sum + S[i])
+4. Exclude S[i]
+      SUBSET(i+1, sum)
+Call SUBSET(1, 0)

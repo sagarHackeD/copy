@@ -1,0 +1,12 @@
+
+19. Construct Minimum Spanning Tree (MST) using Kruskal's algorithm.
+Algorithm: Sort all edges in non-decreasing order of weight. Pick the smallest edge. If it doesn't form a cycle (detected by Union-Find), include it. Repeat until we have `V-1` edges.
+Application:
+1. Sort Edges: `A-C(1)`, `D-E(2)`, `B-C(2)`, `A-B(4)`, `B-D(5)`, `C-D(8)`, `C-E(10)`.
+2. Pick `A-C` (1). MST = `{A-C}`.
+3. Pick `D-E` (2). MST = `{A-C, D-E}`.
+4. Pick `B-C` (2). MST = `{A-C, D-E, B-C}`.
+5. Pick `A-B` (4). Check: A-B connects A and B. A is connected to C, and B is connected to C. Adding A-B will form a cycle (A-C-B-A). Reject A-B.
+6. Pick `B-D` (5). Check: B is in set {A,B,C}, D is in set {D,E}. No cycle. Include `B-D`.
+Total Edges included: `A-C`, `D-E`, `B-C`, `B-D`. Total vertices = 5, edges = 4. We stop.
+MST Cost: `1 + 2 + 2 + 5 = 10`.

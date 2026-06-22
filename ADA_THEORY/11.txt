@@ -1,0 +1,30 @@
+
+11. Design an algorithm for merge sort and derive its time complexity.
+Algorithm:
+```
+MERGESORT(arr, low, high):
+if low < high:
+mid = (low + high) / 2
+MERGESORT(arr, low, mid)      // Sort left half
+MERGESORT(arr, mid+1, high)   // Sort right half
+MERGE(arr, low, mid, high)    // Merge sorted halves
+
+MERGE(arr, low, mid, high):
+Create Left array L = arr[low..mid]
+Create Right array R = arr[mid+1..high]
+i = 0, j = 0, k = low
+while i < len(L) and j < len(R):
+if L[i] <= R[j]:
+arr[k++] = L[i++]
+else:
+arr[k++] = R[j++]
+Copy remaining elements of L and R into arr.
+```
+Time Complexity Derivation:
+- The `MERGE` function merges `n` elements in `O(n)` time.
+- For input size `n`, the recurrence is: `T(n) = 2T(n/2) + n`. Base case: `T(1) = 1`.
+- Using Master Theorem: Here `a=2`, `b=2`, and `f(n) = n`. 
+- Calculate `n^(log_b a) = n^(log_2 2) = n^1 = n`.
+- Since `f(n) = n` matches `n^(log_b a)` exactly, this is Case 2 of Master Theorem.
+- The solution is `T(n) = \Theta(n log n)`.
+- Conclusion: Best, Average, and Worst-case complexities are all `\Theta(n log n)`.

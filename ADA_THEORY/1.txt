@@ -1,0 +1,15 @@
+1. Define Algorithm. Explain fundamentals of algorithmic problem solving. Explain different steps in designing and analyzing an algorithm.
+Definition:An algorithm is a finite set of unambiguous instructions that, given some set of initial conditions, can be performed in a prescribed sequence to achieve a certain goal and that has a recognizable set of end conditions. 
+OR
+An algorithm is a finite, unambiguous, step-by-step logical procedure that takes a set of inputs and produces a desired output to solve a specific computational problem. It must terminate after a finite number of steps.
+Fundamentals of Problem Solving: 
+1. Comprehension: Read the problem carefully to identify the constraints and required output. For example, asking for "sorting" vs "searching" changes the entire approach.
+2. Exact vs Approximation: Decide if we need an exact mathematical solution (like finding roots) or an approximate one (like solving NP-Hard Travelling Salesman Problem where we accept a near-optimal route).
+3. Algorithmic Strategy: Select the design paradigm—Brute Force (simple), Divide and Conquer (fast), Greedy (optimization), Dynamic Programming (overlapping subproblems), or Backtracking (constraint satisfaction).
+4. Data Structures: Choosing the right structure is critical; e.g., using a Hash Table gives O(1) search, while an array gives O(n). 
+Steps in Designing and Analyzing:
+1. Problem Definition: Define input (size `n`) and output precisely.
+2. Algorithm Design: Write the pseudo-code. Ensure it is clear and finite.
+3. Correctness Proof: Use mathematical induction or loop invariants to prove the algorithm works for all `n`.
+4. Complexity Analysis: Compute the Time Complexity (how running time grows with `n`) and Space Complexity (memory usage). This is done using asymptotic notations.
+5. Implementation: Code it in a programming language and test with edge cases (e.g., empty input, largest input).

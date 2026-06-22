@@ -1,0 +1,14 @@
+
+10. Explain divide and conquer method. Also, mention its advantages and disadvantages.
+Methodology: It is a top-down approach to problem-solving, divided into three phases:
+1. Divide: The original problem is recursively divided into smaller, independent sub-problems of the same type. This continues until the sub-problems are small enough to be solved trivially (base case).
+2. Conquer: The base cases are solved directly.
+3. Combine: The solutions to the sub-problems are merged together to formulate the solution to the original problem.
+Advantages:
+- Achieves highly efficient time complexities (e.g., `O(n log n)` for sorting).
+- The recursive nature makes the code clean and easy to understand.
+- It is inherently suitable for parallel processing and multiprocessor systems since sub-problems are independent.
+Disadvantages:
+- Recursive calls consume extra memory on the stack. Space complexity is usually `O(log n)` or `O(n)`.
+- If sub-problems overlap (e.g., Fibonacci series), it repeats calculations, making it slow (Dynamic Programming is better there).
+- The "Combine" step is sometimes complex and time-consuming (e.g., Strassen's multiplication combine step).

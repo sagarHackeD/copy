@@ -1,0 +1,10 @@
+
+14. Define Topological Sorting. List the two approaches.
+Definition: For a Directed Acyclic Graph (DAG), topological sorting is a linear ordering of its vertices such that for every directed edge `u  v`, vertex `u` comes strictly before vertex `v` in the ordering. It is impossible for cyclic graphs.
+Two Approaches:
+1. DFS-based Approach: Perform a Depth First Search on the graph. When a vertex is completely processed (i.e., all its descendants are visited), push it onto a stack. At the end, popping the stack gives the topological order.
+2. Kahn's Algorithm (Indegree / Source Removal Approach):
+Compute the indegree (number of incoming edges) for every vertex.
+Enqueue all vertices with indegree 0.
+Dequeue a vertex, add it to the answer, and reduce the indegree of all its adjacent vertices. If an adjacent vertex's indegree becomes 0, enqueue it.
+Repeat until the queue is empty.

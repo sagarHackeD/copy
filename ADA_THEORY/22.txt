@@ -1,0 +1,19 @@
+
+22. Define Transitive closure. Apply Warshall's algorithm.
+Using same Graph A-B, A-C, B-C, B-D, D-E.
+Initial Matrix R0 (direct edges): 
+A: 0 1 1 0 0
+B: 0 0 1 1 0
+C: 0 0 0 0 0
+D: 0 0 0 0 1
+E: 0 0 0 0 0
+Warshall's Logic: For k=0 to 4 (A to E), if R[i][k] and R[k][j] are 1, set R[i][j]=1.
+Iteration k=0 (A): A connects to B and C. No change for B/C paths that use A.
+Iteration k=1 (B): B connects to C and D. Since A connects to B, A now connects to C (already) and D (new). So AD becomes 1. Matrix updates.
+Iteration k=4 (D): D connects to E. Since B connects to D, B now connects to E. Since A connects to D, A now connects to E.
+Final Transitive Closure: 
+A reaches: A, B, C, D, E.
+B reaches: B, C, D, E.
+C reaches: C.
+D reaches: D, E.
+E reaches: E.

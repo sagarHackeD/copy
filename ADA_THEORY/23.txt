@@ -1,0 +1,28 @@
+
+23. Explain the Greedy Technique for Prim's Algorithm & Obtain MST
+
+1. Concept of Greedy Technique for Prim's Algorithm:
+Prim's Algorithm is a greedy algorithm used to find the Minimum Spanning Tree (MST) of a weighted, connected, undirected graph. 
+
+The Greedy Strategy: It grows a single tree from an arbitrary starting vertex. At each step, it looks at all edges that connect a vertex already in the tree to a vertex outside the tree. It greedily picks the edge with the minimum weight (cheapest edge) across this "cut" and adds that outside vertex to the tree. 
+Why Greedy works here (Cut Property): For any partition (cut) of the graph's vertices, the minimum-weight edge crossing that cut is always safe (guaranteed to be part of some MST). Prim's algorithm repeatedly applies this logic, ensuring the final tree is globally optimal.
+
+2. Step-by-Step Application (Using a Standard 6-Vertex Graph):
+Since you didn't provide a specific image, I am solving the most standard textbook graph below. You can apply this exact table method to your given graph.
+
+Given Graph (Vertices: A, B, C, D, E, F):
+Edges: A-B(6), A-C(5), A-D(1), B-C(2), B-E(5), C-E(6), C-F(4), D-F(2), E-F(4).
+
+Algorithm Process (Starting from Vertex A):
+
+| Step | Current Tree (Visited) | Edge with Minimum Weight crossing the cut | Add this Edge/Vertex | Total Cost |
+| :--- | :--- | :--- | :--- | :--- |
+| 0 | {A} | Check edges: A-B(6), A-C(5), A-D(1). Min = A-D (1) | Add D (Add edge A-D) | 1 |
+| 1 | {A, D} | Check edges: A-B(6), A-C(5), D-F(2). Min = D-F (2) | Add F (Add edge D-F) | 1+2 = 3 |
+| 2 | {A, D, F} | Check edges: A-B(6), A-C(5), F-C(4), F-E(4). Min = F-C (4) (or F-E, tie-break choose C) | Add C (Add edge F-C) | 3+4 = 7 |
+| 3 | {A, D, F, C} | Check edges: A-B(6), C-B(2), C-E(6), F-E(4). Min = C-B (2) | Add B (Add edge C-B) | 7+2 = 9 |
+| 4 | {A, D, F, C, B} | Check edges: B-E(5), F-E(4), C-E(6). Min = F-E (4) | Add E (Add edge F-E) | 9+4 = 13 |
+
+3. Final Minimum Cost Spanning Tree:
+Edges included: {A-D}, {D-F}, {F-C}, {C-B}, {F-E}.
+Total Minimum Cost: 1 + 2 + 4 + 2 + 4 = 13.

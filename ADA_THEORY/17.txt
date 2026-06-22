@@ -1,0 +1,16 @@
+
+17. Design Horspool's algorithm for string matching. Apply it.
+Algorithm Overview: Horspool is a simplified version of Boyer-Moore. It slides the pattern over the text from left to right but compares characters from right to left.
+Shift Table Preprocessing: We construct a "bad-symbol" shift table for the pattern.
+- For every character `c` in the pattern (except the last), shift distance `d(c) = length(m) - 1 - index` (rightmost occurrence index).
+- For all other characters not in the pattern, `d(c) = length(m)`.
+Worked Example: 
+- Text: `"BARABARA"`
+- Pattern: `"BARA"` (Length `m=4`)
+Preprocessing:
+- `d('B') = 4 - 1 - 0 = 3` (Occurs at index 0)
+- `d('A') = 4 - 1 - 2 = 1` (Rightmost at index 2)
+- `d('R') = 4 - 1 - 1 = 2`
+- `d(other) = 4`
+Searching:
+1. Align pattern at index 0: Text `B A R A B A R A`, Pattern `B A R A`. Compare `A` vs `A` (match), `R` vs `R` (match), `A` vs `A` (match), `B` vs `B` (match). Pattern found at index 0! (Algorithm stops or shifts by `d('B')=3` to find next).

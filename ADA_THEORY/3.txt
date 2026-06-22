@@ -1,0 +1,9 @@
+
+3. Explain General Plan for analyzing efficiency of Recursive Algorithm
+1.  Decide on Input Size: Identify the parameter `n` (e.g., size of the array, number of disks).
+2.  Identify the Basic Operation: In the algorithm, find the operation that contributes most to the total running time (e.g., multiplication, comparison, moving disks). The analysis counts how many times this operation is executed.
+3.  Set up the Recurrence Relation: 
+- Define `T(n)` as the total number of basic operations performed.
+- Establish the base case: `T(0)` or `T(1)` = constant `c` (usually 1).
+- Establish the general case: `T(n) = a  T(n/b) + f(n)`, where `a` is the number of recursive calls, `n/b` is the size of the sub-problem, and `f(n)` is the cost of dividing and combining the results.
+4.  Solve the Recurrence: Use the Back Substitution Method, Recursion Tree Method, or the Master Theorem to derive the closed-form solution for `T(n)`.

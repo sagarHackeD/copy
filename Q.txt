@@ -1,0 +1,28 @@
+1. Define Algorithm. Explain fundamentals of algorithmic problem solving. Explain different steps in designing and analyzing an algorithm.
+2. Define Asymptotic Notations: Big Oh, Big Omega and Big Theta (with Mathematical Definitions)
+3. Explain General Plan for analyzing efficiency of Recursive Algorithm
+4. Find factorial of a number using Recursive Algorithm Analysis. Derive its efficiency.
+5. Write Tower of Hanoi Algorithm using recursive algorithm analysis. Derive its efficiency.
+6. Explain General Plan for analyzing non-recursive algorithm
+7. Suggest non-recursive algorithm for finding maximum element in a list of n-elements. Derive its efficiency.
+8. Prove that if t1(n) E O(g1(n)) and t2(n) E O(g2(n)) then t1(n) + t2(n) E O(max[g1(n), g2(n)]).
+9. Write an algorithm for sequential search of an element using an array. Calculate best, avg and worst case efficiency.
+10. Explain divide and conquer method. Also, mention its advantages and disadvantages.
+11. Design an algorithm for merge sort and derive its time complexity.
+12. Explain Strassen's Multiplication and derive its time complexity.
+13. Design an algorithm for quick sort. Apply quick sort on these elements [25, 75, 40, 10, 20, 05, 15].
+14. Define Topological Sorting. List the two approaches.
+15. Define AVL Tree. Explain its four rotation types with an example of insertion.
+16. Define a Heap. Explain its properties with its representation.
+17. Design Horspool's algorithm for string matching. Apply it.
+18. Construct a bottom up heap for the given list and obtain its time complexity.
+19. Construct Minimum Spanning Tree (MST) using Kruskal's algorithm.
+20. What are Huffman Trees? Construct the Huffman Tree and Encode DAD-CBE.
+21. Apply Dijkstra's algorithm (Using the same Graph A-B:4, A-C:1, B-C:2, B-D:5, C-D:8, C-E:10, D-E:2). Start from A.
+22. Define Transitive closure. Apply Warshall's algorithm.
+23. Explain the Greedy Technique for Prim's Algorithm & Obtain MST
+24 .Explain Greedy Criterion & Apply Greedy Method for Knapsack
+25. Illustrate N-Queens problem using backtracking to solve 4-Queens problem.
+26. How Branch and Bound technique is different from Backtracking?
+27. What is backtracking? Apply backtracking to solve the Sum of Subset problem.
+28. Explain greedy algorithm to solve greedy (Fractional) knapsack problem.

@@ -1,0 +1,8 @@
+
+21. Apply Dijkstra's algorithm (Using the same Graph A-B:4, A-C:1, B-C:2, B-D:5, C-D:8, C-E:10, D-E:2). Start from A.
+Step 1: dist[A]=0, dist[B]=∞, dist[C]=∞, dist[D]=∞, dist[E]=∞. Set A visited.
+Relax neighbors of A: B becomes 4, C becomes 1. Pick min dist (C=1).
+Step 2: Visit C. Relax B: `1+2=3` < `4`  update B=3. Relax D: `1+8=9`. Relax E: `1+10=11`. Pick min dist (B=3).
+Step 3: Visit B. Relax D: `3+5=8` < `9`  update D=8. Relax E: `3+∞` (no edge). Pick min dist (D=8).
+Step 4: Visit D. Relax E: `8+2=10` < `11`  update E=10.
+Final Shortest Paths from A: `AA:0`, `AB:3`, `AC:1`, `AD:8`, `AE:10`.

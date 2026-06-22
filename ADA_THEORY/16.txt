@@ -1,0 +1,11 @@
+
+16. Define a Heap. Explain its properties with its representation.
+Definition: A Heap is a specialized tree-based data structure that satisfies two main properties:
+1. Shape Property: It must be a Complete Binary Tree (all levels are completely filled except possibly the last, which is filled from left to right). 
+2. Heap Order Property: For a Max-Heap, the value of every parent node is greater than or equal to the values of its children. (For Min-Heap, parent is smaller).
+Array Representation: Heaps are efficiently stored as an array.
+- Root is at index `0`.
+- For any node at index `i`:
+- Parent index = `floor((i - 1) / 2)`.
+- Left child index = `(2  i) + 1`.
+- Right child index = `(2  i) + 2`.
