@@ -1,0 +1,25 @@
+33. Code Optimization, Profiling, and Cycle Counting
+These are three pillars of embedded software performance engineering.
+1. Code Optimization (Compiler Level)
+Compilers use flags to optimize without changing functionality:
+- `-O0` (No opt): Fast compilation, heavy debugging. Code is literal and slow.
+- `-O1` (Basic): Removes dead code and unused variables.
+- `-O2` (Standard): Enables instruction scheduling, loop unrolling, and function inlining.
+- `-O3` (Aggressive): Heavy loop unrolling and vectorization (NEON SIMD). Can increase code size.
+- `-Os` (Size): Optimizes for memory footprint (critical for microcontrollers) rather than speed.
+2. Profiling (Dynamic Analysis)
+Profiling identifies hot spots (where the CPU spends most of its time). Tools like `gprof` (GNU), `perf` (Linux), or ARM's `DSTREAM` use:
+- Instrumentation: The compiler adds extra code to count how many times a function is called.
+- Sampling: The debugger interrupts the CPU periodically (e.g., every 1ms) to record the Program Counter (PC). Statistical analysis shows which functions are executing most frequently (the 80/20 rule).
+3. Cycle Counting (Performance Measurement)
+Every ARM instruction has a latency (measured in clock cycles). Cycle counting is critical for real-time systems.
+- Basic Cycle Costs: `MOV`, `ADD`, `CMP` take 1 cycle. `LDR`/`STR` (cache hit) take 1-2 cycles. `LDR` (cache miss from Flash/SRAM) can take 10-50 cycles. `MUL` takes 2-4 cycles.
+- Pipelining Effects: The ARM pipeline (Fetch-Decode-Execute) masks latencies. However, branch mispredictions cause pipeline flushes costing ~3 cycles.
+- Measuring: On Cortex-M, you use the DWT (Data Watchpoint and Trace) cycle counter. On Cortex-A, you read the `PMCCNTR` (Performance Monitor Cycle Count Register).
+Example C code to count cycles:
+```c
+int start = read_cycle_counter();
+my_function();    // The function you want to measure
+int elapsed = read_cycle_counter() - start;
+```
+---

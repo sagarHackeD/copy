@@ -1,0 +1,23 @@
+21. SWAP Instruction (Atomic Exchange)
+The `SWP` (Swap) and `SWPB` (Swap Byte) instructions are used to atomically exchange data between a register and memory. This is crucial for implementing semaphores and mutexes in multitasking OSes, as it prevents interrupts from corrupting the read-modify-write process.
+Syntax:
+```assembly
+SWP{cond}{B}  Rd, Rm, [Rn]
+```
+- `Rd` = Destination register (gets the value from memory).
+- `Rm` = Source register (value written to memory).
+- `[Rn]` = Memory address to swap with.
+Operation:
+`Rd = Rn`  (Read memory into Rd)
+`Rn = Rm`  (Write Rm into memory)
+(These two steps happen as a single, uninterruptible operation).
+Example (Mutex Acquisition):
+```assembly
+; Assume [r0] points to a mutex variable (0 = free, 1 = locked)
+MOV   r1, #1            ; r1 = value to write (lock the mutex)
+SWP   r0, r1, [r0]      ; Atomically: r0 = old_value, memory = r1 (1)
+CMP   r0, #0            ; Check if the mutex was previously free (0)
+BEQ   mutex_acquired    ; If old value was 0, we now own the lock!
+```
+If the old value was 1 (already locked), we don't jump and must retry later.
+---

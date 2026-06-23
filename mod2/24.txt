@@ -1,0 +1,32 @@
+24. Single Load-Store Addressing Modes (Syntax, Table, Index Mode)
+ARM's Load (`LDR`) and Store (`STR`) use a base register (`Rn`) plus an offset. The addressing determines when the offset is added to `Rn`.
+General Syntax: `LDR{cond}{size} Rd, [Rn, <offset>]{!}`
+Table of Addressing Modes:
+| Mode | Syntax | Base Register Update? | Description |
+|
+| Offset | `[Rn, #offset]` | No | Uses `Rn + offset` as the address. `Rn` remains unchanged. |
+| Pre-Indexed | `[Rn, #offset]!` | Yes (before) | Adds offset to `Rn` first, uses new address, then updates `Rn`. |
+| Post-Indexed | `[Rn], #offset` | Yes (after) | Uses address in `Rn` first, then adds offset to `Rn` after. |
+Example with an Array (`int arr[5]` at address `r0`):
+```assembly
+; 1. Offset Mode (No update to r0)
+LDR   r1, [r0, #8]  ; r1 = arr[2]  (base + 8). r0 still points to arr[0].
+; 2. Pre-Indexed Mode (Update before)
+LDR   r1, [r0, #4]!  ; r0 = r0 + 4 (now points to arr[1]).
+  ; r1 = (new r0) which is arr[1].
+; 3. Post-Indexed Mode (Update after) - Great for looping!
+LDR   r1, [r0], #4  ; r1 = r0 (reads arr[0]).
+  ; r0 = r0 + 4 (now points to arr[1] for next iteration).
+```
+Complete Loop Example (Post-Indexed):
+```assembly
+    ; Loop to sum 10 elements in an array pointed by r0. Result in r1.
+    MOV   r1, #0
+    MOV   r2, #10
+    loop:
+    LDR   r3, [r0], #4  ; Read value, THEN increment pointer by 4
+    ADD   r1, r1, r3
+    SUBS  r2, r2, #1  ; Decrement counter and set flags
+    BNE   loop  ; Branch if Not Equal to zero
+```
+---

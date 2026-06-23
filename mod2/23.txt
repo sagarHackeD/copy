@@ -1,0 +1,40 @@
+23. Branch Instruction Flow with Diagram and Example
+Branch instructions (`B`, `BL`, `BX`) alter the Program Counter (`PC` / `R15`).
+- `B label` : Unconditional jump. `PC = PC + offset` (offset is signed, 24-bit, multiplied by 4).
+- `BL label` : Branch with Link. Saves the return address (`PC - 4`) into `LR` (R14) before branching. Used for function calls.
+- `BX Rn` : Branch and eXchange. Jumps to the address in `Rn` and can switch between ARM (bit 0 = 0) and Thumb (bit 0 = 1) states.
+Flow Diagram (BL instruction):
+```
+    Main Function
+    | PC = 0x1000          |
+    | BL    my_func        |
+    | (LR = 0x1004)        |
+    | ...                  |
+    | PC = 0x1004 (resume) |
+
+    Subroutine (my_func)
+
+    | PC = 0x2000          |
+    | PUSH {lr}  (save LR) |  <- LR holds 0x1004
+    | ... do work ...      |
+    | POP  {pc}   (return) |
+```
+Flow Explanation:
+1. CPU at `0x1000` executes `BL my_func`.
+2. CPU saves `0x1004` (the next instruction address) into `LR`.
+3. CPU jumps to `0x2000` (my_func).
+4. At `0x2008`, `POP {pc}` is executed.
+5. CPU loads `0x1004` from the stack into `PC`.
+6. Execution resumes at `0x1004` in the main function.
+Conditional Branch Example:
+```assembly
+    CMP   r0, #10         ; Compare r0 with 10 (sets flags)
+    BGT   greater_than    ; Branch to 'greater_than' if r0 > 10
+    MOV   r0, #0          ; Else, set r0 to 0
+    B     done
+    greater_than:
+    SUB   r0, r0, #10     ; r0 = r0 - 10
+    done:
+    ...
+```
+---

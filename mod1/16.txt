@@ -1,0 +1,12 @@
+16. Different Processor Modes in ARM7
+ARM7 supports 7 processor modes (defined by bits M[4:0] in the CPSR). Each mode has its own banked registers (except User/System).
+| Mode | Abbrev. | M[4:0] | Purpose |
+|
+| User | usr | 10000 | Normal program execution (unprivileged). |
+| Fast Interrupt | fiq | 10001 | High-speed interrupt handling (has 8 banked registers for fast context switching). |
+| Interrupt | irq | 10010 | Standard general-purpose interrupt handling. |
+| Supervisor | svc | 10011 | Protected OS mode; entered on Reset or SWI (Software Interrupt). |
+| Abort | abt | 10111 | Memory access violation (Data/Pre-fetch abort). |
+| Undefined | und | 11011 | Enters when an undefined instruction is fetched. |
+| System | sys | 11111 | Privileged mode that uses the User mode registers. Used for OS tasks. |
+---

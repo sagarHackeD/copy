@@ -1,0 +1,22 @@
+34. C Program that Prints Squares of 0 to 9 using Functions
+Here is a well-structured C program that separates the logic into a `square()` function:
+```c
+#include <stdio.h>
+// Function to calculate the square of an integer
+int square(int x) {
+return x  x;
+}
+int main() {
+int i;
+
+printf("Squares of 0 to 9:\n");
+for (i = 0; i < 10; i++) {
+    // Call the function and print the result
+    printf("%d squared = %d\n", i, square(i));
+}
+
+return 0;
+}
+```
+Behind the scenes: The compiler will pass `i` into `R0`, execute `BL square`, and the function will return the result in `R0` before printing.
+---

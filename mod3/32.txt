@@ -1,0 +1,19 @@
+32. ARM Assembly Program: Sum of First 10 Integer Numbers (1 to 10)
+Here is a classic ARM assembly program (ARMv7 syntax) to calculate `1 + 2 + ... + 10 = 55`.
+```assembly
+    AREA    Program, CODE, READONLY
+    ENTRY
+    MOV     r0, #0          ; r0 = Sum (initialize to 0)
+    MOV     r1, #1          ; r1 = Current Counter (start at 1)
+    MOV     r2, #10         ; r2 = Loop Limit (10)
+loop
+    ADD     r0, r0, r1      ; Sum = Sum + Counter
+    ADD     r1, r1, #1      ; Counter = Counter + 1
+    CMP     r1, r2          ; Compare Counter with 10
+    BLE     loop            ; If Counter <= 10, branch to loop
+stop
+    B       stop            ; Infinite halt (result 55 is in r0)
+    END
+```
+Optimization note: To speed this up, we could count downwards to avoid the `CMP` instruction (see compiler handling section below).
+---

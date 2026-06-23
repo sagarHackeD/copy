@@ -1,0 +1,21 @@
+44. Exception Priorities and Link Register Offset
+Exception Priorities
+When multiple exceptions occur simultaneously, the ARM core services them based on a fixed priority order. The highest priority is:
+1.  Reset (Highest)
+2.  Data Abort
+3.  FIQ (Fast Interrupt Request)
+4.  IRQ (Interrupt Request)
+5.  Prefetch Abort
+6.  Undefined Instruction, SWI (Lowest)
+Link Register Offset
+When an exception occurs, the core saves the return address in the Link Register (LR) of the exception mode. However, the value saved in LR is not always the exact address to return to. An offset must be subtracted to correctly resume execution.
+| Exception | Return Instruction | Offset from LR |
+| Reset | N/A (System restart) | N/A |
+| Data Abort | `SUBS PC, LR, #8` | `-8` |
+| FIQ | `SUBS PC, LR, #4` | `-4` |
+| IRQ | `SUBS PC, LR, #4` | `-4` |
+| Prefetch Abort | `SUBS PC, LR, #4` | `-4` |
+| SWI | `MOVS PC, LR` | `0` |
+| Undefined Instruction | `MOVS PC, LR` | `0` |
+Why the offset? For IRQ and FIQ, the processor has already fetched the next instruction before the interrupt is taken, so LR points to the instruction after the one that would have been executed next. The `-4` offset ensures you return to the correct place. For a Data Abort, the instruction that caused the abort is re-executed after the handler fixes the issue, requiring an `-8` offset.
+---

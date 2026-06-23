@@ -1,0 +1,20 @@
+22. STACK Operation (PUSH and POP)
+ARM does not have dedicated `PUSH` and `POP` opcodes in classic ARM (ARMv7 and below); they are syntactic aliases for `STM` and `LDM` using the Stack Pointer (`SP` / `R13`).
+ARM uses a Full Descending stack by default (standard for AAPCS - ARM Architecture Procedure Call Standard). The stack grows downwards (towards lower addresses), and `SP` points to the last pushed item.
+Syntax Aliases:
+- `PUSH {registers}`  ->  `STMDB SP!, {registers}` (Store Multiple Decrement Before, update SP)
+- `POP {registers}`   ->  `LDMIA SP!, {registers}` (Load Multiple Increment After, update SP)
+Example (Function Prologue & Epilogue):
+```assembly
+    my_function:
+    ; PROLOGUE: Save caller's registers and return address
+    PUSH   {r4-r6, lr}       ; Save r4, r5, r6, and lr onto the stack
+
+    ; ... Do some work using r4, r5, r6 ...
+    MOV    r4, #10
+    ADD    r5, r4, #5
+    ; EPILOGUE: Restore registers and return to caller
+    POP    {r4-r6, pc}       ; Restore r4-r6, and pop the saved LR directly into PC (return!)
+```
+Note: Popping directly into `PC` effectively does `MOV pc, lr`, returning to the calling function.
+---

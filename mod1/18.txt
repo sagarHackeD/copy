@@ -1,0 +1,12 @@
+18. Pipelining in ARM
+Pipelining is a technique where the CPU works on multiple instructions simultaneously in different stages.
+ARM7 3-Stages:Fetch->Decode->Execute
+ARM9 5-Stages:Fetch->Decode->Execute->Memory Access->Write-Back
+ARM10 6-Stages:Fetch->Issue->Decode->Execute->Memory Access->Write-Back
+```
+Time   |Fetch|Decod|Exec
+Cycle 1|ADD|
+Cycle 2|SUB|ADD|
+Cycle 3|MOV|SUB|ADD|
+```
+----------------------------------------------------------------

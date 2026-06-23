@@ -1,0 +1,11 @@
+51. Memory Hierarchy and Cache Memory (Brief Explanation)
+Memory Hierarchy is the structured layering of different types of memory storage in a computer system, arranged by speed, cost, and capacity. The higher you go, the faster and more expensive per byte it is, but the smaller the capacity.
+The Pyramid (Top to Bottom):
+1.  Registers (Fastest, smallest - inside CPU)
+2.  Cache Memory (SRAM - fast, moderate size)
+3.  Main Memory (RAM) (DRAM - slower, large)
+4.  Secondary Storage (SSD/HDD - slowest, massive)
+Cache Memory is a small, ultra-fast memory (SRAM) placed between the CPU and the slower main memory (DRAM). It stores copies of frequently accessed data and instructions. The core principle of caching relies on Locality of Reference:
+- Temporal Locality: If you access an address, you'll likely access it again soon (loops, variables).
+- Spatial Locality: If you access an address, you'll likely access nearby addresses (arrays, sequential code execution).
+---

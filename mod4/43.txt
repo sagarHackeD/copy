@@ -1,0 +1,14 @@
+43. IRQ and FIQ Exceptions: Enabling and Disabling
+ARM provides two levels of external interrupts:
+IRQ (Interrupt Request): The standard interrupt for general-purpose devices.
+FIQ (Fast Interrupt Request): A higher-priority interrupt designed for very fast, low-latency responses.
+Enabling and Disabling
+Interrupts are enabled and disabled by setting or clearing specific bits in the Current Program Status Register (CPSR).
+IRQ Enable/Disable: Controlled by the 'I' bit (bit 7) in the CPSR.
+   `I = 1` : IRQ interrupts are disabled (masked).
+   `I = 0` : IRQ interrupts are enabled.
+FIQ Enable/Disable: Controlled by the 'F' bit (bit 6) in the CPSR.
+   `F = 1` : FIQ interrupts are disabled.
+   `F = 0` : FIQ interrupts are enabled.
+These bits can only be modified in a privileged mode (e.g., SVC, IRQ, FIQ). An operating system or firmware will typically disable interrupts when entering a critical section of code that must not be interrupted.
+---

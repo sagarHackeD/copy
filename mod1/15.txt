@@ -1,0 +1,23 @@
+15. ARM Core Dataflow Model (Neat Diagram)
+The dataflow shows how instructions move through the core and how data is processed. The critical path is: Registers -> Barrel Shifter -> ALU -> Write-back.
+Text-based Diagram:
+```
+Data
+        Instruction decoder
+Sign extend
+Write    Read
+r15        Register file    Rd
+pc        r0-r15        Result
+    Rn A    Rm B
+            Barrel shifter    A B Acc
+                            MAC
+                N
+            ALU
+    Address register
+                    Incrementer
+        Address
+```
+- Barrel Shifter: Pre-processes one operand (shift/rotate) before the ALU, at no extra cost.
+- ALU: Performs the actual computation and sets condition flags.
+- Register File: Has 16 general-purpose registers (R0-R15) plus the CPSR.
+---

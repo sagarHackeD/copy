@@ -1,0 +1,13 @@
+55. Cache Hit and Cache Miss
+These are the two possible outcomes of a memory access request to the cache.
+- Cache Hit:
+- Definition: The requested data is found in the cache memory.
+- Action: The CPU reads/writes the data immediately from/to the cache (usually within 1-2 clock cycles). The main memory is not accessed.
+- Cache Miss:
+- Definition: The requested data is not found in the cache memory.
+- Action: The CPU must stall and wait. The cache controller fetches the required block from main memory (or lower-level cache) and places it into the cache. The CPU then tries again (or the data is forwarded).
+The 3 C's of Cache Misses (Classified by cause):
+1.  Compulsory (Cold Start) Miss: The very first access to a block that has never been loaded. (Unavoidable).
+2.  Capacity Miss: The cache is too small to hold all the working set of a program. Blocks are evicted and must be reloaded.
+3.  Conflict Miss: Occurs in Direct-Mapped or Set-Associative caches. Multiple memory addresses map to the same set and evict each other, even if the cache isn't physically full.
+---

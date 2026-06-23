@@ -1,0 +1,21 @@
+25. Multiple Register Transfer (LDM / STM)
+These instructions transfer a block of registers to/from memory in a single instruction. This is extremely fast for context switching and block memory copies.
+Syntax: `LDM|STM{cond}<addressing_mode> Rn{!}, {registers}^{?}`
+Addressing Modes for Multiple Transfers:
+| Mnemonic | Name | Description |
+| `IA` | Increment After | Transfer, then increase address. |
+| `IB` | Increment Before | Increase address, then transfer. |
+| `DA` | Decrement After | Transfer, then decrease address. |
+| `DB` | Decrement Before | Decrease address, then transfer. |
+Example 1: Block Memory Copy
+```assembly
+; Copy 4 words from [r0] to [r1]
+LDMIA  r0!, {r2-r5}   ; Load r2, r3, r4, r5 from [r0], then update r0 by 16 bytes.
+STMIA  r1!, {r2-r5}   ; Store r2-r5 to [r1], then update r1 by 16 bytes.
+```
+(`!` updates the base register `r0` and `r1` after the operation).
+Example 2: Stack PUSH/POP (As mentioned previously)
+- `STMDB SP!, {r0-r3}` (PUSH) - Decrement Before.
+- `LDMIA SP!, {r0-r3}` (POP) - Increment After.
+Important: If you load registers including `PC` (R15), e.g., `LDMIA SP!, {r0-r12, PC}`, the processor loads the top of the stack directly into the Program Counter, performing a return.
+---

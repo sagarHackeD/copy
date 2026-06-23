@@ -1,0 +1,9 @@
+13. RISC vs CISC
+| Feature | RISC (Reduced Instruction Set Computer) - ARM | CISC (Complex Instruction Set Computer) - x86 |
+| Instruction Size | Fixed length (e.g., 32-bit) - easy to decode. | Variable length (1 to 15 bytes) - complex decode. |
+| Instruction Count | Few, simple, and atomic instructions. | Many, complex, multi-step instructions. |
+| Addressing Modes | Few (typically Load/Store architecture). | Many complex addressing modes. |
+| Execution Time | Most instructions execute in 1 clock cycle. | Instructions take multiple clock cycles. |
+| Hardware | Relies on compilers for complex operations; simpler hardware. | Relies on microcode for complex ops; complex hardware. |
+| Memory Access | Only Load and Store access memory. ALU ops work on registers. | Many instructions can directly operate on memory. |
+---

@@ -1,0 +1,16 @@
+45. Assigning Interrupts and Interrupt Latency
+Assigning Interrupts
+In modern ARM systems, interrupts are managed by an Interrupt Controller (like the ARM PrimeCell Vectored Interrupt Controller, or VIC).
+1.  Configuration: Software configures the interrupt controller to assign each peripheral's interrupt request to either the IRQ or FIQ signal.
+2.  Priority: The interrupt controller allows software to set a priority level for each interrupt source. The VIC, for example, supports up to 32 interrupt lines, with 16 of them being vectored (having a pre-assigned priority).
+3.  Vectoring: For vectored interrupts, the interrupt controller can provide the address of the specific ISR directly to the processor. The processor reads this address from a register (e.g., `VICVectAddr`), dramatically reducing the time spent determining which device caused the interrupt.
+Interrupt Latency
+Interrupt latency is the time from the assertion of an interrupt signal to the start of the execution of the first instruction in the Interrupt Service Routine (ISR). Several factors contribute to this latency:
+Hardware Latency: The time for the interrupt signal to synchronize with the processor clock.
+Pipeline Flush: The processor must finish executing the current instruction and flush the pipeline before it can fetch the handler.
+Vector Fetch: The time to fetch the handler's address from the vector table.
+ARM provides features to minimize interrupt latency:
+FIQ Mode: FIQ has its own banked registers (R8 to R12), meaning the handler does not need to save and restore these registers, reducing context-switch overhead.
+Vectored Interrupt Controller: By providing the ISR address directly, the VIC eliminates the need for software to poll interrupt sources to determine the cause.
+Prioritization: By setting a higher priority for time-critical interrupts, you can ensure they are serviced before less important ones, reducing their worst-case latency.
+---------------------------------------

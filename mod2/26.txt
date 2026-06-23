@@ -1,0 +1,28 @@
+26. Different Logical Instructions in ARM with Examples
+ARM has a rich set of bitwise logical instructions. They all follow the syntax: `Op{cond}{S} Rd, Rn, <Oprnd2>`.
+| Instruction | Operation | C Equivalent | Example & Description |
+|
+| `AND` | Bitwise AND | `&` | `AND r0, r1, #0xFF` -> `r0 = r1 & 0xFF` (Extracts lower 8 bits). |
+| `ORR` | Bitwise OR | `|` | `ORR r0, r1, r2` -> `r0 = r1 | r2` (Sets bits from r2). |
+| `EOR` | Bitwise XOR | `^` | `EOR r0, r1, r2` -> `r0 = r1 ^ r2` (Toggles bits where r2 has 1s). |
+| `BIC` | Bit Clear | `& ~` | `BIC r0, r1, #0x0F` -> `r0 = r1 & ~0x0F` (Clears the lower nibble of r1). |
+| `ORN` | OR NOT | `| ~` | `ORN r0, r1, r2` -> `r0 = r1 | ~r2` (Sets bits except those in r2). |
+| `MVN` | Move NOT | `~` | `MVN r0, r1` -> `r0 = ~r1` (Bitwise complement). Useful for creating wide masks. |
+Practical Example (Setting, Clearing, and Toggling Bits):
+Imagine a GPIO control register `r0`. We want to:
+- Set bit 3 (enable LED).
+- Clear bit 5 (disable pull-up).
+- Toggle bit 7 (invert output).
+```assembly
+; Assume r0 holds the current GPIO register value
+LDR   r0, =GPIO_ADDR  ; Load current value into r0
+; 1. SET bit 3 (ORR)
+ORR   r0, r0, #(1<<3)   ; r0 = r0 | 0b1000
+; 2. CLEAR bit 5 (BIC)
+BIC   r0, r0, #(1<<5)   ; r0 = r0 & ~0b100000
+; 3. TOGGLE bit 7 (EOR)
+EOR   r0, r0, #(1<<7)   ; r0 = r0 ^ 0b10000000
+; Store the modified value back
+STR   r0, =GPIO_ADDR
+```
+------------------------------------------

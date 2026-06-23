@@ -1,7 +1,0 @@
-
-6. Explain General Plan for analyzing non-recursive algorithm
-1.  Decide on Input Size: Clearly identify `n` (e.g., number of elements in an array).
-2.  Identify the Basic Operation: Usually found in the innermost loop (e.g., comparison, arithmetic operation).
-3.  Set up the Summation: Write a sum that counts how many times the basic operation is executed based on the loop counters. For example, if a loop runs from `i=0` to `n-1`, the sum is `Σ (i=0 to n-1) [constant]`.
-4.  Compute the Sum: Use mathematical formulas to evaluate the sum (e.g., `Σ i = n(n-1)/2`).
-5.  Simplify and Express in Big-Oh: Drop the lower-order terms and constants to identify the dominant term.

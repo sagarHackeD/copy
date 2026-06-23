@@ -1,5 +1,0 @@
-
-26. How Branch and Bound technique is different from Backtracking?
-Objective: Backtracking is used for finding all (or any) feasible solutions satisfying constraints. Branch and Bound is used for optimization problems (finding the minimum or maximum cost solution).
-Search Tree Traversal: Backtracking uses Depth-First Search (DFS) to traverse the state space tree. Branch and Bound typically uses Breadth-First Search (BFS) or Best-First Search (using a priority queue) to explore the tree.
-Pruning Mechanism: Backtracking prunes a branch only if it violates the constraints (e.g., a queen is attacked). Branch and Bound prunes a branch using a bounding function—if the lower bound of a partial solution is already greater than the current best optimal solution, we discard that branch entirely. This guarantees optimality without exhaustive search.

@@ -1,8 +1,0 @@
-
-15. Define AVL Tree. Explain its four rotation types with an example of insertion.
-Definition: An AVL tree (Adelson-Velsky and Landis) is a self-balancing Binary Search Tree (BST). The balance factor (BF) for any node is defined as: `BF = Height(Left Subtree) - Height(Right Subtree)`. In an AVL tree, the absolute value of the BF must be `<= 1` for every node. If a node violates this, we rotate it to restore balance.
-Four Rotation Types:
-1. LL Rotation (Left-Left) - Single Right Rotation: Occurs when a node is inserted into the left subtree of the left child. (Example: Insert 10, 20, 30 in a sequence). Perform a single right rotation on the unbalanced node.
-2. RR Rotation (Right-Right) - Single Left Rotation: Occurs when a node is inserted into the right subtree of the right child. (Example: Insert 30, 20, 10). Perform a single left rotation on the unbalanced node.
-3. LR Rotation (Left-Right) - Double Rotation: Occurs when a node is inserted into the right subtree of the left child. First, do a left rotation on the left child, then do a right rotation on the unbalanced node.
-4. RL Rotation (Right-Left) - Double Rotation: Occurs when a node is inserted into the left subtree of the right child. First, do a right rotation on the right child, then do a left rotation on the unbalanced node.

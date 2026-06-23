@@ -1,8 +1,0 @@
-
-2. Define Asymptotic Notations: Big Oh, Big Omega and Big Theta (with Mathematical Definitions)
-Big Oh (O) – Asymptotic Upper Bound: We say `f(n) = O(g(n))` if there exist positive constants `c` and `n_o` such that for all `n => n_o`, `0 <= f(n) <= c  g(n)`. 
-Example: `3n + 5` is `O(n)` because `3n+5 <= 4n` for `n => 5`. It represents the worst-case running time.
-Big Omega (\Omega) – Asymptotic Lower Bound: We say `f(n) = \Omega(g(n))` if there exist positive constants `c` and `n_o` such that for all `n => n_o`, `0 <= c  g(n) <= f(n)`. 
-Example: `3n + 5` is `\Omega(n)` because `3n+5 => 3n` for all `n > 0`. It represents the best-case running time.
-Big Theta (\Theta) – Asymptotic Tight Bound: We say `f(n) = \Theta(g(n))` if and only if `f(n) = O(g(n))` AND `f(n) = \Omega(g(n))`. There exist constants `c1, c2, n_o` such that `c1g(n) <= f(n) <= c2g(n)`. 
-Example: `3n + 5` is `\Theta(n)`. It means `g(n)` is the exact asymptotic growth rate.

@@ -1,0 +1,48 @@
+41. ARM Processor Exceptions and Modes
+An exception is any event that disrupts the normal sequential execution of instructions to require immediate attention from the processor. This includes resets, instruction fetch or data access failures, undefined instructions, software interrupts, and external hardware interrupts.
+ARM Processor Modes and Associated Exceptions
+| Exception | Mode | Main Purpose | Mode Bits (M[4:0]) |
+| Reset | Supervisor (SVC) | Processor initialization and OS booting. Highest priority. | `10011` |
+| Fast Interrupt Request | FIQ | For fast, low-latency interrupt handling. | `10001` |
+| Interrupt Request | IRQ | For general-purpose interrupt handling. | `10010` |
+| Prefetch/Data Abort | Abort | Memory access violations, virtual memory management. | `10111` |
+| Undefined Instruction | Undefined | Software emulation of hardware or coprocessor instructions. | `11011` |
+| Software Interrupt (SWI) | Supervisor (SVC) | System call to the Operating System. | `10011` |
+
+When an exception occurs, the ARM core automatically performs a mode switch to handle it. The processor enters a specific mode, which has its own banked (dedicated) registers to protect the state of the previous mode.
+Exception Flow and Mode Transition
+```Diagram
+| Normal Execution  |
+| (Processor in     |
+|  'User' mode)     |
+        |
+Exception Occurs (e.g., IRQ, SWI, Data Abort)
+        |
+
+|ARM Core Automatic Actions
+|1. Save CPSR to SPSR_<mode>
+|2. Save Return Address to LR_<mode>
+|3. Set CPSR Mode Bits to new <mode>
+|4. Set PC to Vector Table Address
+|   for that exception
+         |
+|   Vector Table    |   |    Handler        |
+| (Addresses in     |-->|   Execution       |
+|  memory)          |   | (in new mode)     |
+|                           | Handler completes
+|                           v
+|
+|             | Exception Return            |
+|             | (e.g., MOVS PC, LR)         |
+|             | 1. Restores CPSR from SPSR |
+|             | 2. Restores PC from LR     |
+|                           |
++---------------------------+
+v
+
+|  Return to Normal |
+|  Execution        |
+
+```
+The Vector Table is a table of addresses that the ARM core uses to find the appropriate exception handler. It's typically located at the start of memory (e.g., address `0x00000000`). The table contains either a branch instruction (`B <address>`) or a load instruction (`LDR pc, [pc, #offset]`) to jump to the handler's code.
+---

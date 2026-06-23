@@ -1,0 +1,30 @@
+11. Architecture of an ARM Embedded Device (Neat Diagram)
+An ARM-based embedded system is not just the CPU core; it is a System-on-Chip (SoC). The core communicates with memory and peripherals via a bus matrix (typically AMBA - Advanced Microcontroller Bus Architecture).
+Text-based Diagram:
+```
+ARM processor
+    Interrupt controller
+AHB arbiter
+ |
+AHB-APB bridge
+ |
+Real-time clock-
+Console-Serial UARTS-
+-----
+Memory controller
+AHB-external bridge
+
+Ethernet
+Counter/timers
+-----
+ROM
+SRAM
+FLASHROM
+DRAM
+External bus
+Ethernet physical driver
+--------
+ARM Controllers Peripherals Bus
+```
+Key components: CPU core, tightly coupled memory (Flash/SRAM), interrupt handler, peripherals, and external bus interface-all interconnected via a high-speed bus.
+---

@@ -1,0 +1,14 @@
+54. Cache Line Replacement Policies (With Examples)
+When a Cache Miss occurs and the targeted set is full, the controller must evict an existing line to make room for the new one. The policy decides which line to kick out.
+- LRU (Least Recently Used):
+- Rule: Evicts the block that has gone the longest without being accessed.
+- Example (2-way set): Lines A and B are full. Access order: A, B, A, B, C (Miss, need to load C). A and B are both recently used, but B was used just before C, while A was used before B. So, A is evicted.
+- FIFO (First In, First Out):
+- Rule: Evicts the block that was loaded into the cache the earliest, regardless of usage.
+- Example (2-way set): A loaded, then B loaded. Access C (Miss). Even if A was used 100 times and B was used 0 times, A is evicted because it came in first.
+- Random:
+- Rule: Randomly selects a line to evict.
+- Example: Access C (Miss). The controller uses a pseudo-random number generator. If it generates "1", Line B is evicted.
+- LFU (Least Frequently Used):
+- Rule: Evicts the block with the lowest usage count (counter). Good for data accessed heavily in the past.
+---

@@ -1,0 +1,21 @@
+53. Main Memory Mapping to Cached Memory (The Process)
+When the CPU generates a memory address, the cache controller must determine if the data is in the cache. The CPU address (e.g., 32-bit) is divided into three fields:
+| Field | Name | Purpose |
+| Higher bits | Tag | Stored in cache. Compared against the tag of the selected cache set. |
+| Middle bits | Index/Set | Selects which cache line or cache set to look into. |
+| Lower bits | Block Offset | Selects the specific byte within the cache line/data block. |
+The Step-by-Step Mapping Process:
+1.  Address Split: CPU outputs a 32-bit address.
+2.  Index Decode: The controller extracts the Index bits.
+3.  Set Selection: It goes to that specific row (or set) in the cache memory.
+4.  Tag Compare: The controller reads the Tag stored in that selected cache line and compares it to the Tag from the CPU address.
+5.  Valid Check: It checks if the Valid bit for that line is set to 1.
+6.  Decision:
+- If Valid == 1 AND Tags match -> CACHE HIT. The data is read directly from the data block (using the Block Offset).
+- If Valid == 0 OR Tags mismatch -> CACHE MISS. The controller fetches the entire block of data from main memory, places it into this cache line (updating Tag and Valid), and then feeds the requested byte to the CPU.
+The 3 Types of Cache Mapping:
+| Mapping Type | How it works | Pros / Cons |
+| Direct Mapped | Each memory block maps to exactly one specific cache line (Address = Line Number). | Pro: Fastest, simplest hardware. Con: Poor hit rate (two variables may fight for the same line). |
+| Fully Associative | Any memory block can be stored in any cache line. The Tag must be compared against all lines simultaneously. | Pro: Best hit rate. Con: Very expensive hardware (requires parallel comparators). |
+| Set-Associative | Compromise. Cache is divided into sets (e.g., 2-way, 4-way). A memory block maps to a specific set, but can go into any line within that set. | Pro: Great balance of speed and hit rate (used in almost all modern CPUs). |
+---

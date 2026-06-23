@@ -1,0 +1,9 @@
+12. Microcontroller vs Microprocessor
+| Feature | Microcontroller (e.g., ARM Cortex-M) | Microprocessor (e.g., ARM Cortex-A) |
+| Integration | CPU + RAM + ROM/Flash + Peripherals on a single chip. | CPU only. Memory and peripherals are external. |
+| Purpose | Dedicated, specific tasks (e.g., motor control, IoT sensors). | General-purpose computing (e.g., smartphones, laptops). |
+| Power | Low power, often battery-operated. | High power consumption. |
+| Cost | Inexpensive. | Expensive (requires external chipsets). |
+| OS | Runs bare-metal or RTOS (FreeRTOS). | Runs full OS (Linux, Android, Windows). |
+| Memory | Limited KB to MB. | GBs of external DRAM. |
+---

@@ -1,0 +1,18 @@
+35. Pointer Aliasing and Portability Issues
+1. Pointer Aliasing
+Aliasing occurs when two different pointers point to the exact same memory location.
+```c
+void update(int a, int b, int c) {
+a += b;
+c += b;  // Danger! If 'c' points to the same memory as 'a' or 'b'
+}
+```
+- The Problem: The compiler must reload `b` from memory for the second line because it cannot assume `b` hasn't been overwritten by `a += b` (if `a` and `b` are aliases). This prevents the compiler from keeping `b` in a register for speed.
+- The Fix (C99): Use the `restrict` keyword. `void update(int restrict a, int restrict b, int restrict c)` tells the compiler the pointers are guaranteed not to overlap, allowing aggressive register optimization.
+2. Portability Issues in Embedded C
+Portability refers to how easily code runs on different hardware without changes.
+- Data Type Sizes: `int` is 32-bit on ARM, but often 16-bit on AVR/8051. Always use `stdint.h` (`uint8_t`, `uint32_t`, etc.) for exact sizes.
+- Endianness: ARM is bi-endian but usually runs in Little-Endian. A network protocol might require Big-Endian. If you access a `uint32_t` as a `uint8_t` array, the byte order breaks across architectures. Use `htons()` / `ntohl()` (host-to-network) macros.
+- Alignment: ARM requires 32-bit words to be aligned to 4-byte boundaries. `uint32_t ptr = (uint32_t)0x20000001;` will cause an alignment fault on Cortex-M0/M3 (HardFault) or severe performance penalties on Cortex-A. Always align packed buffers manually, or use `__attribute__((packed))` carefully.
+- Compiler Intrinsics: Inline assembly changes syntax across compilers (GCC vs ARMCC vs IAR). Abstract low-level hardware access into separate `.c` files per platform.
+---

@@ -1,0 +1,6 @@
+14. Four Major Rules of RISC Design Philosophy
+1.  Rule 1 - Simplicity favors regularity: The instruction set must be simple and regular. Fixed-length instruction formats make decoding easier and faster.
+2.  Rule 2 - Smaller is faster: A limited number of instructions and a large, general-purpose register file (e.g., 16-32 registers) reduce access time and chip area.
+3.  Rule 3 - Make the common case fast: Optimize the most frequently used instructions (e.g., load, store, add, branch) to execute in a single cycle, even if it makes rare instructions slower.
+4.  Rule 4 - Good design demands good compromises: Use a Load/Store architecture (only two instructions touch memory) to keep the pipeline simple and efficient, sacrificing code density for speed.
+---
