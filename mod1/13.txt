@@ -1,9 +1,35 @@
-13. RISC vs CISC
-| Feature | RISC (Reduced Instruction Set Computer) - ARM | CISC (Complex Instruction Set Computer) - x86 |
-| Instruction Size | Fixed length (e.g., 32-bit) - easy to decode. | Variable length (1 to 15 bytes) - complex decode. |
-| Instruction Count | Few, simple, and atomic instructions. | Many, complex, multi-step instructions. |
-| Addressing Modes | Few (typically Load/Store architecture). | Many complex addressing modes. |
-| Execution Time | Most instructions execute in 1 clock cycle. | Instructions take multiple clock cycles. |
-| Hardware | Relies on compilers for complex operations; simpler hardware. | Relies on microcode for complex ops; complex hardware. |
-| Memory Access | Only Load and Store access memory. ALU ops work on registers. | Many instructions can directly operate on memory. |
+13. Component Modules of a DBMS and Their Interactions
+A DBMS is a complex software system composed of many interacting modules. The diagram below shows the main functional components and the flow of a typical query/transaction.
+```
+    1
+    2
+    3
+    4
+ | / | \
+ 5 6 7 8
+    9
+    10
+1-User/Application
+2-DML Precompiler/Query Language Processor(DDL Compiler,DML Compiler,Interpreter)
+3-Query Optimizer(Generates efficient execution plan)      
+4-Query Evaluation Engine/Executor(Executes plan,calls lower modules)      
+5-Transaction Manager(Begin,Commit,Abort)                
+6-Lock Manager(Concurrency Control)
+7-Recovery Manager(Logging,Checkpointing,UNDO/REDO)  
+8-Buffer Manager(Caches pages in main memory)
+9-Storage Manager (File & Access Methods)         
+10-Disk Storage (Data Files,Index Files,Data Dict.)
+```
+Key Modules and Their Roles  
+- DDL Compiler - Processes schema definitions and stores metadata in the data dictionary.
+- DML Compiler / Query Language Processor - Parses and translates DML statements (e.g., SQL) into an internal form.
+- Query Optimizer - Evaluates different execution strategies and picks the most efficient one (uses statistics, indices).
+- Query Evaluation Engine - Executes the optimized plan by invoking operations on the storage manager.
+- Transaction Manager - Enforces ACID properties; coordinates transactions with begin, commit, abort.
+- Lock Manager - Implements concurrency control protocols (e.g., two-phase locking) to ensure isolation.
+- Recovery Manager - Maintains a log of changes and performs automatic recovery after failures (rollback/rollforward).
+- Buffer Manager - Manages the transfer of data blocks between disk and main memory, reducing disk I/O.
+- Storage Manager - Provides an interface between the low-level data (files) and the higher layers; handles file organization, indexing, and access paths.
+Interaction Example  
+A user submits an SQL query. The DML compiler parses it and passes it to the optimizer. The optimizer consults the data dictionary for statistics and indices, then builds an execution plan. The evaluation engine executes the plan by requesting data through the storage manager. If a transaction is active, the transaction manager coordinates with the lock manager to obtain appropriate locks and with the recovery manager to log changes. The buffer manager caches disk blocks to improve performance. Results flow back to the user.
 ---

@@ -1,21 +1,19 @@
-53. Main Memory Mapping to Cached Memory (The Process)
-When the CPU generates a memory address, the cache controller must determine if the data is in the cache. The CPU address (e.g., 32-bit) is divided into three fields:
-| Field | Name | Purpose |
-| Higher bits | Tag | Stored in cache. Compared against the tag of the selected cache set. |
-| Middle bits | Index/Set | Selects which cache line or cache set to look into. |
-| Lower bits | Block Offset | Selects the specific byte within the cache line/data block. |
-The Step-by-Step Mapping Process:
-1.  Address Split: CPU outputs a 32-bit address.
-2.  Index Decode: The controller extracts the Index bits.
-3.  Set Selection: It goes to that specific row (or set) in the cache memory.
-4.  Tag Compare: The controller reads the Tag stored in that selected cache line and compares it to the Tag from the CPU address.
-5.  Valid Check: It checks if the Valid bit for that line is set to 1.
-6.  Decision:
-- If Valid == 1 AND Tags match -> CACHE HIT. The data is read directly from the data block (using the Block Offset).
-- If Valid == 0 OR Tags mismatch -> CACHE MISS. The controller fetches the entire block of data from main memory, places it into this cache line (updating Tag and Valid), and then feeds the requested byte to the CPU.
-The 3 Types of Cache Mapping:
-| Mapping Type | How it works | Pros / Cons |
-| Direct Mapped | Each memory block maps to exactly one specific cache line (Address = Line Number). | Pro: Fastest, simplest hardware. Con: Poor hit rate (two variables may fight for the same line). |
-| Fully Associative | Any memory block can be stored in any cache line. The Tag must be compared against all lines simultaneously. | Pro: Best hit rate. Con: Very expensive hardware (requires parallel comparators). |
-| Set-Associative | Compromise. Cache is divided into sets (e.g., 2-way, 4-way). A memory block maps to a specific set, but can go into any line within that set. | Pro: Great balance of speed and hit rate (used in almost all modern CPUs). |
+53. What is NoSQL? CAP Theorem
+NoSQL stands for "Not Only SQL." It encompasses a wide class of database management systems that differ from the traditional relational model. They are designed to handle large volumes of distributed data, offer flexible schemas, and scale horizontally.
+Key characteristics:
+- Schema-less or flexible schema
+- Support for semi-structured (JSON, XML) or unstructured data
+- High scalability (horizontal scaling on commodity hardware)
+- Eventual consistency over strict ACID (often BASE: Basically Available, Soft state, Eventually consistent)
+- Optimised for specific data models: key-value, document, column-family, graph.
+#CAP Theorem (Brewer's Theorem)
+The CAP theorem states that a distributed system can simultaneously provide at most two of the following three guarantees:
+- Consistency (C) - Every read receives the most recent write or an error. All nodes see the same data at the same time.
+- Availability (A) - Every request receives a (non-error) response, without guarantee that it is the most recent data.
+- Partition Tolerance (P) - The system continues to operate despite arbitrary message loss or failure of part of the network.
+In the event of a network partition, the system must choose between consistency and availability. A distributed database can be classified as:
+- CP (Consistency + Partition tolerance) - Sacrifices availability during a partition; e.g., MongoDB (in certain configurations), HBase.
+- AP (Availability + Partition tolerance) - Sacrifices strong consistency; e.g., Cassandra, DynamoDB.
+- CA - A system that is both consistent and available; theoretically possible only if there is no network partition, which is unrealistic in large distributed systems, so most practical systems are either CP or AP.
+Implications for NoSQL: Many NoSQL databases are designed for partition tolerance and choose between C and A based on the use case (e.g., social media feeds tolerate eventual consistency for high availability).
 ---

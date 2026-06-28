@@ -1,31 +1,32 @@
-11. Architecture of an ARM Embedded Device (Neat Diagram)
-12. Microcontroller vs Microprocessor
-13. RISC vs CISC
-14. Four Major Rules of RISC Design Philosophy
-15. ARM Core Dataflow Model (Neat Diagram)
-16. Different Processor Modes in ARM7
-17. Current Program Status Register (CPSR) - Detailed
-18. Pipelining in ARM
-21. SWAP Instruction (Atomic Exchange)
-22. STACK Operation (PUSH and POP)
-23. Branch Instruction Flow with Diagram and Example
-24. Single Load-Store Addressing Modes (Syntax, Table, Index Mode)
-25. Multiple Register Transfer (LDM / STM)
-26. Different Logical Instructions in ARM with Examples
-31. How Registers are Allocated to Optimize a Program
-32. ARM Assembly Program: Sum of First 10 Integer Numbers (1 to 10)
-33. Code Optimization, Profiling, and Cycle Counting
-34. C Program that Prints Squares of 0 to 9 using Functions
-35. Pointer Aliasing and Portability Issues
-36. How a Compiler Handles a `for` Loop with Variable Number of Iterations `n`
-41. ARM Processor Exceptions and Modes
-42. ARM Firmware Suite Features and Red Hat RedBoot
-43. IRQ and FIQ Exceptions: Enabling and Disabling
-44. Exception Priorities and Link Register Offset
-45. Assigning Interrupts and Interrupt Latency
-51. Memory Hierarchy and Cache Memory (Brief Explanation)
-52. Basic Architecture of Cache Memory
-53. Main Memory Mapping to Cached Memory (The Process)
-54. Cache Line Replacement Policies (With Examples)
-55. Cache Hit and Cache Miss
-56. How is the Efficiency of Cache Measured?
+11. What is a Database? Three-Schema Architecture & Mapping
+12. Advantages of Using the DBMS Approach
+13. Component Modules of a DBMS and Their Interactions
+14. Explanation of Terms
+15. Responsibilities of DBA and Database Designers
+21. Update Operations on Relational Database and Constraint Violations
+22. Unary Relational Operators
+23. Integrity Constraints and the Importance of Referential Integrity
+24. ER to Relational Mapping Algorithm with Examples
+25. Relational Algebra Operations for Set Theory
+26. Different Relational Model Constraints
+27. Sailors Problems
+28. Instructor-Student Problems
+29. employees Belagavi Problems
+31. What is Normalization? 1NF, 2NF, 3NF with Examples
+32. Informal Design Guidelines for Relational Schema Design
+33. What is Functional Dependency? Minimal Cover Construction
+34. Types of Update Anomalies in SQL with Example
+35. SQL Commands: INSERT, UPDATE, DELETE, ALTER, DROP
+36. Inference Rules in Functional Dependency (Armstrong's Axioms) with Proof
+37. Functional Dependency Problem (Typical Example)
+41. Transaction States and Additional Operations
+42. Assertion and Trigger in DBMS
+43. System Log in Database Transaction
+44. ACID Properties of Database Transactions
+45. Stored Procedure in SQL with Example
+46. Write SQL queries for the following
+51. Two-Phase Locking Protocol (2PL) for Concurrency Control
+52. Why Concurrency Control is Needed - Example
+53. What is NoSQL? CAP Theorem
+54. Document-Based NoSQL System - MongoDB CRUD Operations
+55. NoSQL Graph Database - Neo4j

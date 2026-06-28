@@ -1,48 +1,46 @@
-41. ARM Processor Exceptions and Modes
-An exception is any event that disrupts the normal sequential execution of instructions to require immediate attention from the processor. This includes resets, instruction fetch or data access failures, undefined instructions, software interrupts, and external hardware interrupts.
-ARM Processor Modes and Associated Exceptions
-| Exception | Mode | Main Purpose | Mode Bits (M[4:0]) |
-| Reset | Supervisor (SVC) | Processor initialization and OS booting. Highest priority. | `10011` |
-| Fast Interrupt Request | FIQ | For fast, low-latency interrupt handling. | `10001` |
-| Interrupt Request | IRQ | For general-purpose interrupt handling. | `10010` |
-| Prefetch/Data Abort | Abort | Memory access violations, virtual memory management. | `10111` |
-| Undefined Instruction | Undefined | Software emulation of hardware or coprocessor instructions. | `11011` |
-| Software Interrupt (SWI) | Supervisor (SVC) | System call to the Operating System. | `10011` |
-
-When an exception occurs, the ARM core automatically performs a mode switch to handle it. The processor enters a specific mode, which has its own banked (dedicated) registers to protect the state of the previous mode.
-Exception Flow and Mode Transition
+41. Transaction States and Additional Operations
+A transaction is a logical unit of work that must be entirely completed or entirely aborted. It moves through several states during its lifecycle:
+# Transaction States
 ```Diagram
-| Normal Execution  |
-| (Processor in     |
-|  'User' mode)     |
-        |
-Exception Occurs (e.g., IRQ, SWI, Data Abort)
-        |
+  2  3
+1      6
+  4  5
 
-|ARM Core Automatic Actions
-|1. Save CPSR to SPSR_<mode>
-|2. Save Return Address to LR_<mode>
-|3. Set CPSR Mode Bits to new <mode>
-|4. Set PC to Vector Table Address
-|   for that exception
-         |
-|   Vector Table    |   |    Handler        |
-| (Addresses in     |-->|   Execution       |
-|  memory)          |   | (in new mode)     |
-|                           | Handler completes
-|                           v
-|
-|             | Exception Return            |
-|             | (e.g., MOVS PC, LR)         |
-|             | 1. Restores CPSR from SPSR |
-|             | 2. Restores PC from LR     |
-|                           |
-+---------------------------+
-v
+1.Active State
+2.Partially Committed State
+3.Committed State
+4.Failed State
+5.Aborted State
+6.Terminated State
 
-|  Return to Normal |
-|  Execution        |
-
+1->2 reads/writes
+1->4 Failure
+2->3 Permanent store
+2->4 Failure
+4->5 Rollback
 ```
-The Vector Table is a table of addresses that the ARM core uses to find the appropriate exception handler. It's typically located at the start of memory (e.g., address `0x00000000`). The table contains either a branch instruction (`B <address>`) or a load instruction (`LDR pc, [pc, #offset]`) to jump to the handler's code.
+- ACTIVE - The transaction starts; it is executing read/write operations.
+- PARTIALLY COMMITTED - All operations have been executed and the final statement has run. But the changes are not yet permanently stored (still in buffers). If a system failure happens now, recovery may be needed.
+- COMMITTED - Successful completion; changes are permanently saved and visible to other transactions.
+- FAILED - An error (logical, system crash, or deadlock) occurs; the transaction cannot continue normally.
+- ABORTED - The transaction has been rolled back and the database is restored to the state before the transaction began. After abort, the system can either restart the transaction (as a new one) or kill it.
+Terminated is sometimes used to describe a transaction that has reached COMMITTED or ABORTED and left the system.
+# Additional Transaction Operations
+- BEGIN / START TRANSACTION - Marks the beginning of a transaction.
+- COMMIT - Signals successful end; all changes are made permanent.
+- ROLLBACK - Aborts the transaction and undoes all changes made during the transaction.
+- SAVEPOINT - Creates an intermediate marker within a transaction to which a partial rollback can be performed, without aborting the whole transaction.
+- ROLLBACK TO SAVEPOINT - Undoes all changes after a specific savepoint, but the transaction remains active.
+Example (SQL):
+```sql
+START TRANSACTION;
+UPDATE Accounts SET balance = balance - 100 WHERE acc_id = 1;
+SAVEPOINT sp1;
+UPDATE Accounts SET balance = balance + 100 WHERE acc_id = 2;
+-- Oops, wrong account; rollback to savepoint
+ROLLBACK TO SAVEPOINT sp1;
+UPDATE Accounts SET balance = balance + 100 WHERE acc_id = 3;
+COMMIT;
+```
+Here, if the second update needed correction, we only roll back to `sp1`, preserving the first debit.
 ---

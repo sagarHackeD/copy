@@ -1,16 +1,51 @@
-45. Assigning Interrupts and Interrupt Latency
-Assigning Interrupts
-In modern ARM systems, interrupts are managed by an Interrupt Controller (like the ARM PrimeCell Vectored Interrupt Controller, or VIC).
-1.  Configuration: Software configures the interrupt controller to assign each peripheral's interrupt request to either the IRQ or FIQ signal.
-2.  Priority: The interrupt controller allows software to set a priority level for each interrupt source. The VIC, for example, supports up to 32 interrupt lines, with 16 of them being vectored (having a pre-assigned priority).
-3.  Vectoring: For vectored interrupts, the interrupt controller can provide the address of the specific ISR directly to the processor. The processor reads this address from a register (e.g., `VICVectAddr`), dramatically reducing the time spent determining which device caused the interrupt.
-Interrupt Latency
-Interrupt latency is the time from the assertion of an interrupt signal to the start of the execution of the first instruction in the Interrupt Service Routine (ISR). Several factors contribute to this latency:
-Hardware Latency: The time for the interrupt signal to synchronize with the processor clock.
-Pipeline Flush: The processor must finish executing the current instruction and flush the pipeline before it can fetch the handler.
-Vector Fetch: The time to fetch the handler's address from the vector table.
-ARM provides features to minimize interrupt latency:
-FIQ Mode: FIQ has its own banked registers (R8 to R12), meaning the handler does not need to save and restore these registers, reducing context-switch overhead.
-Vectored Interrupt Controller: By providing the ISR address directly, the VIC eliminates the need for software to poll interrupt sources to determine the cause.
-Prioritization: By setting a higher priority for time-critical interrupts, you can ensure they are serviced before less important ones, reducing their worst-case latency.
----------------------------------------
+45. Stored Procedure in SQL with Example
+A stored procedure is a pre-compiled collection of SQL statements and control-of-flow logic stored on the database server. It can be invoked by applications to perform a well-defined task, often accepting parameters and returning results.
+# Advantages
+- Reduced network traffic: Instead of sending many individual statements, the application calls one procedure.
+- Modular programming: Reusable and maintainable code.
+- Enhanced security: Users can be granted permission to execute a procedure without direct access to the underlying tables.
+- Improved performance: The procedure is parsed and optimized once, then cached; execution plans are reused.
+- Business logic enforcement: Complex rules reside in the database, ensuring consistency.
+# Example: Transfer Funds Procedure
+We want a procedure `transfer_funds` that moves money between two accounts while logging the transaction.
+```sql
+CREATE PROCEDURE transfer_funds(
+    IN from_acc INT,
+    IN to_acc   INT,
+    IN amount   DECIMAL(10,2),
+    OUT msg     VARCHAR(100)
+)
+BEGIN
+    DECLARE from_balance DECIMAL(10,2);
+    DECLARE exit HANDLER FOR SQLEXCEPTION
+    BEGIN
+        ROLLBACK;
+        SET msg = 'Transaction failed, rolled back.';
+    END;
+    START TRANSACTION;
+    
+    SELECT balance INTO from_balance FROM Accounts WHERE acc_id = from_acc FOR UPDATE;
+    
+    IF from_balance IS NULL THEN
+        SET msg = 'Source account does not exist.';
+        ROLLBACK;
+    ELSEIF from_balance < amount THEN
+        SET msg = 'Insufficient funds.';
+        ROLLBACK;
+    ELSE
+        UPDATE Accounts SET balance = balance - amount WHERE acc_id = from_acc;
+        UPDATE Accounts SET balance = balance + amount WHERE acc_id = to_acc;
+        INSERT INTO Transfers(from_acc, to_acc, amount, transfer_time) 
+             VALUES(from_acc, to_acc, amount, NOW());
+        COMMIT;
+        SET msg = 'Transfer successful.';
+    END IF;
+END;
+```
+Calling the procedure:
+```sql
+CALL transfer_funds(101, 202, 200.00, @status);
+SELECT @status;  -- shows the outcome message
+```
+The procedure enforces the whole transfer as an atomic unit, uses exception handling to roll back on errors, and abstracts the multi-step logic into a single call.
+---

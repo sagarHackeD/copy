@@ -1,39 +1,23 @@
-52. Basic Architecture of Cache Memory
-A cache is not just a single block of RAM; it is highly structured to allow fast searches. The architecture consists of a Cache Controller and the Cache Memory Array.
-Diagram of Cache Architecture:
-```
-+------------------------------------------+
-|             CPU Core                       |
-|  (Generates 32-bit Address)               |
-+------------------+-----------------------+
-               | (Address Bus)
-               v
-+------------------------------------------------------------+
-|                    CACHE CONTROLLER                        |
-|  +-------------+  +-------------+  +------------------+   |
-|  | Address     |  | Comparator  |  | Control Logic    |   |
-|  | Decoder     |  | (Tag Check) |  | (Hit/Miss, RD/WR)|   |
-|  +-------------+  +------+------+  +------------------+   |
-+--------------------------|----------------------------------+
-                       | (Hit/Miss signal)
-                       v
-+------------------------------------------------------------+
-|                CACHE MEMORY ARRAY (SRAM)                   |
-|  +----------+----------+----------+----------+----------+ |
-|  |  Valid   |   Tag    |   Data   |  Dirty   |   LRU    | |
-|  |  Bit     |  (Addr)  |  (Block) |  Bit    |   Bits   | |
-|  +----------+----------+----------+----------+----------+ |
-|  |  Line 0  |  Tag 0   |  Bytes 0-31|  D0    |   ...    | |
-|  |  Line 1  |  Tag 1   |  Bytes 0-31|  D1    |   ...    | |
-|  |  Line 2  |  Tag 2   |  Bytes 0-31|  D2    |   ...    | |
-|  |  ...     |  ...     |  ...       |  ...   |   ...    | |
-|  +----------+----------+----------+----------+----------+ |
-+------------------------------------------------------------+
-```
-Architecture Components:
-- Valid Bit: Indicates if the cache line contains valid data (cleared on reset, set on load).
-- Tag: The upper portion of the main memory address. Stored to identify which specific memory block is currently residing in this cache line.
-- Data Block (Cache Line): The actual chunk of main memory data (typically 16, 32, or 64 bytes).
-- Dirty Bit: Used in Write-Back caches. Indicates whether the data in the cache has been modified by the CPU and is not yet written back to main memory.
-- LRU/Replacement Bits: Used to decide which line to evict when the cache is full.
+52. Why Concurrency Control is Needed - Example
+Concurrency control is required to avoid problems that arise when multiple transactions execute simultaneously and access the same data. Without it, the following anomalies can occur:
+# Lost Update Problem
+Two transactions read the same value, update it based on the read, and then write back, causing one update to be overwritten.
+Example: Two airline agents try to book the last seat on flight 101.
+- T1: reads seats_available = 1
+- T2: reads seats_available = 1
+- T1: decrements to 0 and writes back
+- T2: decrements its read value (still 1) to 0 and writes back  
+Result: two bookings, but only one seat was deducted - lost update.
+# Dirty Read (Uncommitted Dependency)
+One transaction reads data written by another uncommitted transaction, which later aborts.
+Example:
+- T1 updates account A from 1000 to 900, hasn't committed.
+- T2 reads A = 900 and uses it for a report.
+- T1 aborts; A rolls back to 1000. T2 used a value that never existed permanently.
+# Incorrect Summary (Non-repeatable Read)
+A transaction reads the same item twice and sees different values because another transaction modified it in between.
+Example:
+- T3: reads total of accounts A, B while T4 transfers money from A to B.
+- If T3 reads A (before transfer), B (after transfer), it sees inconsistent total.
+Concurrency control protocols (locking, timestamp, MVCC) prevent these by ensuring serializable execution.
 ---

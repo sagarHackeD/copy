@@ -1,14 +1,38 @@
-54. Cache Line Replacement Policies (With Examples)
-When a Cache Miss occurs and the targeted set is full, the controller must evict an existing line to make room for the new one. The policy decides which line to kick out.
-- LRU (Least Recently Used):
-- Rule: Evicts the block that has gone the longest without being accessed.
-- Example (2-way set): Lines A and B are full. Access order: A, B, A, B, C (Miss, need to load C). A and B are both recently used, but B was used just before C, while A was used before B. So, A is evicted.
-- FIFO (First In, First Out):
-- Rule: Evicts the block that was loaded into the cache the earliest, regardless of usage.
-- Example (2-way set): A loaded, then B loaded. Access C (Miss). Even if A was used 100 times and B was used 0 times, A is evicted because it came in first.
-- Random:
-- Rule: Randomly selects a line to evict.
-- Example: Access C (Miss). The controller uses a pseudo-random number generator. If it generates "1", Line B is evicted.
-- LFU (Least Frequently Used):
-- Rule: Evicts the block with the lowest usage count (counter). Good for data accessed heavily in the past.
+54. Document-Based NoSQL System - MongoDB CRUD Operations
+A document database stores data in semi-structured documents, typically JSON or BSON. Documents are self-describing, may have varying structures, and are grouped into collections (analogous to tables but schema-free). MongoDB is the most popular document database.
+# Basic CRUD Operations in MongoDB (using the mongo shell)
+Assume a collection `users`.
+CREATE (Insert)
+```javascript
+db.users.insertOne({
+    name: "Alice",
+    age: 30,
+    email: "alice@example.com",
+    tags: ["developer", "admin"]
+})
+```
+Insert multiple:
+```javascript
+db.users.insertMany([
+   { name: "Bob", age: 25, email: "bob@example.com" },
+   { name: "Carol", age: 28 }
+])
+```
+READ (Query)
+- Find all documents: `db.users.find()`
+- With condition: `db.users.find({ age: { $gt: 25 } })`   // age > 25
+- Projection (only return name and email):  
+  `db.users.find({}, { name: 1, email: 1, _id: 0 })`
+- Sorting: `db.users.find().sort({ age: -1 })`  // descending
+UPDATE
+- Update one document:  
+  `db.users.updateOne({ name: "Alice" }, { $set: { age: 31 }, $push: { tags: "manager" } })`
+- Update many:  
+  `db.users.updateMany({ age: { $lt: 30 } }, { $set: { status: "junior" } })`
+- Replace entire document: `db.users.replaceOne(...)`
+DELETE
+- Delete one: `db.users.deleteOne({ name: "Bob" })`
+- Delete many: `db.users.deleteMany({ status: "junior" })`
+- Drop the entire collection: `db.users.drop()`
+MongoDB uses BSON binary format and provides drivers for many languages, supporting indexing, aggregation pipelines, and transactions (in replica sets).
 ---

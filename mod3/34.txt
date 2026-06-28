@@ -1,22 +1,15 @@
-34. C Program that Prints Squares of 0 to 9 using Functions
-Here is a well-structured C program that separates the logic into a `square()` function:
-```c
-#include <stdio.h>
-// Function to calculate the square of an integer
-int square(int x) {
-return x  x;
-}
-int main() {
-int i;
-
-printf("Squares of 0 to 9:\n");
-for (i = 0; i < 10; i++) {
-    // Call the function and print the result
-    printf("%d squared = %d\n", i, square(i));
-}
-
-return 0;
-}
-```
-Behind the scenes: The compiler will pass `i` into `R0`, execute `BL square`, and the function will return the result in `R0` before printing.
+34. Types of Update Anomalies in SQL with Example
+Update anomalies occur when a database is not properly normalized. Consider a poorly designed table `Emp_Dept`:
+ emp_id  emp_name  dept_id  dept_name   dept_head 
+--------------------------------------------------
+ 1       Alice     D01      Sales       John      
+ 2       Bob       D01      Sales       John      
+ 3       Carol     D02      Marketing   Jane      
+Insertion Anomaly:  
+You cannot add a new department (D03, HR, head Mike) unless an employee is assigned to it, because the primary key `emp_id` is the only thing uniquely identifying each row; you can't have a NULL `emp_id` (entity integrity). So information about the department cannot be inserted independently.
+Deletion Anomaly:  
+If you delete the only employee Carol (emp_id 3) from the Marketing department, all information about Marketing is lost because it was stored only in that row. The department ceases to exist in the database.
+Update (Modification) Anomaly:  
+If the Sales department gets a new head, you must update every row where `dept_id = 'D01'`. If you miss one, you have inconsistent data (some rows say John, others say the new head). This is a consequence of data redundancy.
+Normalization to 3NF would separate the table into `Employee` and `Department` relations, eliminating these anomalies.
 ---

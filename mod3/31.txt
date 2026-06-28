@@ -1,15 +1,40 @@
-31. How Registers are Allocated to Optimize a Program
-Register allocation is the process by which a compiler maps the infinite virtual variables in your source code to the finite physical registers of the CPU (ARM has 16 general-purpose registers). This is the most critical optimization because accessing registers is ~100x faster than accessing RAM.
-Key Allocation Techniques:
-1.  Live Range Analysis: The compiler builds a control-flow graph and determines the "lifespan" of each variable (from its first definition to its last use). Variables whose live ranges do not overlap can share the same physical register.
-2.  Graph Coloring (Chaitin's Algorithm): Variables are treated as nodes in a graph. Edges connect variables that overlap in time. The compiler tries to assign colors (physical registers) to nodes so that no two connected nodes share a color. If a color isn't available, the variable is spilled to the stack.
-3.  Register Spilling: When there are more active variables than registers (e.g., R0-R12 are general-purpose), the compiler saves some variables to memory (stack frame) and reloads them later. Spilling is slow, so optimizers try to avoid it inside tight loops.
-4.  ARM Calling Convention (AAPCS) Allocation Rules:
-- R0-R3: Scratch / Argument registers. Pass first 4 arguments to functions. Caller-saved (must be saved by caller if needed after a `BL`).
-- R4-R11: Callee-saved. Used for local variables. A function must preserve them (push/pop).
-- R12 (IP): Intra-procedure scratch.
-- R13 (SP): Stack Pointer.
-- R14 (LR): Link Register.
-- R15 (PC): Program Counter.
-The compiler prioritizes using R0-R3 first, then R4-R11, to minimize stack usage.
+31. What is Normalization? 1NF, 2NF, 3NF with Examples
+Normalization is the process of organizing the columns and tables of a relational database to reduce data redundancy and improve data integrity. It involves decomposing tables and establishing relationships through keys, ensuring that dependencies are properly enforced. The goal is to eliminate undesirable insertion, update, and deletion anomalies.
+Normalization is carried out in successive stages called normal forms. The first three are:
+# First Normal Form (1NF)
+A relation is in 1NF if the domain of each attribute contains only atomic (indivisible) values, and every tuple contains exactly one value from that domain. No multi-valued attributes, no repeating groups.
+Violation example:
+A table `Student` with columns: `stud_id`, `name`, `phone_numbers` where `phone_numbers` can contain multiple values like '123-4567, 234-5678'.
+Convert to 1NF:
+- Create a separate row for each phone number:
+  ```
+  stud_id  name    phone_number
+  1        Alice   123-4567
+  1        Alice   234-5678
+  ```
+- Or decompose into two tables: `Student(stud_id, name)` and `StudentPhone(stud_id, phone_number)`.
+# Second Normal Form (2NF)
+A relation is in 2NF if it is in 1NF and every non-prime attribute is fully functionally dependent on the whole primary key, not on just part of it. This applies only when the primary key is composite. A non-prime attribute is one that is not part of any candidate key.
+Violation example:
+Consider a table `Order_Details` with composite primary key `(order_id, product_id)` and additional attributes: `product_description`, `order_date`, `customer_id`.
+- Functional dependencies:  
+  `{order_id} -> order_date, customer_id` (partial dependency)  
+  `{product_id} -> product_description` (partial dependency)  
+  `{order_id, product_id} -> quantity` (full dependency)
+Here, `order_date` depends only on `order_id`, not on the full key. To achieve 2NF:
+- Decompose into:
+  - `Orders(order_id, order_date, customer_id)`
+  - `Products(product_id, product_description)`
+  - `Order_Items(order_id, product_id, quantity)` - each non-prime attribute now fully depends on the whole key.
+# Third Normal Form (3NF)
+A relation is in 3NF if it is in 2NF and no non-prime attribute is transitively dependent on the primary key. In other words, there should be no dependency where a non-prime attribute determines another non-prime attribute.
+Violation example:
+Consider `Employee` table with columns `emp_id` (PK), `emp_name`, `dept_id`, `dept_name`, `dept_location`.  
+FDs: `emp_id -> dept_id`, `dept_id -> dept_name, dept_location`.  
+Here, `emp_id -> dept_name` is a transitive dependency via `dept_id`. Non-prime attribute `dept_id` determines other non-prime attributes.
+To get to 3NF:
+- Decompose into:
+  - `Employee(emp_id, emp_name, dept_id)` FK `dept_id` references Department.
+  - `Department(dept_id, dept_name, dept_location)`
+Now, `dept_name` depends directly on the PK of Department, not transitively from Employee's PK.
 ---

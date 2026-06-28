@@ -1,0 +1,43 @@
+29. employees Belagavi Problems
+Given the schema:
+```text
+EMP(Eno, Ename, Salary, Address, Phone, DNo)
+DEPT(DNo, Dname, DLoc, MgrEno)
+DEPENDENT(Eno, Dep_Name, Drelation, Dage)
+```
+The relational algebra expressions are:
+# (i) List all the employees who reside in 'Belagavi'
+```text
+6Address='Belagavi'(EMP)
+```
+or, if only employee names are required:
+```text
+\piEname(6Address='Belagavi'(EMP))
+```
+---
+# (ii) List all the employees who earn salary between 30000 and 40000
+```text
+6Salary>=30000 A Salary<=40000(EMP)
+```
+or, for names only:
+```text
+\piEname(6Salary>=30000 A Salary<=40000(EMP))
+```
+---
+# (iii) List all the employees who work for the 'Sales' department
+```text
+\piEname(6Dname='Sales'(EMP X EMP.DNo=DEPT.DNo DEPT))
+```
+---
+# (iv) List all the employees who have at least one daughter
+Join EMP and DEPENDENT on `Eno`, then select dependents whose relation is Daughter.
+```text
+\piEname(6Drelation='Daughter'(EMP X EMP.Eno=DEPENDENT.Eno DEPENDENT))
+```
+---
+#(v) List the department names along with the names of the managers
+Join DEPT with EMP using the manager's employee number.
+```text
+\piDname,Ename(DEPT X DEPT.MgrEno=EMP.Eno EMP)
+```
+----------------------

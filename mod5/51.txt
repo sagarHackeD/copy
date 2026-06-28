@@ -1,11 +1,51 @@
-51. Memory Hierarchy and Cache Memory (Brief Explanation)
-Memory Hierarchy is the structured layering of different types of memory storage in a computer system, arranged by speed, cost, and capacity. The higher you go, the faster and more expensive per byte it is, but the smaller the capacity.
-The Pyramid (Top to Bottom):
-1.  Registers (Fastest, smallest - inside CPU)
-2.  Cache Memory (SRAM - fast, moderate size)
-3.  Main Memory (RAM) (DRAM - slower, large)
-4.  Secondary Storage (SSD/HDD - slowest, massive)
-Cache Memory is a small, ultra-fast memory (SRAM) placed between the CPU and the slower main memory (DRAM). It stores copies of frequently accessed data and instructions. The core principle of caching relies on Locality of Reference:
-- Temporal Locality: If you access an address, you'll likely access it again soon (loops, variables).
-- Spatial Locality: If you access an address, you'll likely access nearby addresses (arrays, sequential code execution).
+51. Two-Phase Locking Protocol (2PL) for Concurrency Control
+The two-phase locking protocol is a concurrency control mechanism that ensures serializable schedules by controlling how transactions acquire and release locks on data items.
+# The Protocol
+A transaction must follow two distinct phases:
+1. Growing Phase - The transaction may obtain locks (shared or exclusive) but cannot release any lock.
+2. Shrinking Phase - The transaction may release locks but cannot obtain any new locks.
+The transaction can be visualised:
+```
+Locks ^
+     Growing         Shrinking
+     phase           phase
+       /`````````````````````````\
+      /                  \
+     /                    \
+    /                      \
+   /                        \
+  ------------------------------> Time
+            Lock point
+```
+- Lock point - the moment when the transaction has acquired all needed locks and is about to release the first one.
+# Example with Two Transactions
+Consider two transactions transferring money:
+T1: Transfer $100 from account A to B  
+read(A); A = A - 100; write(A); read(B); B = B + 100; write(B);
+T2: Print total of A + B  
+read(A); read(B); print(A+B);
+Without 2PL: interleaving could cause T2 to read after T1's write to A but before write to B, printing an inconsistent total.
+With Basic 2PL:  
+T1 needs locks: X(A), X(B)  
+T2 needs locks: S(A), S(B)
+Possible lock schedule (T1 goes first):
+ Step  T1 action                T2 action               
+--------------------------------------------------------
+ 1     X_lock(A) - granted                              
+ 2     read(A)                                          
+ 3     A := A-100                                       
+ 4     write(A)                                         
+ 5     X_lock(B) - granted                              
+ 6     read(B)                  S_lock(A) - wait (A locked by T1) 
+ 7     B := B+100                                       
+ 8     write(B)                                         
+ 9     Unlock(A), Unlock(B)                             
+ 10    (shrinking phase ends)   S_lock(A) granted       
+ 11                             read(A)                 
+ 12                             S_lock(B) granted       
+ 13                             read(B)                 
+ 14                             print(A+B)              
+ 15                             Unlock(A), Unlock(B)    
+This schedule is serial (T1 then T2) and ensures consistency. The 2PL rule prevents T2 from acquiring any lock after releasing one, but here T2 doesn't release locks until it finishes reading both.
+Variation - Strict 2PL: Transaction holds all exclusive locks until commit/abort. This avoids cascading rollbacks and is widely used in commercial DBMSs.
 ---

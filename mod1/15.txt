@@ -1,23 +1,22 @@
-15. ARM Core Dataflow Model (Neat Diagram)
-The dataflow shows how instructions move through the core and how data is processed. The critical path is: Registers -> Barrel Shifter -> ALU -> Write-back.
-Text-based Diagram:
-```
-Data
-        Instruction decoder
-Sign extend
-Write    Read
-r15        Register file    Rd
-pc        r0-r15        Result
-    Rn A    Rm B
-            Barrel shifter    A B Acc
-                            MAC
-                N
-            ALU
-    Address register
-                    Incrementer
-        Address
-```
-- Barrel Shifter: Pre-processes one operand (shift/rotate) before the ALU, at no extra cost.
-- ALU: Performs the actual computation and sets condition flags.
-- Register File: Has 16 general-purpose registers (R0-R15) plus the CPSR.
----
+15. Responsibilities of DBA and Database Designers
+Database Administrator (DBA)  
+The DBA has overall responsibility for the database system. Key duties include:
+- Schema Definition - Implementing the logical schema (tables, views) and physical schema (storage structures) using DDL.
+- Storage Structure and Access Methods - Deciding on file organizations, indexing strategies, and disk allocation to meet performance goals.
+- Security and Authorization - Creating user accounts, granting/revoking privileges, defining roles, and ensuring only authorized access.
+- Backup and Recovery - Establishing backup routines, performing restores, and testing disaster recovery plans.
+- Performance Monitoring and Tuning - Continuously monitoring system performance, identifying bottlenecks, reorganizing data, and tuning parameters (buffer sizes, query caches).
+- Data Integrity - Enforcing integrity constraints and defining business rules at the database level.
+- Capacity Planning - Estimating future storage and processing needs and upgrading hardware/software accordingly.
+- Routine Maintenance - Applying patches, upgrades, and maintaining the data dictionary.
+- Liaison with Users - Helping users define their requirements and resolving data access problems.
+Database Designers  
+Database designers are responsible for identifying the data to be stored and for choosing appropriate structures to represent it. Their work happens before and during implementation:
+- Requirements Gathering - Interacting with stakeholders to understand what data must be captured, how it will be used, and the constraints.
+- Conceptual Design - Creating a high-level data model (typically an ER diagram) independent of any DBMS. They identify entities, relationships, attributes, and constraints.
+- Logical Design - Mapping the conceptual schema to a logical data model (e.g., relational tables). This involves normalization to eliminate redundancy and ensure data integrity.
+- Physical Design - Deciding on internal storage details like indexing, partitioning, and clustering for the target DBMS (often in collaboration with the DBA).
+- View Design - Defining external schemas for different user groups or applications, ensuring that sensitive data is hidden and only relevant data is exposed.
+- Documentation - Preparing detailed design documents, data dictionaries, and mapping specifications for developers and the DBA.
+- Validation - Checking that the design meets functional and performance requirements before it goes live.
+--------------

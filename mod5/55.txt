@@ -1,13 +1,36 @@
-55. Cache Hit and Cache Miss
-These are the two possible outcomes of a memory access request to the cache.
-- Cache Hit:
-- Definition: The requested data is found in the cache memory.
-- Action: The CPU reads/writes the data immediately from/to the cache (usually within 1-2 clock cycles). The main memory is not accessed.
-- Cache Miss:
-- Definition: The requested data is not found in the cache memory.
-- Action: The CPU must stall and wait. The cache controller fetches the required block from main memory (or lower-level cache) and places it into the cache. The CPU then tries again (or the data is forwarded).
-The 3 C's of Cache Misses (Classified by cause):
-1.  Compulsory (Cold Start) Miss: The very first access to a block that has never been loaded. (Unavoidable).
-2.  Capacity Miss: The cache is too small to hold all the working set of a program. Blocks are evicted and must be reloaded.
-3.  Conflict Miss: Occurs in Direct-Mapped or Set-Associative caches. Multiple memory addresses map to the same set and evict each other, even if the cache isn't physically full.
+55. NoSQL Graph Database - Neo4j
+A graph database uses graph structures for semantic queries, with nodes representing entities, edges (relationships) representing relationships, and properties storing information about both.
+Neo4j is the most prominent native graph database. It stores data in nodes and relationships, and offers the declarative query language Cypher (similar to SQL but for graphs).
+# Core Concepts
+- Node: An entity (e.g., Person, Movie). Each node can have labels (like types) and properties (key-value pairs).
+- Relationship: Connects two nodes with a direction, a type, and properties. e.g., `(Person)-[:ACTED_IN {role: "Neo"}]->(Movie)`.
+- Path: A sequence of nodes and relationships.
+# Examples with Cypher
+Create nodes and relationships:
+```cypher
+CREATE (m:Person {name: "Morpheus", age: 45})
+CREATE (n:Person {name: "Neo", age: 30})
+CREATE (m)-[:KNOWS {since: 1999}]->(n)
+```
+Query:
+- Find all persons who know someone:  
+  ```cypher
+  MATCH (p:Person)-[:KNOWS]->(friend)
+  RETURN p.name, friend.name
+  ```
+- Find the movie "The Matrix" and all actors:  
+  ```cypher
+  MATCH (m:Movie {title: "The Matrix"})<-[:ACTED_IN]-(actor)
+  RETURN actor.name
+  ```
+- Shortest path between two nodes:  
+  ```cypher
+  MATCH path = shortestPath((a:Person {name:"Neo"})-[*]-(b:Person {name:"Morpheus"}))
+  RETURN path
+  ```
+# Advantages of Neo4j
+- Native graph storage and processing, giving high performance for traversals and connected data queries.
+- ACID transactions.
+- Highly expressive Cypher language for pattern matching.
+- Suitable for social networks, recommendation engines, fraud detection, knowledge graphs.
 ---

@@ -1,23 +1,31 @@
-21. SWAP Instruction (Atomic Exchange)
-The `SWP` (Swap) and `SWPB` (Swap Byte) instructions are used to atomically exchange data between a register and memory. This is crucial for implementing semaphores and mutexes in multitasking OSes, as it prevents interrupts from corrupting the read-modify-write process.
-Syntax:
-```assembly
-SWP{cond}{B}  Rd, Rm, [Rn]
-```
-- `Rd` = Destination register (gets the value from memory).
-- `Rm` = Source register (value written to memory).
-- `[Rn]` = Memory address to swap with.
-Operation:
-`Rd = Rn`  (Read memory into Rd)
-`Rn = Rm`  (Write Rm into memory)
-(These two steps happen as a single, uninterruptible operation).
-Example (Mutex Acquisition):
-```assembly
-; Assume [r0] points to a mutex variable (0 = free, 1 = locked)
-MOV   r1, #1            ; r1 = value to write (lock the mutex)
-SWP   r0, r1, [r0]      ; Atomically: r0 = old_value, memory = r1 (1)
-CMP   r0, #0            ; Check if the mutex was previously free (0)
-BEQ   mutex_acquired    ; If old value was 0, we now own the lock!
-```
-If the old value was 1 (already locked), we don't jump and must retry later.
+21. Update Operations on Relational Database and Constraint Violations
+In a relational database, data manipulation is done through three basic update operations:
+- INSERT - Adds one or more new tuples to a relation.
+- DELETE - Removes one or more existing tuples from a relation.
+- UPDATE (or MODIFY) - Changes the values of one or more attributes in existing tuples.
+Each operation can potentially violate the integrity constraints defined on the schema. The DBMS checks every operation against the constraints and enforces them.
+## How Basic Operations Deal with Constraint Violations
+1. INSERT Operation
+- Violations possible:
+  - *Domain constraint* - Value does not belong to the specified data type/domain.
+  - *Key constraint* - Primary key value already exists; duplicate would violate uniqueness.
+  - *Entity integrity* - Primary key is NULL.
+  - *Referential integrity* - A foreign key value is inserted that does not match any primary key in the referenced relation.
+- Handling: The DBMS rejects the insert and returns an error. In some cases (e.g., foreign key NULLs allowed), a NULL may be accepted if the constraint is not strict.
+2. DELETE Operation
+- Violations possible:
+  - *Referential integrity* - Deleting a tuple whose primary key is referenced by foreign keys in other relations can cause dangling references.
+- Handling: The DBMS can be configured to:
+  - RESTRICT / NO ACTION - Reject the deletion if there are matching foreign keys.
+  - CASCADE - Automatically delete all referencing tuples.
+  - SET NULL / SET DEFAULT - Set the foreign key values in referencing tuples to NULL or a predefined default value.
+3. UPDATE Operation
+- Violations possible:
+  - *Domain, key, entity integrity* - Changing values can break any of these (e.g., setting a primary key to NULL, duplicate primary key, out-of-range value).
+  - *Referential integrity* - Updating a primary key that is referenced by a foreign key, or updating a foreign key to a non-existent value.
+- Handling: 
+  - The DBMS checks all applicable constraints.
+  - If a primary key is updated and foreign keys reference it, options are similar to DELETE: restrict, cascade (update the foreign keys too), set null, or set default.
+  - If a foreign key is updated to a non-existent value, the update is rejected unless the foreign key can be NULL and the new value is NULL.
+In all cases, the DBMS's constraint checker ensures that after any operation the database remains in a consistent state; otherwise the operation is rolled back.
 ---

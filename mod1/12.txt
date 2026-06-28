@@ -1,9 +1,13 @@
-12. Microcontroller vs Microprocessor
-| Feature | Microcontroller (e.g., ARM Cortex-M) | Microprocessor (e.g., ARM Cortex-A) |
-| Integration | CPU + RAM + ROM/Flash + Peripherals on a single chip. | CPU only. Memory and peripherals are external. |
-| Purpose | Dedicated, specific tasks (e.g., motor control, IoT sensors). | General-purpose computing (e.g., smartphones, laptops). |
-| Power | Low power, often battery-operated. | High power consumption. |
-| Cost | Inexpensive. | Expensive (requires external chipsets). |
-| OS | Runs bare-metal or RTOS (FreeRTOS). | Runs full OS (Linux, Android, Windows). |
-| Memory | Limited KB to MB. | GBs of external DRAM. |
+12. Advantages of Using the DBMS Approach
+- Minimized Data Redundancy - In a DBMS, data is integrated and duplication can be controlled (or eliminated) through normalization.
+- Data Consistency - Redundancy control ensures that multiple copies of the same data stay consistent.
+- Data Sharing - Multiple users and applications can access the same database concurrently under controlled, secure conditions.
+- Enforcement of Integrity Constraints - Rules (e.g., primary keys, referential integrity, domain constraints) are defined once and enforced automatically.
+- Data Security - User authentication, authorization, and access control can be applied at various levels (database, table, view).
+- Concurrent Access and Transaction Management - ACID properties (Atomicity, Consistency, Isolation, Durability) are maintained, preventing interference between simultaneous users.
+- Backup and Recovery - Automatic backup utilities and recovery mechanisms protect against hardware/software failures.
+- Data Independence - Application programs are insulated from changes in data storage or logical structure.
+- Reduced Application Development Time - Programmers work with high-level data manipulation languages, not low-level file operations.
+- Centralized Management - A database administrator (DBA) can standardize data formats, enforce policies, and monitor performance.
+- Improved Data Accessibility - Ad-hoc query facilities (SQL) allow end users to retrieve information without writing full programs.
 ---

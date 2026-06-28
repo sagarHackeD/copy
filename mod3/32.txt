@@ -1,19 +1,10 @@
-32. ARM Assembly Program: Sum of First 10 Integer Numbers (1 to 10)
-Here is a classic ARM assembly program (ARMv7 syntax) to calculate `1 + 2 + ... + 10 = 55`.
-```assembly
-    AREA    Program, CODE, READONLY
-    ENTRY
-    MOV     r0, #0          ; r0 = Sum (initialize to 0)
-    MOV     r1, #1          ; r1 = Current Counter (start at 1)
-    MOV     r2, #10         ; r2 = Loop Limit (10)
-loop
-    ADD     r0, r0, r1      ; Sum = Sum + Counter
-    ADD     r1, r1, #1      ; Counter = Counter + 1
-    CMP     r1, r2          ; Compare Counter with 10
-    BLE     loop            ; If Counter <= 10, branch to loop
-stop
-    B       stop            ; Infinite halt (result 55 is in r0)
-    END
-```
-Optimization note: To speed this up, we could count downwards to avoid the `CMP` instruction (see compiler handling section below).
+32. Informal Design Guidelines for Relational Schema Design
+When designing a relational schema (even before formal normalization), certain informal guidelines help produce a good quality schema:
+1. Attribute Semantics Clarity - Each attribute should represent a single fact or property. Avoid mixing different types of information in one column (e.g., not combining street, city in one field).
+2. Eliminate Redundancy and Update Anomalies - Design tables so that the same information isn't repeated in many tuples. Redundancy leads to inconsistencies and waste of storage.
+3. Minimize NULL Values - Avoid designing tables where many attributes will frequently be NULL because they don't apply to many tuples. This can be a sign that entities should be split into separate relations (e.g., subtypes).
+4. Avoid Spurious Tuples - When joining relations, the joins should not produce meaningless tuples that were not originally intended. This is prevented by ensuring that join conditions are based on foreign keys and that the decomposition follows the lossless-join property.
+5. Design for Easy Querying and Maintainability - The schema should support the anticipated queries without excessive joins, but not at the cost of introducing anomalies. A balance between normalization and performance (denormalization) may be required for some applications, but only after understanding the trade-offs.
+6. Use Meaningful Primary Keys and Foreign Keys - Keys should be stable, unique, and ideally not subject to frequent changes. Foreign keys must reference correct tables to enforce referential integrity.
+7. Group Related Attributes in One Relation - Attributes that are directly dependent on the same key should reside in the same relation. If dependencies split across relations, update anomalies appear.
 ---

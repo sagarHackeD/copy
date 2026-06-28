@@ -1,32 +1,46 @@
-24. Single Load-Store Addressing Modes (Syntax, Table, Index Mode)
-ARM's Load (`LDR`) and Store (`STR`) use a base register (`Rn`) plus an offset. The addressing determines when the offset is added to `Rn`.
-General Syntax: `LDR{cond}{size} Rd, [Rn, <offset>]{!}`
-Table of Addressing Modes:
-| Mode | Syntax | Base Register Update? | Description |
-|
-| Offset | `[Rn, #offset]` | No | Uses `Rn + offset` as the address. `Rn` remains unchanged. |
-| Pre-Indexed | `[Rn, #offset]!` | Yes (before) | Adds offset to `Rn` first, uses new address, then updates `Rn`. |
-| Post-Indexed | `[Rn], #offset` | Yes (after) | Uses address in `Rn` first, then adds offset to `Rn` after. |
-Example with an Array (`int arr[5]` at address `r0`):
-```assembly
-; 1. Offset Mode (No update to r0)
-LDR   r1, [r0, #8]  ; r1 = arr[2]  (base + 8). r0 still points to arr[0].
-; 2. Pre-Indexed Mode (Update before)
-LDR   r1, [r0, #4]!  ; r0 = r0 + 4 (now points to arr[1]).
-  ; r1 = (new r0) which is arr[1].
-; 3. Post-Indexed Mode (Update after) - Great for looping!
-LDR   r1, [r0], #4  ; r1 = r0 (reads arr[0]).
-  ; r0 = r0 + 4 (now points to arr[1] for next iteration).
-```
-Complete Loop Example (Post-Indexed):
-```assembly
-    ; Loop to sum 10 elements in an array pointed by r0. Result in r1.
-    MOV   r1, #0
-    MOV   r2, #10
-    loop:
-    LDR   r3, [r0], #4  ; Read value, THEN increment pointer by 4
-    ADD   r1, r1, r3
-    SUBS  r2, r2, #1  ; Decrement counter and set flags
-    BNE   loop  ; Branch if Not Equal to zero
-```
+24. ER to Relational Mapping Algorithm with Examples
+Mapping an Entity-Relationship (ER) model into a relational database schema follows a standard algorithm. Below are the steps with a small running example: an ER model containing entities `EMPLOYEE`, `DEPARTMENT`, and `PROJECT`, with relationships and attributes.
+Step 1: Mapping of Regular (Strong) Entity Types  
+Create a relation for each strong entity type. Include all simple attributes (composite attributes become simple component attributes). The primary key of the relation becomes the primary key of the entity type.
+Example:
+Entity `EMPLOYEE` with attributes `emp_id` (key), `name`, `address` (composite: `street`, `city`, `zip`), and `salary`.  
+Resulting relation:  
+`EMPLOYEE(emp_id, name, street, city, zip, salary)` PK: `emp_id`
+Step 2: Mapping of Weak Entity Types  
+Create a relation for each weak entity type. Include all simple attributes and the primary key of the owner entity as a foreign key. The primary key of the weak relation is the combination of the owner's primary key and the weak entity's partial key (discriminator).
+Example:
+Weak entity `DEPENDENT` with partial key `dep_name` and attribute `birth_date`, owned by `EMPLOYEE`.  
+Relation: `DEPENDENT(emp_id, dep_name, birth_date)` PK: `(emp_id, dep_name)`, FK: `emp_id` references `EMPLOYEE`.
+Step 3: Mapping Binary 1:1 Relationship Types  
+Choose one of the participating entities (preferably the one with total participation) and include the primary key of the other entity as a foreign key. Add any relationship attributes to the chosen relation. Alternatively, merge both entities into a single relation if both have total participation.
+Example:
+1:1 relationship `MANAGES` between `EMPLOYEE` (total participation) and `DEPARTMENT` (partial), with attribute `start_date`.  
+Add the primary key `emp_id` of `EMPLOYEE` as a foreign key in `DEPARTMENT`, along with the relationship attribute:  
+`DEPARTMENT(dept_id, dept_name, mgr_emp_id, start_date)`  
+FK: `mgr_emp_id` references `EMPLOYEE(emp_id)`.
+Step 4: Mapping Binary 1:N Relationship Types  
+Identify the relation representing the entity on the "N" side. Include the primary key of the "1" side as a foreign key in that relation. Any relationship attributes are also placed in the "N" side relation.
+Example:
+1:N relationship `WORKS_FOR` between `DEPARTMENT` (1) and `EMPLOYEE` (N).  
+Add foreign key `dept_id` to `EMPLOYEE` plus any relationship attributes (e.g., `since`).  
+`EMPLOYEE` now: `EMPLOYEE(emp_id, name, street, city, zip, salary, dept_id, since)` FK: `dept_id` references `DEPARTMENT`.
+Step 5: Mapping Binary M:N Relationship Types  
+Create a new relation (linking table) for the M:N relationship. Include the primary keys of both participating entities as foreign keys; their combination forms the primary key of the new relation. Add any relationship attributes to the new relation.
+Example:
+M:N relationship `WORKS_ON` between `EMPLOYEE` and `PROJECT` with attribute `hours`.  
+New relation: `WORKS_ON(emp_id, proj_id, hours)`  
+PK: `(emp_id, proj_id)`, FK: `emp_id` ref. `EMPLOYEE`, `proj_id` ref. `PROJECT`.
+Step 6: Mapping Multivalued Attributes  
+Create a separate relation for each multivalued attribute. Include the primary key of the entity (or the relation) that has the multivalued attribute as a foreign key. The primary key is the combination of that foreign key and the multivalued attribute itself.
+Example:
+`EMPLOYEE` has multivalued attribute `phone_numbers`.  
+New relation: `EMP_PHONES(emp_id, phone_number)`  
+PK: `(emp_id, phone_number)`, FK: `emp_id` ref. `EMPLOYEE`.
+Step 7: Mapping N-ary Relationship Types  
+For a relationship type with degree n > 2, create a new relation. Include the primary keys of all participating entity types as foreign keys. The primary key of the new relation is typically the combination of all these foreign keys. Add any relationship attributes.
+Example (ternary): 
+Relationship `SUPPLIES` linking `SUPPLIER`, `PART`, `PROJECT` with attribute `quantity`.  
+New relation: `SUPPLIES(supplier_id, part_id, project_id, quantity)`  
+PK: `(supplier_id, part_id, project_id)`, FKs to respective entity relations.
+After applying all steps, the final schema consists of a set of normalized relations.
 ---

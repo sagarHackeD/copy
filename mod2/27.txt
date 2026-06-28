@@ -1,0 +1,54 @@
+27. Sailors Problems
+Given the schema:
+```text
+Sailors(sid, sname, rating, age)
+Boats(bid, bname, color) 
+Reserves(sid, bid, date)
+```
+Here are the SQL queries:
+# 1. Find the colors of boats reserved by Albert.
+```sql
+SELECT DISTINCT b.color
+FROM Sailors s
+JOIN Reserves r ON s.sid = r.sid
+JOIN Boats b ON r.bid = b.bid
+WHERE s.sname = 'Albert';
+```
+---
+# 2. Find all sailor IDs of sailors who have a rating of at least 8 or reserved boat 103.
+```sql
+SELECT sid
+FROM Sailors
+WHERE rating >= 8
+UNION
+SELECT sid
+FROM Reserves
+WHERE bid = 103;
+```
+---
+# 3. Find the names of sailors who have not reserved a boat whose name contains the string "storm". Order the names in ascending order.
+```sql
+SELECT s.sname
+FROM Sailors s
+WHERE s.sid NOT IN (
+    SELECT r.sid
+    FROM Reserves r
+    JOIN Boats b ON r.bid = b.bid
+    WHERE b.bname LIKE '%storm%'
+)
+ORDER BY s.sname ASC;
+```
+---
+# 4. Find the sailor IDs of sailors with age over 20 who have not reserved a boat whose name includes the string "thunder".
+```sql
+SELECT s.sid
+FROM Sailors s
+WHERE s.age > 20
+AND s.sid NOT IN (
+    SELECT r.sid
+    FROM Reserves r
+    JOIN Boats b ON r.bid = b.bid
+    WHERE b.bname LIKE '%thunder%'
+);
+```
+---

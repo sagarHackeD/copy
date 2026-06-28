@@ -1,14 +1,39 @@
-42. ARM Firmware Suite Features and Red Hat RedBoot
-Firmware is the low-level software that resides in ROM and provides an interface between the hardware and the operating system or application software. Its main purpose is to provide a stable mechanism to load and boot an operating system.
-ARM Firmware Suite (AFS)
-Developed by ARM, the ARM Firmware Suite (AFS) is a firmware package designed specifically for ARM-based embedded systems. It provides support for various boards and processors, including the Intel XScale and StrongARM families.
-Red Hat RedBoot
-RedBoot (Red Hat Embedded Debug and Bootstrap) is a standardized, open-source firmware solution. It is based on the eCos Hardware Abstraction Layer (HAL) and is designed to be portable across a wide range of architectures, including ARM, MIPS, PowerPC, and x86.
-Key Features of RedBoot:
-Remote Debugging: Supports integrated GDB stubs for debugging applications via serial or Ethernet.
-Network Booting: Can download and boot operating system images over a network (e.g., TFTP).
-Flash Management: Provides commands to read, write, and erase flash ROM, enabling field upgrades.
-OS Boot Support: Capable of booting Embedded Linux, eCos, or other OS images, passing parameters directly to the kernel.
-Command Line Interface: Offers a simple, scriptable CLI for configuration and control.
-Power-On Self-Test (POST): Includes diagnostics for basic hardware verification.
+42. Assertion and Trigger in DBMS
+# Assertion
+An assertion is a declarative integrity constraint that can span multiple tables and is checked whenever any modification could violate it. Unlike simple `CHECK` constraints that are attached to a single table, assertions express general conditions that the entire database must always satisfy.
+Example: "The sum of all account balances in a branch must not exceed the branch's total credit limit." This involves tables `Account` and `Branch`.
+SQL Syntax (standard, though rarely implemented fully):
+```sql
+CREATE ASSERTION sum_balance_ok
+CHECK (
+NOT EXISTS (
+SELECT b.branch_id
+FROM Branch b
+WHERE (SELECT SUM(a.balance) FROM Account a WHERE a.branch_id = b.branch_id) > b.credit_limit
+)
+);
+```
+Whenever an account balance changes or a branch's credit limit changes, the DBMS automatically checks this assertion and rejects any transaction that would violate it.
+Why assertions are powerful but rarely supported: They require the DBMS to identify every possible modification that could affect the condition and re-evaluate it, which can cause significant performance overhead. Most commercial DBMSs implement triggers instead.
+# Trigger
+A trigger is a procedural code that automatically executes in response to certain events (INSERT, UPDATE, DELETE) on a particular table. Triggers can be used to enforce complex integrity constraints, audit trails, and business rules.
+Components of a trigger:
+- Event: the operation (INSERT/UPDATE/DELETE) and the table it fires on.
+- Timing: `BEFORE` or `AFTER` the event, or `INSTEAD OF` for views.
+- Action: the procedural code (often SQL/PL block) to execute.
+Example: Enforce that an employee's salary cannot be decreased by more than 20% in one update.
+```sql
+CREATE TRIGGER check_salary_decrease
+BEFORE UPDATE OF salary ON Employee
+FOR EACH ROW
+WHEN (NEW.salary < OLD.salary * 0.8)
+BEGIN
+    RAISE_APPLICATION_ERROR(-20001, 'Salary decrease exceeds 20%');
+END;
+```
+Whenever an UPDATE on `Employee.salary` occurs, the trigger checks the condition. If violated, it raises an error, causing the update to fail.
+Difference between Assertion and Trigger:
+- Assertions are declarative, triggers are procedural.
+- Assertions are defined on the whole database; triggers are attached to a specific table/event.
+- Assertions are automatically evaluated for any relevant change; triggers must be explicitly defined for the specific events that matter.
 ---

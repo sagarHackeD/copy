@@ -1,34 +1,17 @@
-36. How a Compiler Handles a `for` Loop with Variable Number of Iterations `n`
-When the number of iterations is a variable (`int n` known only at runtime), the compiler cannot unroll the loop. Instead, it uses a standard decrement-and-branch-if-not-zero pattern to remove the overhead of an extra `CMP` instruction.
-Example C Code:
-```c
-void process(int array, int n) {
-for (int i = 0; i < n; i++) {
-    array[i] += 10;
-}
-}
-```
-How the Compiler Translates this (ARM Assembly Optimized -O2):
-Since `n` is variable, the compiler uses a count-down logic. It sets the counter to `n` and decrements until zero, rather than incrementing from 0 to n.
-```assembly
-process:
-CMP     r1, #0          ; Check if n (r1) is 0
-BLE     .done           ; If n <= 0, exit immediately
-; Use r12 as the loop counter. We will count DOWN from n to 0.
-MOV     r12, r1         ; r12 = n (number of iterations)
-.loop:
-LDR     r2, [r0]        ; r2 = array (load current element)
-ADD     r2, r2, #10     ; r2 = r2 + 10
-STR     r2, [r0], #4    ; Store r2 back, and post-increment pointer by 4 (array++)
-
-SUBS    r12, r12, #1    ; Decrement counter, and SET FLAGS (N/Z/C/V)
-BNE     .loop           ; If r12 is NOT zero, branch to .loop
-.done:
-BX      lr              ; Return to caller
-```
-Compiler Strategy Breakdown:
-1.  No `CMP` inside the loop: Notice there is no `CMP r12, #0`. The `SUBS` instruction updates the `Z` (Zero) flag directly. This saves 1 clock cycle per iteration compared to incrementing and comparing.
-2.  Base Register Update: Uses `STR r2, [r0], #4` (Post-indexed addressing) to increment the array pointer without extra `ADD` instructions, packing the pointer move into the store instruction.
-3.  Skipping zero iterations: The initial `CMP` handles the case where the user passes `n = 0`.
-This transformation (counting down to zero) is one of the oldest and most fundamental compiler optimizations for loops with variable runtime bounds.
----------------------------------
+36. Inference Rules in Functional Dependency (Armstrong's Axioms) with Proof
+Armstrong's axioms are a set of rules that are sound (any FD derived using them is logically implied by the given FDs) and complete (all logically implied FDs can be derived). The three primary axioms:
+1. Reflexivity: If Y E X, then X -> Y.  
+   *Proof:* Trivial; if two tuples agree on all attributes of X, they agree on any subset Y.
+2. Augmentation: If X -> Y, then XZ -> YZ for any set Z.  
+   *Proof:* Let two tuples t1 and t2 agree on XZ. They agree on X and on Z. Since X -> Y, they also agree on Y. Thus they agree on YZ.
+3. Transitivity: If X -> Y and Y -> Z, then X -> Z.  
+   *Proof:* Let t1, t2 agree on X. By X -> Y, they agree on Y. By Y -> Z, they agree on Z. Hence X -> Z.
+Secondary (derivable) rules often used:
+- Union: If X -> Y and X -> Z, then X -> YZ.  
+  *Proof:* From X -> Y, augment by X: X -> XY. From X -> Z, augment by Y (and X): XY -> YZ. By transitivity, X -> YZ.
+- Decomposition: If X -> YZ, then X -> Y and X -> Z.  
+  *Proof:* YZ E YZ, so by reflexivity YZ -> Y. By transitivity from X -> YZ and YZ -> Y, we get X -> Y. Similarly X -> Z.
+- Pseudotransitivity: If X -> Y and WY -> Z, then XW -> Z.  
+  *Proof:* From X -> Y, augment by W: XW -> WY. Combine with WY -> Z by transitivity, XW -> Z.
+These rules allow us to compute the closure of a set of attributes or FDs and to find minimal covers.
+---

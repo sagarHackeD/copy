@@ -1,28 +1,20 @@
-26. Different Logical Instructions in ARM with Examples
-ARM has a rich set of bitwise logical instructions. They all follow the syntax: `Op{cond}{S} Rd, Rn, <Oprnd2>`.
-| Instruction | Operation | C Equivalent | Example & Description |
-|
-| `AND` | Bitwise AND | `&` | `AND r0, r1, #0xFF` -> `r0 = r1 & 0xFF` (Extracts lower 8 bits). |
-| `ORR` | Bitwise OR | `|` | `ORR r0, r1, r2` -> `r0 = r1 | r2` (Sets bits from r2). |
-| `EOR` | Bitwise XOR | `^` | `EOR r0, r1, r2` -> `r0 = r1 ^ r2` (Toggles bits where r2 has 1s). |
-| `BIC` | Bit Clear | `& ~` | `BIC r0, r1, #0x0F` -> `r0 = r1 & ~0x0F` (Clears the lower nibble of r1). |
-| `ORN` | OR NOT | `| ~` | `ORN r0, r1, r2` -> `r0 = r1 | ~r2` (Sets bits except those in r2). |
-| `MVN` | Move NOT | `~` | `MVN r0, r1` -> `r0 = ~r1` (Bitwise complement). Useful for creating wide masks. |
-Practical Example (Setting, Clearing, and Toggling Bits):
-Imagine a GPIO control register `r0`. We want to:
-- Set bit 3 (enable LED).
-- Clear bit 5 (disable pull-up).
-- Toggle bit 7 (invert output).
-```assembly
-; Assume r0 holds the current GPIO register value
-LDR   r0, =GPIO_ADDR  ; Load current value into r0
-; 1. SET bit 3 (ORR)
-ORR   r0, r0, #(1<<3)   ; r0 = r0 | 0b1000
-; 2. CLEAR bit 5 (BIC)
-BIC   r0, r0, #(1<<5)   ; r0 = r0 & ~0b100000
-; 3. TOGGLE bit 7 (EOR)
-EOR   r0, r0, #(1<<7)   ; r0 = r0 ^ 0b10000000
-; Store the modified value back
-STR   r0, =GPIO_ADDR
-```
-------------------------------------------
+26. Different Relational Model Constraints
+Relational databases enforce several types of constraints to maintain integrity. The major categories are:
+1. Domain Constraints  
+   Each attribute is associated with a domain of legal values (data type, length, format, range). For example, `age` must be an integer between 0 and 120, `salary` must be a positive decimal. Violations are rejected.
+2. Key Constraints  
+   Every relation must have at least one candidate key, and a chosen primary key that uniquely identifies each tuple. No two tuples can have the same primary key value, and the primary key value cannot be NULL (this is also part of entity integrity).
+3. Entity Integrity Constraint  
+   No attribute participating in the primary key can accept NULL values. This ensures that every tuple is uniquely identifiable.
+4. Referential Integrity Constraint  
+   Already detailed in section 3. A foreign key value must reference an existing primary key value in the referenced relation (or be NULL if allowed). It preserves relationships and prevents orphan records.
+5. Semantic Integrity Constraints (Business Rules)  
+   Application-specific rules that go beyond the basic model. They can be enforced using:
+   - CHECK constraints - e.g., `CHECK (salary > 0)`, or `CHECK (end_date > start_date)`.
+   - Assertions - A declarative constraint that can span multiple tables (though not supported in all DBMSs).
+   - Triggers - Procedural code that automatically runs on INSERT/UPDATE/DELETE to enforce complex rules.
+6. NOT NULL Constraint  
+   Specifies that an attribute cannot contain NULL values, even if it is not part of the primary key. For example, an employee's name must be provided.
+7. UNIQUE Constraint  
+   Ensures that all values in one or more columns are distinct across the relation, similar to a candidate key but can allow a single NULL.
+   

@@ -1,20 +1,30 @@
-22. STACK Operation (PUSH and POP)
-ARM does not have dedicated `PUSH` and `POP` opcodes in classic ARM (ARMv7 and below); they are syntactic aliases for `STM` and `LDM` using the Stack Pointer (`SP` / `R13`).
-ARM uses a Full Descending stack by default (standard for AAPCS - ARM Architecture Procedure Call Standard). The stack grows downwards (towards lower addresses), and `SP` points to the last pushed item.
-Syntax Aliases:
-- `PUSH {registers}`  ->  `STMDB SP!, {registers}` (Store Multiple Decrement Before, update SP)
-- `POP {registers}`   ->  `LDMIA SP!, {registers}` (Load Multiple Increment After, update SP)
-Example (Function Prologue & Epilogue):
-```assembly
-    my_function:
-    ; PROLOGUE: Save caller's registers and return address
-    PUSH   {r4-r6, lr}       ; Save r4, r5, r6, and lr onto the stack
-
-    ; ... Do some work using r4, r5, r6 ...
-    MOV    r4, #10
-    ADD    r5, r4, #5
-    ; EPILOGUE: Restore registers and return to caller
-    POP    {r4-r6, pc}       ; Restore r4-r6, and pop the saved LR directly into PC (return!)
-```
-Note: Popping directly into `PC` effectively does `MOV pc, lr`, returning to the calling function.
+22. Unary Relational Operators
+In relational algebra, unary operators operate on a single relation. The two most important are:
+- SELECT (6) - Selects tuples (rows) that satisfy a given condition.
+- PROJECT (\pi) - Selects attributes (columns), returning only the specified columns and eliminating duplicate rows.
+Another unary operator is RENAME (p) , which changes the name of a relation or its attributes.
+# Examples
+Consider a relation `EMPLOYEE`:
+emp_id name dept salary
+----------------------
+101   Alice IT   60000 
+102   Bob  HR   45000 
+103   Carol IT   70000 
+104   Dave Sales50000 
+- SELECT example:  
+  `6_dept='IT'_(EMPLOYEE)` returns rows where department is IT:
+emp_id name dept salary
+---------------------
+101   Alice IT  60000 
+103   Carol IT  70000 
+- PROJECT example:  
+  `\pi_name,dept(EMPLOYEE)` returns only name and dept columns, with duplicates removed:
+name dept 
+----------
+Alice IT   
+Bob   HR   
+Carol IT   
+Dave  Sales
+- RENAME example:  
+  `p(EMP, employee_id, full_name, department, sal)(EMPLOYEE)` changes the relation name to `EMP` and attribute names accordingly.
 ---

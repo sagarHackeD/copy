@@ -1,25 +1,28 @@
-33. Code Optimization, Profiling, and Cycle Counting
-These are three pillars of embedded software performance engineering.
-1. Code Optimization (Compiler Level)
-Compilers use flags to optimize without changing functionality:
-- `-O0` (No opt): Fast compilation, heavy debugging. Code is literal and slow.
-- `-O1` (Basic): Removes dead code and unused variables.
-- `-O2` (Standard): Enables instruction scheduling, loop unrolling, and function inlining.
-- `-O3` (Aggressive): Heavy loop unrolling and vectorization (NEON SIMD). Can increase code size.
-- `-Os` (Size): Optimizes for memory footprint (critical for microcontrollers) rather than speed.
-2. Profiling (Dynamic Analysis)
-Profiling identifies hot spots (where the CPU spends most of its time). Tools like `gprof` (GNU), `perf` (Linux), or ARM's `DSTREAM` use:
-- Instrumentation: The compiler adds extra code to count how many times a function is called.
-- Sampling: The debugger interrupts the CPU periodically (e.g., every 1ms) to record the Program Counter (PC). Statistical analysis shows which functions are executing most frequently (the 80/20 rule).
-3. Cycle Counting (Performance Measurement)
-Every ARM instruction has a latency (measured in clock cycles). Cycle counting is critical for real-time systems.
-- Basic Cycle Costs: `MOV`, `ADD`, `CMP` take 1 cycle. `LDR`/`STR` (cache hit) take 1-2 cycles. `LDR` (cache miss from Flash/SRAM) can take 10-50 cycles. `MUL` takes 2-4 cycles.
-- Pipelining Effects: The ARM pipeline (Fetch-Decode-Execute) masks latencies. However, branch mispredictions cause pipeline flushes costing ~3 cycles.
-- Measuring: On Cortex-M, you use the DWT (Data Watchpoint and Trace) cycle counter. On Cortex-A, you read the `PMCCNTR` (Performance Monitor Cycle Count Register).
-Example C code to count cycles:
-```c
-int start = read_cycle_counter();
-my_function();    // The function you want to measure
-int elapsed = read_cycle_counter() - start;
-```
+33. What is Functional Dependency? Minimal Cover Construction
+Functional Dependency (FD):  
+Given a relation schema R, an FD denoted X -> Y (X and Y are sets of attributes) means that if two tuples agree on the values of X, they must also agree on the values of Y. In other words, X functionally determines Y.
+Minimal Cover (Canonical Cover):  
+A minimal cover `Fc` for a set of FDs `F` is a set of dependencies such that:
+- The closure of `Fc` equals the closure of `F` (i.e., Fc implies exactly the same FDs).
+- Every FD in Fc has a single attribute on the right-hand side.
+- No FD in Fc can be removed without losing equivalence.
+- No attribute on the left-hand side of any FD is redundant (i.e., we cannot remove an attribute from the LHS and still have an equivalent set).
+Algorithm to compute minimal cover (example):  
+Given: F = { A -> BC, B -> C, AB -> D, A -> D }
+Step 1: Make RHS single-attribute:
+- A -> B, A -> C (from A->BC)
+- B -> C
+- AB -> D
+- A -> D
+Step 2: Remove extraneous attributes from LHS (if any):
+- Check AB -> D. Can we drop A? Is B+ using F' (all FDs) containing D? Compute B+ with F: {B, C} - no D. So A is not redundant.
+- Can we drop B? Compute A+ with F: {A, B, C, D} (using A->B, A->C, A->D). Yes, D is in A+, so B is extraneous. Replace AB -> D with A -> D.
+Now set: A -> B, A -> C, B -> C, A -> D.
+Step 3: Remove redundant FDs (a FD that can be derived from the remaining FDs):
+- Try removing A -> B: compute A+ using {A->C, B->C, A->D} = {A, C, D} - no B, so it is needed.
+- Remove A -> C: A+ = {A, B, D, C}? Compute A+ with {A->B, B->C, A->D} = A->B, B->C gives A->C, so C is in closure. So A->C is redundant (it's derivable via A->B and B->C). Remove it.
+- B -> C: check if redundant. B+ using remaining {A->B, A->D} = {B} no C. So keep.
+- A -> D: A+ using {A->B, B->C} = {A, B, C}. No D, so keep.
+Resulting minimal cover: { A -> B, B -> C, A -> D }.
+*If you have a specific set of FDs, please provide them, and I'll compute its minimal cover.*
 ---

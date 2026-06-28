@@ -1,0 +1,59 @@
+46. Write SQL queries for the following
+Given the schema:
+```text
+Student(Snum, Sname, Branch, level, age)
+Class(Cname, meet_at, room, fid)
+Enrolled(Snum, Cname)
+Faculty(fid, fname, deptid)
+```
+## (i) Find the names of all Juniors (level = 'JR') who are enrolled in a class taught by 'I. Teach'.
+```sql
+SELECT DISTINCT s.Sname
+FROM Student s
+JOIN Enrolled e ON s.Snum = e.Snum
+JOIN Class c ON e.Cname = c.Cname
+JOIN Faculty f ON c.fid = f.fid
+WHERE s.level = 'JR'
+  AND f.fname = 'I. Teach';
+```
+---
+## (ii) Find the names of all classes that either meet in room R128 or have five or more students enrolled.
+```sql
+SELECT DISTINCT Cname
+FROM Class
+WHERE room = 'R128'
+UNION
+SELECT Cname
+FROM Enrolled
+GROUP BY Cname
+HAVING COUNT(Snum) >= 5;
+```
+---
+## (iii) For all levels except JR, print the level and the average age of students for that level.
+```sql
+SELECT level, AVG(age) AS Average_Age
+FROM Student
+WHERE level <> 'JR'
+GROUP BY level;
+```
+---
+## (iv) For each faculty member that has taught classes only in room R128, print the faculty member's name and the total number of classes he or she has taught.
+```sql
+SELECT f.fname, COUNT(c.Cname) AS Total_Classes
+FROM Faculty f
+JOIN Class c ON f.fid = c.fid
+GROUP BY f.fid, f.fname
+HAVING COUNT(DISTINCT c.room) = 1
+   AND MAX(c.room) = 'R128';
+```
+---
+## (v) Find the names of students not enrolled in any class.
+```sql
+SELECT DISTINCT s.Sname
+FROM Student s
+WHERE s.Snum NOT IN (
+    SELECT Snum
+    FROM Enrolled
+);
+```
+---------------

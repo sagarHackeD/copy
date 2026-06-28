@@ -1,30 +1,34 @@
-11. Architecture of an ARM Embedded Device (Neat Diagram)
-An ARM-based embedded system is not just the CPU core; it is a System-on-Chip (SoC). The core communicates with memory and peripherals via a bus matrix (typically AMBA - Advanced Microcontroller Bus Architecture).
-Text-based Diagram:
+11. What is a Database? Three-Schema Architecture & Mapping
+Database  
+A database is an organized collection of structured information, or data, typically stored electronically in a computer system. It is managed by a Database Management System (DBMS) which allows users to define, create, query, update, and administer the data.
+Three-Schema Architecture (ANSI/SPARC)  
+This architecture separates the user view of the database from its physical storage. It has three levels:
+- Internal Level (Physical Schema)  
+  Describes *how* data is stored on the storage medium. It deals with data structures, file organizations, indexing, compression, and access paths.
+- Conceptual Level (Logical Schema)  
+  Describes *what* data is stored in the entire database and the relationships among the data. It hides physical storage details, focusing on entities, attributes, relations, and constraints.
+- External Level (View Schema)  
+  Describes the part of the database that a specific user group is interested in. Multiple external views can exist, each providing a tailored perspective.
 ```
-ARM processor
-    Interrupt controller
-AHB arbiter
- |
-AHB-APB bridge
- |
-Real-time clock-
-Console-Serial UARTS-
------
-Memory controller
-AHB-external bridge
+EXTERNAL LEVEL
+(View 1)   X3
 
-Ethernet
-Counter/timers
------
-ROM
-SRAM
-FLASHROM
-DRAM
-External bus
-Ethernet physical driver
---------
-ARM Controllers Peripherals Bus
+External/Conceptual Mapping
+
+CONCEPTUAL LEVEL
+(Logical Schema)
+
+Conceptual/Internal Mapping
+
+INTERNAL LEVEL
+(Physical Storage Schema)
 ```
-Key components: CPU core, tightly coupled memory (Flash/SRAM), interrupt handler, peripherals, and external bus interface-all interconnected via a high-speed bus.
+Why do we need mapping between schema levels?  
+Mapping translates a request from one level into the form required by the next level. The two critical mappings are:
+- External/Conceptual Mapping - Links an external view to the conceptual schema. Changing the conceptual schema does not force application changes if the mapping is updated.
+- Conceptual/Internal Mapping - Links the logical schema to the physical storage. Changing storage structures (e.g., adding an index) does not require changes to the conceptual schema.
+These mappings provide data independence:
+- Logical Data Independence: The ability to change the conceptual schema without altering external schemas or application programs.
+- Physical Data Independence: The ability to modify the physical storage structure without affecting the conceptual schema or applications.
+Without mapping, any change in storage or logical organization would break applications and user views.
 ---
