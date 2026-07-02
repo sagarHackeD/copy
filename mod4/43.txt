@@ -1,26 +1,13 @@
-43. System Log in Database Transaction
-The system log (or transaction log) is a crucial, append-only file used by the recovery manager to record every change made to the database. It ensures durability and atomicity, enabling recovery from crashes.
-# Contents of a Log Record
-Each log entry typically contains:
-- Transaction identifier (TID)
-- Data item identifier (page/record ID)
-- Old value (before-image) - for undo
-- New value (after-image) - for redo
-- Log sequence number (LSN)
-- Type of operation: `[start_transaction, T]`, `[write_item, T, X, old_value, new_value]`, `[commit, T]`, `[abort, T]`, `[checkpoint]`
-# Write-Ahead Logging (WAL) Rule
-Before any modification to a database block is written to disk, the corresponding log record must be forced to stable storage (log disk). This ensures that if a crash occurs before the data is actually written, the log can be used to redo or undo the operation.
-# Example: Funds Transfer
-Transaction T1 transfers $100 from account A (balance 1000) to B (balance 500).
-Log records (simplified):
-```
-[start_transaction, T1]
-[write_item, T1, A, 1000, 900]    -- old 1000, new 900
-[write_item, T1, B, 500, 600]     -- old 500, new 600
-[commit, T1]
-```
-If a crash occurs after writing the log but before the database pages are written:
-- On recovery, the system sees `[start, T1]` and `[commit, T1]`. It redoes the writes to ensure A=900 and B=600.
-If a crash occurs after the first write record but without a commit record, T1 is undone using the old values.
-Checkpointing: Periodically, the DBMS creates a checkpoint record that lists all active transactions. This reduces the amount of log that must be scanned during recovery.
+43. Solve (a_{n+2} - 3a_{n+1} + 2a_n = 0, a_0=1, a_1=6)
+
+Characteristic:
+[r^2 - 3r + 2 = (r-1)(r-2)=0.]
+So
+[a_n = A▪ 1^n + B▪ 2^n = A + B2^n.]
+Using initial conditions:
+[a_0 = A+B = 1,\qquad a_1 = A + 2B = 6.]
+Subtract: (B = 5), hence (A = -4). Therefore
+[\boxed{a_n = -4 + 5▪ 2^n}.]
+
 ---
+

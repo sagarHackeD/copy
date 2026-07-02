@@ -1,18 +1,22 @@
-14. Explanation of Terms
-Data Dictionary  
-A repository that stores *metadata* - data about the database. It contains definitions of schemas, tables, columns, data types, constraints (keys, check), views, indexes, storage parameters, and user privileges. The DBMS consults the data dictionary to validate and execute queries, and to enforce integrity and security.
-Entity  
-A "thing" or "object" in the real world that has an independent existence and can be distinctly identified. In an ER model, an entity represents a collection of objects (e.g., all employees). Each individual instance is an entity occurrence.
-Attribute  
-A property or characteristic that describes an entity. For example, an Employee entity may have attributes like `EmpID`, `Name`, `Salary`, `Address`.
-Composite Attribute  
-An attribute that can be divided into smaller meaningful sub-parts. For example, `Address` may be composed of `Street`, `City`, `State`, `ZipCode`. Each sub-part is itself an attribute.
-Multi-valued Attribute  
-An attribute that can hold multiple values for a single entity instance. For example, `PhoneNumbers` for an employee - a person may have several phone numbers. Represented in an ER diagram by a double oval.
-Weak Entity  
-An entity type that does not have a key attribute of its own and cannot be uniquely identified without being related to another (owner or identifying) entity. It relies on an *identifying relationship* and a *partial key* (discriminator) from the owner. Example: a `Dependent` of an `Employee` - dependents are identified by the employee they belong to plus their own first name.
-Participation Role  
-The function that an entity plays in a relationship instance. Each participating entity type can be given a *role name* to clarify its meaning in the relationship. For example, in a relationship "Works_For", the entity `Employee` plays the role of "worker" and `Department` plays the role of "employer". Sometimes "participation" also refers to whether every entity instance must participate (total participation) or not (partial participation).
-Data Model  
-A collection of conceptual tools for describing data, data relationships, data semantics, and consistency constraints. It provides a way to design and organize the database logically. Common data models include the Relational Model, Entity-Relationship (ER) Model, Object-Oriented Model, Hierarchical Model, and Network Model.
+14. Validity using Rules of Inference
+
+Premises:
+[p,    p→q,    sVr,    r→¬q]
+Conclusion:
+[sVt]
+
+Proof:
+
+1. (p) (Premise)  
+2. (p→q) (Premise)  
+3. (q) (Modus Ponens, 1,2)  
+4. (r→¬q) (Premise)  
+5. (¬r) (Modus Tollens, 3,4; because (q) is true, (¬q) is false, so (r) must be false)  
+6. (sVr) (Premise)  
+7. (s) (Disjunctive Syllogism, 5,6)  
+8. (sVt) (Addition, 7)
+
+Thus the argument is valid.
+
 ---
+

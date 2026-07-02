@@ -1,34 +1,25 @@
-11. What is a Database? Three-Schema Architecture & Mapping
-Database  
-A database is an organized collection of structured information, or data, typically stored electronically in a computer system. It is managed by a Database Management System (DBMS) which allows users to define, create, query, update, and administer the data.
-Three-Schema Architecture (ANSI/SPARC)  
-This architecture separates the user view of the database from its physical storage. It has three levels:
-- Internal Level (Physical Schema)  
-  Describes *how* data is stored on the storage medium. It deals with data structures, file organizations, indexing, compression, and access paths.
-- Conceptual Level (Logical Schema)  
-  Describes *what* data is stored in the entire database and the relationships among the data. It hides physical storage details, focusing on entities, attributes, relations, and constraints.
-- External Level (View Schema)  
-  Describes the part of the database that a specific user group is interested in. Multiple external views can exist, each providing a tailored perspective.
-```
-EXTERNAL LEVEL
-(View 1)   X3
+11. Tautology and truth table
 
-External/Conceptual Mapping
+Definition:  
+A compound proposition is a tautology if it is true for every possible truth assignment of its component propositions.
 
-CONCEPTUAL LEVEL
-(Logical Schema)
+We prove that  
+[[(pV q)Λ(p→r)Λ(q→r)]→r]
+is a tautology.
 
-Conceptual/Internal Mapping
+Truth table:
 
-INTERNAL LEVEL
-(Physical Storage Schema)
-```
-Why do we need mapping between schema levels?  
-Mapping translates a request from one level into the form required by the next level. The two critical mappings are:
-- External/Conceptual Mapping - Links an external view to the conceptual schema. Changing the conceptual schema does not force application changes if the mapping is updated.
-- Conceptual/Internal Mapping - Links the logical schema to the physical storage. Changing storage structures (e.g., adding an index) does not require changes to the conceptual schema.
-These mappings provide data independence:
-- Logical Data Independence: The ability to change the conceptual schema without altering external schemas or application programs.
-- Physical Data Independence: The ability to modify the physical storage structure without affecting the conceptual schema or applications.
-Without mapping, any change in storage or logical organization would break applications and user views.
+| (p) | (q) | (r) | (pV q) | (p→r) | (q→r) | (A=(pV q)Λ(p→r)Λ(q→r)) | (A→r) |
+| T | T | T | T | T | T | T | T |
+| T | T | F | T | F | F | F | T |
+| T | F | T | T | T | T | T | T |
+| T | F | F | T | F | T | F | T |
+| F | T | T | T | T | T | T | T |
+| F | T | F | T | T | F | F | T |
+| F | F | T | F | T | T | F | T |
+| F | F | F | F | T | T | F | T |
+
+Since (A→r) is true in every row, the proposition is a tautology.
+
 ---
+

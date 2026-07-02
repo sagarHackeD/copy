@@ -1,20 +1,9 @@
-37. Functional Dependency Problem (Typical Example)
-Since you didn't provide a specific problem, I'll present a common type: finding all candidate keys and checking normal forms given a set of FDs.
-Example: Relation R(A, B, C, D, E) with FDs:  
-F = { A -> B, CD -> E, B -> D, E -> A }.
-Find all candidate keys:
-- Start with the attribute closure test. A candidate key is a minimal set of attributes that functionally determines all attributes.
-- Check single attributes:
-  - A+ = {A, B, D} (A->B, B->D). No C, E. So A alone not superkey.
-  - B+ = {B, D}. No.
-  - C+ = {C}. No.
-  - D+ = {D}. No.
-  - E+ = {E, A, B, D} (E->A, A->B, B->D). So E+ = {E, A, B, D}. Missing C. Not a superkey.
-- Pairs: Try CD. (CD)+ = {C, D, E, A, B} (using CD->E, E->A, A->B, B->D). So CD is a superkey. Is it minimal? C alone not superkey, D alone not superkey, so CD is a candidate key.
-- Try other pairs like CE, CB, etc. CE+ = {C, E, A, B, D} (E->A, A->B, B->D). So CE is superkey. Minimal? C alone no, E alone no. So CE is another candidate key.
-- Similarly, try CB: CB+ = {C, B, D, ...? B->D, but can't get A or E from CB, so no.
-- So candidate keys: CD, CE.
-Check 2NF/3NF:  
-If we take CD as primary key, non-prime attributes are A, B, E. But we have FD E -> A where E is non-prime and determines another non-prime A. This violates 3NF (transitive dependency). Also B -> D gives a partial dependency? The key is CD, B depends on part? B is not part of CD, but B is non-prime. B -> D where D is prime? Actually D is part of key CD. A non-prime determining a prime attribute is allowed in 3NF? 3NF requires that for any X -> Y (non-trivial), either X is a superkey or Y is part of some candidate key (prime attribute). Here B -> D, D is prime, so it satisfies 3NF? Yes, because D is a prime attribute. But E -> A: A is non-prime, E is not a superkey (E+ = {E,A,B,D} missing C). That FD violates 3NF because the RHS A is non-prime and LHS E is not a superkey. So R is not in 3NF. It is in 2NF because no non-prime attribute is partially dependent on any candidate key (the only partial dependency would be if a non-prime depended on part of CD or CE; here CD -> E is full, etc.). So R is in 2NF but not 3NF.
-How to fix: Decompose to {E, A} (with E -> A) and remove A from original, resulting R1(E, A) and R2(B, C, D, E) with FDs B->D, CD->E, E->B? Wait recalc properly. A standard solution would produce a lossless decomposition.
-----------------------
+37. Pigeon‑hole Principle – sum 9
+
+The intended statement is: “If 5 numbers are chosen from ({1,2,▪▪▪,8}), then two of them sum to (9).”  
+Partition into 4 pairs summing to 9:
+[(1,8),(2,7),(3,6),(4,5).]
+Choosing 5 numbers forces at least one complete pair by PHP. Hence two sum to 9.
+
+---
+

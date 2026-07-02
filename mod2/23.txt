@@ -1,13 +1,20 @@
-23. Integrity Constraints and the Importance of Referential Integrity
-Integrity Constraint  
-A rule that restricts the data that can be stored in a database to ensure accuracy, consistency, and reliability. Constraints are part of the database schema and are enforced by the DBMS.
-Referential Integrity Constraint  
-This constraint involves two relations and specifies that a value appearing in a foreign key column of a referencing relation must either be NULL (if permitted) or match the primary key value of a tuple in the referenced relation.
-Formally: If relation R1 has a foreign key FK that references relation R2's primary key PK, then for every tuple in R1, FK = PK in some tuple of R2, or FK is NULL (if allowed).
-#Importance of Referential Integrity
-- Maintains consistency across relations: Prevents orphan records (dangling references) where a foreign key points to a non-existent record.
-- Ensures valid relationships: For instance, an employee's department number must correspond to a real department; an order must be linked to an existing customer.
-- Supports data quality: Without it, applications could easily insert meaningless or corrupt data.
-- Facilitates cascading actions: The DBMS can automatically cascade updates/deletes to preserve consistency, reducing application logic.
-- Foundation for relational model: Referential integrity is one of the core pillars that distinguish a relational DBMS from simple file storage.
+239. 8 identical marbles into 4 distinct containers
+
+(i) No container empty:  
+Give 1 marble to each container first, leaving (8-4=4) marbles.  
+Distribute 4 identical marbles into 4 containers:
+[\binom{4+4-1}{4-1} = \binom{7}{3} = 35.]
+
+(ii) Fourth container has an odd number:  
+Let (x_4 Ɛ {1,3,5,7}).
+
+- (x_4=1): remaining (7) into 3 containers →(\binom{7+3-1}{2}=\binom{9}{2}=36).
+- (x_4=3): remaining (5) →(\binom{5+2}{2}=\binom{7}{2}=21).
+- (x_4=5): remaining (3) →(\binom{3+2}{2}=\binom{5}{2}=10).
+- (x_4=7): remaining (1) →(\binom{1+2}{2}=\binom{3}{2}=3).
+
+Total:
+[36+21+10+3 = 70.]
+
 ---
+

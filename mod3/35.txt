@@ -1,40 +1,11 @@
-35. SQL Commands: INSERT, UPDATE, DELETE, ALTER, DROP
-Assume a table `Employees(emp_id INT PRIMARY KEY, name VARCHAR(50), salary DECIMAL(10,2), dept_id INT)`.
-INSERT - adds new rows.
-```sql
-INSERT INTO Employees (emp_id, name, salary, dept_id)
-VALUES (101, 'Alice', 50000.00, 1);
-```
-You can also insert multiple rows or use a query to copy data.
-UPDATE - modifies existing rows.
-```sql
-UPDATE Employees
-SET salary = salary * 1.10
-WHERE dept_id = 1;
-```
-Without WHERE clause, all rows would be updated.
-DELETE - removes rows from a table.
-```sql
-DELETE FROM Employees
-WHERE emp_id = 101;
-```
-If no WHERE clause, all rows are deleted but the table structure remains.
-ALTER - changes the schema (add, modify, drop columns, add constraints).
-- Add a column:
-  ```sql
-  ALTER TABLE Employees ADD email VARCHAR(100);
-  ```
-- Modify data type:
-  ```sql
-  ALTER TABLE Employees MODIFY COLUMN name VARCHAR(100);
-  ```
-- Add a constraint:
-  ```sql
-  ALTER TABLE Employees ADD CONSTRAINT fk_dept FOREIGN KEY (dept_id) REFERENCES Departments(dept_id);
-  ```
-DROP - removes the entire table structure (or database, index, etc.).
-```sql
-DROP TABLE Employees;
-```
-This deletes the table definition and all its data. To remove only data while keeping structure, use `TRUNCATE TABLE Employees`.
+35. Pigeon‑hole Principle
+
+Statement: If (n+1) items are put into (n) boxes, then at least one box contains at least two items.
+
+Proof for sum to (2n+1):  
+Partition the set ({1,2,▪▪▪,2n}) into (n) pairs:
+[(1,2n),(2,2n-1),▪▪▪,(n,n+1).]
+Each pair sums to (2n+1). If we choose (n+1) numbers, by the PHP we must take both numbers from at least one pair. Hence their sum is (2n+1).
+
 ---
+

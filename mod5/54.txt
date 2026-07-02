@@ -1,38 +1,19 @@
-54. Document-Based NoSQL System - MongoDB CRUD Operations
-A document database stores data in semi-structured documents, typically JSON or BSON. Documents are self-describing, may have varying structures, and are grouped into collections (analogous to tables but schema-free). MongoDB is the most popular document database.
-# Basic CRUD Operations in MongoDB (using the mongo shell)
-Assume a collection `users`.
-CREATE (Insert)
-```javascript
-db.users.insertOne({
-    name: "Alice",
-    age: 30,
-    email: "alice@example.com",
-    tags: ["developer", "admin"]
-})
-```
-Insert multiple:
-```javascript
-db.users.insertMany([
-   { name: "Bob", age: 25, email: "bob@example.com" },
-   { name: "Carol", age: 28 }
-])
-```
-READ (Query)
-- Find all documents: `db.users.find()`
-- With condition: `db.users.find({ age: { $gt: 25 } })`   // age > 25
-- Projection (only return name and email):  
-  `db.users.find({}, { name: 1, email: 1, _id: 0 })`
-- Sorting: `db.users.find().sort({ age: -1 })`  // descending
-UPDATE
-- Update one document:  
-  `db.users.updateOne({ name: "Alice" }, { $set: { age: 31 }, $push: { tags: "manager" } })`
-- Update many:  
-  `db.users.updateMany({ age: { $lt: 30 } }, { $set: { status: "junior" } })`
-- Replace entire document: `db.users.replaceOne(...)`
-DELETE
-- Delete one: `db.users.deleteOne({ name: "Bob" })`
-- Delete many: `db.users.deleteMany({ status: "junior" })`
-- Drop the entire collection: `db.users.drop()`
-MongoDB uses BSON binary format and provides drivers for many languages, supporting indexing, aggregation pipelines, and transactions (in replica sets).
+54. Intersection and union of subgroups
+
+Prove (H \cap K) is a subgroup:  
+Let (H, K ≤ G).
+
+- Identity: (e Ɛ H) and (e Ɛ K → e Ɛ H \cap K).
+- Closure: If (x, y Ɛ H \cap K), then (x,y Ɛ H → xy Ɛ H), and (x,y Ɛ K → xy Ɛ K). Hence (xy Ɛ H \cap K).
+- Inverses: If (x Ɛ H \cap K), then (x Ɛ H → x^{-1} Ɛ H), and (x Ɛ K → x^{-1} Ɛ K). Hence (x^{-1} Ɛ H \cap K).
+
+Therefore (H \cap K ≤ G).
+
+Is (H \cup K) a subgroup?  
+No, in general.  
+Counterexample: Let (G = S_3), (H = {e, (12)}), (K = {e, (13)}). Then
+[H \cup K = {e, (12), (13)}.]
+But ((12)(13) = (132)), which is not in (H \cup K). So (H \cup K) is not closed under the group operation, hence not a subgroup.
+
 ---
+

@@ -1,0 +1,19 @@
+59. Prove cube roots of unity form a group under multiplication
+
+The cube roots of unity are
+[U_3 = {1,Ω,Ω^2},]
+where
+[Ω = e^{2\pi i/3} = -\frac{1}{2} + \frac{\sqrt{3}}{2}i,    Ω^2 = e^{4\pi i/3} = -\frac{1}{2} - \frac{\sqrt{3}}{2}i,]
+and (Ω^3 = 1).
+
+- Closure: Check products:
+  (1▪1=1,1▪Ω=Ω,1▪Ω^2=Ω^2,Ω▪Ω = Ω^2,Ω▪Ω^2 = Ω^3 = 1,Ω^2▪Ω^2 = Ω^4 = Ω).
+  All results are in the set.
+- Associativity: Inherited from ({C}).
+- Identity: (1).
+- Inverses: (1^{-1}=1,Ω^{-1}=Ω^2,(Ω^2)^{-1}=Ω).
+
+Thus ((U_3, ▪)) is a group. It is abelian (commutative multiplication).
+
+---
+

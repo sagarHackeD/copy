@@ -1,13 +1,11 @@
-12. Advantages of Using the DBMS Approach
-- Minimized Data Redundancy - In a DBMS, data is integrated and duplication can be controlled (or eliminated) through normalization.
-- Data Consistency - Redundancy control ensures that multiple copies of the same data stay consistent.
-- Data Sharing - Multiple users and applications can access the same database concurrently under controlled, secure conditions.
-- Enforcement of Integrity Constraints - Rules (e.g., primary keys, referential integrity, domain constraints) are defined once and enforced automatically.
-- Data Security - User authentication, authorization, and access control can be applied at various levels (database, table, view).
-- Concurrent Access and Transaction Management - ACID properties (Atomicity, Consistency, Isolation, Durability) are maintained, preventing interference between simultaneous users.
-- Backup and Recovery - Automatic backup utilities and recovery mechanisms protect against hardware/software failures.
-- Data Independence - Application programs are insulated from changes in data storage or logical structure.
-- Reduced Application Development Time - Programmers work with high-level data manipulation languages, not low-level file operations.
-- Centralized Management - A database administrator (DBA) can standardize data formats, enforce policies, and monitor performance.
-- Improved Data Accessibility - Ad-hoc query facilities (SQL) allow end users to retrieve information without writing full programs.
+129. Proof by contradiction for “If (n^2) is odd, then (n) is odd”
+
+Assume the negation: there exists an integer (n) such that (n^2) is odd and (n) is not odd (i.e. (n) is even).  
+Then (n=2k) for some integer (k). Hence
+[n^2=(2k)^2=4k^2=2(2k^2),]
+which is even, contradicting the assumption that (n^2) is odd.  
+Therefore, if (n^2) is odd, (n) must be odd.
+
 ---
+MOD2
+

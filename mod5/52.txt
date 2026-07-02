@@ -1,23 +1,14 @@
-52. Why Concurrency Control is Needed - Example
-Concurrency control is required to avoid problems that arise when multiple transactions execute simultaneously and access the same data. Without it, the following anomalies can occur:
-# Lost Update Problem
-Two transactions read the same value, update it based on the read, and then write back, causing one update to be overwritten.
-Example: Two airline agents try to book the last seat on flight 101.
-- T1: reads seats_available = 1
-- T2: reads seats_available = 1
-- T1: decrements to 0 and writes back
-- T2: decrements its read value (still 1) to 0 and writes back  
-Result: two bookings, but only one seat was deducted - lost update.
-# Dirty Read (Uncommitted Dependency)
-One transaction reads data written by another uncommitted transaction, which later aborts.
-Example:
-- T1 updates account A from 1000 to 900, hasn't committed.
-- T2 reads A = 900 and uses it for a report.
-- T1 aborts; A rolls back to 1000. T2 used a value that never existed permanently.
-# Incorrect Summary (Non-repeatable Read)
-A transaction reads the same item twice and sees different values because another transaction modified it in between.
-Example:
-- T3: reads total of accounts A, B while T4 transfers money from A to B.
-- If T3 reads A (before transfer), B (after transfer), it sees inconsistent total.
-Concurrency control protocols (locking, timestamp, MVCC) prevent these by ensuring serializable execution.
+52. Define Klein 4‑group and verify (A = {1, 3, 5, 7})
+
+Definition:  
+A Klein 4‑group is a group of order 4 in which every element is its own inverse (i.e. (x^2 = e) for all (x)). It is abelian and isomorphic to ({Z}_2 X {Z}_2).
+
+Verification for (A = {1,3,5,7}) under multiplication modulo 8:
+
+Compute squares modulo 8:
+[1^2 ≡ 1,    3^2 = 9 ≡ 1,    5^2 = 25 ≡ 1,    7^2 = 49 ≡ 1.]
+Thus every non‑identity element has order 2. The set is closed under multiplication mod 8 (products of odd numbers are odd and not divisible by 8, so they remain in ({1,3,5,7})). Associativity and commutativity follow from multiplication of integers. The identity is (1).  
+Hence ((A, ▪ \bmod 8)) is a Klein 4‑group.
+
 ---
+

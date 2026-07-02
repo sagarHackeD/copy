@@ -1,54 +1,12 @@
-27. Sailors Problems
-Given the schema:
-```text
-Sailors(sid, sname, rating, age)
-Boats(bid, bname, color) 
-Reserves(sid, bid, date)
-```
-Here are the SQL queries:
-# 1. Find the colors of boats reserved by Albert.
-```sql
-SELECT DISTINCT b.color
-FROM Sailors s
-JOIN Reserves r ON s.sid = r.sid
-JOIN Boats b ON r.bid = b.bid
-WHERE s.sname = 'Albert';
-```
+27. Given (a_0=1,a_1=2,a_2=3), and (a_n = a_{n-1}+a_{n-2}+a_{n-3}) for (n≥3). Prove (a_n ≤ 3^n) for all (n≥0).
+
+Base: (a_0=1≤1), (a_1=2≤3), (a_2=3≤9). True.
+
+Inductive step: Assume (a_k ≤ 3^k) for all (k<n). Then
+[a_n = a_{n-1}+a_{n-2}+a_{n-3}
+≤ 3^{n-1}+3^{n-2}+3^{n-3}
+= 3^{n-3}(1+3+9)=13▪ 3^{n-3}.]
+Since (13 ≤ 27 = 3^3), we have (13▪3^{n-3} ≤ 3^n). Hence (a_n ≤ 3^n). Proved.
+
 ---
-# 2. Find all sailor IDs of sailors who have a rating of at least 8 or reserved boat 103.
-```sql
-SELECT sid
-FROM Sailors
-WHERE rating >= 8
-UNION
-SELECT sid
-FROM Reserves
-WHERE bid = 103;
-```
----
-# 3. Find the names of sailors who have not reserved a boat whose name contains the string "storm". Order the names in ascending order.
-```sql
-SELECT s.sname
-FROM Sailors s
-WHERE s.sid NOT IN (
-    SELECT r.sid
-    FROM Reserves r
-    JOIN Boats b ON r.bid = b.bid
-    WHERE b.bname LIKE '%storm%'
-)
-ORDER BY s.sname ASC;
-```
----
-# 4. Find the sailor IDs of sailors with age over 20 who have not reserved a boat whose name includes the string "thunder".
-```sql
-SELECT s.sid
-FROM Sailors s
-WHERE s.age > 20
-AND s.sid NOT IN (
-    SELECT r.sid
-    FROM Reserves r
-    JOIN Boats b ON r.bid = b.bid
-    WHERE b.bname LIKE '%thunder%'
-);
-```
----
+

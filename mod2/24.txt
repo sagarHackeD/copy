@@ -1,46 +1,17 @@
-24. ER to Relational Mapping Algorithm with Examples
-Mapping an Entity-Relationship (ER) model into a relational database schema follows a standard algorithm. Below are the steps with a small running example: an ER model containing entities `EMPLOYEE`, `DEPARTMENT`, and `PROJECT`, with relationships and attributes.
-Step 1: Mapping of Regular (Strong) Entity Types  
-Create a relation for each strong entity type. Include all simple attributes (composite attributes become simple component attributes). The primary key of the relation becomes the primary key of the entity type.
-Example:
-Entity `EMPLOYEE` with attributes `emp_id` (key), `name`, `address` (composite: `street`, `city`, `zip`), and `salary`.  
-Resulting relation:  
-`EMPLOYEE(emp_id, name, street, city, zip, salary)` PK: `emp_id`
-Step 2: Mapping of Weak Entity Types  
-Create a relation for each weak entity type. Include all simple attributes and the primary key of the owner entity as a foreign key. The primary key of the weak relation is the combination of the owner's primary key and the weak entity's partial key (discriminator).
-Example:
-Weak entity `DEPENDENT` with partial key `dep_name` and attribute `birth_date`, owned by `EMPLOYEE`.  
-Relation: `DEPENDENT(emp_id, dep_name, birth_date)` PK: `(emp_id, dep_name)`, FK: `emp_id` references `EMPLOYEE`.
-Step 3: Mapping Binary 1:1 Relationship Types  
-Choose one of the participating entities (preferably the one with total participation) and include the primary key of the other entity as a foreign key. Add any relationship attributes to the chosen relation. Alternatively, merge both entities into a single relation if both have total participation.
-Example:
-1:1 relationship `MANAGES` between `EMPLOYEE` (total participation) and `DEPARTMENT` (partial), with attribute `start_date`.  
-Add the primary key `emp_id` of `EMPLOYEE` as a foreign key in `DEPARTMENT`, along with the relationship attribute:  
-`DEPARTMENT(dept_id, dept_name, mgr_emp_id, start_date)`  
-FK: `mgr_emp_id` references `EMPLOYEE(emp_id)`.
-Step 4: Mapping Binary 1:N Relationship Types  
-Identify the relation representing the entity on the "N" side. Include the primary key of the "1" side as a foreign key in that relation. Any relationship attributes are also placed in the "N" side relation.
-Example:
-1:N relationship `WORKS_FOR` between `DEPARTMENT` (1) and `EMPLOYEE` (N).  
-Add foreign key `dept_id` to `EMPLOYEE` plus any relationship attributes (e.g., `since`).  
-`EMPLOYEE` now: `EMPLOYEE(emp_id, name, street, city, zip, salary, dept_id, since)` FK: `dept_id` references `DEPARTMENT`.
-Step 5: Mapping Binary M:N Relationship Types  
-Create a new relation (linking table) for the M:N relationship. Include the primary keys of both participating entities as foreign keys; their combination forms the primary key of the new relation. Add any relationship attributes to the new relation.
-Example:
-M:N relationship `WORKS_ON` between `EMPLOYEE` and `PROJECT` with attribute `hours`.  
-New relation: `WORKS_ON(emp_id, proj_id, hours)`  
-PK: `(emp_id, proj_id)`, FK: `emp_id` ref. `EMPLOYEE`, `proj_id` ref. `PROJECT`.
-Step 6: Mapping Multivalued Attributes  
-Create a separate relation for each multivalued attribute. Include the primary key of the entity (or the relation) that has the multivalued attribute as a foreign key. The primary key is the combination of that foreign key and the multivalued attribute itself.
-Example:
-`EMPLOYEE` has multivalued attribute `phone_numbers`.  
-New relation: `EMP_PHONES(emp_id, phone_number)`  
-PK: `(emp_id, phone_number)`, FK: `emp_id` ref. `EMPLOYEE`.
-Step 7: Mapping N-ary Relationship Types  
-For a relationship type with degree n > 2, create a new relation. Include the primary keys of all participating entity types as foreign keys. The primary key of the new relation is typically the combination of all these foreign keys. Add any relationship attributes.
-Example (ternary): 
-Relationship `SUPPLIES` linking `SUPPLIER`, `PART`, `PROJECT` with attribute `quantity`.  
-New relation: `SUPPLIES(supplier_id, part_id, project_id, quantity)`  
-PK: `(supplier_id, part_id, project_id)`, FKs to respective entity relations.
-After applying all steps, the final schema consists of a set of normalized relations.
+240. Positive integers using digits 3,4,4,5,5,6,7 exceeding 5,000,000
+
+We have 7 digits, so the number is a 7‑digit number. To exceed 5,000,000, the first digit must be 5, 6, or 7.
+
+- First digit 5: Remaining digits: 3,4,4,5,6,7 →(6) letters with one repeated 4.
+  [  \frac{6!}{2!}=360.]
+- First digit 6: Remaining: 3,4,4,5,5,7 →two pairs repeated.
+  [  \frac{6!}{2!2!} = 180.]
+- First digit 7: Remaining: 3,4,4,5,5,6 →two pairs repeated.
+  [  \frac{6!}{2!2!} = 180.]
+
+Total:
+[360 + 180 + 180 = 720.]
+
 ---
+MOD3
+

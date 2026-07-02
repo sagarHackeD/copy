@@ -1,28 +1,31 @@
-33. What is Functional Dependency? Minimal Cover Construction
-Functional Dependency (FD):  
-Given a relation schema R, an FD denoted X -> Y (X and Y are sets of attributes) means that if two tuples agree on the values of X, they must also agree on the values of Y. In other words, X functionally determines Y.
-Minimal Cover (Canonical Cover):  
-A minimal cover `Fc` for a set of FDs `F` is a set of dependencies such that:
-- The closure of `Fc` equals the closure of `F` (i.e., Fc implies exactly the same FDs).
-- Every FD in Fc has a single attribute on the right-hand side.
-- No FD in Fc can be removed without losing equivalence.
-- No attribute on the left-hand side of any FD is redundant (i.e., we cannot remove an attribute from the LHS and still have an equivalent set).
-Algorithm to compute minimal cover (example):  
-Given: F = { A -> BC, B -> C, AB -> D, A -> D }
-Step 1: Make RHS single-attribute:
-- A -> B, A -> C (from A->BC)
-- B -> C
-- AB -> D
-- A -> D
-Step 2: Remove extraneous attributes from LHS (if any):
-- Check AB -> D. Can we drop A? Is B+ using F' (all FDs) containing D? Compute B+ with F: {B, C} - no D. So A is not redundant.
-- Can we drop B? Compute A+ with F: {A, B, C, D} (using A->B, A->C, A->D). Yes, D is in A+, so B is extraneous. Replace AB -> D with A -> D.
-Now set: A -> B, A -> C, B -> C, A -> D.
-Step 3: Remove redundant FDs (a FD that can be derived from the remaining FDs):
-- Try removing A -> B: compute A+ using {A->C, B->C, A->D} = {A, C, D} - no B, so it is needed.
-- Remove A -> C: A+ = {A, B, D, C}? Compute A+ with {A->B, B->C, A->D} = A->B, B->C gives A->C, so C is in closure. So A->C is redundant (it's derivable via A->B and B->C). Remove it.
-- B -> C: check if redundant. B+ using remaining {A->B, A->D} = {B} no C. So keep.
-- A -> D: A+ using {A->B, B->C} = {A, B, C}. No D, so keep.
-Resulting minimal cover: { A -> B, B -> C, A -> D }.
-*If you have a specific set of FDs, please provide them, and I'll compute its minimal cover.*
+33. Hasse diagram of divisors of 36
+
+Positive divisors of (36):  
+[D={1,2,3,4,6,9,12,18,36}.]
+Order by divisibility. Covering relations (remove transitive edges):
+[1⮜ 2,1⮜ 3;   
+2⮜ 4,2⮜ 6;   
+3⮜ 6,3⮜ 9;   
+4⮜ 12;   
+6⮜ 12,6⮜ 18;   
+9⮜ 18;   
+12⮜ 36,18⮜ 36.]
+
+Hasse diagram (text representation):
+```
+		36
+	   /  \
+	 12   18
+	/     /
+   4     6
+		/ \
+	   2   9
+	  /
+	 3
+	 |
+	 1
+```
+(Adjust mentally: edges go upward.)
+
 ---
+

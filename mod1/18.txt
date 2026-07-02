@@ -1,0 +1,31 @@
+18. Prove using laws of logic:
+[¬[¬(¬qΛ r)V((qΛ r)V(pΛ r))]↔r.]
+
+
+[¬(¬qΛ r) ≡ qV ¬r,]
+and
+[(qΛ r)V(pΛ r) ≡ rΛ(qV p).]
+So the inner expression becomes
+[(qV ¬r)V(rΛ(qV p)).]
+Using distributivity:
+[(qV ¬r)V(rΛ(qV p))
+≡
+qV ¬rV rΛ(qV p).]
+Now,
+[¬rV(rΛ(qV p))
+≡
+(¬rV r)Λ(¬rV qV p)
+≡
+¬rV qV p.]
+Thus the whole inner expression simplifies to
+[qV ¬rV qV p ≡ pV qV ¬r.]
+Therefore,
+[¬(pV qV ¬r) ≡ ¬pΛ ¬qΛ r.]
+So the left side is (¬pΛ ¬qΛ r), not simply (r).
+
+Counterexample: Take (p=T,q=F,r=T).  
+Then LHS = (¬TΛ ¬FΛ T = FΛ TΛ T = F), but RHS = (T).  
+Hence the given equivalence is false. There is likely a typo in the problem.
+
+---
+

@@ -1,46 +1,39 @@
-41. Transaction States and Additional Operations
-A transaction is a logical unit of work that must be entirely completed or entirely aborted. It moves through several states during its lifecycle:
-# Transaction States
-```Diagram
-  2  3
-1      6
-  4  5
+41. Permutations of 26 letters avoiding patterns CAR, DOG, PUN, BYTE
 
-1.Active State
-2.Partially Committed State
-3.Committed State
-4.Failed State
-5.Aborted State
-6.Terminated State
+Let  
+- (A_1): pattern CAR occurs,  
+- (A_2): DOG occurs,  
+- (A_3): PUN occurs,  
+- (A_4): BYTE occurs.
 
-1->2 reads/writes
-1->4 Failure
-2->3 Permanent store
-2->4 Failure
-4->5 Rollback
-```
-- ACTIVE - The transaction starts; it is executing read/write operations.
-- PARTIALLY COMMITTED - All operations have been executed and the final statement has run. But the changes are not yet permanently stored (still in buffers). If a system failure happens now, recovery may be needed.
-- COMMITTED - Successful completion; changes are permanently saved and visible to other transactions.
-- FAILED - An error (logical, system crash, or deadlock) occurs; the transaction cannot continue normally.
-- ABORTED - The transaction has been rolled back and the database is restored to the state before the transaction began. After abort, the system can either restart the transaction (as a new one) or kill it.
-Terminated is sometimes used to describe a transaction that has reached COMMITTED or ABORTED and left the system.
-# Additional Transaction Operations
-- BEGIN / START TRANSACTION - Marks the beginning of a transaction.
-- COMMIT - Signals successful end; all changes are made permanent.
-- ROLLBACK - Aborts the transaction and undoes all changes made during the transaction.
-- SAVEPOINT - Creates an intermediate marker within a transaction to which a partial rollback can be performed, without aborting the whole transaction.
-- ROLLBACK TO SAVEPOINT - Undoes all changes after a specific savepoint, but the transaction remains active.
-Example (SQL):
-```sql
-START TRANSACTION;
-UPDATE Accounts SET balance = balance - 100 WHERE acc_id = 1;
-SAVEPOINT sp1;
-UPDATE Accounts SET balance = balance + 100 WHERE acc_id = 2;
--- Oops, wrong account; rollback to savepoint
-ROLLBACK TO SAVEPOINT sp1;
-UPDATE Accounts SET balance = balance + 100 WHERE acc_id = 3;
-COMMIT;
-```
-Here, if the second update needed correction, we only roll back to `sp1`, preserving the first debit.
+The letters in these patterns are all distinct, so we use inclusion–exclusion.
+
+- Total permutations without restriction: (26!).
+- For a 3‑letter pattern (CAR, DOG, PUN), treat it as one block →(24) items →(24!) ways. There are (3) such patterns.
+- For the 4‑letter pattern BYTE →(23) items →(23!) ways.
+
+Thus:
+[N_1 = 3▪ 24! + 23!.]
+
+Two patterns together:
+- Two 3‑letter patterns: (3) choices, (2) blocks + 20 letters = (22) items →(22!).
+- One 3‑letter + BYTE: (3) choices, (2) blocks + 19 letters = (21) items →(21!).
+
+So:
+[N_2 = \binom{3}{2}22! + 3▪ 21! = 3▪ 22! + 3▪ 21!.]
+
+Three patterns together:
+- Three 3‑letter patterns: (1) way, (3) blocks + 17 letters = (20) items →(20!).
+- Two 3‑letter + BYTE: (\binom{3}{2}=3) ways, (3) blocks + 16 letters = (19) items →(19!).
+
+So:
+[N_3 = 20! + 3▪ 19!.]
+
+All four patterns together:  
+(3) blocks (for CAR, DOG, PUN) + (1) block (BYTE) + 13 letters = (17) items →(17!).
+
+By inclusion–exclusion, the required number is:
+[\boxed{26! - (3▪ 24! + 23!) + (3▪ 22! + 3▪ 21!) - (20! + 3▪ 19!) + 17!}.]
+
 ---
+

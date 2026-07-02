@@ -1,10 +1,21 @@
-32. Informal Design Guidelines for Relational Schema Design
-When designing a relational schema (even before formal normalization), certain informal guidelines help produce a good quality schema:
-1. Attribute Semantics Clarity - Each attribute should represent a single fact or property. Avoid mixing different types of information in one column (e.g., not combining street, city in one field).
-2. Eliminate Redundancy and Update Anomalies - Design tables so that the same information isn't repeated in many tuples. Redundancy leads to inconsistencies and waste of storage.
-3. Minimize NULL Values - Avoid designing tables where many attributes will frequently be NULL because they don't apply to many tuples. This can be a sign that entities should be split into separate relations (e.g., subtypes).
-4. Avoid Spurious Tuples - When joining relations, the joins should not produce meaningless tuples that were not originally intended. This is prevented by ensuring that join conditions are based on foreign keys and that the decomposition follows the lossless-join property.
-5. Design for Easy Querying and Maintainability - The schema should support the anticipated queries without excessive joins, but not at the cost of introducing anomalies. A balance between normalization and performance (denormalization) may be required for some applications, but only after understanding the trade-offs.
-6. Use Meaningful Primary Keys and Foreign Keys - Keys should be stable, unique, and ideally not subject to frequent changes. Foreign keys must reference correct tables to enforce referential integrity.
-7. Group Related Attributes in One Relation - Attributes that are directly dependent on the same key should reside in the same relation. If dependencies split across relations, update anomalies appear.
+32. Composition of functions
+
+Let (f(x)=ax+b) and (g(x)=1-x+x^2).  
+Given ((g∘ f)(x)=9x^2-9x+3).
+
+Compute:
+[(g∘ f)(x)=g(f(x))=1-(ax+b)+(ax+b)^2.]
+Expand:
+[=1-ax-b+a^2x^2+2abx+b^2 = a^2x^2+(-a+2ab)x+(1-b+b^2).]
+Equate coefficients:
+[a^2=9,\qquad -a+2ab=-9,\qquad 1-b+b^2=3.]
+From (a^2=9), (a=\pm3).  
+From (b^2-b-2=0→ (b-2)(b+1)=0→ b=2) or (b=-1).
+
+- If (a=3): (-3+6b=-9→ 6b=-6→ b=-1).
+- If (a=-3): (-(-3)+2(-3)b=3-6b=-9→ -6b=-12→ b=2).
+
+Thus (\boxed{(a,b)=(3,-1)\text{or}(-3,2)}).
+
 ---
+

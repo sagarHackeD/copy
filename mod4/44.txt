@@ -1,11 +1,26 @@
-44. ACID Properties of Database Transactions
-Transactions are designed to guarantee data integrity in concurrent and failure-prone environments. The four key properties are:
-# Atomicity
-All operations in a transaction are treated as a single unit. Either all are performed, or none are. If any part fails, the entire transaction is rolled back. Implemented using undo logging and rollback mechanisms.
-# Consistency
-A transaction moves the database from one consistent state to another. All defined integrity constraints (keys, referential integrity, check) hold before and after the transaction. If a transaction would violate a constraint, it is aborted, preserving consistency.
-# Isolation
-Concurrently executing transactions do not interfere with each other. Each transaction appears to run in isolation, as if it were the only one in the system. This is enforced by concurrency control (e.g., two-phase locking, snapshot isolation). The degree of isolation can be adjusted (e.g., Read Committed, Serializable).
-# Durability
-Once a transaction commits, its changes persist even in the event of a system crash or power failure. Achieved via redo logging and writing commit records to stable storage before acknowledging commit success. Recovery mechanisms use the log to re-apply committed transactions.
+44. Arrangements of 5 a’s, 4 b’s, 3 c’s so that all identical letters are not in a single block
+
+Interpretation: the 5 a’s are not all together, the 4 b’s are not all together, and the 3 c’s are not all together.
+
+Total arrangements:
+[\frac{12!}{5!4!3!} = 27720.]
+
+Let (A): a’s together, (B): b’s together, (C): c’s together.
+
+- (|A| = \frac{8!}{4!3!} = 280) (block of a’s + 4 b’s + 3 c’s = 8 items).
+- (|B| = \frac{9!}{5!3!} = 504).
+- (|C| = \frac{10!}{5!4!} = 1260).
+
+Intersections:
+- (|A\cap B|): blocks of a’s and b’s + 3 c’s →(5) items →(\frac{5!}{3!} = 20).
+- (|A\cap C|): block a, 4 b’s, block c →(6) items →(\frac{6!}{4!} = 30).
+- (|B\cap C|): 5 a’s, block b, block c →(7) items →(\frac{7!}{5!} = 42).
+- (|A\cap B\cap C|): three blocks →(3! = 6).
+
+By inclusion–exclusion:
+[N = 27720 - (280+504+1260) + (20+30+42) - 6
+= 27720 - 2044 + 92 - 6 = 25762.]
+[\boxed{25762}]
+
 ---
+

@@ -1,15 +1,18 @@
-34. Types of Update Anomalies in SQL with Example
-Update anomalies occur when a database is not properly normalized. Consider a poorly designed table `Emp_Dept`:
- emp_id  emp_name  dept_id  dept_name   dept_head 
---------------------------------------------------
- 1       Alice     D01      Sales       John      
- 2       Bob       D01      Sales       John      
- 3       Carol     D02      Marketing   Jane      
-Insertion Anomaly:  
-You cannot add a new department (D03, HR, head Mike) unless an employee is assigned to it, because the primary key `emp_id` is the only thing uniquely identifying each row; you can't have a NULL `emp_id` (entity integrity). So information about the department cannot be inserted independently.
-Deletion Anomaly:  
-If you delete the only employee Carol (emp_id 3) from the Marketing department, all information about Marketing is lost because it was stored only in that row. The department ceases to exist in the database.
-Update (Modification) Anomaly:  
-If the Sales department gets a new head, you must update every row where `dept_id = 'D01'`. If you miss one, you have inconsistent data (some rows say John, others say the new head). This is a consequence of data redundancy.
-Normalization to 3NF would separate the table into `Employee` and `Department` relations, eliminating these anomalies.
+347. Equivalence relation on (AX A)
+
+(A={1,2,3,4,5}),  
+[(x_1,y_1)R(x_2,y_2)\Longleftrightarrow x_1+y_1=x_2+y_2.]
+
+(i) Verification:
+- Reflexive: (x+y=x+y).
+- Symmetric: if sums equal, then reversed equality holds.
+- Transitive: if (x_1+y_1=x_2+y_2) and (x_2+y_2=x_3+y_3), then (x_1+y_1=x_3+y_3).
+Hence (R) is an equivalence relation.
+
+(ii) Equivalence class of ((2,4)):  
+Sum (2+4=6). All pairs in (AX A) with sum 6:
+[[(2,4)] = {(1,5),(2,4),(3,3),(4,2),(5,1)}.]
+
 ---
+MOD4
+

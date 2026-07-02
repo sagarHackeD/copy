@@ -1,0 +1,14 @@
+39. Relation xRy iff x divides y on A={1,2,3,4}
+
+(i) Ordered pairs:
+[R={(1,1),(1,2),(1,3),(1,4),(2,2),(2,4),(3,3),(4,4)}.]
+
+(ii) Digraph: vertices (1,2,3,4); loops on all; edges (1→2,1→3,1→4,2→4).
+
+(iii) In‑degrees:
+[deg^-(1)=1,deg^-(2)=2,deg^-(3)=2,deg^-(4)=3.]
+Out‑degrees:
+[deg^+(1)=4,deg^+(2)=2,deg^+(3)=1,deg^+(4)=1.]
+
+---
+

@@ -1,0 +1,18 @@
+16. Truth values of quantified statements
+
+Universe: all non‑zero integers.
+
+(i) (Ǝ xƎ y[xy=1])
+
+Yes, e.g. (x=1,y=1) gives (1▪ 1=1).  
+Truth value: True.
+
+(ii) (Ǝ x▽ y[xy=1])
+
+We need one integer (x) such that for every non‑zero integer (y), (xy=1).  
+If (x=1), then (xy=y), which equals 1 only when (y=1), not for all (y).  
+If (x=-1), then (xy=-y), not always 1.  
+No such (x) exists.  
+Truth value: False.
+
+---

@@ -1,19 +1,23 @@
-53. What is NoSQL? CAP Theorem
-NoSQL stands for "Not Only SQL." It encompasses a wide class of database management systems that differ from the traditional relational model. They are designed to handle large volumes of distributed data, offer flexible schemas, and scale horizontally.
-Key characteristics:
-- Schema-less or flexible schema
-- Support for semi-structured (JSON, XML) or unstructured data
-- High scalability (horizontal scaling on commodity hardware)
-- Eventual consistency over strict ACID (often BASE: Basically Available, Soft state, Eventually consistent)
-- Optimised for specific data models: key-value, document, column-family, graph.
-#CAP Theorem (Brewer's Theorem)
-The CAP theorem states that a distributed system can simultaneously provide at most two of the following three guarantees:
-- Consistency (C) - Every read receives the most recent write or an error. All nodes see the same data at the same time.
-- Availability (A) - Every request receives a (non-error) response, without guarantee that it is the most recent data.
-- Partition Tolerance (P) - The system continues to operate despite arbitrary message loss or failure of part of the network.
-In the event of a network partition, the system must choose between consistency and availability. A distributed database can be classified as:
-- CP (Consistency + Partition tolerance) - Sacrifices availability during a partition; e.g., MongoDB (in certain configurations), HBase.
-- AP (Availability + Partition tolerance) - Sacrifices strong consistency; e.g., Cassandra, DynamoDB.
-- CA - A system that is both consistent and available; theoretically possible only if there is no network partition, which is unrealistic in large distributed systems, so most practical systems are either CP or AP.
-Implications for NoSQL: Many NoSQL databases are designed for partition tolerance and choose between C and A based on the use case (e.g., social media feeds tolerate eventual consistency for high availability).
+53. Klein 4‑group on (A = {e, a, b, c})
+
+Define the operation by the following table (the standard Klein 4‑group):
+
+[\begin{array}{c|cccc}
+*   e   a   b   c\\
+\hline
+e   e   a   b   c\\
+a   a   e   c   b\\
+b   b   c   e   a\\
+c   c   b   a   e
+\end{array}]
+
+Properties:
+- (e) is the identity.
+- (a^2 = b^2 = c^2 = e).
+- Product of any two distinct non‑identity elements gives the third: (a*b = c, a*c = b, b*c = a).
+- The table is symmetric, so the group is abelian.
+
+Thus (A = {e,a,b,c}) with this operation is a Klein 4‑group.
+
 ---
+

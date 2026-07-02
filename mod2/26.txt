@@ -1,20 +1,21 @@
-26. Different Relational Model Constraints
-Relational databases enforce several types of constraints to maintain integrity. The major categories are:
-1. Domain Constraints  
-   Each attribute is associated with a domain of legal values (data type, length, format, range). For example, `age` must be an integer between 0 and 120, `salary` must be a positive decimal. Violations are rejected.
-2. Key Constraints  
-   Every relation must have at least one candidate key, and a chosen primary key that uniquely identifies each tuple. No two tuples can have the same primary key value, and the primary key value cannot be NULL (this is also part of entity integrity).
-3. Entity Integrity Constraint  
-   No attribute participating in the primary key can accept NULL values. This ensures that every tuple is uniquely identifiable.
-4. Referential Integrity Constraint  
-   Already detailed in section 3. A foreign key value must reference an existing primary key value in the referenced relation (or be NULL if allowed). It preserves relationships and prevents orphan records.
-5. Semantic Integrity Constraints (Business Rules)  
-   Application-specific rules that go beyond the basic model. They can be enforced using:
-   - CHECK constraints - e.g., `CHECK (salary > 0)`, or `CHECK (end_date > start_date)`.
-   - Assertions - A declarative constraint that can span multiple tables (though not supported in all DBMSs).
-   - Triggers - Procedural code that automatically runs on INSERT/UPDATE/DELETE to enforce complex rules.
-6. NOT NULL Constraint  
-   Specifies that an attribute cannot contain NULL values, even if it is not part of the primary key. For example, an employee's name must be provided.
-7. UNIQUE Constraint  
-   Ensures that all values in one or more columns are distinct across the relation, similar to a candidate key but can allow a single NULL.
-   
+26. Binet’s formula for Fibonacci numbers
+
+Let (Φ = \frac{1+\sqrt5}{2}), (Ψ = \frac{1-\sqrt5}{2}).  
+We prove
+[F_n = \frac{1}{\sqrt5}(Φ^n - Ψ^n)]
+for all (n≥ 0), with (F_0=0,F_1=1).
+
+Base:  
+(n=0): (\frac{1}{\sqrt5}(1-1)=0=F_0).  
+(n=1): (\frac{1}{\sqrt5}(Φ-Ψ)=\frac{1}{\sqrt5}(\sqrt5)=1=F_1).
+
+Inductive step: Assume true for all integers (≤ k) ((k≥1)).  
+Since (F_{k+1}=F_k+F_{k-1}), substitute:
+[F_{k+1} = \frac{1}{\sqrt5}(Φ^k-Ψ^k) + \frac{1}{\sqrt5}(Φ^{k-1}-Ψ^{k-1})
+= \frac{1}{\sqrt5}[Φ^{k-1}(Φ+1) - Ψ^{k-1}(Ψ+1)].]
+But (Φ+1=Φ^2) and (Ψ+1=Ψ^2) because they satisfy (x^2=x+1). Hence
+[F_{k+1}=\frac{1}{\sqrt5}(Φ^{k+1}-Ψ^{k+1}).]
+Proved.
+
+---
+

@@ -1,51 +1,21 @@
-51. Two-Phase Locking Protocol (2PL) for Concurrency Control
-The two-phase locking protocol is a concurrency control mechanism that ensures serializable schedules by controlling how transactions acquire and release locks on data items.
-# The Protocol
-A transaction must follow two distinct phases:
-1. Growing Phase - The transaction may obtain locks (shared or exclusive) but cannot release any lock.
-2. Shrinking Phase - The transaction may release locks but cannot obtain any new locks.
-The transaction can be visualised:
-```
-Locks ^
-     Growing         Shrinking
-     phase           phase
-       /`````````````````````````\
-      /                  \
-     /                    \
-    /                      \
-   /                        \
-  ------------------------------> Time
-            Lock point
-```
-- Lock point - the moment when the transaction has acquired all needed locks and is about to release the first one.
-# Example with Two Transactions
-Consider two transactions transferring money:
-T1: Transfer $100 from account A to B  
-read(A); A = A - 100; write(A); read(B); B = B + 100; write(B);
-T2: Print total of A + B  
-read(A); read(B); print(A+B);
-Without 2PL: interleaving could cause T2 to read after T1's write to A but before write to B, printing an inconsistent total.
-With Basic 2PL:  
-T1 needs locks: X(A), X(B)  
-T2 needs locks: S(A), S(B)
-Possible lock schedule (T1 goes first):
- Step  T1 action                T2 action               
---------------------------------------------------------
- 1     X_lock(A) - granted                              
- 2     read(A)                                          
- 3     A := A-100                                       
- 4     write(A)                                         
- 5     X_lock(B) - granted                              
- 6     read(B)                  S_lock(A) - wait (A locked by T1) 
- 7     B := B+100                                       
- 8     write(B)                                         
- 9     Unlock(A), Unlock(B)                             
- 10    (shrinking phase ends)   S_lock(A) granted       
- 11                             read(A)                 
- 12                             S_lock(B) granted       
- 13                             read(B)                 
- 14                             print(A+B)              
- 15                             Unlock(A), Unlock(B)    
-This schedule is serial (T1 then T2) and ensures consistency. The 2PL rule prevents T2 from acquiring any lock after releasing one, but here T2 doesn't release locks until it finishes reading both.
-Variation - Strict 2PL: Transaction holds all exclusive locks until commit/abort. This avoids cascading rollbacks and is widely used in commercial DBMSs.
+51. State and prove Lagrange's Theorem
+
+Statement (Lagrange’s Theorem):  
+If (G) is a finite group and (H) is a subgroup of (G), then the order of (H) divides the order of (G). In symbols,
+[|G| = [G:H] ▪ |H|,]
+where ([G:H]) is the number of left (or right) cosets of (H) in (G).
+
+Proof:  
+Define a relation on (G) by (a \sim b) iff (a^{-1}b Ɛ H). This is an equivalence relation:
+- Reflexive: (a^{-1}a = e Ɛ H).
+- Symmetric: if (a^{-1}b Ɛ H), then ((a^{-1}b)^{-1} = b^{-1}a Ɛ H).
+- Transitive: if (a^{-1}b Ɛ H) and (b^{-1}c Ɛ H), then (a^{-1}c = (a^{-1}b)(b^{-1}c) Ɛ H).
+
+The equivalence class of (a) is the left coset (aH = {ah | h Ɛ H}).  
+The map (H →aH) given by (h \mapsto ah) is a bijection (its inverse is (x \mapsto a^{-1}x)). Hence every left coset has exactly (|H|) elements.  
+The left cosets partition (G), so
+[|G| = (\text{number of distinct left cosets}) ▪ |H|.]
+Therefore, (|H|) divides (|G|).
+
 ---
+

@@ -1,0 +1,13 @@
+17. Prove using laws of logic:
+[p→(q→r)↔(pΛ q)→r.]
+
+Proof:
+[p→(q→r)≡¬pV(¬qV r)
+≡(¬pV ¬q)V r
+≡¬(pΛ q)V r
+≡(pΛ q)→r.]
+
+Hence they are logically equivalent.
+
+---
+
