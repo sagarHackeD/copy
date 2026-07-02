@@ -1,0 +1,22 @@
+123. Validity of argument
+
+Let:
+- (E): The triangle has two equal sides.
+- (I): The triangle is isosceles.
+- (A): The triangle has two equal angles.
+
+Premises:
+1. (E→I)
+2. (I→A)
+3. (¬A)
+
+Conclusion:
+[¬E.]
+
+Proof:
+- From (E→I) and (I→A), by Hypothetical Syllogism, get (E→A).
+- From (E→A) and (¬A), by Modus Tollens, get (¬E).
+
+Therefore, the argument is valid.
+
+---

@@ -1,0 +1,15 @@
+230. Recursive definitions 
+
+(i) (a_n = 5n): same as above: (a_0=0,a_n=a_{n-1}+5).
+
+(ii) (a_n = 3n+7): same: (a_0=7,a_n=a_{n-1}+3).
+
+(iii) (a_n = 2(-1)^n):  
+(a_0 = 2).  
+For (n≥1):
+[a_n - a_{n-1} = 2(-1)^n - 2(-1)^{n-1}
+= 2(-1)^n + 2(-1)^n = 4(-1)^n.]
+Thus (a_n = a_{n-1} + 4(-1)^n).
+
+---
+

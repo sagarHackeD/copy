@@ -1,0 +1,27 @@
+340. POSET and Hasse diagram on (A={1,2,3,6,9,12,18})
+
+Relation (xRy) iff (x| y).
+
+Proof of POSET:
+- Reflexive: (x| x).
+- Antisymmetric: if (x| y) and (y| x), then (x=y).
+- Transitive: if (x| y) and (y| z), then (x| z).
+
+Hasse diagram (cover relations):
+[1⮜ 2,1⮜ 3, 2⮜ 6, 3⮜ 6,3⮜ 9, 6⮜ 12,6⮜ 18, 9⮜ 18.]
+((12) and (18) are maximal; no relation between (12) and (18).)
+
+Text representation:
+```
+	12      18
+	 \     / \
+	  6   /   9
+	 / \ /    /
+	2   3    /
+	 \ /    /
+	  1    /
+```
+Better to just list the cover relations and draw arrows upward.
+
+---
+

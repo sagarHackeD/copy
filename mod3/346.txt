@@ -1,0 +1,15 @@
+346. Power set and Cartesian product
+
+Power set: the set of all subsets of a given set.
+
+Prove (AX(B\cup C)=(AX B)\cup(AX C)):
+
+[(x,y)Ɛ AX(B\cup C)
+\iff xƐ A\text{and}yƐ B\cup C
+\iff xƐ A\text{and}(yƐ B\text{or}yƐ C)]
+[\iff (xƐ A\text{and}yƐ B)\text{or}(xƐ A\text{and}yƐ C)
+\iff (x,y)Ɛ (AX B)\cup(AX C).]
+Thus equality holds.
+
+---
+

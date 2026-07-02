@@ -1,0 +1,12 @@
+342. Associativity of composition
+
+Prove: for (f:A→B,g:B→C,h:C→D),
+[h∘(g∘ f)=(h∘ g)∘ f.]
+For any (aƐ A):
+[(h∘(g∘ f))(a)=h((g∘ f)(a))=h(g(f(a))),]
+and
+[((h∘ g)∘ f)(a)=(h∘ g)(f(a))=h(g(f(a))).]
+Both are equal, so composition is associative.
+
+---
+

@@ -1,0 +1,18 @@
+231. Word “MASSASAUGA”
+
+Letters: M(1), A(4), S(3), U(1), G(1). Total (10) letters.  
+Total permutations:
+[\frac{10!}{4!3!} = \frac{3628800}{24▪6}=25200.]
+
+(i) All four A’s together:  
+Treat (AAAA) as one block. Now we have 7 items: block, M, S,S,S, U, G.  
+Permutations:
+[\frac{7!}{3!} = \frac{5040}{6}=840.]
+
+(ii) Begin with S:  
+Fix one S at the start. Remaining: A(4), S(2), M, U, G →9 letters.  
+Permutations:
+[\frac{9!}{4!2!} = \frac{362880}{24▪2}=7560.]
+
+---
+

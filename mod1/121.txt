@@ -1,0 +1,25 @@
+121. Symbolic form and validity
+
+Let:
+- (A): A gets the Supervisor’s position.
+- (W): A works hard.
+- (R): A gets a raise.
+- (C): A buys a car.
+
+Premises:
+1. ((AΛ W)→R)
+2. (R→C)
+3. (¬C)
+
+Conclusion:
+[¬AV ¬W.]
+
+Proof:
+- From (R→C) and (¬C), by Modus Tollens, get (¬R).
+- From ((AΛ W)→R) and (¬R), by Modus Tollens, get (¬(AΛ W)).
+- By De Morgan’s law, (¬(AΛ W)≡ ¬AV ¬W).
+
+Thus the argument is valid.
+
+---
+

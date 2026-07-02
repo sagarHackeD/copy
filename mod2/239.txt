@@ -1,0 +1,20 @@
+239. 8 identical marbles into 4 distinct containers
+
+(i) No container empty:  
+Give 1 marble to each container first, leaving (8-4=4) marbles.  
+Distribute 4 identical marbles into 4 containers:
+[\binom{4+4-1}{4-1} = \binom{7}{3} = 35.]
+
+(ii) Fourth container has an odd number:  
+Let (x_4 Ɛ {1,3,5,7}).
+
+- (x_4=1): remaining (7) into 3 containers →(\binom{7+3-1}{2}=\binom{9}{2}=36).
+- (x_4=3): remaining (5) →(\binom{5+2}{2}=\binom{7}{2}=21).
+- (x_4=5): remaining (3) →(\binom{3+2}{2}=\binom{5}{2}=10).
+- (x_4=7): remaining (1) →(\binom{1+2}{2}=\binom{3}{2}=3).
+
+Total:
+[36+21+10+3 = 70.]
+
+---
+

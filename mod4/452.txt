@@ -1,0 +1,28 @@
+452. Four persons to five tables (vacant chairs)
+
+Persons (P_1,▪▪▪,P_4), tables (T_1,▪▪▪,T_5).
+
+Restrictions:
+- (P_1): not (T_1,T_2)
+- (P_2): not (T_2)
+- (P_3): not (T_3,T_4)
+- (P_4): not (T_4,T_5)
+
+We use the rook polynomial for the forbidden board (4 rows, 5 columns).
+
+Forbidden cells count:
+- (r_0 = 1)
+- (r_1 = 7)
+- (r_2 = 16) (computed by choosing two non‑attacking forbidden cells)
+- (r_3 = 13)
+- (r_4 = 3)
+- (r_5 = 0) (only 4 rows)
+
+Number of valid assignments (choose 4 tables out of 5 and assign persons to them):
+[N = \sum_{k=0}^4 (-1)^k r_k ▪ (5-k)!
+= 1▪ 120 - 7▪ 24 + 16▪ 6 - 13▪ 2 + 3▪ 1
+= 120 - 168 + 96 - 26 + 3 = 25.]
+[\boxed{25}]
+
+---
+

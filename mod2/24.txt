@@ -1,17 +1,17 @@
-240. Positive integers using digits 3,4,4,5,5,6,7 exceeding 5,000,000
+24. Prove every integer (n≥ 24) is a sum of 5’s and 7’s
 
-We have 7 digits, so the number is a 7‑digit number. To exceed 5,000,000, the first digit must be 5, 6, or 7.
+We use strong induction.
 
-- First digit 5: Remaining digits: 3,4,4,5,6,7 →(6) letters with one repeated 4.
-  [  \frac{6!}{2!}=360.]
-- First digit 6: Remaining: 3,4,4,5,5,7 →two pairs repeated.
-  [  \frac{6!}{2!2!} = 180.]
-- First digit 7: Remaining: 3,4,4,5,5,6 →two pairs repeated.
-  [  \frac{6!}{2!2!} = 180.]
+Base cases:  
+(24 = 5+5+7+7),  
+(25 = 5+5+5+5+5),  
+(26 = 7+7+7+5),  
+(27 = 5+5+5+5+7),  
+(28 = 7+7+7+7).
 
-Total:
-[360 + 180 + 180 = 720.]
+Inductive step: Assume true for all integers from 24 up to (k≥ 28).  
+For (k+1), since ((k+1)-5 ≥ 24), by the induction hypothesis ((k+1)-5) is a sum of 5’s and 7’s. Adding one more 5 gives a representation of (k+1).  
+Hence proved.
 
 ---
-MOD3
 

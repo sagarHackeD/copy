@@ -1,0 +1,26 @@
+451. Teachers to classes (restricted assignments)
+
+Teachers (T_1,▪▪▪,T_5) to classes (C_1,▪▪▪,C_5).
+
+Restrictions:
+- (T_1,T_2): not (C_1,C_2).
+- (T_3,T_4): not (C_4,C_5).
+- (T_5): not (C_3,C_4,C_5).
+
+Since (T_5) cannot be assigned to (C_3,C_4,C_5), (T_5) must be assigned to (C_1) or (C_2).
+
+Case 1: (T_5 →C_1).  
+Then (T_3,T_4) cannot go to (C_4,C_5), so they must occupy (C_2,C_3) in (2! = 2) ways.  
+The remaining classes for (T_1,T_2) are (C_4,C_5), which they can take in (2! = 2) ways.  
+Total for Case 1: (2X 2 = 4).
+
+Case 2: (T_5 →C_2).  
+By symmetry, (T_3,T_4) must occupy (C_1,C_3) in (2) ways, and (T_1,T_2) take (C_4,C_5) in (2) ways.  
+Total: (4).
+
+Total valid assignments:
+[4 + 4 = 8.]
+[\boxed{8}]
+
+---
+

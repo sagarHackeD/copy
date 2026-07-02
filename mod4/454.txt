@@ -1,0 +1,40 @@
+454. Arrangements of letters of “CORRESPONDENTS”
+
+Letters: C(1), O(2), R(2), E(2), S(2), P(1), N(1), D(1), T(1). Total 14.  
+Let the repeated pairs be (A=OO,B=RR,C=EE,D=SS).
+
+Define (S_i = \sum) arrangements where a specific set of (i) pairs are tied together:
+[S_i = \binom{4}{i} \frac{(14-i)!}{2^{4-i}}.]
+
+We need:
+- (S_0 = \frac{14!}{16})
+- (S_1 = \frac{13!}{2})
+- (S_2 = \frac{3}{2}▪ 12!)
+- (S_3 = 2▪ 11!)
+- (S_4 = 10!)
+
+(i) Exactly 2 pairs together:
+[E_2 = S_2 - 3S_3 + 6S_4
+= \frac{3}{2}12! - 3(2▪ 11!) + 6(10!)
+= 10!≤ft( \frac{3}{2}▪ 12▪ 11 - 6▪ 11 + 6 \right)
+= 10!(198 - 66 + 6) = 138▪ 10!.]
+[\boxed{138▪ 10!}]
+
+(ii) At least 3 pairs together:
+[E_3 = S_3 - 4S_4 = 2▪ 11! - 4▪ 10! = 10!(22-4)=18▪ 10!,]
+[E_4 = S_4 = 10!.]
+So:
+[E_3 + E_4 = 18▪ 10! + 10! = 19▪ 10!.]
+[\boxed{19▪ 10!}]
+
+(iii) No pair together:
+[E_0 = S_0 - S_1 + S_2 - S_3 + S_4
+= 10!≤ft( \frac{14▪13▪12▪11}{16} - \frac{13▪12▪11}{2} + \frac{3▪12▪11}{2} - 2▪ 11 + 1 \right).]
+Simplify the bracket:
+[= 10!≤ft( \frac{24024 - 13728 + 3168 - 352 + 16}{16} \right)
+= 10!≤ft( \frac{13128}{16} \right)
+= 10! ▪ \frac{1641}{2}.]
+[\boxed{\frac{1641}{2}▪ 10!}]
+
+---
+

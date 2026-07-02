@@ -1,0 +1,14 @@
+566. Uniqueness of identity and inverses
+
+(i) Identity is unique:  
+Suppose (e_1) and (e_2) are both identity elements in (G). Then
+[e_1 = e_1 e_2 = e_2,]
+so they are equal.
+
+(ii) Inverse of each element is unique:  
+Let (a Ɛ G), and suppose (b) and (c) are both inverses of (a). Then
+[b = b e = b(ac) = (ba)c = e c = c.]
+Hence the inverse is unique.
+
+---
+
