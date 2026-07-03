@@ -1,14 +1,10 @@
 11. Tautology and truth table
-
 Definition:  
 A compound proposition is a tautology if it is true for every possible truth assignment of its component propositions.
-
 We prove that  
 [[(pV q)Λ(p→r)Λ(q→r)]→r]
 is a tautology.
-
 Truth table:
-
 | (p) | (q) | (r) | (pV q) | (p→r) | (q→r) | (A=(pV q)Λ(p→r)Λ(q→r)) | (A→r) |
 | T | T | T | T | T | T | T | T |
 | T | T | F | T | F | F | F | T |
@@ -18,8 +14,5 @@ Truth table:
 | F | T | F | T | T | F | F | T |
 | F | F | T | F | T | T | F | T |
 | F | F | F | F | T | T | F | T |
-
 Since (A→r) is true in every row, the proposition is a tautology.
-
 ---
-

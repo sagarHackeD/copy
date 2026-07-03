@@ -1,7 +1,11 @@
 45. Rook polynomial for the board shown in the figure
 r_1 = no of cells
 r_2 = 2 non capturing groups and so on
+
 r(C,x) = 1 + r_1 x + r_2 x^2 + r_3 x^3 + ... + r_n x^n
+
 r(C,x) = x r(D,x) + r(E,x)
+
 r(C,x) = r(C_1,x) X r(C_2,x)
 ---
+

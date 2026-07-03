@@ -1,7 +1,4 @@
 563. Show the group from the given multiplication table is cyclic
-
 The multiplication table referenced in this question is not included in the provided document.  
 Please provide the table so that I can identify a generator and prove the group is cyclic. Without the table, this question cannot be solved.
-
 ---
-

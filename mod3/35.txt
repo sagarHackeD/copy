@@ -1,11 +1,7 @@
 35. Pigeon‑hole Principle
-
 Statement: If (n+1) items are put into (n) boxes, then at least one box contains at least two items.
-
 Proof for sum to (2n+1):  
 Partition the set ({1,2,▪▪▪,2n}) into (n) pairs:
 [(1,2n),(2,2n-1),▪▪▪,(n,n+1).]
 Each pair sums to (2n+1). If we choose (n+1) numbers, by the PHP we must take both numbers from at least one pair. Hence their sum is (2n+1).
-
 ---
-

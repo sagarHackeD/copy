@@ -7,6 +7,4 @@ By distributivity,
 Therefore,
 [[(pV q)→r]↔[(p→r)Λ(q→r)]]
 is a tautology.
-
 ---
-

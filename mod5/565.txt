@@ -1,20 +1,15 @@
 565. Possible values of (|H|)
-
 Given:
-[K \subset H \subset G,    |G| = 660,    |K| = 66.]
+[K c H c G,    |G| = 660,    |K| = 66.]
 By Lagrange’s Theorem, since (K ≤ H ≤ G), we have
 [|K| | |H|    \text{and}    |H| | |G|.]
 Thus (66 | |H| | 660). Let (|H| = 66k). Then (66k | 660 → k | 10).  
 So (k Ɛ {1,2,5,10}).
-
-Since the inclusions are proper ((K \subset H) and (H \subset G)), we have
-[|H| > |K| = 66 → k \neq 1,]
+Since the inclusions are proper ((K c H) and (H c G)), we have
+[|H| > |K| = 66 → k ╪ 1,]
 and
-[|H| < |G| = 660 → k \neq 10.]
+[|H| < |G| = 660 → k ╪ 10.]
 Thus the possible values are:
 [|H| = 66 ▪ 2 = 132    \text{or}    |H| = 66 ▪ 5 = 330.]
-
 [\boxed{|H| Ɛ {132,330}}]
-
 ---
-

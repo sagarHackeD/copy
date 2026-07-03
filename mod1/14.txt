@@ -1,12 +1,9 @@
 14. Validity using Rules of Inference
-
 Premises:
 [p,    p→q,    sVr,    r→¬q]
 Conclusion:
 [sVt]
-
 Proof:
-
 1. (p) (Premise)  
 2. (p→q) (Premise)  
 3. (q) (Modus Ponens, 1,2)  
@@ -15,8 +12,5 @@ Proof:
 6. (sVr) (Premise)  
 7. (s) (Disjunctive Syllogism, 5,6)  
 8. (sVt) (Addition, 7)
-
 Thus the argument is valid.
-
 ---
-

@@ -1,13 +1,9 @@
 23. Well‑Ordering Principle and prove (1+2+▪▪▪+n = \frac{n(n+1)}2)
-
 Well‑Ordering Principle: Every non‑empty subset of ({Z}^+) has a least element.
-
 Proof by induction:  
 Base (n=1): (1=\frac{1▪2}{2}). True.  
 Assume for (k): (1+▪▪▪+k=\frac{k(k+1)}2).  
 Then
 [1+▪▪▪+k+(k+1)=\frac{k(k+1)}2 + (k+1)=\frac{k+1}{2}(k+2)=\frac{(k+1)(k+2)}2,]
 which is the formula for (k+1). Proved.
-
 ---
-

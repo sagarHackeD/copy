@@ -1,7 +1,5 @@
 343. Composition of functions on ({Z})
-
 (f(x)=x-1,g(x)=3x,h(x)= \begin{cases}0, x\text{ even}\\1, x\text{ odd}\end{cases}).
-
 Compute ((f∘ g∘ h)(x)):
 [(f∘ g)(x)=f(g(x))=f(3x)=3x-1.]
 Then
@@ -17,6 +15,4 @@ Verification of (f∘(g∘ h)):
 [(g∘ h)(x)=g(h(x))=3h(x),   
 f(3h(x))=3h(x)-1,]
 same. Hence equality holds.
-
 ---
-

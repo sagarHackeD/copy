@@ -1,0 +1,18 @@
+11. Tautology and truth table
+12.Show that [[(p↔q)Λ(q↔r)Λ(r↔p)]↔[(p→q)Λ(q→r)Λ(r→p)]] is a tautology (i.e. the two sides are logically equivalent).
+13.Show that [[(pV q)→r]↔[(p→r)Λ(q→r)].] Using laws of logic:
+14. Validity using Rules of Inference
+15. Validity using Rules of Inference
+16. Truth values of quantified statements
+17. Prove using laws of logic:
+18. Prove using laws of logic:
+19. Prove using laws of logic:
+120. Test validity of argument
+121. Symbolic form and validity
+123. Validity of argument
+124. Definitions
+125. Symbolic form and negation
+126. Proofs for “If (n) is odd then (n+9) is even”
+127. For two odd integers (m,n)
+128. Indirect proof of “The product of two even integers is even”
+129. Proof by contradiction for “If (n^2) is odd, then (n) is odd”

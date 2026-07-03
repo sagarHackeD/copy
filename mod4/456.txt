@@ -1,18 +1,13 @@
 456. Multiples of at least one of 15, 40, 35 not exceeding 1000
-
 Let (A=15,B=40,C=35).
-
-[|A| = ≤ft\lfloor \frac{1000}{15} \right\rfloor = 66,   
-|B| = ≤ft\lfloor \frac{1000}{40} \right\rfloor = 25,   
-|C| = ≤ft\lfloor \frac{1000}{35} \right\rfloor = 28.]
-[|A\cap B| = ≤ft\lfloor \frac{1000}{\mathrm{lcm}(15,40)} \right\rfloor = ≤ft\lfloor \frac{1000}{120} \right\rfloor = 8,]
-[|A\cap C| = ≤ft\lfloor \frac{1000}{\mathrm{lcm}(15,35)} \right\rfloor = ≤ft\lfloor \frac{1000}{105} \right\rfloor = 9,]
-[|B\cap C| = ≤ft\lfloor \frac{1000}{\mathrm{lcm}(40,35)} \right\rfloor = ≤ft\lfloor \frac{1000}{280} \right\rfloor = 3,]
-[|A\cap B\cap C| = ≤ft\lfloor \frac{1000}{\mathrm{lcm}(15,40,35)} \right\rfloor = ≤ft\lfloor \frac{1000}{840} \right\rfloor = 1.]
-
+[|A| = \lfloor \frac{1000}{15} \rfloor = 66,   
+|B| = \lfloor \frac{1000}{40} \rfloor = 25,   
+|C| = \lfloor \frac{1000}{35} \rfloor = 28.]
+[|An B| = \lfloor \frac{1000}lcm(15,40)} \rfloor = \lfloor \frac{1000}{120} \rfloor = 8,]
+[|An C| = \lfloor \frac{1000}lcm(15,35)} \rfloor = \lfloor \frac{1000}{105} \rfloor = 9,]
+[|Bn C| = \lfloor \frac{1000}lcm(40,35)} \rfloor = \lfloor \frac{1000}{280} \rfloor = 3,]
+[|An Bn C| = \lfloor \frac{1000}lcm(15,40,35)} \rfloor = \lfloor \frac{1000}{840} \rfloor = 1.]
 By inclusion–exclusion:
 [66+25+28 - (8+9+3) + 1 = 119 - 20 + 1 = 100.]
 [\boxed{100}]
-
 ---
-

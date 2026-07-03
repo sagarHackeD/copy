@@ -1,12 +1,9 @@
 12.Show that [[(p↔q)Λ(q↔r)Λ(r↔p)]↔[(p→q)Λ(q→r)Λ(r→p)]] is a tautology (i.e. the two sides are logically equivalent).
-
 Let  
 [L=(p↔q)Λ(q↔r)Λ(r↔p)]
 and  
 [R=(p→q)Λ(q→r)Λ(r→p).]
-
 We evaluate both for all truth assignments:
-
 | (p) | (q) | (r) | (L) | (R) |
 | T | T | T | T | T |
 | T | T | F | F | F |
@@ -16,10 +13,7 @@ We evaluate both for all truth assignments:
 | F | T | F | F | F |
 | F | F | T | F | F |
 | F | F | F | T | T |
-
 In every row, (L) and (R) have the same truth value. Hence  
 [L↔R]
 is a tautology, so they are logically equivalent.
-
 ---
-

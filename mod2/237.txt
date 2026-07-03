@@ -1,13 +1,9 @@
 237. Coefficient of (a^2 b^3 c^2 d^5) in ((a + 2b - 3c + 2d + 5)^{16})
-
 Sum of exponents for (a,b,c,d) is (2+3+2+5 = 12).  
 The remaining (16-12=4) comes from the constant term (5).
-
 Multinomial coefficient:
 [\frac{16!}{2!3!2!5!4!}
 ▪ (1)^2 ▪ (2)^3 ▪ (-3)^2 ▪ (2)^5 ▪ (5)^4.]
 So the coefficient is
 [\boxed{\frac{16!}{2!3!2!5!4!} ▪ 8 ▪ 9 ▪ 32 ▪ 625}.]
-
 ---
-

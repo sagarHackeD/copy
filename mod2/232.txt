@@ -1,7 +1,5 @@
 232. Word “TALLAHASSEE”
-
 Letters: T(1), A(3), L(2), H(1), S(2), E(2). Total 11.
-
 No adjacent A’s:  
 First arrange the 8 non‑A letters: T, L,L, H, S,S, E,E.
 [\frac{8!}{2!2!2!} = \frac{40320}{8}=5040.]
@@ -9,6 +7,4 @@ These 8 letters create 9 gaps (including ends). Choose 3 gaps for the 3 A’s:
 [\binom{9}{3}=84.]
 Total arrangements:
 [5040 X 84 = 423360.]
-
 ---
-

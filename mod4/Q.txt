@@ -1,0 +1,20 @@
+41. Permutations of 26 letters avoiding patterns CAR, DOG, PUN, BYTE
+42. Solve (F_{n+2}=F_{n+1}+F_n, F_0=0, F_1=1)
+43. Solve (a_{n+2} - 3a_{n+1} + 2a_n = 0, a_0=1, a_1=6)
+44. Arrangements of 5 a’s, 4 b’s, 3 c’s so that all identical letters are not in a single block
+45. Rook polynomial for the board shown in the figure
+46. Derangements of ({1,2,3,4})
+47. Positive integers (≤ 100) not divisible by 2, 3, or 5
+48. Integers between 1 and 250 divisible by 3, not by 5, and not by 7
+49. Integers between 1 and 300 divisible by 5, 6, or 8
+450. Umbrellas returned to 10 men
+451. Teachers to classes (restricted assignments)
+452. Four persons to five tables (vacant chairs)
+453. Virus affected files – recurrence
+454. Arrangements of letters of “CORRESPONDENTS”
+455. Rook polynomial for a (3X 3) board using expansion formula
+456. Multiples of at least one of 15, 40, 35 not exceeding 1000
+457. Solve (a_n = a_{n-1}, a_0=1)
+458. Solve (a_n - 3a_{n-1} = 5▪ 3^n, a_0=2)
+459. Solve (a_n = 5a_{n-1} + 6a_{n-2}, a_0=1, a_1=3)
+460. Solve (a_n - 6a_{n-1} + 9a_{n-2} = 0, a_0=5, a_1=12)

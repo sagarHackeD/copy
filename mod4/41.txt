@@ -1,39 +1,27 @@
 41. Permutations of 26 letters avoiding patterns CAR, DOG, PUN, BYTE
-
 Let  
 - (A_1): pattern CAR occurs,  
 - (A_2): DOG occurs,  
 - (A_3): PUN occurs,  
 - (A_4): BYTE occurs.
-
 The letters in these patterns are all distinct, so we use inclusion–exclusion.
-
 - Total permutations without restriction: (26!).
 - For a 3‑letter pattern (CAR, DOG, PUN), treat it as one block →(24) items →(24!) ways. There are (3) such patterns.
 - For the 4‑letter pattern BYTE →(23) items →(23!) ways.
-
 Thus:
 [N_1 = 3▪ 24! + 23!.]
-
 Two patterns together:
 - Two 3‑letter patterns: (3) choices, (2) blocks + 20 letters = (22) items →(22!).
 - One 3‑letter + BYTE: (3) choices, (2) blocks + 19 letters = (21) items →(21!).
-
 So:
 [N_2 = \binom{3}{2}22! + 3▪ 21! = 3▪ 22! + 3▪ 21!.]
-
 Three patterns together:
 - Three 3‑letter patterns: (1) way, (3) blocks + 17 letters = (20) items →(20!).
 - Two 3‑letter + BYTE: (\binom{3}{2}=3) ways, (3) blocks + 16 letters = (19) items →(19!).
-
 So:
 [N_3 = 20! + 3▪ 19!.]
-
 All four patterns together:  
 (3) blocks (for CAR, DOG, PUN) + (1) block (BYTE) + 13 letters = (17) items →(17!).
-
 By inclusion–exclusion, the required number is:
 [\boxed{26! - (3▪ 24! + 23!) + (3▪ 22! + 3▪ 21!) - (20! + 3▪ 19!) + 17!}.]
-
 ---
-

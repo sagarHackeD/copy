@@ -1,9 +1,6 @@
 37. Pigeon‑hole Principle – sum 9
-
 The intended statement is: “If 5 numbers are chosen from ({1,2,▪▪▪,8}), then two of them sum to (9).”  
 Partition into 4 pairs summing to 9:
 [(1,8),(2,7),(3,6),(4,5).]
 Choosing 5 numbers forces at least one complete pair by PHP. Hence two sum to 9.
-
 ---
-

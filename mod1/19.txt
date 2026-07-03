@@ -1,6 +1,5 @@
 19. Prove using laws of logic:
 [[(pV q)Λ(pV ¬q)]V q↔pV q.]
-
 Proof:
 [(pV q)Λ(pV ¬q)
 ≡ pV(qΛ ¬q)
@@ -9,6 +8,4 @@ Proof:
 Then
 [pV q ≡ pV q.]
 So the identity holds.
-
 ---
-

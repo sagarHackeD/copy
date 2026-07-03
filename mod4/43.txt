@@ -1,5 +1,4 @@
 43. Solve (a_{n+2} - 3a_{n+1} + 2a_n = 0, a_0=1, a_1=6)
-
 Characteristic:
 [r^2 - 3r + 2 = (r-1)(r-2)=0.]
 So
@@ -8,6 +7,4 @@ Using initial conditions:
 [a_0 = A+B = 1,\qquad a_1 = A + 2B = 6.]
 Subtract: (B = 5), hence (A = -4). Therefore
 [\boxed{a_n = -4 + 5▪ 2^n}.]
-
 ---
-

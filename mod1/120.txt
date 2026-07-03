@@ -1,24 +1,17 @@
 120. Test validity of argument
-
 Let:
 - (S): Ram studies.
 - (P): Ram passes 12th.
 - (B): Ram’s father gifts him a bike.
 - (V): Ram plays video game.
-
 Premises:
 1. (S→P)
 2. (P→B)
 3. (¬V→P)
 4. (¬B)
-
 Conclusion: (V).
-
 Proof:
 - From (P→B) and (¬B), by Modus Tollens, we get (¬P).
 - From (¬V→P) and (¬P), by Modus Tollens, we get (¬¬V = V).
-
 Therefore, the argument is valid.
-
 ---
-

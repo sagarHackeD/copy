@@ -1,7 +1,5 @@
 18. Prove using laws of logic:
 [¬[¬(¬qΛ r)V((qΛ r)V(pΛ r))]↔r.]
-
-
 [¬(¬qΛ r) ≡ qV ¬r,]
 and
 [(qΛ r)V(pΛ r) ≡ rΛ(qV p).]
@@ -22,10 +20,7 @@ Thus the whole inner expression simplifies to
 Therefore,
 [¬(pV qV ¬r) ≡ ¬pΛ ¬qΛ r.]
 So the left side is (¬pΛ ¬qΛ r), not simply (r).
-
 Counterexample: Take (p=T,q=F,r=T).  
 Then LHS = (¬TΛ ¬FΛ T = FΛ TΛ T = F), but RHS = (T).  
 Hence the given equivalence is false. There is likely a typo in the problem.
-
 ---
-

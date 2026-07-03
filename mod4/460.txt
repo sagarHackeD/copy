@@ -1,5 +1,4 @@
 460. Solve (a_n - 6a_{n-1} + 9a_{n-2} = 0, a_0=5, a_1=12)
-
 Characteristic:
 [r^2 - 6r + 9 = (r-3)^2 = 0.]
 Repeated root (r=3):
@@ -8,7 +7,5 @@ Using (a_0=5): (A=5).
 Using (a_1=12): ((5+B)▪ 3 = 12 → 5+B = 4 → B = -1).  
 Thus:
 [\boxed{a_n = (5-n)3^n}.]
-
 ---
 MOD5
-

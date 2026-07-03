@@ -1,20 +1,14 @@
 49. Integers between 1 and 300 divisible by 5, 6, or 8
-
 Let (A_5,A_6,A_8).
-
 [|A_5| = 60,    |A_6| = 50,    |A_8| = 37,]
-[|A_5\cap A_6| = \lfloor 300/30\rfloor = 10,   
-|A_5\cap A_8| = \lfloor 300/40\rfloor = 7,   
-|A_6\cap A_8| = \lfloor 300/24\rfloor = 12,]
-[|A_5\cap A_6\cap A_8| = \lfloor 300/120\rfloor = 2.]
-
+[|A_5n A_6| = \lfloor 300/30\rfloor = 10,   
+|A_5n A_8| = \lfloor 300/40\rfloor = 7,   
+|A_6n A_8| = \lfloor 300/24\rfloor = 12,]
+[|A_5n A_6n A_8| = \lfloor 300/120\rfloor = 2.]
 (i) At least one:
 [60+50+37 - (10+7+12) + 2 = 147 - 29 + 2 = 120.]
 [\boxed{120}]
-
 (ii) None:
 [300 - 120 = 180.]
 [\boxed{180}]
-
 ---
-

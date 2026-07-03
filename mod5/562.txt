@@ -1,10 +1,6 @@
 562. Define Group and Subgroup with examples
-
 Group: See definition in Q1 (Page 2).  
 Example of a group: (({Z}, +)), the set of integers under addition.
-
-Subgroup: A non‑empty subset (H) of a group (G) is a subgroup of (G) if (H) itself is a group under the same operation as (G). Equivalently, (H \neq 0) and for all (a,b Ɛ H), (ab Ɛ H) and (a^{-1} Ɛ H).  
+Subgroup: A non‑empty subset (H) of a group (G) is a subgroup of (G) if (H) itself is a group under the same operation as (G). Equivalently, (H ╪ 0) and for all (a,b Ɛ H), (ab Ɛ H) and (a^{-1} Ɛ H).  
 Example of a subgroup: (2{Z} = {▪▪▪, -4, -2, 0, 2, 4, ▪▪▪}) is a subgroup of (({Z}, +)).
-
 ---
-

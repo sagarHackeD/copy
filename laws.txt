@@ -1,0 +1,38 @@
+1.Identity Laws
+P∧true ≡ P
+P∨false ≡ P 
+
+2. Domination Laws
+P∨true ≡ true
+P∧false ≡ false 
+
+3. Idempotent Laws
+P∨P≡P
+P∧P≡P 
+
+4. Double Negation Law
+¬(¬P)≡P 
+
+5. Commutative Laws
+P∨Q ≡ Q∨P
+P∧Q ≡Q∧P 
+
+6. Associative Laws
+(P∨Q)∨R ≡ P∨(Q∨R)
+(P∧Q)∧R ≡ P∧(Q∧R) 
+
+7. Distributive Laws
+P∨(Q∧R) ≡ (P∨Q)∧(P∨R)
+P∧(Q∨R) ≡ (P∧Q)∨(P∧R) 
+
+8. De Morgan's Laws
+¬(P∧Q) ≡ ¬P ∨¬Q
+¬(P∨Q) ≡ ¬P ∧¬Q 
+
+9. Absorption Laws
+P∨(P∧Q) ≡P
+P∧(P∨Q) ≡P 
+
+10. Negation Laws
+P∨¬P ≡true
+P∧¬P ≡ false

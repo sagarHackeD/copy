@@ -1,23 +1,16 @@
 53. Klein 4‑group on (A = {e, a, b, c})
-
 Define the operation by the following table (the standard Klein 4‑group):
-
 [\begin{array}{c|cccc}
-*   e   a   b   c\\
-\hline
+*   e   a   b   c\\hline
 e   e   a   b   c\\
 a   a   e   c   b\\
 b   b   c   e   a\\
 c   c   b   a   e
 \end{array}]
-
 Properties:
 - (e) is the identity.
 - (a^2 = b^2 = c^2 = e).
 - Product of any two distinct non‑identity elements gives the third: (a*b = c, a*c = b, b*c = a).
 - The table is symmetric, so the group is abelian.
-
 Thus (A = {e,a,b,c}) with this operation is a Klein 4‑group.
-
 ---
-

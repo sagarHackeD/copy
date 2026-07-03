@@ -1,13 +1,10 @@
 42. Solve (F_{n+2}=F_{n+1}+F_n, F_0=0, F_1=1)
-
 Characteristic equation:
 [r^2 - r - 1 = 0    →    r = \frac{1\pm \sqrt{5}}{2}.]
 Thus
-[F_n = A≤ft(\frac{1+\sqrt{5}}{2}\right)^n + B≤ft(\frac{1-\sqrt{5}}{2}\right)^n.]
+[F_n = A(\frac{1+\sqrt{5}}{2})^n + B(\frac{1-\sqrt{5}}{2})^n.]
 Using (F_0=0,F_1=1):
 [A+B=0,\qquad A\frac{1+\sqrt{5}}{2} + B\frac{1-\sqrt{5}}{2}=1.]
 Solving gives (A = \frac{1}{\sqrt{5}}, B = -\frac{1}{\sqrt{5}}). Hence
-[\boxed{F_n = \frac{1}{\sqrt{5}}≤ft[(\frac{1+\sqrt{5}}{2}\right)^n - ≤ft(\frac{1-\sqrt{5}}{2}\right)^n]}.]
-
+[\boxed{F_n = \frac{1}{\sqrt{5}}[(\frac{1+\sqrt{5}}{2})^n - (\frac{1-\sqrt{5}}{2})^n]}.]
 ---
-

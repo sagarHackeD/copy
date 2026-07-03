@@ -1,19 +1,13 @@
 54. Intersection and union of subgroups
-
-Prove (H \cap K) is a subgroup:  
+Prove (H n K) is a subgroup:  
 Let (H, K ≤ G).
-
-- Identity: (e Ɛ H) and (e Ɛ K → e Ɛ H \cap K).
-- Closure: If (x, y Ɛ H \cap K), then (x,y Ɛ H → xy Ɛ H), and (x,y Ɛ K → xy Ɛ K). Hence (xy Ɛ H \cap K).
-- Inverses: If (x Ɛ H \cap K), then (x Ɛ H → x^{-1} Ɛ H), and (x Ɛ K → x^{-1} Ɛ K). Hence (x^{-1} Ɛ H \cap K).
-
-Therefore (H \cap K ≤ G).
-
-Is (H \cup K) a subgroup?  
+- Identity: (e Ɛ H) and (e Ɛ K → e Ɛ H n K).
+- Closure: If (x, y Ɛ H n K), then (x,y Ɛ H → xy Ɛ H), and (x,y Ɛ K → xy Ɛ K). Hence (xy Ɛ H n K).
+- Inverses: If (x Ɛ H n K), then (x Ɛ H → x^{-1} Ɛ H), and (x Ɛ K → x^{-1} Ɛ K). Hence (x^{-1} Ɛ H n K).
+Therefore (H n K ≤ G).
+Is (H U K) a subgroup?  
 No, in general.  
 Counterexample: Let (G = S_3), (H = {e, (12)}), (K = {e, (13)}). Then
-[H \cup K = {e, (12), (13)}.]
-But ((12)(13) = (132)), which is not in (H \cup K). So (H \cup K) is not closed under the group operation, hence not a subgroup.
-
+[H U K = {e, (12), (13)}.]
+But ((12)(13) = (132)), which is not in (H U K). So (H U K) is not closed under the group operation, hence not a subgroup.
 ---
-

@@ -1,8 +1,6 @@
 32. Composition of functions
-
 Let (f(x)=ax+b) and (g(x)=1-x+x^2).  
 Given ((g∘ f)(x)=9x^2-9x+3).
-
 Compute:
 [(g∘ f)(x)=g(f(x))=1-(ax+b)+(ax+b)^2.]
 Expand:
@@ -11,11 +9,7 @@ Equate coefficients:
 [a^2=9,\qquad -a+2ab=-9,\qquad 1-b+b^2=3.]
 From (a^2=9), (a=\pm3).  
 From (b^2-b-2=0→ (b-2)(b+1)=0→ b=2) or (b=-1).
-
 - If (a=3): (-3+6b=-9→ 6b=-6→ b=-1).
 - If (a=-3): (-(-3)+2(-3)b=3-6b=-9→ -6b=-12→ b=2).
-
 Thus (\boxed{(a,b)=(3,-1)\text{or}(-3,2)}).
-
 ---
-

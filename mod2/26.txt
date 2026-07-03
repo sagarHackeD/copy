@@ -1,14 +1,11 @@
 26. Binet’s formula for Fibonacci numbers
-
 Let (Φ = \frac{1+\sqrt5}{2}), (Ψ = \frac{1-\sqrt5}{2}).  
 We prove
 [F_n = \frac{1}{\sqrt5}(Φ^n - Ψ^n)]
 for all (n≥ 0), with (F_0=0,F_1=1).
-
 Base:  
 (n=0): (\frac{1}{\sqrt5}(1-1)=0=F_0).  
 (n=1): (\frac{1}{\sqrt5}(Φ-Ψ)=\frac{1}{\sqrt5}(\sqrt5)=1=F_1).
-
 Inductive step: Assume true for all integers (≤ k) ((k≥1)).  
 Since (F_{k+1}=F_k+F_{k-1}), substitute:
 [F_{k+1} = \frac{1}{\sqrt5}(Φ^k-Ψ^k) + \frac{1}{\sqrt5}(Φ^{k-1}-Ψ^{k-1})
@@ -16,6 +13,4 @@ Since (F_{k+1}=F_k+F_{k-1}), substitute:
 But (Φ+1=Φ^2) and (Ψ+1=Ψ^2) because they satisfy (x^2=x+1). Hence
 [F_{k+1}=\frac{1}{\sqrt5}(Φ^{k+1}-Ψ^{k+1}).]
 Proved.
-
 ---
-

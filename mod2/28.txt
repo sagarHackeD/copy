@@ -1,13 +1,9 @@
 28(a_0=1,a_1=2,a_2=3), and (a_n = a_{n-1} + a_{n-3}) for (n≥3).
-
 Proof (strong induction):  
 Base (n=0,1,2) hold as before.
-
 For (n≥3), assume (a_k ≤ 3^k) for all (k<n):
 [a_n = a_{n-1} + a_{n-3}
 ≤ 3^{n-1} + 3^{n-3}
 = 3^{n-3}(9+1)=10▪ 3^{n-3}.]
 Since (10 ≤ 27 = 3^3), (10▪3^{n-3} ≤ 3^n). Therefore (a_n ≤ 3^n). Proved.
-
 ---
-

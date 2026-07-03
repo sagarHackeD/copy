@@ -89,4 +89,4 @@
 564. The only left coset of (H) that is also a subgroup is (H) itself
 565. Possible values of (|H|)
 566. Uniqueness of identity and inverses
-567. Show ((A, \bullet)) is an abelian group
+567. Show ((A, ▪)) is an abelian group

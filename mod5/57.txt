@@ -1,23 +1,17 @@
 57. Define group and show fourth roots of unity is abelian
-
 Definition of a Group:  
 A non‑empty set (G) together with a binary operation (*) is a group if:
 1. Closure: (a*b Ɛ G) for all (a,b Ɛ G).
 2. Associativity: ((a*b)*c = a*(b*c)) for all (a,b,c Ɛ G).
 3. Identity: There exists (e Ɛ G) such that (e*a = a*e = a) for all (a Ɛ G).
 4. Inverse: For every (a Ɛ G), there exists (a^{-1} Ɛ G) such that (a*a^{-1} = a^{-1}*a = e).
-
 Fourth roots of unity:  
 [W_4 = {1, -1, i, -i}]
 under ordinary multiplication of complex numbers.
-
 - Closure: Products of any two are in the set.
 - Associativity: Inherited from ({C}).
 - Identity: (1).
 - Inverses: (1^{-1}=1, (-1)^{-1}=-1, i^{-1}=-i, (-i)^{-1}=i).
 - Abelian: Multiplication of complex numbers is commutative.
-
 Hence (W_4) is an abelian group.
-
 ---
-

@@ -1,10 +1,7 @@
 56. Define cyclic group and verify the given table
-
 Definition:  
 A group (G) is cyclic if there exists an element (g Ɛ G) such that every element of (G) can be written as (g^n) for some integer (n). Such an element (g) is called a generator.
-
 Given table (reconstructed):
-
 [\begin{array}{c|cccccc}
 *   a   b   c   d   e   f\\hline
 a   a   b   c   d   e   f\\
@@ -14,10 +11,7 @@ d   d   e   f   a   b   c\\
 e   e   f   a   b   c   d\\
 f   f   a   b   c   d   e
 \end{array}]
-
 From the table, we see:
 [b^1 = b,    b^2 = b*b = c,    b^3 = c*b = d,    b^4 = d*b = e,    b^5 = e*b = f,    b^6 = f*b = a.]
 Thus every element is a power of (b). Therefore (b) generates the group, so ((G, *)) is cyclic of order 6.
-
 ---
-

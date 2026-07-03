@@ -1,20 +1,13 @@
 560. Show ((G, *)) with (a*b = ab/2) on non‑zero reals is abelian
-
-Let (G = {R}^* = {R} \setminus {0}).
-
-- Closure: If (a,b \neq 0), then (a*b = \frac{ab}{2} \neq 0), so (a*b Ɛ G).
+Let (G = {R}^* = {R} \ {0}).
+- Closure: If (a,b ╪ 0), then (a*b = \frac{ab}{2} ╪ 0), so (a*b Ɛ G).
 - Associativity:
-  [  (a*b)*c = \frac{ab}{2} * c = \frac{\frac{ab}{2} ▪ c}{2} = \frac{abc}{4},
-  \]
+  [  (a*b)*c = \frac{ab}{2} * c = \frac{\frac{ab}{2} ▪ c}{2} = \frac{abc}{4},]
   and
-  [  a*(b*c) = a * \frac{bc}{2} = \frac{a ▪ \frac{bc}{2}}{2} = \frac{abc}{4}.
-  \]
+  [  a*(b*c) = a * \frac{bc}{2} = \frac{a ▪ \frac{bc}{2}}{2} = \frac{abc}{4}.]
   Hence ((a*b)*c = a*(b*c)).
-- Identity: Find (e) such that (a*e = a). We need (\frac{ae}{2} = a → e = 2) (since (a \neq 0)). So identity is (2).
-- Inverse: For given (a), find (a') such that (a*a' = 2). We need (\frac{aa'}{2} = 2 → a' = \frac{4}{a}). Since (a \neq 0), (a' Ɛ G).
+- Identity: Find (e) such that (a*e = a). We need (\frac{ae}{2} = a → e = 2) (since (a ╪ 0)). So identity is (2).
+- Inverse: For given (a), find (a') such that (a*a' = 2). We need (\frac{aa'}{2} = 2 → a' = \frac{4}{a}). Since (a ╪ 0), (a' Ɛ G).
 - Commutative: (a*b = \frac{ab}{2} = \frac{ba}{2} = b*a).
-
 Hence ((G, *)) is an abelian group.
-
 ---
-

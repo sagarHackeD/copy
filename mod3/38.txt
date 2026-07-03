@@ -1,9 +1,6 @@
 38. Birthday month problem
-
 There are 12 months. To guarantee at least 5 people share a birthday month, we need the smallest (n) such that
 [[ \frac{n}{12}] ≥ 5.]
 This gives (n > 4▪12 =48), so (n=49).  
 (\boxed{49\text{ persons}}).
-
 ---
-

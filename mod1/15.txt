@@ -1,12 +1,9 @@
 15. Validity using Rules of Inference
-
 Premises:
 [p→q,    r→s,    ¬qV ¬s]
 Conclusion:
 [¬(pΛ r).]
-
 Proof by contradiction:
-
 1. Suppose (pΛ r) is true.  
 2. Then (p) and (r) are true.  
 3. From (p→q) and (p), get (q) (Modus Ponens).  
@@ -14,8 +11,5 @@ Proof by contradiction:
 5. Now (q) and (s) are both true, so (¬q) and (¬s) are both false.  
 6. Hence (¬qV ¬s) is false, contradicting the premise.  
 7. Therefore (pΛ r) is false, i.e. (¬(pΛ r)).
-
 The argument is valid.
-
 ---
-

@@ -1,15 +1,11 @@
 47. Positive integers (≤ 100) not divisible by 2, 3, or 5
-
 Let (A_2, A_3, A_5) be sets of numbers divisible by 2, 3, 5 respectively.
-
 [|A_2|=50,|A_3|=33,|A_5|=20,]
-[|A_2\cap A_3|=16,|A_2\cap A_5|=10,|A_3\cap A_5|=6,]
-[|A_2\cap A_3\cap A_5|=3.]
+[|A_2n A_3|=16,|A_2n A_5|=10,|A_3n A_5|=6,]
+[|A_2n A_3n A_5|=3.]
 Divisible by at least one:
 [50+33+20 - (16+10+6) + 3 = 103 - 32 + 3 = 74.]
 Not divisible by any:
 [100 - 74 = 26.]
 [\boxed{26}]
-
 ---
-

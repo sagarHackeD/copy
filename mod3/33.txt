@@ -1,5 +1,4 @@
 33. Hasse diagram of divisors of 36
-
 Positive divisors of (36):  
 [D={1,2,3,4,6,9,12,18,36}.]
 Order by divisibility. Covering relations (remove transitive edges):
@@ -10,7 +9,6 @@ Order by divisibility. Covering relations (remove transitive edges):
 6⮜ 12,6⮜ 18;   
 9⮜ 18;   
 12⮜ 36,18⮜ 36.]
-
 Hasse diagram (text representation):
 ```
 		36
@@ -26,6 +24,4 @@ Hasse diagram (text representation):
 	 1
 ```
 (Adjust mentally: edges go upward.)
-
 ---
-

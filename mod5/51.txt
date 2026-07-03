@@ -1,21 +1,16 @@
 51. State and prove Lagrange's Theorem
-
 Statement (Lagrange’s Theorem):  
 If (G) is a finite group and (H) is a subgroup of (G), then the order of (H) divides the order of (G). In symbols,
 [|G| = [G:H] ▪ |H|,]
 where ([G:H]) is the number of left (or right) cosets of (H) in (G).
-
 Proof:  
-Define a relation on (G) by (a \sim b) iff (a^{-1}b Ɛ H). This is an equivalence relation:
+Define a relation on (G) by (a ~ b) iff (a^{-1}b Ɛ H). This is an equivalence relation:
 - Reflexive: (a^{-1}a = e Ɛ H).
 - Symmetric: if (a^{-1}b Ɛ H), then ((a^{-1}b)^{-1} = b^{-1}a Ɛ H).
 - Transitive: if (a^{-1}b Ɛ H) and (b^{-1}c Ɛ H), then (a^{-1}c = (a^{-1}b)(b^{-1}c) Ɛ H).
-
 The equivalence class of (a) is the left coset (aH = {ah | h Ɛ H}).  
-The map (H →aH) given by (h \mapsto ah) is a bijection (its inverse is (x \mapsto a^{-1}x)). Hence every left coset has exactly (|H|) elements.  
+The map (H →aH) given by (h → ah) is a bijection (its inverse is (x → a^{-1}x)). Hence every left coset has exactly (|H|) elements.  
 The left cosets partition (G), so
 [|G| = (\text{number of distinct left cosets}) ▪ |H|.]
 Therefore, (|H|) divides (|G|).
-
 ---
-

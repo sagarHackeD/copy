@@ -1,17 +1,12 @@
 24. Prove every integer (n≥ 24) is a sum of 5’s and 7’s
-
 We use strong induction.
-
 Base cases:  
 (24 = 5+5+7+7),  
 (25 = 5+5+5+5+5),  
 (26 = 7+7+7+5),  
 (27 = 5+5+5+5+7),  
 (28 = 7+7+7+7).
-
 Inductive step: Assume true for all integers from 24 up to (k≥ 28).  
 For (k+1), since ((k+1)-5 ≥ 24), by the induction hypothesis ((k+1)-5) is a sum of 5’s and 7’s. Adding one more 5 gives a representation of (k+1).  
 Hence proved.
-
 ---
-

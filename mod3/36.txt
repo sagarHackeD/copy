@@ -1,12 +1,8 @@
 36. Pigeon‑hole Principle (generalised)
-
 Statement: If (m) items are placed into (n) boxes, then some box contains at least ([ m/n]) items.
-
 Proof for dictionaries:  
 (30) dictionaries, total (61327) pages.  
 If every dictionary had at most (2044) pages, total pages (≤ 30▪2044=61320<61327), contradiction.  
 Hence at least one dictionary has at least ([ 61327/30] = 2045) pages.  
 (\boxed{\text{At least one has } ≥2045\text{ pages.}})
-
 ---
-

@@ -1,8 +1,6 @@
 34. Relation (R) on (A={1,2,3,4,6}) defined by (aRb) iff (a) is a multiple of (b).
-
 List (R):
 [R={(1,1),(2,1),(3,1),(4,1),(6,1),(2,2),(4,2),(6,2),(3,3),(6,3),(4,4),(6,6)}.]
-
 Relation matrix (M(R)) (rows (a), columns (b) in order (1,2,3,4,6)):
 [M(R)=
 1 0 0 0 0
@@ -11,15 +9,10 @@ Relation matrix (M(R)) (rows (a), columns (b) in order (1,2,3,4,6)):
 1 1 0 1 0
 1 1 1 0 1
 ]
-
 Digraph: vertices (1,2,3,4,6); directed edge (a→b) if (aRb).  
 Loops on every vertex. Other edges: (2→1,3→1,4→1,6→1,4→2,6→2,6→3). (Also all loops.)
-
 Out‑degrees (including loops):
 [deg^+(1)=1,    deg^+(2)=2,    deg^+(3)=2,    deg^+(4)=3,    deg^+(6)=4.]
-
 In‑degrees:
 [deg^-(1)=5,    deg^-(2)=3,    deg^-(3)=2,    deg^-(4)=1,    deg^-(6)=1.]
-
 ---
-

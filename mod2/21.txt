@@ -1,8 +1,6 @@
 21. Prove (1^2 + 2^2 + ▪▪▪ + n^2 = \dfrac{n(n+1)(2n+1)}{6})
-
 Base case ((n=1)):  
 LHS (=1^2=1). RHS (=\frac{1▪2▪3}{6}=1). True.
-
 Inductive step: Assume true for (n=k):
 [1^2+▪▪▪+k^2=\frac{k(k+1)(2k+1)}6.]
 For (n=k+1):
@@ -13,6 +11,4 @@ Factor ((k+1)/6):
 = \frac{k+1}{6}(2k^2+7k+6)
 = \frac{(k+1)(k+2)(2k+3)}6.]
 This is exactly the formula for (n=k+1). Hence proved.
-
 ---
-

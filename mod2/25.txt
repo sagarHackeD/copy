@@ -1,7 +1,5 @@
 25. Prove (1▪3 + 2▪4 + ▪▪▪ + n(n+2) = \dfrac{n(n+1)(2n+7)}6)
-
 Base (n=1): LHS (=1▪3=3). RHS (=\frac{1▪2▪9}{6}=3). True.
-
 Inductive step: Assume for (k):
 [\sum_{i=1}^k i(i+2)=\frac{k(k+1)(2k+7)}6.]
 For (k+1):
@@ -11,6 +9,4 @@ For (k+1):
 Factor (2k^2+13k+18 = (k+2)(2k+9)). Thus we get
 [\frac{(k+1)(k+2)(2k+9)}6,]
 which is exactly the formula for (n=k+1). Proved.
-
 ---
-
