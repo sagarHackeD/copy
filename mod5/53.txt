@@ -1,16 +1,13 @@
-53. Klein 4‑group on (A = {e, a, b, c})
-Define the operation by the following table (the standard Klein 4‑group):
-[\begin{array}{c|cccc}
-*   e   a   b   c\\hline
-e   e   a   b   c\\
-a   a   e   c   b\\
-b   b   c   e   a\\
-c   c   b   a   e
-\end{array}]
-Properties:
-- (e) is the identity.
-- (a^2 = b^2 = c^2 = e).
-- Product of any two distinct non‑identity elements gives the third: (a*b = c, a*c = b, b*c = a).
-- The table is symmetric, so the group is abelian.
-Thus (A = {e,a,b,c}) with this operation is a Klein 4‑group.
+53. Compare human tongue and electronic tongue.
+| Feature | Human Tongue | Electronic Tongue (E-tongue) |
+|
+| Basis of Detection | Biological chemoreceptors (taste receptor cells expressing GPCRs and ion channels) bind specific tastants. | Non-specific, cross-sensitive chemical sensors (electrochemical, optical) generate a global response pattern. |
+| Sensitivity | Highly sensitive to certain compounds (e.g., bitter at micromolar levels). | Can be engineered for high sensitivity, often surpassing human thresholds for certain ions. |
+| Objectivity | Subjective – influenced by mood, health, prior food intake, and genetic variability (e.g., supertasters). | Objective – produces unbiased, reproducible quantitative data. |
+| Fatigue & Adaptation | Suffers from sensory adaptation (reduced response to continuous stimuli) and fatigue. | No fatigue; can operate 24/7 without loss of performance. |
+| Dynamic Range | Narrow; cannot tolerate high concentrations of toxins or dangerous chemicals. | Wide; can handle toxic, corrosive, or highly concentrated samples without damage. |
+| Specificity | Specific receptors give specific taste qualities (sweet, umami, etc.). | Non-specific; relies on chemometric algorithms to differentiate complex mixtures. |
+| Portability | Inherently portable (on the body). | Often bulky lab equipment (though miniaturization is ongoing). |
+| Integration | Integrated with olfactory and cognitive systems for flavor perception. | Standalone analytical tool; lacks integration with smell. |
+| Cost | Natural (free). | High initial investment and maintenance cost. |
 ---

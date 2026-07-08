@@ -1,0 +1,30 @@
+110. Explain the structure and functions of mitochondria and endoplasmic reticulum.
+A. Mitochondria (The Powerhouse of the Cell)
+Structure:
+- Shape & Size: Double-membrane-bound, rod-shaped or spherical organelles (0.5–1.0 µm in diameter, up to 10 µm long). They are dynamic and can fuse or divide.
+- Outer Membrane: Smooth, highly permeable to small molecules and ions due to the presence of porin proteins.
+- Intermembrane Space: The space between the outer and inner membranes; contains enzymes and has a high concentration of protons (H⁺) during electron transport.
+- Inner Membrane: Highly impermeable and extensively folded into shelf-like structures called cristae (which increase surface area enormously).
+- Matrix: The fluid-filled space inside the inner membrane. It contains circular DNA (mtDNA), 70S ribosomes, enzymes for the Krebs cycle, and phosphate granules.
+- Enzymes: The inner membrane houses the electron transport chain (ETC) complexes and ATP synthase.
+Functions:
+1.  ATP Production (Aerobic Respiration): Oxidizes pyruvate (from glycolysis) via the Krebs cycle (in matrix) and oxidative phosphorylation (via ETC and chemiosmosis on cristae) to produce ATP. *Note: This produces ~30-32 ATP per glucose molecule.*
+2.  Apoptosis (Programmed Cell Death): Mitochondria release cytochrome c into the cytosol, which activates caspases (proteases) that dismantle the cell in a controlled manner.
+3.  Calcium Storage: Mitochondria buffer cytosolic Ca²⁺ levels, playing a role in calcium signaling and homeostasis.
+4.  Thermogenesis (Heat Production): In brown adipose tissue, mitochondria contain uncoupling protein 1 (UCP1) which dissipates the proton gradient as heat (non-shivering thermogenesis).
+5.  Synthesis of some molecules: They participate in heme synthesis, steroid biosynthesis, and pyrimidine synthesis.
+---
+B. Endoplasmic Reticulum (ER) - The Manufacturing and Transport System
+Structure:
+The ER is a continuous, extensive network of membranous tubules, flattened sacs (cisternae), and vesicles that extends from the nuclear envelope throughout the cytoplasm. It is divided into two distinct regions:
+1. Rough Endoplasmic Reticulum (RER):
+- Structure: Studded with ribosomes on its cytosolic surface (giving it a "rough" appearance). It consists of flattened, parallel stacks of cisternae.
+- Continuity: Directly continuous with the outer membrane of the nuclear envelope.
+2. Smooth Endoplasmic Reticulum (SER):
+- Structure: Lacks ribosomes; appears smooth. It consists of a network of more tubular structures rather than flattened sacs.
+Functions:
+| Organelle | Functions |
+|
+| Rough ER (RER) | 1. Protein Synthesis & Folding: Ribosomes synthesize proteins that are translocated into the ER lumen. Here, chaperone proteins help fold them into their 3D conformation. <br> 2. Protein Modification: Adds carbohydrate chains to proteins (N-linked glycosylation), forming glycoproteins. <br> 3. Quality Control: Misfolded proteins are retained and sent for degradation (ER-associated degradation – ERAD). <br> 4. Membrane Biogenesis: Synthesizes phospholipids for its own membrane and for the Golgi/Plasma membrane. |
+| Smooth ER (SER) | 1. Lipid Synthesis: Synthesizes lipids, including triglycerides, phospholipids, and steroids (cholesterol, steroid hormones). <br> 2. Carbohydrate Metabolism: Participates in gluconeogenesis and glycogenolysis (e.g., in liver cells, glucose-6-phosphatase is located here). <br> 3. Detoxification: Contains enzymes (Cytochrome P450) that detoxify drugs, alcohol, and metabolic waste products (mainly in liver hepatocytes). <br> 4. Calcium Storage: Stores and releases Ca²⁺ ions, crucial for muscle contraction (sarcoplasmic reticulum is a specialized SER) and cell signaling. <br> 5. Transport: Helps transport newly synthesized lipids and proteins to the Golgi apparatus via vesicles. |
+---

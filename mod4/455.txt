@@ -1,8 +1,0 @@
-455. Rook polynomial for a (3X 3) board using expansion formula
-For a full (3X 3) board,
-[r_k = \binom{3}{k}^2 k!.]
-Thus:
-[r_0 = 1,    r_1 = 9,    r_2 = \binom{3}{2}^2 ▪ 2! = 9▪ 2 = 18,    r_3 = \binom{3}{3}^2 ▪ 3! = 6.]
-So the rook polynomial is:
-[\boxed{R(x) = 1 + 9x + 18x^2 + 6x^3}.]
----

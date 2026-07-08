@@ -1,14 +1,22 @@
-49. Integers between 1 and 300 divisible by 5, 6, or 8
-Let (A_5,A_6,A_8).
-[|A_5| = 60,    |A_6| = 50,    |A_8| = 37,]
-[|A_5n A_6| = \lfloor 300/30\rfloor = 10,   
-|A_5n A_8| = \lfloor 300/40\rfloor = 7,   
-|A_6n A_8| = \lfloor 300/24\rfloor = 12,]
-[|A_5n A_6n A_8| = \lfloor 300/120\rfloor = 2.]
-(i) At least one:
-[60+50+37 - (10+7+12) + 2 = 147 - 29 + 2 = 120.]
-[\boxed{120}]
-(ii) None:
-[300 - 120 = 180.]
-[\boxed{180}]
+49. Explain how the kingfisher beak inspired bullet train design.
+The Problem:
+In the 1990s, Japan's high-speed Shinkansen bullet trains were reaching unprecedented speeds (approaching 300 km/h). However, this brought a new problem: when a train entered a tunnel at high speed, it pushed a wave of pressurized air ahead of it. When this pressurized air exited the far end of the tunnel, it produced a sudden, loud sonic boom. These booms were startling and caused noise pollution complaints from residents living near tunnels.
+The Inspiration:
+The engineering team, led by Eiji Nakatsu (a train engineer who was also a birdwatcher), observed that the kingfisher is a bird that dives into water to catch its prey with virtually no splash and no noise. The kingfisher's beak is perfectly streamlined to minimize resistance when transitioning from air to water.
+The Solution:
+Nakatsu realized that the same principle could be applied to the train. By redesigning the nose of the bullet train to mimic the long, tapered, streamlined shape of a kingfisher's beak, the engineers were able to:
+- Reduce Air Pressure Waves: The new design minimized the compression of air in front of the train.
+- Eliminate Sonic Booms: The train became much quieter, staying under the 70-decibel noise limit in residential areas.
+- Improve Energy Efficiency: The train used less electricity.
+- Increase Speed: The train could run faster without creating disruptive noise.
+Results of the Biomimetic Design:
+| Metric | Improvement |
+|
+| Noise Reduction | Stayed under 70 dB noise limit. |
+| Air Pressure Reduction | 30% less air pressure. |
+| Electricity Consumption | 15% less electricity used. |
+| Speed | 10% faster. |
+Other Biomimetic Features of the Shinkansen:
+- Pantograph (Owl Feathers): The rig connecting the train to overhead electrical wires was redesigned to mimic the serrated edges of owl feathers, which allow owls to fly silently.
+- Streamlined Body (Penguin): The overall body shape was influenced by the streamlined form of the Adelie penguin to reduce air resistance.
 ---

@@ -1,7 +1,0 @@
-236. Coefficient of (a^5 b^2) in ((2a - 3b)^7)
-Use binomial theorem:
-[\binom{7}{5}(2a)^5(-3b)^2
-= 21 ▪ 32a^5 ▪ 9b^2
-= 21 ▪ 288 = 6048.]
-Coefficient is (\boxed{6048}).
----

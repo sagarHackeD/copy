@@ -1,19 +1,14 @@
-12.Show that [[(p↔q)Λ(q↔r)Λ(r↔p)]↔[(p→q)Λ(q→r)Λ(r→p)]] is a tautology (i.e. the two sides are logically equivalent).
-Let  
-[L=(p↔q)Λ(q↔r)Λ(r↔p)]
-and  
-[R=(p→q)Λ(q→r)Λ(r→p).]
-We evaluate both for all truth assignments:
-| (p) | (q) | (r) | (L) | (R) |
-| T | T | T | T | T |
-| T | T | F | F | F |
-| T | F | T | F | F |
-| T | F | F | F | F |
-| F | T | T | F | F |
-| F | T | F | F | F |
-| F | F | T | F | F |
-| F | F | F | T | T |
-In every row, (L) and (R) have the same truth value. Hence  
-[L↔R]
-is a tautology, so they are logically equivalent.
+12. Compare Prokaryotic and Eukaryotic cells.
+| Feature | Prokaryotic Cell | Eukaryotic Cell |
+|
+| Definition | Unicellular organisms lacking a true nucleus and membrane-bound organelles (e.g., Bacteria, Archaea). | Unicellular or multicellular organisms possessing a true nucleus and membrane-bound organelles (e.g., Plants, Animals, Fungi, Protists). |
+| Nucleus | Absent (nucleoid region – irregularly shaped area containing DNA). | Present (well-defined, membrane-bound nucleus). |
+| Membrane-bound Organelles | Absent (only ribosomes). | Present (ER, Golgi, Mitochondria, Lysosomes, etc.). |
+| Ribosomes | 70S (smaller; 50S + 30S subunits). | 80S (larger; 60S + 40S subunits). |
+| Cell Wall | Present (usually made of *peptidoglycan* in bacteria; pseudomurein in archaea). | Present in plants/fungi (cellulose in plants, chitin in fungi); absent in animal cells. |
+| DNA Structure | Circular, naked DNA (no histones). | Linear DNA associated with histone proteins (forming chromatin). |
+| Organelles for Energy | No mitochondria or chloroplasts; respiration occurs via the plasma membrane (mesosomes). | Mitochondria (respiration); Chloroplasts (photosynthesis in plants). |
+| Cell Division | Binary fission (simple division). | Mitosis (somatic) and Meiosis (gametes). |
+| Size | Typically 0.1 – 5.0 µm. | Typically 10 – 100 µm (much larger). |
+| Example | *E. coli*, *Streptococcus*. | Human liver cell, *Chlamydomonas*, Yeast. |
 ---

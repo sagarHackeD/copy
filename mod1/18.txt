@@ -1,26 +1,20 @@
-18. Prove using laws of logic:
-[¬[¬(¬qΛ r)V((qΛ r)V(pΛ r))]↔r.]
-[¬(¬qΛ r) ≡ qV ¬r,]
-and
-[(qΛ r)V(pΛ r) ≡ rΛ(qV p).]
-So the inner expression becomes
-[(qV ¬r)V(rΛ(qV p)).]
-Using distributivity:
-[(qV ¬r)V(rΛ(qV p))
-≡
-qV ¬rV rΛ(qV p).]
-Now,
-[¬rV(rΛ(qV p))
-≡
-(¬rV r)Λ(¬rV qV p)
-≡
-¬rV qV p.]
-Thus the whole inner expression simplifies to
-[qV ¬rV qV p ≡ pV qV ¬r.]
-Therefore,
-[¬(pV qV ¬r) ≡ ¬pΛ ¬qΛ r.]
-So the left side is (¬pΛ ¬qΛ r), not simply (r).
-Counterexample: Take (p=T,q=F,r=T).  
-Then LHS = (¬TΛ ¬FΛ T = FΛ TΛ T = F), but RHS = (T).  
-Hence the given equivalence is false. There is likely a typo in the problem.
+18. Define vitamins and explain their sources, functions, and deficiency diseases.
+Definition: Vitamins are organic, essential micronutrients that the body requires in small quantities for normal growth, metabolism, and physiological functions. They are not synthesized in the body (or synthesized in insufficient amounts) and must be obtained from the diet.
+Classification:
+- Fat-soluble (A, D, E, K): Stored in the liver and adipose tissue; not excreted easily (can be toxic in excess).
+- Water-soluble (B-complex and C): Not stored in the body; excess is excreted via urine; need regular intake.
+Table of Vitamins:
+| Vitamin | Other Names | Sources | Major Functions | Deficiency Disease |
+|
+| A | Retinol | Carrots, sweet potatoes, liver, spinach, dairy. | Vision (retinal pigments), cell differentiation, immune function. | Night blindness, Xerophthalmia (dry cornea), keratomalacia. |
+| D | Calciferol (Cholecalciferol/D_2) | Sunlight (UV), fatty fish, egg yolks, fortified milk. | Regulates calcium and phosphorus absorption; promotes bone mineralization. | Rickets (children), Osteomalacia (adults). |
+| E | Tocopherol | Nuts, seeds, vegetable oils, green leafy vegetables. | Major antioxidant (protects cell membranes from lipid peroxidation). | Hemolytic anemia (in premature infants), neurological issues. |
+| K | Phylloquinone (K_1), Menaquinone (K_2) | Green leafy vegetables (spinach, kale), synthesized by gut bacteria. | Cofactor for gamma-carboxylation of clotting factors (II, VII, IX, X). | Hemorrhagic disease (excessive bleeding). |
+| B_1 | Thiamine | Whole grains, legumes, pork, nuts. | Cofactor for carbohydrate metabolism (Krebs cycle - as TPP). | Beriberi (wet: CVS issues; dry: neuritis), Wernicke-Korsakoff syndrome. |
+| B_2 | Riboflavin | Dairy, eggs, green vegetables, liver. | Component of FAD and FMN (redox coenzymes) in energy metabolism. | Ariboflavinosis (cheilosis, glossitis, photophobia). |
+| B_3 | Niacin | Meat, poultry, fish, peanuts, whole grains. | Component of NAD and NADP (redox coenzymes) in cellular respiration. | Pellagra (3 Ds: Dermatitis, Diarrhea, Dementia). |
+| B_6 | Pyridoxine | Meat, bananas, potatoes, nuts, chickpeas. | Cofactor in amino acid metabolism (transamination) and neurotransmitter synthesis. | Microcytic anemia, dermatitis, depression, convulsions. |
+| B_9 | Folic Acid / Folate | Green leafy vegetables, legumes, citrus fruits. | Essential for nucleotide synthesis and red blood cell formation; prevents neural tube defects. | Megaloblastic anemia, Neural tube defects (e.g., spina bifida). |
+| B_12 | Cobalamin | Meat, fish, eggs, dairy (not in plants). | Myelin sheath maintenance; DNA synthesis; cofactor for methionine synthase. | Pernicious anemia (megaloblastic), subacute combined degeneration of spinal cord. |
+| C | Ascorbic Acid | Citrus fruits, strawberries, bell peppers, broccoli. | Collagen synthesis (wound healing), antioxidant, iron absorption enhancer. | Scurvy (bleeding gums, joint pain, poor wound healing). |
 ---

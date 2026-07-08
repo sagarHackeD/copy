@@ -1,7 +1,0 @@
-341. Equivalence relation on ({N})
-[R={(a,b)| a-b \text{ is divisible by }5}.]
-- Reflexive: (a-a=0), divisible by 5.
-- Symmetric: if (5|(a-b)), then (5|(b-a)).
-- Transitive: if (5|(a-b)) and (5|(b-c)), then (5|(a-c)).
-Thus (R) is an equivalence relation.
----

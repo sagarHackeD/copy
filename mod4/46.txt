@@ -1,8 +1,24 @@
-46. Derangements of ({1,2,3,4})
-Definition: A derangement is a permutation in which no element appears in its original position.
-The number of derangements of 4 items is:
-[!4 = 4!(1 - \frac{1}{1!} + \frac{1}{2!} - \frac{1}{3!} + \frac{1}{4!})
-= 24(1 - 1 + \frac12 - \frac16 + \frac1{24}) = 9.]
-List of all 9 derangements:
-[2143, 2341, 2413, 3142, 3412, 3421, 4123, 4312, 4321.]
+46. Explain superhydrophobic and self-cleaning surfaces.
+Superhydrophobic Surfaces:
+Superhydrophobic surfaces are extremely water-repellent, characterized by a water contact angle exceeding 150° and a sliding angle below 5°. This means water droplets bead up and roll off the surface very easily.
+Mechanism of Superhydrophobicity:
+Superhydrophobicity results from a combination of two factors:
+1.  Low Surface Energy Chemistry: The surface is coated with hydrophobic materials (e.g., waxes, fluorocarbons) that repel water.
+2.  Rough Surface Topography: Micro- and nano-scale roughness creates air pockets beneath water droplets (Cassie-Baxter state), minimizing the contact area between the droplet and the surface.
+Self-Cleaning Surfaces:
+Self-cleaning surfaces leverage superhydrophobicity to keep themselves clean. When water droplets roll off a superhydrophobic surface, they pick up dirt and debris, carrying them away. This is the same principle as the lotus leaf effect.
+Natural Examples:
+- Lotus Leaves
+- Water Strider Legs (nanoscale grooves trap air, allowing them to walk on water)
+- Butterfly Wings
+- Rice Leaves (exhibit anisotropic wettability)
+Engineering Applications:
+| Application | Description |
+|
+| Self-Cleaning Coatings | Paints and sprays for buildings, cars, and glass that repel water and dirt. |
+| Anti-Icing Surfaces | Preventing ice formation on aircraft, power lines, and wind turbines. |
+| Oil-Water Separation | Membranes that separate oil from water for environmental cleanup. |
+| Anti-Reflection | Coatings that reduce glare on screens and solar panels. |
+| Water Collection | Surfaces that efficiently collect water from fog (inspired by desert beetles). |
+| Anti-Biofouling | Medical devices and ship hulls that resist bacterial and algal attachment. |
 ---

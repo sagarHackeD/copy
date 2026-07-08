@@ -1,8 +1,0 @@
-453. Virus affected files – recurrence
-Initial files (a_0 = 1000).  
-Increase by (250\%) means new amount = old + (2.5X) old = (3.5X) old.  
-Every 2 hours: (a_{n+1} = 3.5 a_n).  
-After 12 hours, (n = 12/2 = 6) intervals.
-[a_6 = 1000 ▪ (3.5)^6 = 1000 ▪ (\frac{7}{2})^6.]
-[\boxed{1000 (\frac{7}{2})^6}]
----

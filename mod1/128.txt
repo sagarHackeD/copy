@@ -1,6 +1,0 @@
-128. Indirect proof of “The product of two even integers is even”
-We prove the contrapositive:  
-If the product (mn) is not even (i.e. odd), then (m) and (n) are not both even.
-Suppose (mn) is odd. Then neither factor can be even; otherwise the product would be even. Hence both (m) and (n) are odd, so they are not both even.  
-Thus the contrapositive is true, and the original statement holds.
----

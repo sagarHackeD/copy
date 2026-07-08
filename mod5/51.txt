@@ -1,16 +1,29 @@
-51. State and prove Lagrange's Theorem
-Statement (Lagrange’s Theorem):  
-If (G) is a finite group and (H) is a subgroup of (G), then the order of (H) divides the order of (G). In symbols,
-[|G| = [G:H] ▪ |H|,]
-where ([G:H]) is the number of left (or right) cosets of (H) in (G).
-Proof:  
-Define a relation on (G) by (a ~ b) iff (a^{-1}b Ɛ H). This is an equivalence relation:
-- Reflexive: (a^{-1}a = e Ɛ H).
-- Symmetric: if (a^{-1}b Ɛ H), then ((a^{-1}b)^{-1} = b^{-1}a Ɛ H).
-- Transitive: if (a^{-1}b Ɛ H) and (b^{-1}c Ɛ H), then (a^{-1}c = (a^{-1}b)(b^{-1}c) Ɛ H).
-The equivalence class of (a) is the left coset (aH = {ah | h Ɛ H}).  
-The map (H →aH) given by (h → ah) is a bijection (its inverse is (x → a^{-1}x)). Hence every left coset has exactly (|H|) elements.  
-The left cosets partition (G), so
-[|G| = (\text{number of distinct left cosets}) ▪ |H|.]
-Therefore, (|H|) divides (|G|).
+51. Explain bioremediation and biomining using microbial surface adsorption.
+Bioremediation is the use of living organisms (primarily microorganisms, fungi, or plants) to remove, degrade, or neutralize pollutants (heavy metals, pesticides, hydrocarbons) from contaminated environments (soil, water, sediments).
+Biomining (or bioleaching) is the use of microorganisms to extract valuable metals (e.g., copper, gold, uranium) from low-grade ores or industrial waste, where traditional smelting is economically or environmentally unfeasible.
+The Role of Microbial Surface Adsorption (Biosorption):
+Biosorption is a rapid, passive, metabolism-independent process where microbial cell walls bind metal ions or organic contaminants to their surface. This is the critical mechanism linking both fields.
+Mechanism of Surface Adsorption:
+Microbial cell walls contain a variety of functional groups (e.g., carboxyl, phosphate, amino, thiol, hydroxyl) that act as binding sites for charged ions.
+Textual Diagram:
+```
+[Metal Ion]  -->  [Cell Wall Functional Group]  -->  [Bound Complex]
+ (e.g., Pb2+)      (e.g., -COO⁻, -PO_4³⁻, -NH_2)       (Adsorbed on biomass)
+```
+Specific Mechanisms:
+- Ion Exchange: Metal ions exchange with counter-ions (e.g., Na⁺, K⁺, Ca²⁺) already bound to the cell wall.
+- Complexation & Chelation: Functional groups form coordinate bonds with metal ions.
+- Physical Adsorption: Van der Waals forces trap contaminants on the highly porous surface of biofilms.
+- Precipitation: Cell wall components or metabolic by-products can cause metals to precipitate out of solution.
+Key Microorganisms and Their Applications:
+| Organism | Role in Bioremediation | Role in Biomining |
+|
+| Pseudomonas spp. | Degrades oil spills and adsorbs heavy metals (Cr, Pb). | - |
+| Acidithiobacillus ferrooxidans | Oxidizes iron and sulfur in acidic mine drainage (passive treatment). | Primary agent – oxidizes ferrous iron to ferric iron, which leaches copper and uranium from ores. |
+| Saccharomyces cerevisiae (Yeast) | Biosorbs heavy metals from industrial effluents. | Reclaims precious metals (e.g., gold, silver) from electronic waste (e-waste). |
+| Bacillus subtilis | Biofilm formation for adsorbing toxic dyes and heavy metals. | Used in bio-flotation to separate minerals. |
+Engineering Applications:
+1.  Heavy Metal Removal: Using packed-bed bioreactors containing immobilized bacterial biomass to treat acid mine drainage and electroplating wastewater.
+2.  E-Waste Recycling: Using microbial consortia to adsorb and recover gold, platinum, and rare earth elements from discarded circuit boards (urban mining).
+3.  In-Situ Cleanup: Injecting biosurfactant-producing microbes into contaminated aquifers to mobilize and adsorb pollutants.
 ---

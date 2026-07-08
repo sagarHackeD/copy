@@ -1,43 +1,26 @@
-31. Preimages of a piecewise function
-Let  
-[f:{R}→{R},\qquad
-f(x)=
-\begin{cases}
-3x-5,   x>0,\\[2mm]
-1-3x,   x≤ 0.
-\end{cases}]
-We compute the required preimages.
-- (f^{-1}(0)):  
-  For (x>0): (3x-5=0→ x=5/3>0) valid.  
-  For (x≤0): (1-3x=0→ x=1/3>0) invalid.  
-  Hence (\boxed{f^{-1}(0)={5/3}}).
-- (f^{-1}(1)):  
-  (x>0): (3x-5=1→ x=2>0) valid.  
-  (x≤0): (1-3x=1→ x=0≤0) valid.  
-  Hence (\boxed{f^{-1}(1)={0,2}}).
-- (f^{-1}(-1)):  
-  (x>0): (3x-5=-1→ x=4/3>0) valid.  
-  (x≤0): (1-3x=-1→ x=2/3>0) invalid.  
-  Hence (\boxed{f^{-1}(-1)={4/3}}).
-- (f^{-1}(3)):  
-  (x>0): (3x-5=3→ x=8/3>0) valid.  
-  (x≤0): (1-3x=3→ x=-2/3≤0) valid.  
-  Hence (\boxed{f^{-1}(3)={-2/3,8/3}}).
-- (f^{-1}(-6)):  
-  (x>0): (3x-5=-6→ x=-1/3\not>0).  
-  (x≤0): (1-3x=-6→ x=7/3\not≤0).  
-  Hence (\boxed{f^{-1}(-6)=0}).
-- (f^{-1}([-6,5])):  
-  We need (f(x)Ɛ[-6,5]).  
-  For (x>0): (-6≤ 3x-5≤5 → -1≤3x≤10 → -1/3≤ x≤10/3).  
-  Intersect with (x>0) gives ((0,10/3]).  
-  For (x≤0): (-6≤1-3x≤5 → -7≤ -3x≤4 → -4/3≤ x≤ 7/3).  
-  Intersect with (x≤0) gives ([-4/3,0]).  
-  Union: (\boxed{f^{-1}([-6,5]) = [-4/3,10/3]}).
-- (f^{-1}([-5,5])):  
-  For (x>0): (-5≤3x-5≤5 → 0≤3x≤10 → 0≤ x≤10/3).  
-  Intersect (x>0): ((0,10/3]).  
-  For (x≤0): (-5≤1-3x≤5 → -6≤ -3x≤4 → -4/3≤ x≤2).  
-  Intersect (x≤0): ([-4/3,0]).  
-  Union: (\boxed{f^{-1}([-5,5]) = [-4/3,10/3]}).
+31. Explain the brain as a CPU system.
+The Central Processing Unit (CPU) of a computer and the human brain share profound functional parallels, though the brain is vastly more complex, parallel, and adaptive.
+Textual Diagram (Brain as a CPU):
+```
+[Input Devices]          [Processing Unit]          [Memory]            [Output Devices]
+   (Senses)       -->    (Brain/Cerebrum)     <-->  (Short/Long-term)  --> (Muscles/Glands)
+                             |                         |
+                    [Frontal Lobe]            [Hippocampus (RAM)]
+                    (Executive Control)       [Cerebral Cortex (HDD)]
+                             |
+                    [Thalamus (Data Router)]
+```
+Detailed Comparison:
+| CPU Component | Biological Equivalent (Brain) | Function |
+|
+| Input (I/O) | Sensory organs (eyes, ears, skin, nose, tongue). | Convert external stimuli into electrical signals (neural impulses) for processing. |
+| Control Unit (CU) | Prefrontal Cortex and Frontal Lobe. | Executive functions: decision-making, planning, impulse control, and orchestrating complex cognitive behaviors. |
+| Arithmetic Logic Unit (ALU) | Cerebral Cortex (association areas) & Basal Ganglia. | Performs logical reasoning, mathematical calculations, and problem-solving. |
+| Cache / RAM (Working Memory) | Prefrontal Cortex & Hippocampus (short-term). | Holds and manipulates transient information for immediate tasks (e.g., remembering a phone number just long enough to dial it). |
+| Hard Drive (Long-term Storage) | Cerebral Cortex (distributed throughout) & Hippocampus (for consolidation). | Stores permanent memories, learned skills, language, and semantic knowledge via synaptic strengthening (Long-Term Potentiation). |
+| Data Bus (Communication) | Corpus Callosum & White Matter Tracts. | Transmits information rapidly between different brain regions and hemispheres. |
+| Clock Speed (Timing) | Suprachiasmatic Nucleus (SCN) and neural oscillators. | Regulates circadian rhythms and synchronizes neural firing patterns, but unlike a CPU, the brain has no fixed global clock; it operates asynchronously in parallel. |
+| Power Supply | Glucose and Oxygen delivered via the blood-brain barrier. | Fuels ATP production required for maintaining ion gradients and firing action potentials. |
+| Output (I/O) | Motor cortex, spinal cord, and autonomic nervous system. | Sends electrical signals to muscles (movement, speech) and glands (hormone secretion). |
+Crucial Differences: The brain is parallel (billions of neurons process simultaneously), fault-tolerant (can rewire via neuroplasticity), and consumes ~20% of the body's oxygen despite being only 2% of body weight. A CPU is serial-sequential, brittle to physical damage, and relies on external binary voltage.
 ---

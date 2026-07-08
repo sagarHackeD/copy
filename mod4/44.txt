@@ -1,18 +1,16 @@
-44. Arrangements of 5 a’s, 4 b’s, 3 c’s so that all identical letters are not in a single block
-Interpretation: the 5 a’s are not all together, the 4 b’s are not all together, and the 3 c’s are not all together.
-Total arrangements:
-[\frac{12!}{5!4!3!} = 27720.]
-Let (A): a’s together, (B): b’s together, (C): c’s together.
-- (|A| = \frac{8!}{4!3!} = 280) (block of a’s + 4 b’s + 3 c’s = 8 items).
-- (|B| = \frac{9!}{5!3!} = 504).
-- (|C| = \frac{10!}{5!4!} = 1260).
-Intersections:
-- (|An B|): blocks of a’s and b’s + 3 c’s →(5) items →(\frac{5!}{3!} = 20).
-- (|An C|): block a, 4 b’s, block c →(6) items →(\frac{6!}{4!} = 30).
-- (|Bn C|): 5 a’s, block b, block c →(7) items →(\frac{7!}{5!} = 42).
-- (|An Bn C|): three blocks →(3! = 6).
-By inclusion–exclusion:
-[N = 27720 - (280+504+1260) + (20+30+42) - 6
-= 27720 - 2044 + 92 - 6 = 25762.]
-[\boxed{25762}]
+44. Compare photosynthesis and photovoltaic cells.
+Photosynthesis:
+Photosynthesis is the biological process by which plants, algae, and certain bacteria convert sunlight into chemical energy. Photosynthetic cells contain pigment-protein complexes (Photosystems I and II) that absorb photons and transfer electrons, producing energy-rich compounds such as ATP and NADPH. These molecules then power the Calvin cycle, reducing atmospheric carbon dioxide into sugars and releasing oxygen.
+Photovoltaic (PV) Cells:
+Photovoltaic cells (solar panels) are man-made semiconductor devices that directly convert solar radiation into electricity. When sunlight hits the semiconductor material (usually silicon), it excites electrons, creating an electrical current.
+Comparison Table:
+| Feature | Photosynthesis | Photovoltaic Cells |
+|
+| Output | Chemical Energy (sugars, biomass). | Electrical Energy (electricity). |
+| Mechanism | Light energy drives electron transfer in pigment-protein complexes, producing ATP and NADPH. | Light energy excites electrons in a semiconductor, creating a flow of electric current. |
+| Energy Conversion Efficiency | Lower (~1-3% for most plants; up to ~6% for some algae). | Higher (15–22% for commercial panels; >40% for multi-junction cells). |
+| Wavelength Utilization | Primarily absorbs visible light (400–700 nm), which is only ~43% of sunlight. | Can be engineered to absorb a broader spectrum, including UV and infrared. |
+| Self-Repair | Yes – plants can repair damage and regenerate. | No – cells degrade over time and require replacement. |
+| Carbon Footprint | Carbon Negative – absorbs CO_2 from the atmosphere. | Carbon Neutral during operation, but manufacturing has an environmental cost. |
+| Storage | Energy is stored as chemical bonds (sugars, starch) for later use. | Energy must be stored in batteries or converted to other forms for later use. |
 ---

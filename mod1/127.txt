@@ -1,5 +1,0 @@
-127. For two odd integers (m,n)
-Let (m=2a+1, n=2b+1), where (a,bƐ{Z}).
-(i) (m+n = (2a+1)+(2b+1)=2a+2b+2=2(a+b+1)), so (m+n) is even.
-(ii) (mn = (2a+1)(2b+1)=4ab+2a+2b+1=2(2ab+a+b)+1), so (mn) is odd.
----

@@ -1,0 +1,23 @@
+510. Explain DNA origami, biocomputing, and their applications.
+DNA Origami:
+DNA origami is the nanoscale folding of DNA to create arbitrary two-dimensional and three-dimensional shapes. It is a powerful bottom-up nanofabrication technique.
+Principle:
+The technique, pioneered by Paul Rothemund in 2006, uses a long, single-stranded viral genome (typically from the M13 bacteriophage, ~7,000 bases) as a "scaffold." Hundreds of short, synthetic "staple" strands are designed to bind to complementary regions on the scaffold via Watson-Crick base pairing. This hybridization forces the long scaffold strand to fold into a pre-designed, highly precise nanostructure.
+Textual Diagram:
+```
+[Long Scaffold Strand] + [Short Staple Strands] --> (Annealing/Hybridization) --> [Designed 2D/3D Nanostructure]
+(M13 ssDNA)             (Complementary binders)                                  (e.g., Box, Smiley, Triangle)
+```
+Biocomputing:
+Biocomputing uses biological molecules (DNA, RNA, proteins) to perform computational logic and arithmetic. It operates on the principles of molecular recognition and strand displacement.
+Principle:
+DNA strands are used to encode data. Logic gates (AND, OR, NOT, XOR) are constructed using DNA sequences. When specific input DNA strands are present, they trigger a cascade of hybridization reactions, producing a specific output signal (often a fluorescent signal or a specific DNA strand). In 2023, researchers built a functioning DNA-based neural network capable of recognizing handwritten numbers (from digitized molecular inputs).
+Applications of DNA Origami and Biocomputing:
+| Application Domain | DNA Origami | Biocomputing |
+|
+| Targeted Drug Delivery | DNA nanobots shaped like a clamshell that open only upon binding to specific receptor proteins (e.g., HER2 on cancer cells), releasing their therapeutic payload (e.g., Doxorubicin) precisely at the tumor site. | - |
+| Molecular Diagnostics (Biosensors) | Origami structures functionalized with antibodies or aptamers to capture and concentrate rare target molecules (like exosomes or viruses) for ultra-sensitive detection. | Smart biomarkers: Logic gates designed to detect complex disease patterns (e.g., miRNA X AND miRNA Y NOT miRNA Z = Cancer) directly inside living cells. |
+| Nanolithography & Nanoelectronics | Using DNA origami as a "molecular pegboard" to position proteins, nanoparticles, and carbon nanotubes with nanometer precision for building electronic circuits or plasmonic devices. | - |
+| Cryptography & Data Storage | Encoding data in DNA sequences offers ultra-high-density storage (1 gram of DNA can store ~215 petabytes). | DNA logic locks: Using DNA sequences as encryption keys for molecular-scale security. |
+| Algorithms & Neural Networks | - | Molecular neural networks: Researchers have demonstrated DNA-based circuits that perform complex pattern recognition, such as analyzing gene expression profiles to classify 1,000+ distinct genetic programs. |
+| Structural Biology | Creating DNA cages that encapsulate and orient membrane proteins for crystallization or single-particle cryo-EM studies. | - |

@@ -1,10 +1,28 @@
-42. Solve (F_{n+2}=F_{n+1}+F_n, F_0=0, F_1=1)
-Characteristic equation:
-[r^2 - r - 1 = 0    →    r = \frac{1\pm \sqrt{5}}{2}.]
-Thus
-[F_n = A(\frac{1+\sqrt{5}}{2})^n + B(\frac{1-\sqrt{5}}{2})^n.]
-Using (F_0=0,F_1=1):
-[A+B=0,\qquad A\frac{1+\sqrt{5}}{2} + B\frac{1-\sqrt{5}}{2}=1.]
-Solving gives (A = \frac{1}{\sqrt{5}}, B = -\frac{1}{\sqrt{5}}). Hence
-[\boxed{F_n = \frac{1}{\sqrt{5}}[(\frac{1+\sqrt{5}}{2})^n - (\frac{1-\sqrt{5}}{2})^n]}.]
+42. Explain the principle, working, and applications of echolocation in navigation and detection.
+Principle:
+The fundamental principle of echolocation is pulse-echo sensing. A signal (sound or electromagnetic wave) is emitted, travels through a medium, reflects off an object, and returns to a receiver. By measuring the time delay between emission and reception, the distance to the object can be calculated. Additional information (speed, direction, size) is derived from changes in the echo's frequency (Doppler effect) and intensity.
+Working Mechanism:
+```
+[Emitter] --(Sends Pulse)--> [Object]
+                              |
+[Receiver] <--(Receives Echo)--+
+```
+1.  Pulse Generation: A specialized emitter (e.g., bat larynx, sonar transducer, radar antenna) generates a short, focused pulse of energy.
+2.  Transmission: The pulse travels through the medium (air, water, or space).
+3.  Reflection: When the pulse encounters an object with different acoustic or electromagnetic properties, a portion of the energy is reflected back as an echo.
+4.  Reception: The receiver (e.g., bat ears, sonar hydrophone, radar antenna) detects the returning echo.
+5.  Signal Processing: The brain or computer analyzes the echo to extract information:
+    - Time Delay: Determines distance (Range = Speed of Wave × Time Delay / 2).
+    - Frequency Shift (Doppler): Determines relative speed and direction of movement.
+    - Amplitude/Intensity: Indicates size and reflectivity of the object.
+    - Waveform Changes: Reveals texture and composition.
+Applications in Navigation and Detection:
+| Application Domain | Specific Use | Technology/Organism |
+|
+| Marine Navigation | Submarine detection, obstacle avoidance for ships, underwater mapping. | Sonar |
+| Aviation | Air traffic control, weather avoidance, terrain mapping. | Radar |
+| Autonomous Vehicles | Self-driving cars use lidar and radar to detect pedestrians, other vehicles, and obstacles. | Lidar, Radar |
+| Military | Surveillance, target tracking, missile guidance. | Radar, Sonar |
+| Medical | Fetal monitoring, organ imaging. | Ultrasound (medical sonar) |
+| Wildlife Conservation | Tracking animal movements, studying bat and dolphin behavior. | Bioacoustic monitoring |
 ---

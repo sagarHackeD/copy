@@ -1,3 +1,13 @@
-58. Show (W_4 = {1, -1, i, -i}) is abelian under multiplication
-Same as Q1 above. The group table verifies closure, and commutativity is immediate. We already gave the inverses. Thus it is an abelian group.
+58. Explain the applications of Artificial Intelligence in disease diagnosis.
+Artificial Intelligence (AI), particularly Machine Learning (ML) and Deep Learning (DL) (Convolutional Neural Networks - CNNs), has revolutionized disease diagnosis by enabling computers to interpret complex medical data with high accuracy.
+Core Applications Across Medical Domains:
+| Application Domain | Specific AI Application | How it Works |
+|
+| Medical Imaging (Radiology) | Detection of cancers (breast, lung, prostate) and neurological disorders (stroke, Alzheimer's). | CNNs analyze thousands of CT, MRI, and X-ray images to identify micro-calcifications, nodules, or lesions that the human eye might miss. E.g., AI outperforms radiologists in some mammography screenings. |
+| Pathology (Digital Pathology) | Cancer grading and cell classification. | AI analyzes whole-slide digital images of tissue biopsies to identify mitotic figures or abnormal cell morphology (e.g., detecting HER2-positive breast cancer). |
+| Ophthalmology | Diabetic Retinopathy and Glaucoma detection. | AI examines retinal fundus photographs to identify microaneurysms, hemorrhages, and optic nerve head changes. Google Health's algorithm achieves >90% sensitivity. |
+| Cardiology | Arrhythmia detection and Cardiovascular risk prediction. | AI interprets thousands of ECGs to detect silent atrial fibrillation. Deep learning models predict 5-year cardiovascular risk from retinal scans or chest X-rays. |
+| Genomics & Precision Medicine | Variant Calling and Risk prediction. | AI algorithms (e.g., DeepVariant) interpret whole-genome sequences to identify disease-causing mutations. AI predicts polygenic risk scores for Type 2 Diabetes and Autism. |
+| Infectious Disease | COVID-19, Sepsis, and Tuberculosis detection. | AI predicts sepsis up to 12 hours before clinical diagnosis by analyzing vital signs and EHRs. Chest X-ray AI helps rapidly triage suspected COVID-19 cases. |
+| Virtual Assistants & Triage | Symptom checking and Triage. | NLP-powered chatbots (e.g., Babylon Health) interact with patients, analyze symptoms, and direct them to appropriate emergency or primary care. |
 ---

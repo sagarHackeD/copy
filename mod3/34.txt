@@ -1,18 +1,38 @@
-34. Relation (R) on (A={1,2,3,4,6}) defined by (aRb) iff (a) is a multiple of (b).
-List (R):
-[R={(1,1),(2,1),(3,1),(4,1),(6,1),(2,2),(4,2),(6,2),(3,3),(6,3),(4,4),(6,6)}.]
-Relation matrix (M(R)) (rows (a), columns (b) in order (1,2,3,4,6)):
-[M(R)=
-1 0 0 0 0
-1 1 0 0 0
-1 0 1 0 0
-1 1 0 1 0
-1 1 1 0 1
-]
-Digraph: vertices (1,2,3,4,6); directed edge (a→b) if (aRb).  
-Loops on every vertex. Other edges: (2→1,3→1,4→1,6→1,4→2,6→2,6→3). (Also all loops.)
-Out‑degrees (including loops):
-[deg^+(1)=1,    deg^+(2)=2,    deg^+(3)=2,    deg^+(4)=3,    deg^+(6)=4.]
-In‑degrees:
-[deg^-(1)=5,    deg^-(2)=3,    deg^-(3)=2,    deg^-(4)=1,    deg^-(6)=1.]
+34. Explain the mechanism of filtration in the human kidney.
+The kidney's filtration mechanism occurs in the nephron (the functional unit). It involves three main processes: Glomerular Filtration, Tubular Reabsorption, and Tubular Secretion.
+Textual Diagram of a Nephron:
+```
+   [Afferent Arteriole] --> [Glomerulus (Capillary Tuft)]
+              |                      |
+        [Bowman's Capsule] <--- [Efferent Arteriole]
+              |                      |
+         (FILTRATION)                |
+              |                      |
+   [Proximal Convoluted Tubule (PCT)]  ---> (REABSORPTION: Glucose, H2O, Na+, Cl-)
+              |
+   [Loop of Henle (Descending & Ascending)] ---> (Water & Ion concentration)
+              |
+   [Distal Convoluted Tubule (DCT)] ---> (SECRETION & Reabsorption: K+, H+, pH balance)
+              |
+   [Collecting Duct] ---> (Final concentration of Urine, regulated by ADH)
+              |
+           [Urine]
+```
+Detailed Mechanism:
+1.  Glomerular Filtration (Ultrafiltration):
+    - Location: Glomerulus (a tuft of capillaries) within Bowman's capsule.
+    - Driving Force: High hydrostatic pressure (created by the difference in diameter between the wider afferent and narrower efferent arterioles).
+    - Filtration Barrier: The capillary endothelium, basement membrane, and podocyte foot processes form a selective filter.
+    - What passes: Water, glucose, salts (Na⁺, K⁺), amino acids, urea, and small molecules.
+    - What is retained: Blood cells, platelets, and large proteins (e.g., albumin). The filtrate (primary urine) is essentially protein-free plasma. ~180 liters are filtered per day.
+2.  Tubular Reabsorption (Selective Recovery):
+    - Location: Primarily the Proximal Convoluted Tubule (PCT), but also the Loop of Henle and DCT.
+    - Mechanism: Active and passive transport of essential substances back into the peritubular capillaries.
+    - What is reabsorbed: ~99% of water, 100% of glucose and amino acids, and most ions (Na⁺, Cl⁻, HCO_3⁻). This is where the body reclaims what it needs. In the Loop of Henle, the counter-current multiplier creates a concentration gradient in the medulla, allowing for water reabsorption later.
+3.  Tubular Secretion (Waste Addition):
+    - Location: Distal Convoluted Tubule (DCT) and Collecting Duct.
+    - Mechanism: Active transport of additional waste products from the blood into the tubular fluid.
+    - What is secreted: H⁺ ions (acid-base balance), K⁺ ions (potassium regulation), and drugs/toxins (e.g., penicillin, creatinine). This ensures these substances are removed from the blood and excreted in urine.
+4.  Excretion:
+    - The final concentrated fluid (urine) passes through the collecting ducts to the renal pelvis, ureter, and bladder.
 ---

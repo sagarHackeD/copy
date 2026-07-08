@@ -1,9 +1,21 @@
-17. Prove using laws of logic:
-[p→(q→r)↔(pΛ q)→r.]
-Proof:
-[p→(q→r)≡¬pV(¬qV r)
-≡(¬pV ¬q)V r
-≡¬(pΛ q)V r
-≡(pΛ q)→r.]
-Hence they are logically equivalent.
+17. Explain the properties and functions of lipids.
+Properties:
+- Solubility: Lipids are hydrophobic (insoluble in water) but soluble in non-polar organic solvents like chloroform, ether, and benzene.
+- Energy Density: They yield ~9 kcal per gram, more than double that of carbohydrates.
+- Physical State: Fats are solid at room temperature (saturated, e.g., animal fats); oils are liquid at room temperature (unsaturated, e.g., plant oils).
+- Amphipathic Nature: Phospholipids and glycolipids have both hydrophilic (polar) heads and hydrophobic (non-polar) tails, allowing them to form bilayers.
+- Esterification: Fats and oils are esters formed from glycerol and fatty acids.
+Classification:
+- Simple Lipids: Esters of fatty acids and alcohols. E.g., Triglycerides (fats/oils), Waxes.
+- Compound/Complex Lipids: Contain additional groups. E.g., Phospholipids (contain phosphate), Glycolipids (contain sugar).
+- Derived Lipids: Hydrolysis products of simple/complex lipids. E.g., Steroids (cholesterol, hormones), Fatty acids, Glycerol.
+- Isoprenoids/Terpenes: Built from isoprene units. E.g., Vitamin A, Carotenoids.
+Functions:
+1.  Energy Storage: Triglycerides stored in adipose tissue are the body's major form of long-term energy reserve.
+2.  Structural Component of Membranes: Phospholipids and cholesterol form the phospholipid bilayer of cell membranes, providing fluidity, flexibility, and selective permeability.
+3.  Insulation: Subcutaneous fat acts as a thermal insulator (prevents heat loss) and provides cushioning (protection) for internal organs.
+4.  Signaling Molecules: Steroid hormones (testosterone, estrogen, cortisol) and eicosanoids (prostaglandins) act as chemical messengers regulating metabolism, reproduction, and inflammation.
+5.  Vitamin Absorption: Lipids aid in the absorption of fat-soluble vitamins (A, D, E, K) in the intestine.
+6.  Protection: Waxes protect plant surfaces (cuticle) from water loss and animal skin/fur (e.g., earwax).
+7.  Myelin Sheath: Lipids (sphingolipids) form the myelin sheath around neurons, enabling rapid electrical impulse conduction (saltatory conduction).
 ---

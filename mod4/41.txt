@@ -1,27 +1,24 @@
-41. Permutations of 26 letters avoiding patterns CAR, DOG, PUN, BYTE
-Let  
-- (A_1): pattern CAR occurs,  
-- (A_2): DOG occurs,  
-- (A_3): PUN occurs,  
-- (A_4): BYTE occurs.
-The letters in these patterns are all distinct, so we use inclusion–exclusion.
-- Total permutations without restriction: (26!).
-- For a 3‑letter pattern (CAR, DOG, PUN), treat it as one block →(24) items →(24!) ways. There are (3) such patterns.
-- For the 4‑letter pattern BYTE →(23) items →(23!) ways.
-Thus:
-[N_1 = 3▪ 24! + 23!.]
-Two patterns together:
-- Two 3‑letter patterns: (3) choices, (2) blocks + 20 letters = (22) items →(22!).
-- One 3‑letter + BYTE: (3) choices, (2) blocks + 19 letters = (21) items →(21!).
-So:
-[N_2 = \binom{3}{2}22! + 3▪ 21! = 3▪ 22! + 3▪ 21!.]
-Three patterns together:
-- Three 3‑letter patterns: (1) way, (3) blocks + 17 letters = (20) items →(20!).
-- Two 3‑letter + BYTE: (\binom{3}{2}=3) ways, (3) blocks + 16 letters = (19) items →(19!).
-So:
-[N_3 = 20! + 3▪ 19!.]
-All four patterns together:  
-(3) blocks (for CAR, DOG, PUN) + (1) block (BYTE) + 13 letters = (17) items →(17!).
-By inclusion–exclusion, the required number is:
-[\boxed{26! - (3▪ 24! + 23!) + (3▪ 22! + 3▪ 21!) - (20! + 3▪ 19!) + 17!}.]
+41. Explain biological and technological echolocation with applications.
+Biological Echolocation (Biosonar):
+Echolocation is a biological sensing mechanism that evolved independently in animals like bats and dolphins through convergent evolution to navigate and hunt in diverse environments. It involves emitting sound waves and analyzing the returning echoes to determine the location, distance, size, and even texture of objects.
+Mechanism in Animals:
+| Animal | Sound Production | Sound Reception | Key Adaptations |
+|
+| Bats | Larynx produces high-frequency clicks (up to 140 dB) emitted through mouth or nose. | Ears capture returning echoes. | Middle ear muscles contract just before calling to prevent self-deafening. Can detect insects up to 5m away and wires as fine as human hairs. |
+| Dolphins/Toothed Whales | Nasal passages near the blowhole squeeze air to create clicks. | Reflected sound is picked up through the lower jaw and passed to the inner ear. | The melon (a fatty organ in the forehead) focuses sound into a beam. Ears are shielded to protect from loud calls. Can detect a golfball-sized object from the length of a football pitch. |
+Biological Applications:
+- Navigation & Obstacle Avoidance: Moving through pitch-dark caves or murky waters.
+- Hunting & Foraging: Locating and tracking prey.
+- Social Interactions: Identifying friends, enemies, and potential mates.
+Technological Echolocation (Sonar, Radar, Lidar):
+Humans have developed technologies that use reflected sound or electromagnetic waves to detect and locate objects.
+| Technology | Acronym | Wave Type | Medium | Applications |
+|
+| Sonar | Sound Navigation And Ranging | Sound waves (mechanical) | Water (excellent medium) | Naval navigation, submarine detection, ocean floor mapping, fishing |
+| Radar | Radio Detection And Ranging | Radio waves (electromagnetic) | Air/space (poor underwater) | Air traffic control, weather monitoring, speed detection, planetary surveillance |
+| Lidar | Light Detection And Ranging | Light waves (laser) | Air | 3D mapping, autonomous vehicles, archaeology, forestry |
+Technological Applications:
+- Medical Imaging: Ultrasound imaging is directly inspired by echolocation principles.
+- Non-Destructive Testing: Using sound waves to detect flaws in materials without damaging them.
+- Robotics: Autonomous robots use sonar and lidar for navigation and obstacle avoidance.
 ---

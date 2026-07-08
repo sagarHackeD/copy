@@ -1,15 +1,28 @@
-32. Composition of functions
-Let (f(x)=ax+b) and (g(x)=1-x+x^2).  
-Given ((g∘ f)(x)=9x^2-9x+3).
-Compute:
-[(g∘ f)(x)=g(f(x))=1-(ax+b)+(ax+b)^2.]
-Expand:
-[=1-ax-b+a^2x^2+2abx+b^2 = a^2x^2+(-a+2ab)x+(1-b+b^2).]
-Equate coefficients:
-[a^2=9,\qquad -a+2ab=-9,\qquad 1-b+b^2=3.]
-From (a^2=9), (a=\pm3).  
-From (b^2-b-2=0→ (b-2)(b+1)=0→ b=2) or (b=-1).
-- If (a=3): (-3+6b=-9→ 6b=-6→ b=-1).
-- If (a=-3): (-(-3)+2(-3)b=3-6b=-9→ -6b=-12→ b=2).
-Thus (\boxed{(a,b)=(3,-1)\text{or}(-3,2)}).
+32. Explain the eye as a camera system.
+The human eye functions remarkably like a sophisticated, self-adjusting digital camera, capturing light and focusing it onto a photosensitive surface.
+Textual Diagram (Eye as a Camera):
+```
+           [Aperture]          [Lens]         [Sensor/Film]
+              (Iris)           (Crystalline)     (Retina)
+                |                 |                |
+     [Protective Cover]---->  (Focusing) ----> [Image Processing]
+          (Cornea)          (Ciliary Muscles)  (Photoreceptors)
+                                                   |
+                                                [Data Cable]
+                                               (Optic Nerve)
+```
+Detailed Comparison:
+| Camera Component | Biological Equivalent (Eye) | Function |
+|
+| Protective Cover | Cornea (and sclera). | The transparent, fixed outer lens that provides ~80% of the eye's focusing power. Protects the inner structures. |
+| Aperture / Iris Diaphragm | Iris and Pupil. | Regulates the amount of light entering the eye. Dilates (enlarges) in dim light; constricts (shrinks) in bright light. |
+| Camera Lens | Crystalline Lens. | The biconvex, adjustable lens that fine-tunes focusing. It changes shape (accommodation) via ciliary muscles to focus on near or distant objects. |
+| Autofocus Mechanism | Ciliary Muscles and Suspensory Ligaments. | Adjust the curvature of the lens. Accommodation = lens bulges for near vision; relaxation = lens flattens for distance vision. |
+| Shutter | Blinking and the eyelid. | Briefly blocks light to protect and lubricate the eye; also controls integration time to some extent. |
+| Film / Image Sensor | Retina (contains photoreceptors: Rods and Cones). | Converts light photons into electrochemical signals. Rods = black/white, low-light vision; Cones = color, high-acuity vision (3 types: red, green, blue). |
+| Pixels | Photoreceptors (approx. 120 million rods, 6 million cones). | Capture individual points of light. The fovea has the highest density of cones (sharpest vision). |
+| Image Processor (ISP) | Bipolar Cells, Amacrine Cells, and Ganglion Cells. | Pre-process the image locally (edge detection, contrast enhancement) before sending it to the brain. |
+| Data Cable | Optic Nerve (Cranial Nerve II). | Transmits the pre-processed visual data as electrical impulses to the visual cortex in the occipital lobe. |
+| Blind Spot | Optic Disc (where the optic nerve exits). | An area on the retina lacking photoreceptors; equivalent to a dead pixel or missing sensor area that the brain compensates for. |
+Crucial Differences: A camera lens is glass; the eye's lens is proteinaceous (can become cloudy = cataract). The eye's "image processing" (lateral inhibition) happens *at the sensor level*, whereas a camera sends raw data to a separate chip. Furthermore, the brain, not the eye, performs the final, complex reconstruction (e.g., filling in the blind spot, color constancy).
 ---

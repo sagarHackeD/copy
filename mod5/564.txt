@@ -1,9 +1,0 @@
-564. The only left coset of (H) that is also a subgroup is (H) itself
-Let (G) be a group and (H ≤ G). Suppose (aH) is a left coset that is also a subgroup of (G).
-Since (aH) is a subgroup, it must contain the identity element (e).  
-Thus (e Ɛ aH), so there exists (h Ɛ H) such that (e = a h).  
-Multiplying on the right by (h^{-1}), we get
-[a = h^{-1} Ɛ H.]
-Now, since (a Ɛ H), the coset (aH) is exactly (H) (because for any (h' Ɛ H), (a h' Ɛ H), and every element of (H) can be written as (a (a^{-1} h')) with (a^{-1} h' Ɛ H)). Hence (aH = H).
-Therefore, the only left coset of (H) that is a subgroup is (H) itself.
----

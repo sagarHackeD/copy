@@ -1,8 +1,0 @@
-129. Proof by contradiction for “If (n^2) is odd, then (n) is odd”
-Assume the negation: there exists an integer (n) such that (n^2) is odd and (n) is not odd (i.e. (n) is even).  
-Then (n=2k) for some integer (k). Hence
-[n^2=(2k)^2=4k^2=2(2k^2),]
-which is even, contradicting the assumption that (n^2) is odd.  
-Therefore, if (n^2) is odd, (n) must be odd.
----
-MOD2

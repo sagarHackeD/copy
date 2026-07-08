@@ -1,7 +1,17 @@
-45. Rook polynomial for the board shown in the figure
-r_1 = no of cells
-r_2 = 2 non capturing groups and so on
-r(C,x) = 1 + r_1 x + r_2 x^2 + r_3 x^3 + ... + r_n x^n
-r(C,x) = x r(D,x) + r(E,x)
-r(C,x) = r(C_1,x) X r(C_2,x)
+45. Explain the lotus leaf effect and its engineering applications.
+The Lotus Leaf Effect:
+The lotus leaf's self-cleaning ability, known scientifically as the "lotus effect," is a masterpiece of natural engineering. At the microscopic level, the leaf's surface is covered with tiny bumps (papillae) coated in wax crystals. This creates a superhydrophobic (highly water-repellent) surface.
+Mechanism:
+- Hierarchical Structure: The combination of micron-scale papillae and nanoscale wax crystals creates a rough surface.
+- Air Pockets: Water droplets cannot penetrate the rough surface; they sit on top of air pockets, forming near-perfect spheres.
+- Self-Cleaning: As water droplets roll off, they pick up and carry away dirt and dust particles, keeping the leaf clean.
+Engineering Applications:
+| Application Area | Specific Examples | Benefit |
+|
+| Architectural Coatings | Self-cleaning building facades, windows, and paints. | Reduced maintenance; stays clean for years. |
+| Textiles | Water-resistant and stain-repellent clothing, outdoor furniture fabrics, tents. | Stays cleaner longer; resists mold and mildew. |
+| Industrial | Solar panels (self-cleaning maintains efficiency), aircraft surfaces, marine coatings (anti-biofouling). | Reduced cleaning costs; improved performance. |
+| Oil-Water Separation | Membranes that selectively repel water while allowing oil to pass through (or vice versa). | Efficient environmental cleanup. |
+| Anti-Icing | Coatings that prevent ice formation on aircraft wings, power lines, and wind turbines. | Enhanced safety and reduced energy costs. |
+Sustainability Impact: Lotus-inspired surfaces reduce water consumption for cleaning, minimize the use of harsh chemical cleaners, and extend the lifespan of materials.
 ---

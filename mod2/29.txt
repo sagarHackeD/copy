@@ -1,15 +1,24 @@
-29. Recursive definitions
-(i) (a_n = 5n):  
-(a_0=0), and for (n≥1), (a_n = a_{n-1}+5).
-(ii) (a_n = 3n+7):  
-(a_0=7), and for (n≥1), (a_n = a_{n-1}+3).
-(iii) (a_n = n^2):  
-(a_0=0), and for (n≥1), (a_n = a_{n-1} + (2n-1)).
-(iv) (a_n = 2 - (-1)^n):  
-(a_0 = 2-1=1).  
-For (n≥1):
-[a_n - a_{n-1} = [2-(-1)^n] - [2-(-1)^{n-1}]
-= -(-1)^n + (-1)^{n-1}
-= 2(-1)^{n+1}.]
-So (a_n = a_{n-1} + 2(-1)^{n+1}).
+29. Explain DNA fingerprinting and its forensic applications.
+DNA Fingerprinting:
+DNA fingerprinting (or DNA profiling) is a biometric technique that analyzes specific, highly variable regions of an individual's DNA to create a unique genetic profile. Except for identical twins, every person's DNA contains distinct variations, enabling accurate identification.
+The Principle of DNA Fingerprinting:
+The technique exploits genetic polymorphism, particularly in non-coding regions of DNA that contain repetitive sequences. Two main types of repeats are used:
+- Short Tandem Repeats (STRs): These are 2–6 base pair sequences repeated multiple times. The number of repeats varies greatly between individuals. STR analysis is the current gold standard.
+- Variable Number Tandem Repeats (VNTRs): These are longer repeat sequences (10–60 bp) with even greater variability.
+By analyzing multiple STR loci (e.g., 13 core loci in the U.S. CODIS database), a profile with a probability of match as low as 1 in 10^9 can be generated.
+Workflow of DNA Fingerprinting:
+1.  Sample Collection: Biological samples (blood, saliva, hair, semen, bone) are collected from the crime scene or individuals.
+2.  DNA Extraction: DNA is isolated and purified from the cells in the sample using chemical or mechanical methods.
+3.  PCR Amplification: Specific STR (or VNTR) regions are amplified exponentially using the Polymerase Chain Reaction (PCR). This is crucial for generating enough DNA from trace samples.
+4.  Fragment Analysis (Electrophoresis): The amplified DNA fragments are separated by size using capillary electrophoresis.
+5.  Profile Generation & Comparison: The resulting pattern of DNA fragments (the "fingerprint") is analyzed and compared to reference samples to determine a match or exclusion.
+Forensic Applications of DNA Fingerprinting:
+| Application | Description |
+|
+| Criminal Investigation | Identifying perpetrators from trace evidence (blood, saliva, hair, skin cells) left at crime scenes. |
+| Exoneration of the Innocent | DNA evidence has been used to overturn wrongful convictions. |
+| Paternity & Maternity Testing | Determining biological relationships in legal disputes, child custody cases, and immigration. |
+| Identification of Human Remains | Identifying victims of disasters, mass casualties, and war, as seen in the identification of war victims in Ukraine. |
+| Missing Persons & Cold Cases | Matching DNA from unidentified remains to family members of missing persons. |
+| Sexual Assault Cases | Identifying perpetrators from biological evidence in rape and murder cases. |
 ---

@@ -1,5 +1,0 @@
-457. Solve (a_n = a_{n-1}, a_0=1)
-This is a constant sequence:
-[a_n = 1     \text{for all } n.]
-[\boxed{a_n = 1}]
----

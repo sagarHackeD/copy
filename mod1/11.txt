@@ -1,18 +1,37 @@
-11. Tautology and truth table
-Definition:  
-A compound proposition is a tautology if it is true for every possible truth assignment of its component propositions.
-We prove that  
-[[(pV q)Λ(p→r)Λ(q→r)]→r]
-is a tautology.
-Truth table:
-| (p) | (q) | (r) | (pV q) | (p→r) | (q→r) | (A=(pV q)Λ(p→r)Λ(q→r)) | (A→r) |
-| T | T | T | T | T | T | T | T |
-| T | T | F | T | F | F | F | T |
-| T | F | T | T | T | T | T | T |
-| T | F | F | T | F | T | F | T |
-| F | T | T | T | T | T | T | T |
-| F | T | F | T | T | F | F | T |
-| F | F | T | F | T | T | F | T |
-| F | F | F | F | T | T | F | T |
-Since (A→r) is true in every row, the proposition is a tautology.
+11. Explain the structure, components, and functions of a eukaryotic cell with a neat diagram.
+Textual Diagram of a Eukaryotic Cell (Animal Cell):
+```
+                    [Centrosome] (Microtubule organizing center)
+                         |
+                   [Lysosome]----[Peroxisome]
+                         |           |
+    [Plasma Membrane]----+-----------+----[Rough Endoplasmic Reticulum (RER)]
+         |               |                |      (studded with Ribosomes)
+         |          [Nucleus]             |
+         |         /        \             |----[Smooth ER (SER)]
+         |  [Nucleolus]  [Chromatin]      |
+         |         \        /             |
+         |          [Nuclear Envelope]----+
+         |               |                |
+         |          [Cytoplasm]           |
+         |               |                |
+         |          [Mitochondria]--------+----[Golgi Apparatus]
+         |               |                     /          \
+         |          [Ribosomes] (free)     [Vesicles]  [Secretory Vesicles]
+         |_______________________________________________|
+```
+Components and Functions:
+| Component | Structure | Function |
+|
+| Plasma Membrane | Phospholipid bilayer with embedded proteins (Fluid Mosaic Model). | Selective permeability; regulates entry/exit of substances; cell signaling. |
+| Nucleus | Double-membrane bound (nuclear envelope) with nuclear pores; contains chromatin. | Houses genetic material (DNA); controls cellular activities via gene expression. |
+| Nucleolus | Dense, spherical region inside the nucleus. | Synthesizes ribosomal RNA (rRNA) and assembles ribosomal subunits. |
+| Ribosomes | Made of rRNA and proteins (60S + 40S = 80S in eukaryotes); no membrane. | Protein synthesis (translation). Found free in cytosol or bound to RER. |
+| Endoplasmic Reticulum (ER) | Network of membranous tubules and sacs (cisternae). | Rough ER (RER): Protein folding, modification, and quality control. <br> Smooth ER (SER): Lipid synthesis, carbohydrate metabolism, calcium storage, detoxification. |
+| Golgi Apparatus | Stack of flattened, membranous sacs (cisternae). | Modifies, sorts, packages, and transports proteins and lipids (e.g., glycosylation). |
+| Mitochondria | Double membrane: outer smooth, inner folded into cristae; contains its own DNA and ribosomes. | Site of aerobic respiration; generates ATP (cellular energy) via oxidative phosphorylation. Also involved in apoptosis. |
+| Lysosomes | Single-membrane vesicles containing hydrolytic enzymes. | Intracellular digestion; breakdown of waste, worn-out organelles, and pathogens (autophagy and phagocytosis). |
+| Peroxisomes | Single-membrane vesicles with oxidative enzymes. | Break down fatty acids and amino acids; detoxify harmful substances (e.g., hydrogen peroxide into water and oxygen). |
+| Cytoskeleton | Network of microtubules, microfilaments, and intermediate filaments. | Maintains cell shape, supports organelle movement, and facilitates cell motility. |
+| Centrosome | Microtubule-organizing center (contains centrioles in animals). | Organizes spindle fibers during cell division (mitosis/meiosis). |
 ---

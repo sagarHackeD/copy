@@ -1,15 +1,17 @@
-15. Validity using Rules of Inference
-Premises:
-[p→q,    r→s,    ¬qV ¬s]
-Conclusion:
-[¬(pΛ r).]
-Proof by contradiction:
-1. Suppose (pΛ r) is true.  
-2. Then (p) and (r) are true.  
-3. From (p→q) and (p), get (q) (Modus Ponens).  
-4. From (r→s) and (r), get (s) (Modus Ponens).  
-5. Now (q) and (s) are both true, so (¬q) and (¬s) are both false.  
-6. Hence (¬qV ¬s) is false, contradicting the premise.  
-7. Therefore (pΛ r) is false, i.e. (¬(pΛ r)).
-The argument is valid.
+15. Define biomolecules and explain their classification with examples.
+Definition: Biomolecules are organic (and some inorganic) molecules that are produced by living cells and are essential for life processes. They form the structural and functional units of cells.
+Classification:
+A. Based on Molecular Weight:
+1.  Micromolecules (Small molecules): Low molecular weight (< 1000 Da). E.g., Amino acids, Nucleotides, Sugars (glucose), Fatty acids, Vitamins, Water, Minerals.
+2.  Macromolecules (Large polymers): High molecular weight (> 1000 Da). Formed by polymerization of micromolecules. E.g., Polysaccharides (starch), Proteins (hemoglobin), Nucleic acids (DNA), Lipids (though not true polymers, they are often included here).
+B. Based on Chemical Composition and Function:
+1.  Carbohydrates: (C,H,O) – Sugars, starches, cellulose. E.g., Glucose, Glycogen.
+2.  Proteins: (C,H,O,N,S) – Polymers of amino acids. E.g., Enzymes, Hemoglobin, Collagen.
+3.  Lipids: (C,H,O – mostly hydrophobic) – Fats, oils, phospholipids, steroids. E.g., Triglycerides, Cholesterol.
+4.  Nucleic Acids: (C,H,O,N,P) – Polymers of nucleotides. E.g., DNA, RNA.
+5.  Vitamins: Organic molecules required in small quantities for normal metabolism. E.g., Vitamin C, Vitamin B12.
+6.  Inorganic Minerals: Ions like Na⁺, K⁺, Ca²⁺, Mg²⁺, Cl⁻, PO_4³⁻. E.g., Calcium in bones, Iron in hemoglobin.
+C. Based on Biological Role:
+1.  Primary Metabolites: Directly involved in normal growth, development, and reproduction. E.g., Amino acids, Glucose, Nucleotides, ATP.
+2.  Secondary Metabolites: Not directly essential for growth but provide survival advantages (defense, competition). E.g., Alkaloids (Morphine), Antibiotics (Penicillin), Pigments (Carotenoids), Toxins, Flavonoids.
 ---

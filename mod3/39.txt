@@ -1,9 +1,51 @@
-39. Relation xRy iff x divides y on A={1,2,3,4}
-(i) Ordered pairs:
-[R={(1,1),(1,2),(1,3),(1,4),(2,2),(2,4),(3,3),(4,4)}.]
-(ii) Digraph: vertices (1,2,3,4); loops on all; edges (1→2,1→3,1→4,2→4).
-(iii) In‑degrees:
-[deg^-(1)=1,deg^-(2)=2,deg^-(3)=2,deg^-(4)=3.]
-Out‑degrees:
-[deg^+(1)=4,deg^+(2)=2,deg^+(3)=1,deg^+(4)=1.]
+39. Explain cardiac pacemakers, their design, and applications.
+Definition:
+A cardiac pacemaker is an implantable medical device that uses electrical impulses, delivered by electrodes contacting the heart muscle, to regulate the beating of the heart when the natural pacemaker (the SA node) fails or when electrical conduction pathways are blocked.
+Design of a Modern Pacemaker (Textual Diagram):
+```
+    [Pulse Generator] <-------> [Programmer/External Monitor]
+    (Titanium Can)      (Telemetry/Wireless)
+           |
+           |
+   [Connector Header] (Plugs Leads into Generator)
+           |
+    [Insulated Lead Wire] (Usually Bipolar - 2 wires)
+           |
+           |
+   [Active Fixation Lead]  <-- Screw-in tip (helix)
+           or
+   [Passive Fixation Lead] <-- Tines (barbs) that lodge in trabeculae
+           |
+     [Electrode Tip]
+      (Placed in Right Atrium &/or Right Ventricle)
+```
+Components of the Device:
+1.  Pulse Generator (The "Computer"):
+    - Case: A hermetically sealed titanium casing (biocompatible).
+    - Battery: A high-density lithium-iodine battery with a lifespan of 8–15 years.
+    - Circuits: Microprocessor that monitors cardiac activity, decides when to pace, and controls pacing parameters.
+    - Memory: Stores data on heart rhythm and device performance for remote monitoring.
+2.  Leads (The "Wires"):
+    - Insulated flexible wires that run from the generator through the veins (usually subclavian or cephalic) into the heart chambers.
+    - Bipolar vs. Unipolar: Bipolar (most common) has two electrodes close together at the tip to reduce interference.
+3.  Electrode (The "Tip"):
+    - Active Fixation: A small screw (helix) that twists into the endocardial tissue.
+    - Passive Fixation: Small tines (barbs) that wedge into the trabeculae of the heart.
+    - Steroid-eluting tip: Releases a small dose of corticosteroid to reduce local inflammation and improve capture threshold.
+4.  Sensing and Pacing:
+    - Sensing: The device detects intrinsic R-waves (ventricular) or P-waves (atrial). If it senses a native beat, it withholds pacing.
+    - Pacing: If no native beat is sensed within a programmed time interval, it delivers a small, controlled electrical pulse (0.5-2.5 volts) to depolarize the myocardium.
+Types of Pacemakers (Design variations):
+| Type | Configuration | Applications |
+|
+| Single-Chamber | One lead in either the Right Atrium (AAI) or Right Ventricle (VVI). | Sick sinus syndrome (atrial) or chronic atrial fibrillation with bradycardia (ventricular). |
+| Dual-Chamber | Two leads: one in Right Atrium, one in Right Ventricle (DDD). | Most common. Mimics natural physiology (AV synchrony). Used for complete heart block and sinus node dysfunction. |
+| Biventricular (CRT) | Three leads: RA, RV, and Left Ventricle (via the coronary sinus). | Cardiac Resynchronization Therapy (CRT) for severe Heart Failure with reduced ejection fraction (HFrEF) and LBBB (Left Bundle Branch Block). |
+| Leadless Pacemaker | Tiny capsule (like a vitamin pill) implanted directly into the RV via catheter; no leads. | Micra TPS (Medtronic). Ideal for patients needing single-chamber pacing with lower complication rates. |
+Clinical Applications:
+1.  Symptomatic Bradycardia: Heart rate < 60 bpm causing syncope, dizziness, or fatigue.
+2.  Sick Sinus Syndrome: SA node dysfunction with alternating bradycardia and tachycardia.
+3.  Atrioventricular (AV) Blocks: Second-degree Mobitz II or Third-degree (Complete) Heart Block.
+4.  Heart Failure: Biventricular pacemakers (CRT) improve synchronization and ejection fraction.
+5.  Post-Cardiac Surgery: Temporary epicardial pacing wires are often left in place for transient postoperative rhythm issues.
 ---

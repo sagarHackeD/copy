@@ -1,7 +1,37 @@
-35. Pigeon‑hole Principle
-Statement: If (n+1) items are put into (n) boxes, then at least one box contains at least two items.
-Proof for sum to (2n+1):  
-Partition the set ({1,2,▪▪▪,2n}) into (n) pairs:
-[(1,2n),(2,2n-1),▪▪▪,(n,n+1).]
-Each pair sums to (2n+1). If we choose (n+1) numbers, by the PHP we must take both numbers from at least one pair. Hence their sum is (2n+1).
+35. Explain the kidney as a purification system and dialysis as an artificial kidney.
+Kidney as a Natural Purification System:
+The kidneys are the body's primary homeostatic "water treatment plants." They purify blood by:
+- Removing Metabolic Wastes: Urea (from protein breakdown), uric acid (from nucleic acids), and creatinine (from muscle metabolism).
+- Regulating Water Balance: Maintaining blood volume and osmotic pressure via Antidiuretic Hormone (ADH) and thirst mechanisms.
+- Regulating Electrolytes: Maintaining precise blood levels of Na⁺, K⁺, Ca²⁺, and PO_4³⁻ via hormones like Aldosterone and Parathyroid Hormone (PTH).
+- Regulating Blood pH: Excreting H⁺ and reabsorbing HCO_3⁻ (bicarbonate) to maintain arterial pH at ~7.4.
+- Endocrine Functions: Producing Erythropoietin (EPO) for red blood cell production and activating Vitamin D for bone health.
+Dialysis as an Artificial Kidney (Hemodialysis):
+When the kidneys fail (End-Stage Renal Disease - ESRD), dialysis artificially replicates the filtration and purification functions.
+Principle:
+Dialysis works on two physical principles:
+1.  Diffusion: Solutes move from an area of higher concentration (patient's blood) to lower concentration (dialysis fluid/dialysate) across a semi-permeable membrane.
+2.  Ultrafiltration: Hydrostatic pressure is applied to push excess water across the membrane (removing fluid volume).
+The Hemodialysis System (Textual Diagram):
+```
+    [Patient] --> [Blood Pump] --> [Dialyzer (Artificial Kidney)]
+    (Arterial)          |               /         |         \
+                        |          [Membrane]    /          |
+                        |          (Semi-permeable)          |
+    [Patient] <-- [Air Trap] <-- [Clean Blood]   |     [Dialysis Fluid]
+    (Venous)           |             ^           |           |
+                       |             |           |     [Fresh Dialysate]
+                       |             |        [Waste Fluid]
+                       |             |     (Urea, excess K+, H2O)
+                   [Bubble Detector] |
+```
+Components of the Dialysis Machine:
+1.  Dialyzer (Artificial Kidney): Contains thousands of hollow-fiber membranes made of cellulose or synthetic polymers.
+2.  Dialysate Fluid: A specialized solution with precise concentrations of electrolytes (Na⁺, K⁺, Cl⁻, HCO_3⁻) and glucose, adjusted to pull specific waste products out of the blood. It has zero waste products (urea, creatinine).
+3.  Blood Pump: Propels blood from the patient's artery through the dialyzer and back to the vein.
+4.  Heparin Pump: Infuses an anti-coagulant to prevent blood clotting in the machine.
+Limitations of Dialysis vs. Natural Kidney:
+- Continuous vs. Intermittent: Natural kidney works 24/7; dialysis is done 3-4 times a week (3-5 hours per session).
+- Active Reabsorption: Dialysis cannot selectively reabsorb glucose, amino acids, or actively regulate hormones (does not produce EPO or calcitriol; these must be injected separately).
+- Quality of Life: Requires strict dietary restrictions (low K⁺, low phosphate), vascular access complications, and is physically draining.
 ---

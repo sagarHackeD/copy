@@ -1,10 +1,16 @@
-43. Solve (a_{n+2} - 3a_{n+1} + 2a_n = 0, a_0=1, a_1=6)
-Characteristic:
-[r^2 - 3r + 2 = (r-1)(r-2)=0.]
-So
-[a_n = A▪ 1^n + B▪ 2^n = A + B2^n.]
-Using initial conditions:
-[a_0 = A+B = 1,\qquad a_1 = A + 2B = 6.]
-Subtract: (B = 5), hence (A = -4). Therefore
-[\boxed{a_n = -4 + 5▪ 2^n}.]
+43. Explain HBOCs and PFCs as blood substitutes. Compare them.
+HBOCs (Hemoglobin-Based Oxygen Carriers):
+HBOCs are blood substitutes that utilize modified hemoglobin (the oxygen-carrying protein from red blood cells) to transport oxygen. Hemoglobin is extracted from human (outdated donated blood) or animal (bovine) sources and chemically modified to stabilize it and prevent it from breaking down into toxic subunits.
+PFCs (Perfluorocarbon-Based Oxygen Carriers):
+PFCs are chemically and biologically inert, heat-stable, fluorine-substituted hydrocarbons that can dissolve large amounts of oxygen and other gases. They are not derived from blood; they are synthetic compounds that are emulsified (mixed with surfactants) to be injected into the bloodstream.
+Comparison Table:
+| Feature | HBOCs | PFCs |
+|
+| Source | Modified hemoglobin (human or animal). | Synthetic fluorinated hydrocarbons. |
+| Mechanism | Hemoglobin molecules bind oxygen chemically (like natural RBCs). | Dissolve oxygen physically (Henry's Law); oxygen is released based on partial pressure gradients. |
+| Oxygen Carrying Capacity | High (similar to blood). | High solubility for gases. |
+| Shelf Life | Long shelf life. | Stable under various conditions. |
+| Advantages | Universal donor; no blood type matching; long shelf life. | Chemically inert; stable; can carry CO_2 as well as O_2. |
+| Disadvantages / Risks | Risk of vasoconstriction (due to nitric oxide scavenging), potential for oxidative stress, and cardiovascular adverse effects. | Risk of gas embolism (if bubbles form), limited oxygen delivery to tissues, requires high partial pressure of oxygen to load. |
+| Clinical Status | Extensive research but safety concerns (vasoconstriction) have hindered widespread clinical approval. | Used in some applications (e.g., liquid ventilation, organ preservation) but limited as a primary blood substitute. |
 ---

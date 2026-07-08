@@ -1,13 +1,20 @@
-54. Intersection and union of subgroups
-Prove (H n K) is a subgroup:  
-Let (H, K ≤ G).
-- Identity: (e Ɛ H) and (e Ɛ K → e Ɛ H n K).
-- Closure: If (x, y Ɛ H n K), then (x,y Ɛ H → xy Ɛ H), and (x,y Ɛ K → xy Ɛ K). Hence (xy Ɛ H n K).
-- Inverses: If (x Ɛ H n K), then (x Ɛ H → x^{-1} Ɛ H), and (x Ɛ K → x^{-1} Ɛ K). Hence (x^{-1} Ɛ H n K).
-Therefore (H n K ≤ G).
-Is (H U K) a subgroup?  
-No, in general.  
-Counterexample: Let (G = S_3), (H = {e, (12)}), (K = {e, (13)}). Then
-[H U K = {e, (12), (13)}.]
-But ((12)(13) = (132)), which is not in (H U K). So (H U K) is not closed under the group operation, hence not a subgroup.
+54. Explain electronic nose in food science.
+Definition:
+An Electronic Nose (E-nose) is a device that mimics the mammalian olfactory system to detect, identify, and quantify volatile organic compounds (VOCs) in gaseous samples. It comprises a sensor array, a signal processing unit, and pattern recognition software.
+Principle and Working:
+The principle is analogous to the E-tongue but for gases. Volatile compounds interact with sensing materials (e.g., metal-oxide semiconductors, conducting polymers, quartz crystal microbalances), causing a change in electrical properties (resistance, mass, frequency). The unique "smellprint" of the gas mixture is then analyzed using multivariate statistics.
+Textual Diagram:
+```
+[Headspace (VOCs)] --> [Sensor Array] --> [Signal Change] --> [Data Acquisition] --> [Pattern Recognition] --> [Aroma Profile]
+                       (Polymers,        (Resistance/          (ADC)                (PCA, LDA,              (Classification)
+                        Metal-Oxides)     Frequency shifts)                          ANN)
+```
+Applications in Food Science:
+| Application | Detailed Description |
+|
+| Freshness & Spoilage Detection | Monitoring the release of biogenic amines, ammonia, and sulfides in meat, fish, and dairy products during storage to determine shelf life in real-time. |
+| Fermentation Monitoring | Tracking the production of specific volatiles (ethanol, acetic acid, esters) during the brewing of beer, wine, and soy sauce to optimize the fermentation process. |
+| Authenticity & Adulteration | Detecting the geographical origin of wines, olive oils, and coffee by identifying distinct volatile profiles. Detecting adulteration (e.g., cheaper oils added to olive oil). |
+| Quality Grading | Objective grading of tea, coffee beans, and cocoa based on aroma intensity and complexity, reducing reliance on human tasters. |
+| Microbial Contamination | Early detection of mold, yeast, or pathogenic bacteria (like *Salmonella* or *Listeria*) via their unique metabolic volatile signatures, before visual spoilage is apparent. |
 ---
