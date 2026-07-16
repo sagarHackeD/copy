@@ -1,8 +1,0 @@
-56. Discuss the various bioprinting techniques.
-| Technique | Mechanism | Resolution | Cell Viability | Bioink Viscosity | Advantages | Disadvantages |
-|
-| Inkjet-based Bioprinting | Thermal or piezoelectric actuators create droplets (picoliter scale) of bioink that are deposited onto the substrate. | Moderate (~50 µm) | High (>85%) | Low | High speed, low cost, high throughput. | Limited to low-viscosity bioinks; risk of thermal/mechanical damage to cells; nozzle clogging. |
-| Extrusion-based Bioprinting | Mechanical (pneumatic, piston, or screw-driven) force continuously pushes bioink filament through a nozzle. | Lower (~200 µm) | Moderate (40-80%) | High (highly viscous) | Most versatile; can print high cell densities and thick scaffolds (bone, cartilage). | Subject to shear stress which damages cells; lower resolution; slower speed. |
-| Laser-Assisted Bioprinting (LAB) | A focused laser pulse creates a high-pressure bubble in a donor layer, jetting a tiny droplet of bioink onto a receiving substrate. | Very High (~10 µm) | Very High (>95%) | Moderate | No nozzle clogging; high resolution; excellent cell viability; handles very high cell densities. | Expensive; complex setup; limited to thin 2D or simple 3D structures; potential metal contamination from donor layer. |
-| Stereolithography (SLA) / Digital Light Processing (DLP) | A vat of photo-crosslinkable bioink is selectively cured by UV or visible light projectors layer-by-layer. | Very High (~25 µm) | Very High (due to rapid printing) | Low | Extremely fast; high resolution; excellent for creating microchannels (vascularization). | Requires photo-crosslinkable bioinks; limited to a small range of materials; may require removal of uncured resin. |
----
