@@ -1,84 +1,58 @@
+// greedyKnapsack
 #include <stdio.h>
-
-#define MAX 50
-
-int p[MAX], w[MAX], n, m, i;
-double x[MAX], maxprofit;
-
-void greedyKnapsack(int n, int w[], int p[], int m) {
-  double ratio[MAX], temp;
-  int temp2, currentWeight = 0;
-  int i, j;
-
-  // Calculate profit/weight ratio
-  for (i = 0; i < n; i++) {
-    ratio[i] = (double)p[i] / w[i];
-  }
-
-  // Sort in descending order of ratio
-  for (i = 0; i < n - 1; i++) {
-    for (j = i + 1; j < n; j++) {
-      if (ratio[i] < ratio[j]) {
-        temp = ratio[i];
-        ratio[i] = ratio[j];
-        ratio[j] = temp;
-
-        temp2 = w[i];
-        w[i] = w[j];
-        w[j] = temp2;
-
-        temp2 = p[i];
-        p[i] = p[j];
-        p[j] = temp2;
-      }
-    }
-  }
-
-  for (i = 0; i < n; i++) {
-    x[i] = 0.0;
-  }
-
-  maxprofit = 0.0;
-
-  // Fill knapsack
-  for (i = 0; i < n; i++) {
-    if (currentWeight + w[i] <= m) {
-      x[i] = 1.0;
-      currentWeight += w[i];
-      maxprofit += p[i];
-    } else {
-      x[i] = (double)(m - currentWeight) / w[i];
-      maxprofit += x[i] * p[i];
-      break;
-    }
-  }
-
-  printf("\nOptimal Solution for Greedy Method = %.2f\n", maxprofit);
-
-  printf("Solution Vector:\n");
-  for (i = 0; i < n; i++) {
-    printf("%.2f ", x[i]);
-  }
-}
-
 int main() {
-  printf("Enter the number of objects: ");
-  scanf("%d", &n);
-
-  printf("Enter the objects' weights:\n");
-  for (i = 0; i < n; i++) {
-    scanf("%d", &w[i]);
-  }
-
-  printf("Enter the objects' profits:\n");
-  for (i = 0; i < n; i++) {
-    scanf("%d", &p[i]);
-  }
-
-  printf("Enter the maximum capacity: ");
-  scanf("%d", &m);
-
-  greedyKnapsack(n, w, p, m);
-
-  return 0;
+double n, m, rc = 0, temp;
+double profit = 0;
+int i, j;
+double w[10];
+double p[10];
+double pp[10];
+double x[10];
+printf("Enter number of objects: ");
+scanf("%lf", &n);
+printf("Enter capacity of knapsack: ");
+scanf("%lf", &m);
+for (i = 0; i < n; i++) {
+printf("\nEnter the weight and profit of object %d:\n", i + 1);
+scanf("%lf", &w[i]);
+scanf("%lf", &p[i]);
+pp[i] = p[i] / w[i];
+}
+for (i = 0; i < n - 1; i++) {
+for (j = 0; j < n - i - 1; j++) {
+if (pp[j] < pp[j + 1]) {
+temp = pp[j];
+pp[j] = pp[j + 1];
+pp[j + 1] = temp;
+temp = w[j];
+w[j] = w[j + 1];
+w[j + 1] = temp;
+temp = p[j];
+p[j] = p[j + 1];
+p[j + 1] = temp;
+}
+}
+}
+printf("\nSorted items by profit/weight ratio:\n");
+printf("P/W\tWeight\tProfit\n");
+for (i = 0; i < n; i++) {
+printf("%.2lf\t%.2lf\t%.2lf\n", pp[i], w[i], p[i]);
+}
+for (i = 0; i < n; i++) {
+x[i] = 0;
+}
+rc = m;
+for (i = 0; i < n && rc > 0; i++) {
+if (w[i] > rc) {
+x[i] = rc / w[i];
+} else {
+x[i] = 1;
+}
+profit += x[i] * p[i];
+printf("Selected %.2lf of item %d (Profit: %.2lf)\n", x[i], i + 1,
+x[i] * p[i]);
+rc -= x[i] * w[i];
+}
+printf("\nTotal profit earned: %.2lf\n", profit);
+return 0;
 }
