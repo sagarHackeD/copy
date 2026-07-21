@@ -1,8 +1,24 @@
 
-\usepackage{lipsum}
+%Program 02:
+%Develop a LaTeX script to create a document that displays the sample
+%Abstract/Summary
+\documentclass[a4paper]{article}
+\usepackage[top=20mm,bottom=20mm,left=20mm,right=20mm]{geometry}
+\usepackage{fancyhdr}
+\fancyhf{}
+\pagestyle{fancy}
+\fancyhead[l]{Latex,program No 2}
+\fancyhead[r]{by Sagar}
+\fancyfoot[l]{Dept.of CSE,GEC,Karwar.}
+\fancyfoot[r]{page1,2025-26}
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{2pt}
 \begin{document}
 \begin{abstract}
-\textbf{Simple summary about \LaTeX}\\
-\lipsum
+\textbf{Simple summary about latex}\\
+L is a document preparation system for typesetting program.It is used t create different
+types of document structures.A L file(.tex) is created using any text
+editor(vim,emacs,gedit,etc.).There are also many L IDEs like kile,TexStudio,etc..
 \end{abstract}
 \end{document}
+

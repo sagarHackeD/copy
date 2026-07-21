@@ -1,5 +1,17 @@
+%Program 06:
+%Develop a LaTeX script to include the side-by-side graphics/pictures/figures in
+%the document by using the subgraph concept
+\documentclass{article}
 \usepackage{graphicx}
 \usepackage{subcaption}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead[l]{Latex, program 6}
+\fancyhead[r]{by Sagar}
+\fancyfoot[l]{Dept of CSE,GEC,Karwar}
+\fancyfoot[r]{Page \thepage\ 2025-26}
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{2pt}
 \begin{document}
 \begin{figure}[h]
 \centering
@@ -7,16 +19,13 @@
 \centering
 \includegraphics[width=\linewidth]{vtu.jpg}
 \caption{VTU Logo}
-\label{fig:vtu1}
 \end{subfigure}
 \hfill
 \begin{subfigure}{0.45\textwidth}
 \centering
 \includegraphics[width=\linewidth]{vtu.jpg}
 \caption{VTU Logo}
-\label{fig:vtu2}
 \end{subfigure}
 \caption{Side-by-side images}
-\label{fig:sidebyside}
 \end{figure}
 \end{document}

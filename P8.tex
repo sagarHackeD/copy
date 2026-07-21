@@ -1,4 +1,17 @@
+%Program 08:
+%Develop a LaTeX script to demonstrate the presentation of Numbered theorems,
+%definitions, corollaries, and lemmas in the document
+\documentclass{article}
+\usepackage{amsmath}
 \usepackage{amsthm}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead[l]{Latex, program 8}
+\fancyhead[r]{by Sagar}
+\fancyfoot[l]{Dept of CSE, GEC, Karwar}
+\fancyfoot[r]{Page \thepage\ 2025-26}
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{2pt}
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{corollary}[theorem]{Corollary}

@@ -1,5 +1,22 @@
+%Program 03:
+%Develop a LaTeX script to create a %simple title page of the VTU project %Report
+%[Use suitable Logos and text formatting]
+\documentclass[a4paper]{article}
 \usepackage{graphicx}
+\usepackage[margin=25mm]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead[l]{Latex,program 3}
+\fancyhead[r]{by Sagar}
+\fancyfoot[l]{Dept of CSE,GEC,Karwar.}
+\fancyfoot[r]{page 1 2025-26}
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{2pt}
+%\usepackage{tikz}
+%\usetikzlibrary{calc}
+%\usepackage{calc}
 \usepackage{xcolor}
+\geometry{a4paper,total={180mm,250mm},left=20mm,top=20mm}
 \begin{document}
 \begin{center}
 \textcolor{orange}{\large\textbf{VISVESVARAYA TECHNOLOGICAL UNIVERSITY}\\
@@ -20,16 +37,16 @@ IN\\
 \vspace{7mm}
 \textcolor{blue}{\underline{Submitted By}}\\
 \vspace{5mm}
-\textbf{NAME:ANITA}\\
+\textbf{NAME:SAGAR}\\
 \vspace{2mm}
-\textbf{USN:2GP25CS032}\\
+\textbf{USN:2GP25CS403}\\
 \vspace{7mm}
 \textcolor{cyan}{\underline{{\textbf{Under the guidence of}}}}\\
-\large\textbf{AMIT}\\
+\large\textbf{Karishma}\\
 Assistant professor\\
 Dept of CSE\\
 \vspace{5mm}
-\centering\includegraphics[scale=0.2]{gec.jpg}\\
+\centering\includegraphics[scale=0.2]{geck.jpg}\\
 \vspace{5mm}
 \textcolor{blue}{\textbf{Department Of Computer Science and Engineering}}\\
 \vspace{2mm}
@@ -39,5 +56,6 @@ Dept of CSE\\
 Karwar-581345,Karnataka\\
 \vspace{2mm}
 2025-2026
+%\end{tikzpicture}
 \end{center}
 \end{document}

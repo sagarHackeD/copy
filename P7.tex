@@ -1,4 +1,19 @@
+%Program 07:
+%Develop a LaTeX script to create a document that consists of the following two
+%mathematical equations
+\documentclass{article}
 \usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage[paperheight=8in,paperwidth=5in,top=15mm,bottom=20mm,
+left=20mm,right=10mm]{geometry}
+\pagestyle{fancy}
+\fancyhead[l]{Latex, program 7}
+\fancyhead[r]{by Sagar}
+\fancyfoot[l]{Dept of CSE, GEC, Karwar}
+\fancyfoot[r]{Page \thepage\ 2025-26}
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{2pt}
 \begin{document}
 \begin{align*}
 x &= \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \\
