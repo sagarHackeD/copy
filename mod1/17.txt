@@ -1,0 +1,57 @@
+17. Explain specialized process models.
+Definition
+Specialized process models are software development models designed for particular project needs, technical situations or development approaches rather than relying only on a general-purpose process model.
+Three commonly discussed specialized models are component-based development, the formal methods model and aspect-oriented software development.
+1. Component-based development model
+This model builds software by reusing existing software components or services and integrating them into a complete system.
+Steps:
+1. Identify required components.
+2. Search for reusable components.
+3. Evaluate components against requirements.
+4. Adapt or configure selected components.
+5. Integrate and test the system.
+Advantages:
+- Reduces development time and cost.
+- Encourages reuse of tested components.
+- Can improve reliability when components are mature.
+Disadvantages:
+- Suitable components may not be available.
+- Integration and compatibility issues may arise.
+- Customization can be difficult.
+Example: Developing an e-commerce application using an existing payment gateway, authentication library and inventory service.
+2. Formal methods model
+Formal methods use mathematical notation and logic to specify and verify software requirements and design.
+Steps:
+1. Define requirements formally.
+2. Create a mathematical specification.
+3. Analyze or verify the specification.
+4. Implement the software.
+5. Verify that the implementation satisfies the specification.
+Advantages:
+- Can identify logical inconsistencies early.
+- Useful for systems requiring very high reliability.
+- Helps demonstrate important correctness properties.
+Disadvantages:
+- Requires specialized mathematical skills.
+- Can be costly and time-consuming.
+- May be difficult to apply to very large or frequently changing systems.
+Example: Specifying and verifying critical properties of an aircraft control or railway signalling system.
+3. Aspect-oriented software development
+Aspect-oriented software development separates cross-cutting concerns from the main application logic.
+Cross-cutting concerns are features that affect multiple modules, such as logging, security, error handling and transaction management.
+Working:
+1. Identify the main functional modules.
+2. Identify cross-cutting concerns.
+3. Represent those concerns separately as aspects.
+4. Combine or weave the aspects with the main software.
+5. Test the integrated application.
+Advantages:
+- Reduces duplicated code.
+- Improves separation of concerns.
+- Makes some system-wide changes easier to manage.
+Disadvantages:
+- Adds complexity to program structure.
+- Interactions between aspects can be difficult to debug.
+- Requires suitable tools and expertise.
+Example: Applying logging and authorization consistently across multiple functions in a banking application.
+Conclusion: Specialized process models are selected according to the project's reuse opportunities, correctness requirements and software design needs.

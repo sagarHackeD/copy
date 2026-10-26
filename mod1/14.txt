@@ -1,0 +1,58 @@
+14. Explain incremental process models and evolutionary process models with neat diagrams.
+A. Incremental process model
+The incremental process model develops and delivers software in a series of small, functional releases called increments. Each increment adds new features to the existing software.
+Diagram:
+Overall requirements
+Increment 1
+Analysis, design, coding, testing
+Basic features
+Increment 2
+Analysis, design, coding, testing
+More features
+Increment 3
+Analysis, design, coding, testing
+Final features
+Complete software product
+Characteristics:
+1. The software is delivered in multiple releases.
+2. Each release adds new functionality.
+3. Core features are developed first.
+4. Customer feedback can influence subsequent increments.
+5. Testing is performed for every increment.
+Advantages:
+- Early delivery of useful software.
+- Easier testing and debugging.
+- Reduced risk compared with delivering everything at once.
+- Changes can be incorporated in later increments.
+Disadvantages:
+- Requires good overall architecture and planning.
+- Integrating increments can be challenging.
+- Not all systems can be divided into independent features.
+Example: An online shopping application may first provide product browsing, then shopping cart functionality, followed by payment and order tracking.
+B. Evolutionary process models
+An evolutionary process model develops software through repeated versions or iterations. The system evolves as developers learn more about requirements and receive customer feedback.
+Diagram:
+Initial requirements
+Develop initial version
+Customer evaluation
+Refine requirements and software
+Repeat evaluation and refinement until the product meets requirements.
+Types of evolutionary models:
+1. Prototyping model: A preliminary version is created to clarify requirements and obtain customer feedback.
+2. Spiral model: Development proceeds in cycles, with risk analysis performed in each cycle.
+Advantages:
+- Accommodates changing requirements.
+- Encourages customer involvement.
+- Helps identify problems early.
+- Useful when requirements are not fully understood.
+Disadvantages:
+- Repeated changes may increase cost.
+- Project completion can be difficult to predict.
+- Poor planning may lead to weak architecture.
+Difference between incremental and evolutionary models
+| Incremental model                                                  | Evolutionary model                                                   |
+| ------------------------------------------------------------------ | -------------------------------------------------------------------- |
+| Adds functionality through planned increments.                     | Refines the system through repeated iterations.                      |
+| Overall requirements and architecture are generally planned early. | Requirements may become clearer during development.                  |
+| Each increment adds a defined set of features.                     | Each iteration may revise requirements, design or existing features. |
+Conclusion: Incremental development is useful for delivering planned features in stages, while evolutionary development is particularly useful when requirements are uncertain or likely to change.

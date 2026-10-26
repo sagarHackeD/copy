@@ -1,0 +1,44 @@
+26. How can we validate requirements?
+Definition
+Requirements validation is the process of checking whether documented requirements accurately represent the customer's needs and are suitable for developing the intended software system.
+It answers the question: “Are we specifying the right system?”
+Objectives of requirements validation
+1. Ensure that requirements meet customer needs.
+2. Detect errors and omissions before development.
+3. Identify ambiguous or conflicting requirements.
+4. Confirm that requirements are feasible and testable.
+5. Reduce costly changes during later development.
+Characteristics of good requirements
+Requirements should satisfy the following checks:
+1.Validity: Do they represent the actual needs of stakeholders?
+2.Consistency: Do any requirements contradict each other?
+3.Completeness: Are all important functions, constraints and conditions included?
+4.Feasibility: Can the requirements be implemented within the available technology, time and budget?
+5.Unambiguity: Can the requirements be interpreted in only one reasonable way?
+6.Verifiability: Can testing, inspection or analysis determine whether each requirement has been satisfied?
+7.Traceability: Can each requirement be linked to its source and to the corresponding design, implementation and tests?
+Techniques used for requirements validation
+1.Requirements reviews
+Stakeholders, analysts and developers examine the requirements document to identify mistakes, omissions and inconsistencies.
+2.Prototyping
+A preliminary model or interface is demonstrated to users so that they can confirm whether it reflects their needs.
+3.Test-case generation
+Test cases are developed from requirements. If a requirement cannot be tested clearly, it may be ambiguous or insufficiently specified.
+4.Automated analysis
+Tools can check requirements documents for duplication, missing fields, inconsistent terminology and certain types of ambiguity.
+5.Model validation
+Use case diagrams, data models and other representations are checked with stakeholders to ensure that they correctly describe system behavior.
+Example
+Consider the requirement:
+“The banking application should respond quickly.”
+This requirement is ambiguous because “quickly” is not measurable.
+A better requirement would be:
+“The banking application shall display the transaction status within two seconds for at least 95% of requests under the specified normal operating load.”
+The revised requirement is more precise and can be verified through performance testing.
+Difference between verification and validation
+| Verification                                                                        | Validation                                                             |
+| ----------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| Checks whether the product or specification conforms to its specified requirements. | Checks whether the requirements and resulting product meet user needs. |
+| Asks: “Are we building the product right?”                                          | Asks: “Are we building the right product?”                             |
+| Includes reviews and conformance checks.                                            | Includes stakeholder evaluation, prototyping and validation testing.   |
+Conclusion: Requirements validation ensures that requirements are correct, complete, consistent, feasible and testable before they are used as the basis for software development.
