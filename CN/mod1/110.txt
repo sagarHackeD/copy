@@ -1,0 +1,23 @@
+110. Write a note on encapsulation and decapsulation in the TCP/IP protocol suite.
+
+Encapsulation is the process of adding headers and, where applicable, trailers to data as it moves down the sender's protocol layers.
+
+Application Data
+     |
+TCP Header+Data
+     |
+IP Header+TCP Segment
+     |
+Frame Header+IP Packet+Trailer
+     |
+Transmission
+
+Steps:
+1.Application layer generates data.
+2.Transport layer adds a TCP or UDP header.
+3.Internet layer adds an IP header.
+4.Network access layer adds frame information.
+5.The frame is transmitted.
+
+Decapsulation is the reverse process at the receiver. Each layer processes and removes its corresponding protocol information to deliver the original data to the application.
+

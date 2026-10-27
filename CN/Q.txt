@@ -1,0 +1,16 @@
+11. Describe the operation of a connectionless packet-switched network with a neat diagram.
+12. What is data communication? List and explain its characteristics and components.
+13. Define switching. Explain circuit-switched and packet-switched networks.
+14. With a neat sketch, explain the different layers of the TCP/IP protocol suite.
+15. What is meant by logical connection in TCP/IP? Explain the TCP/IP reference model with a diagram.
+16. Explain the four basic topologies used in networks. List adv and Dadv of each.
+17. What are guided transmission media? Explain twisted-pair cable in detail.
+18. Compare OSI and TCP/IP models. What are the reasons for OSI model to fail?
+19. What is a Virtual Circuit Network (VCN)? Explain its three phases with a neat diagram.
+110. Write a note on encapsulation and decapsulation in the TCP/IP protocol suite.
+111. Explain protocol layering and discuss its adv.
+112. Explain the OSI model and its seven layers. Compare OSI and TCP/IP models.
+113. Discuss guided transmission media. Explain twisted pair, coaxial cable, and fibre optics.
+114. Explain packet-switched networks and evaluate their total delay time.
+115. Explain a network and its types.
+116. Explain unguided media.

@@ -34,3 +34,5 @@ A typical House of Quality contains:
 - Importance ratings and prioritization.
 - Technical comparisons and targets.
 Conclusion: QFD helps translate customer expectations into prioritized, measurable technical requirements, improving communication and customer satisfaction.
+
+

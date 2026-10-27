@@ -26,3 +26,5 @@ Examples: Chatbots, recommendation systems and image recognition.
 Designed for smartphones and tablets.
 Examples: Mobile payment apps, navigation apps and fitness trackers.
 Conclusion: Different software domains have different requirements for performance, reliability, security, usability and maintainability. Selecting appropriate development techniques depends on the application domain.
+
+

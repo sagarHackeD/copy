@@ -26,3 +26,5 @@ These are misconceptions held by software developers.
 | Customer     | Requirements never need detailed analysis | Clear requirements reduce rework         |
 | Practitioner | Working code means a finished product     | Testing and maintenance remain necessary |
 Conclusion: Identifying software myths helps organizations make realistic decisions and develop better-quality software.
+
+

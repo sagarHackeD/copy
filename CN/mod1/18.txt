@@ -1,0 +1,24 @@
+18. Compare OSI and TCP/IP models. What are the reasons for OSI model to fail?
+
+| OSI model--v
+| Seven layers
+| Reference model
+| Session and presentation are separate 
+| Physical and data link are separate
+| Developed by ISO
+
+| TCP/IP model--v
+| Four commonly taught layers
+| Practical Internet architecture
+| Included in application-layer functions
+| Combined into network access
+| Developed from DARPA/DoD networking work 
+
+Reasons the OSI protocol suite did not become dominant:
+
+1. TCP/IP was adopted early.
+2. OSI protocols were complex to implement.
+3. Standardization and deployment took time.
+4. TCP/IP implementations were widely available.
+5. Rapid Internet growth increased TCP/IP adoption.
+

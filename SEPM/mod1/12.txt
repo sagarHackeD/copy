@@ -21,3 +21,5 @@ The software is implemented by writing source code and conducting tests to detec
 5. Deployment
 The completed software is delivered to users. Feedback is collected, defects are corrected and future improvements are identified.
 Conclusion: These five activities provide a foundation for organizing software development. They may be repeated as requirements change or feedback is received.
+
+

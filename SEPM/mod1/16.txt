@@ -27,3 +27,5 @@ Disadvantages
 5. Not suitable for projects with highly uncertain requirements.
 Example: A small software project with fixed, legally specified requirements may use a waterfall-style process if the requirements are well understood.
 Conclusion: The waterfall model is appropriate for stable, clearly defined projects, but iterative approaches are often better when requirements change frequently.
+
+

@@ -1,0 +1,29 @@
+13. Define switching. Explain circuit-switched and packet-switched networks.
+
+Switching is the process of transferring data from a source to a destination through intermediate network devices.
+
+Circuit switching:
+-Establishes a dedicated path before communication.
+-Has three phases: setup, data transfer, and teardown.
+-Provides predictable performance after setup.
+-Resources may remain unused during silence.
+
+Packet switching:
+-Divides data into smaller packets.
+-Packets share network links with other traffic.
+-Does not require a dedicated physical path.
+-May experience congestion and variable delays.
+
+Table 5x2
+|Circuit switching
+|Dedicated path
+|Setup required
+|Resources reserved
+|Ex: Traditional telephone network
+
+|Packet switching
+|Shared network links
+|Setup not always req
+|Resources shared
+|Ex: Internet
+

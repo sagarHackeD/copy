@@ -1,0 +1,32 @@
+112. Explain the OSI model and its seven layers. Compare OSI and TCP/IP models.
+
+The OSI model is a seven-layer framework used to explain network communication.
+
+7.Application   – Network services
+6.Presentation  – Data format, encryption
+5.Session       – Session management
+4.Transport     – End-to-end delivery
+3.Network       – Routing and addressing
+2.Data Link     – Framing and MAC addressing
+1.Physical      – Transmission of bits
+
+Comparison:
+| OSI model--v                           
+| Seven layers                          
+| Reference model                       
+| Session and presentation are separate 
+| Physical and data link are separate   
+| Developed by ISO                      
+
+| TCP/IP model--v                           
+| Four commonly taught layers              
+| Practical Internet architecture          
+| Included in application-layer functions  
+| Combined into network access             
+| Developed from DARPA/DoD networking work 
+
+Similarities:
+-Both use layered architecture.
+-Both support communication between devices.
+-Both include transport and network-related functions.
+

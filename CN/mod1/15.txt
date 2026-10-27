@@ -1,0 +1,17 @@
+15. What is meant by logical connection in TCP/IP? Explain the TCP/IP reference model with a diagram.
+
+A logical connection is a conceptual connection between corresponding protocol layers on communicating devices. It does not necessarily represent a dedicated physical connection.
+
+TCP/IP model:
+Sender             Receiver
+Application  <-->  Application
+Transport    <-->  Transport
+Internet     <-->  Internet
+Network Access <-->  Network Access
+
+Layers:
+1.Application: Provides network services to applications.
+2.Transport: Provides end-to-end communication using TCP or UDP.
+3.Internet: Handles IP addressing and routing.
+4.Network access: Transfers frames over the physical network.
+

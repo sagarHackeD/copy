@@ -1,0 +1,14 @@
+14. With a neat sketch, explain the different layers of the TCP/IP protocol suite.
+
+The TCP/IP model consists of four layers.
+| Application Layer, HTTP, FTP, SMTP, DNS
+| Transport Layer, TCP, UDP
+| Internet Layer, IP, ICMP
+| Network Access Layer, Ethernet, Wi-Fi
+
+
+1.Application layer: Provides services such as web browsing, email, and file transfer.
+2.Transport layer: Provides process-to-process communication using TCP or UDP.
+3.Internet layer: Provides IP addressing and routing.
+4.Network access layer: Handles frames and transmission over the local network.
+

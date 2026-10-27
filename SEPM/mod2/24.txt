@@ -1,0 +1,25 @@
+24. Illustrate a UML use case diagram for a home security function.
+Definition
+A UML use case diagram represents the functional requirements of a system by showing its actors, use cases and their relationships.
+For a home security system, the main objective is to monitor the house, detect intrusions and alert the homeowner or security service.
+Actors
+1. Homeowner: Arms and disarms the security system and receives alerts.
+2. Security service: Receives intrusion notifications and responds when necessary.
+3. Sensors: Detect motion, door opening or window opening and report events to the system.
+Use case diagram
+Explanation of use cases
+1. Arm system: The homeowner activates security monitoring.
+2. Disarm system: The homeowner deactivates monitoring using authorized credentials.
+3. Monitor premises: The system receives information from door and motion sensors.
+4. Detect intrusion: The system identifies a possible unauthorized entry.
+5. Sound alarm: An audible alarm is activated when an intrusion is detected.
+6. Send alert: A notification is sent to the homeowner or security service.
+7. View security status: The homeowner checks whether the system is armed and whether any events have occurred.
+Relationships
+- Actors interact with the system through the relevant use cases.
+- Intrusion detection can trigger the alarm and alert functions.
+- In a formal UML diagram, an `<<include>>` relationship can represent required behavior, while `<<extend>>` can represent conditional behavior.
+Conclusion: The use case diagram defines the major functions of a home security system and the external entities that interact with it.
+Exam note: Draw a rectangle around the use cases and label it “Home Security System.” Draw actors outside the rectangle and use ovals for use cases. Label the relationships clearly.
+
+

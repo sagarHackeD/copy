@@ -1,0 +1,21 @@
+115. Explain a network and its types.
+
+A computer network is a collection of interconnected devices that communicate and share data and resources.
+
+Types:
+1. PAN (Personal Area Network): Covers a small area around an individual. Ex: Bluetooth.
+2. LAN (Local Area Network): Covers a room, office, or building. Ex: College computer lab.
+3. MAN (Metropolitan Area Network): Covers a city or metropolitan region.
+4. WAN (Wide Area Network): Covers large geographical areas. Ex: Internet.
+
+adv:
+-Resource sharing.
+-Fast communication.
+-Data sharing.
+-Centralized management.
+
+Dadv:
+-Security risks.
+-Installation and maintenance costs.
+-Network failures can disrupt communication.
+

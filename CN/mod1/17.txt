@@ -1,0 +1,21 @@
+17. What are guided transmission media? Explain twisted-pair cable in detail.
+
+Guided transmission media transmit signals through a physical path. Exs are twisted-pair cable, coaxial cable, and optical fibre.
+
+Twisted-pair cable: It consists of two insulated copper wires twisted together to reduce electromagnetic interference and crosstalk.
+
+Types:
+1. UTP: Unshielded Twisted Pair.
+2. STP: Shielded Twisted Pair.
+
+adv:
+-Low cost.
+-Easy to install.
+-Flexible and lightweight.
+-Commonly used in Ethernet LANs.
+
+Dadv:
+-Limited transmission distance.
+-Susceptible to interference, especially UTP.
+-Lower long-distance performance than optical fibre.
+

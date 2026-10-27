@@ -20,3 +20,5 @@ Characteristics of a good software system
 9.Testability: The system can be tested effectively to verify its behavior.
 10.Reusability: Components can be used in other applications when their design permits it.
 Conclusion: Understanding the nature and characteristics of software helps developers select appropriate development methods and produce reliable, maintainable and secure systems.
+
+

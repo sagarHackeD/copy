@@ -41,3 +41,5 @@ Diagram
 6.Validation
 Requirements management continues throughout the process.
 Conclusion: Requirements engineering reduces misunderstandings, prevents unnecessary rework and helps ensure that the delivered software meets user expectations.
+
+

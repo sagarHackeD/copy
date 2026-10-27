@@ -1,0 +1,14 @@
+111. Explain protocol layering and discuss its adv.
+
+Protocol layering divides network communication into separate layers, each performing specific functions and providing services to the layer above it.
+
+adv:
+1.Reduces complexity.
+2.Simplifies network design.
+3.Supports standardization and interoperability.
+4.Makes troubleshooting easier.
+5.Allows independent development of layers.
+6.Promotes reuse of protocols and services.
+
+Dadv: Adds header overhead and may duplicate certain functions.
+

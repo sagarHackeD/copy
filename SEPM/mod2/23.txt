@@ -41,3 +41,5 @@ Typical interactions between users and the system are described step by step.
 - Limitation: May not capture every non-functional requirement.
 Example: For a college attendance system, the analyst may interview lecturers, observe attendance recording, study existing registers and build a prototype for feedback.
 Conclusion: Requirements elicitation helps establish an accurate understanding of the system before detailed design and implementation begin.
+
+

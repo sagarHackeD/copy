@@ -56,3 +56,5 @@ Difference between incremental and evolutionary models
 | Overall requirements and architecture are generally planned early. | Requirements may become clearer during development.                  |
 | Each increment adds a defined set of features.                     | Each iteration may revise requirements, design or existing features. |
 Conclusion: Incremental development is useful for delivering planned features in stages, while evolutionary development is particularly useful when requirements are uncertain or likely to change.
+
+

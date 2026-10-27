@@ -55,3 +55,5 @@ Disadvantages:
 - Requires suitable tools and expertise.
 Example: Applying logging and authorization consistently across multiple functions in a banking application.
 Conclusion: Specialized process models are selected according to the project's reuse opportunities, correctness requirements and software design needs.
+
+
