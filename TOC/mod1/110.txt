@@ -1,0 +1,11 @@
+110) Accept all four parity combinations \(a,b\)
+
+This accepts all strings over \(\{a,b\}\).
+
+
+δ    | a  | b
+→*q0 | q0 | q0
+
+
+---
+

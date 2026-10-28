@@ -1,0 +1,11 @@
+112) Accept even/even, odd/odd, even/odd, odd/even
+
+Same as question 10: all strings over \(\{a,b\}\).
+
+
+δ    | a  | b
+→* q0 | q0 | q0
+
+
+---
+

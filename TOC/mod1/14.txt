@@ -1,0 +1,12 @@
+14) Every \(a\) is immediately preceded by \(b\)
+
+
+δ   | a | b
+→* S | D | B
+ * B | A | B
+ * A | D | B
+   D | D | D
+
+
+---
+

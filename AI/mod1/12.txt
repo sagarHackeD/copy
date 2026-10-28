@@ -1,0 +1,12 @@
+12. Explain any two applications of Artificial Intelligence.
+1. Speech recognition
+* AI systems recognize spoken words and respond to human commands.
+* They can be used for booking flights, voice assistants and automated telephone services.
+* Example: A person speaks to an automated system to book a flight.
+2. Robotics
+* AI enables robots to perform tasks with less human intervention.
+* Robots can clean houses, handle hazardous materials and identify dangerous objects.
+* Example: A robotic vacuum cleaner automatically cleans the floor.
+Other applications mentioned in the PDF include robotic vehicles, game playing, spam filtering, logistics
+planning and machine translation.
+

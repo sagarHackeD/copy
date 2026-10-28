@@ -1,0 +1,11 @@
+17. Define a rational agent. Explain the factors that determine
+rationality.
+A rational agent is an agent that selects actions to achieve the best outcome or, when there is uncertainty, the
+best expected outcome.
+1. Performance measure: The criterion used to measure success.
+2. Prior knowledge: The agent's existing knowledge about its environment.
+3. Available actions: The actions the agent can perform.
+4. Percept sequence: All the information the agent has perceived so far.
+Example: A vacuum-cleaner agent is rational if it chooses actions that keep the floor clean while considering
+its available actions and the information received from its sensors.
+

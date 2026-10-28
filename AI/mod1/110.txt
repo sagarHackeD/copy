@@ -1,0 +1,12 @@
+110. Explain any two properties of task environments.
+A task environment can be classified using different properties. Two important properties are:
+1. Fully observable vs. partially observable
+* Fully observable: The agent's sensors provide all information relevant to choosing an action.
+* Partially observable: The agent receives incomplete information about the environment.
+Example: A chessboard is fully observable because all pieces are visible, whereas a taxi cannot know
+exactly what another driver is thinking.
+2. Deterministic vs. stochastic
+* Deterministic: The next state is completely determined by the current state and the action performed.
+* Stochastic: The outcome is uncertain and may depend on unpredictable events.
+Example: The basic vacuum-cleaner world is deterministic, whereas taxi driving is stochastic because traffic
+and other drivers' actions are unpredictable.

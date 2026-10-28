@@ -1,0 +1,15 @@
+19. Explain PEAS representation for an automated taxi driver.
+PEAS stands for Performance measure, Environment, Actuators and Sensors. It is used to describe the task
+environment of an intelligent agent.
+Component Description for an automated taxi
+P – Performance
+measure
+Reach the correct destination, ensure safety, minimize travel time and fuel
+consumption, and obey traffic rules.
+E – Environment Roads, other vehicles, pedestrians, passengers, traffic signals and obstacles.
+A – Actuators Steering, accelerator, brakes, display or voice output.
+S – Sensors Cameras, distance sensors, speedometer, GPS, fuel sensors and microphone or
+keyboard.
+Conclusion: PEAS helps identify what the automated taxi must achieve, where it operates, how it acts and
+what information it needs to sense.
+

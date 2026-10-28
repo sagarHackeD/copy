@@ -1,0 +1,10 @@
+11. Define Artificial Intelligence.
+12. Explain any two applications of Artificial Intelligence.
+13. Explain the four approaches to Artificial Intelligence.
+14. Explain the Turing Test approach to AI.
+15. Define an intelligent agent. Explain the role of sensors and
+16. Explain the relationship between an agent and its environment
+17. Define a rational agent. Explain the factors that determine
+18. Explain the vacuum-cleaner world with its agent function.
+19. Explain PEAS representation for an automated taxi driver.
+110. Explain any two properties of task environments.

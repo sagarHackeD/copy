@@ -1,0 +1,18 @@
+10) Definitions with examples
+11) \(L=\{w\in\{0,1\}^*: w\text{ has }001\text{ as substring}\}\)
+12) Even number of 0’s and even number of 1’s
+13) Does not end in \(01\)
+14) Every \(a\) is immediately preceded by \(b\)
+15) Ends with \(abb\)
+16) \(|w|\bmod 3=0\) over \(\{a\}\)
+17) Every maximal \(a\)-block has even length
+18) Every block of 5 consecutive symbols has at least two \(a\)’s
+19) \(wbab\) accepted — interpreted as ends with \(bab\)
+110) Accept all four parity combinations \(a,b\)
+111) Does not end in \(01\)
+113) Not more than 3 \(b\)’s
+114) Decimal strings divisible by 3
+115) Even number of aa's and even number of bb's
+116) Odd number of aa's and odd number of bb's
+117) Even number of aa's and odd number of bb's
+118) Odd number of aa's and even number of bb's

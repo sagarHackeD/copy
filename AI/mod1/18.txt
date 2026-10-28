@@ -1,0 +1,25 @@
+18. Explain the vacuum-cleaner world with its agent function.
+The vacuum-cleaner world is a simple environment containing two locations, A and B. Each location may
+be clean or dirty.
+The agent can perform four actions:
+* Left: Move to the left square.
+* Right: Move to the right square.
+* Suck: Remove dirt from the current square.
+* NoOp: Do nothing.
+Diagram:
+Square A
+Clean / Dirty
+Move
+Square B
+Clean / Dirty
+The vacuum agent moves between squares and cleans dirt.
+Agent function:
+Current location Condition Action
+A Dirty Suck
+A Clean Move Right
+B Dirty Suck
+B Clean Move Left
+Working: The agent senses its current location and whether it contains dirt. If dirty, it cleans the square;
+otherwise, it moves to the other square.
+Add the diagram
+
