@@ -1,0 +1,33 @@
+110. What are citations and attributions? Explain their functions and different styles of citations.
+
+Citation: A citation is a reference in a research document that identifies the source of information, ideas, data, or quotations.
+
+Attribution: Attribution means explicitly giving credit to the person or source responsible for an idea, statement, image, method, or other contribution.
+
+ Functions of citations and attributions
+
+1. Acknowledge the original author.
+2. Avoid plagiarism.
+3. Support claims with evidence.
+4. Allow readers to locate original sources.
+5. Demonstrate the depth of the literature review.
+6. Distinguish original contributions from existing work.
+
+ Different citation styles
+
+| Style   | Format                                | Common use                                |
+| ------- | ------------------------------------- | ----------------------------------------- |
+| APA     | Author–date, e.g., (Sharma, 2024)     | Social sciences and some technical fields |
+| IEEE    | Numbered, e.g., [1]                   | Engineering and technology                |
+| MLA     | Author–page, e.g., (Sharma 25)        | Humanities                                |
+| Chicago | Notes and bibliography or author–date | History and other disciplines             |
+| Harvard | Author–date, e.g., (Sharma, 2024)     | Various academic fields                   |
+
+Example of IEEE style:
+
+In-text citation: Energy efficiency can be improved using smart monitoring systems [1].
+
+Reference: `[1] A. Sharma, "Smart Energy Monitoring," Journal Name, vol. 5, no. 2, pp. 10–15, 2024.`
+
+
+

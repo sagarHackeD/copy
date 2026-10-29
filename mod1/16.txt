@@ -1,0 +1,26 @@
+16. What is a literature review? Explain the importance of new and existing knowledge and the analysis and synthesis of prior art.
+
+Definition: A literature review is a systematic examination of previously published research related to a particular topic or research problem.
+
+Importance of a literature review:
+
+1. Identifies existing knowledge and established theories.
+2. Helps identify gaps and unanswered questions.
+3. Prevents unnecessary duplication of research.
+4. Helps select suitable research methods.
+5. Provides a foundation for developing new ideas.
+6. Helps compare existing solutions and identify their limitations.
+
+Existing and new knowledge:
+
+- Existing knowledge: Information already established through previous research, publications, and experiments.
+- New knowledge: Original findings, methods, designs, or explanations developed through the current research.
+
+Analysis of prior art: Analysis involves examining individual research papers, methods, assumptions, results, strengths, and limitations.
+
+Synthesis of prior art: Synthesis combines findings from multiple sources to identify common patterns, differences, relationships, and research gaps.
+
+Example
+
+
+

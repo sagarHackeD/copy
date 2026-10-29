@@ -1,9 +1,0 @@
-11. Define Artificial Intelligence.
-Artificial Intelligence (AI) is a branch of computer science concerned with creating intelligent machines that
-can perform tasks requiring human intelligence. AI systems can learn from information, understand
-situations, solve problems and improve their performance.
-Examples:
-* A voice assistant understands spoken commands.
-* A self-driving car detects roads and obstacles.
-* An AI system helps doctors diagnose diseases.
-

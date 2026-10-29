@@ -1,0 +1,19 @@
+14. What is research ethics? Explain ethics in engineering research practice.
+
+Definition: Research ethics refers to the moral principles and professional standards that guide researchers in conducting research honestly, responsibly, and fairly.
+
+Ethics in engineering research practice:
+
+1. Honesty
+2. Objectivity
+3. Safety
+4. Respect for intellectual property
+5. Confidentiality
+6. Environmental responsibility
+7. Transparency
+8. Accountability
+9. Fairness
+10. Compliance
+
+
+

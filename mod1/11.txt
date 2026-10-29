@@ -1,0 +1,22 @@
+11. Define research. Explain the objectives and motivation of engineering research.
+
+Research is a systematic and scientific process of collecting, analyzing, and interpreting information to discover new knowledge, verify existing knowledge, or solve a specific problem.
+
+Objectives of engineering research:
+1. Discovery
+2. Problem-solving
+3. Improvement
+4. Innovation
+5. Verification
+6. Cost reduction
+
+Motivation for engineering research:
+- Personal interest and curiosity.
+- Solving real-world problems.
+- Developing new technologies.
+- Improving existing products and systems.
+- Industrial and societal needs.
+- Academic and professional development.
+
+
+

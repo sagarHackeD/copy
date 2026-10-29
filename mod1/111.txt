@@ -1,0 +1,39 @@
+111. Explain the impact of titles and keywords on citations. Discuss the importance of acknowledgments and attributions in research.
+
+ A. Impact of titles on citations
+
+1. First impression: A title gives readers the first idea about the research.
+2. Search visibility
+3. Relevance
+4. Readability
+5. Citation potential
+
+ B. Impact of keywords on citations
+
+1. Help search engines index research papers.
+2. Improve the visibility of papers in database searches.
+3. Connect papers with related research topics.
+4. Help researchers find relevant publications.
+5. Increase the possibility that the paper will be read and cited.
+
+Example
+
+ C. Importance of acknowledgments
+
+Acknowledgments recognize people and organizations that supported the research but do not qualify as authors.
+
+They may include:
+
+- Funding agencies and sponsors.
+- Laboratory and technical staff.
+- Institutions providing equipment or facilities.
+- People who offered advice or assistance.
+
+ D. Importance of attributions
+
+1. Give credit to original creators.
+2. Prevent plagiarism and misuse of intellectual property.
+3. Recognize the contributions of other researchers.
+4. Support verification of research claims.
+5. Respect copyright and licensing requirements.
+

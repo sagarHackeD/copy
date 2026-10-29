@@ -1,0 +1,51 @@
+17. Explain bibliographic databases, Web of Science, Google and Google Scholar.
+
+ 1. Bibliographic databases
+
+Bibliographic databases are organized collections of information about research publications, including titles, authors, abstracts, keywords, and references.
+
+Uses:
+
+- Finding relevant research papers.
+- Tracking citations.
+- Identifying important researchers.
+- Studying research trends.
+
+Examples include Scopus, IEEE Xplore, and Web of Science.
+
+ 2. Web of Science
+
+Web of Science is a multidisciplinary research database that indexes selected scholarly publications and their citations.
+
+Features:
+
+- Citation tracking.
+- Author and journal analysis.
+- Research trend analysis.
+- Identification of influential publications.
+
+ 3. Google
+
+Google is a general-purpose search engine that searches a wide range of web content.
+
+Features:
+
+- Finds websites, technical reports, documentation, and articles.
+- Supports keyword searches and advanced search operators.
+- Provides broad access to technical information.
+
+Limitation: Search results may include unreliable or non-scholarly sources.
+
+ 4. Google Scholar
+
+Google Scholar is a search engine focused on scholarly literature.
+
+Features:
+
+- Finds research papers, theses, books, and conference proceedings.
+- Displays citation counts.
+- Provides related articles and versions of publications.
+- Allows users to create author profiles and citation alerts.
+
+
+

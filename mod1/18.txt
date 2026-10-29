@@ -1,0 +1,48 @@
+18. Explain effective search, technical reading, critical reading and creative reading.
+
+ 1. Effective search
+
+Effective search is the process of finding relevant and reliable information using suitable keywords and search techniques.
+
+Methods:
+
+- Use specific keywords.
+- Combine terms using AND, OR, and NOT.
+- Use quotation marks for exact phrases.
+- Apply date, author, and subject filters.
+- Evaluate the credibility of sources.
+
+ 2. Technical reading
+
+Technical reading involves understanding specialized documents such as research papers, engineering manuals, standards, and technical reports.
+
+Features:
+
+- Focuses on terminology, equations, diagrams, and procedures.
+- Requires attention to technical details.
+- Helps understand engineering concepts and methods.
+
+ 3. Critical reading
+
+Critical reading means evaluating information rather than accepting it without question.
+
+Features:
+
+- Checks the validity of arguments.
+- Examines assumptions and evidence.
+- Identifies limitations and possible bias.
+- Compares conclusions with other research.
+
+ 4. Creative reading
+
+Creative reading involves using information from existing literature to generate new ideas and possible solutions.
+
+Features:
+
+- Encourages original thinking.
+- Connects ideas from different fields.
+- Identifies new research opportunities.
+- Helps develop innovative solutions.
+
+
+

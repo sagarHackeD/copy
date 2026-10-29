@@ -1,0 +1,33 @@
+12. Explain the different types of engineering research with suitable examples.
+
+The major types of engineering research are:
+1.Basic research
+
+Example
+
+2.Applied research
+
+Example
+
+3.Experimental research
+
+Example
+
+4.Theoretical research
+
+Example
+
+5.Computational research
+
+Example
+
+6.Design and development research
+
+Example
+
+7.Field research
+
+Example
+
+
+
